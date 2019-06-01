@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Testing meter element</title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Meter element tests</h1>
+
+			<h2>Meter with nested text</h2>
+			<meter min="0" max="10" value="2">Moderate activity</meter>
+
+			<h2>Meter with title attr</h2>
+			<meter min="0" max="10" value="2" title="centimeters"></meter>
+
+			<h2>Meter with title attr and nested content</h2>
+			<meter min="0" max="10" value="2" title="centimeters">2cm</meter>
+
+			<h2>Meter within label element</h2>
+			<label>
+			  Test
+			  <meter min="0" max="10" value="2"></meter>
+			</label>
+
+			<h2>Meter with explicit label element</h2>
+			<label for="m">
+			  Test
+			</label>
+			<meter min="0" max="10" value="2" id="m"></meter>
+
+			<h2>Meter with aria-label attr</h2>
+			<meter min="0" max="10" value="2" aria-label="centimeters">2cm</meter>
+		</div>
+	</body>
+</html>

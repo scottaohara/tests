@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Footer / contentinfo test case
+		</title>
+		<style>
+			body {
+				background: #aaa;
+				font-family: arial;
+			}
+
+			#app * {
+				margin: .5em;
+			}
+
+			#app *:not(input):not(label):not(legend):not(a):not(h2):not(h1):not(p) {
+				border: 1px solid;
+			}
+
+			#app {
+				background: #fff;
+				border: 1px solid #555;
+			}
+
+			#app > footer {
+				background: darkgreen;
+				color: #fff;
+			}
+
+			footer {
+				background: red;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="app">
+			div#app
+			<nav>
+				<p>Nav</p>
+				<a href="#">Link</a>
+				<footer>
+					Should not be a landmark
+				</footer>
+			</nav>
+			<main>
+				<h1>Main</h1>
+
+				<article>
+					<h2>Article</h2>
+					<footer>
+						Should not be a landmark
+					</footer>
+				</article>
+
+				<section>
+					<h2>Section</h2>
+					<footer>
+						Should not be a landmark
+					</footer>
+				</section>
+
+				<aside>
+					<h2>Aside</h2>
+					<footer>
+						Should not be a landmark
+					</footer>
+				</aside>
+
+				<footer>
+					Should not be a landmark
+				</footer>
+			</main>
+
+			<blockquote>
+				<p>Blockquote</p>
+				<footer>
+					Should not be a landmark
+				</footer>
+			</blockquote>
+
+			<details>
+				<summary>details/summary</summary>
+				<p>text...</p>
+				<footer>
+					Should not be a landmark
+				</footer>
+			</details>
+
+
+			<form>
+				<fieldset>
+					<legend>Fieldset</legend>
+					<label>
+						<input type="radio" name="f"> No
+					</label>
+					<footer>
+						<label>
+							<input type="radio" name="f"> Should not be a landmark
+						</label>
+					</footer>
+				</fieldset>
+			</form>
+
+
+			<figure>
+				<div>
+					Figure
+					<footer>
+						Should not be a landmark
+					</footer>
+				</div>
+				<figcaption>
+					Figcaption
+					<footer>
+						Also should not be a landmark
+					</footer>
+				</figcaption>
+			</figure>
+
+
+			<table>
+				<tr>
+					<td>
+						A table cell
+					</td>
+					<td>
+						Cell with footer:
+						<footer>
+							Should not be a landmark
+						</footer>
+					</td>
+				</tr>
+			</table>
+
+			<footer>
+				<h2>Footer scoped to body</h2>
+				<p>
+					This should be the footer element
+					exposed as contentinfo.</p>
+			</footer>
+
+
+			<dialog>
+				<p>A dialog element</p>
+				<footer>
+					<button>OK</button>
+					Should not be a landmark
+				</footer>
+			</dialog>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>area example</title>
+		<style>
+			div {
+				max-width: 26em;
+				margin: 1em auto;
+			}
+			img {
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>area examples</h1>
+
+			<p>map by itself</p>
+
+			<map name="no_img"></map>
+
+			<hr>
+
+			<p>no alt on image with no area</p>
+			<img src="yellow.jpg" width="416" height="281" usemap="#findme00000">
+
+			<map name="findme00000"></map>
+
+			<hr>
+
+			<p>no alt on image or area</p>
+			<img src="yellow.jpg" width="416" height="281" usemap="#findme0000">
+
+			<map name="findme0000">
+			  <area shape="rect" coords="0,0,416,281" href="https://unsplash.com/">
+			</map>
+
+			<hr>
+
+			<p>no alt on image</p>
+			<img src="yellow.jpg" width="416" height="281" usemap="#findme000">
+
+			<map name="findme000">
+			  <area shape="rect" coords="0,0,416,281" alt="alt" href="https://unsplash.com/">
+			</map>
+
+			<hr>
+
+			<p>no alt on area</p>
+			<img src="yellow.jpg" width="416" height="281" alt="Person wearing a yellow raincoat in a field of yellow flowers." usemap="#findme00">
+
+			<map name="findme00">
+			  <area shape="rect" coords="0,0,416,281" href="https://unsplash.com/">
+			</map>
+
+			<hr>
+
+			<p>just alt</p>
+			<img src="yellow.jpg" width="416" height="281" alt="Person wearing a yellow raincoat in a field of yellow flowers." usemap="#findme0">
+
+			<map name="findme0">
+			  <area shape="rect" coords="0,0,416,281" alt="alt name" href="https://unsplash.com/">
+			</map>
+
+			<hr>
+
+			<p>alt and aria-label</p>
+			<img src="yellow.jpg" width="416" height="281" alt="Person wearing a yellow raincoat in a field of yellow flowers." usemap="#findme1">
+
+			<map name="findme1">
+			  <area shape="rect" coords="0,0,416,281" aria-label="aria label" alt="alt name" href="https://unsplash.com/">
+			</map>
+
+			<hr>
+
+			<p>aria-label and title</p>
+			<img src="yellow.jpg" width="416" height="281" alt="Person wearing a yellow raincoat in a field of yellow flowers." usemap="#findme2">
+
+			<map name="findme2">
+			  <area shape="rect" coords="0,0,416,281" title="title"  aria-label='only aria label' href="https://unsplash.com/">
+			</map>
+
+			<hr>
+
+			<p>title and alt</p>
+			<img src="yellow.jpg" width="416" height="281" alt="Person wearing a yellow raincoat in a field of yellow flowers." usemap="#findme3">
+
+			<map name="findme3">
+			  <area shape="rect" coords="0,0,416,281" title="title" alt="alt name" href="https://unsplash.com/">
+			</map>
+
+			<hr>
+
+			<p>only title</p>
+			<img src="yellow.jpg" width="416" height="281" alt="Person wearing a yellow raincoat in a field of yellow flowers." usemap="#findme4">
+
+			<map name="findme4">
+			  <area shape="rect" coords="0,0,416,281" title="title" href="https://unsplash.com/">
+			</map>
+
+
+			<p>alt on area but not img</p>
+			<img src="yellow.jpg" width="416" height="281" alt usemap="#findme5">
+
+			<map name="findme5">
+			  <area shape="rect" coords="0,0,416,281" alt="alt name" href="https://unsplash.com/">
+			</map>
+
+			<footer>
+				<p>
+					Photo by Daniel Mingook Kim on Unsplash
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

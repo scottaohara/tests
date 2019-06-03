@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Testing hgroup element</title>
+		<style>
+			hgroup + p {
+				margin-top: 2em;
+				border-top: 1px solid;
+				padding-top: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p>One heading</p>
+			<hgroup>
+				<h1>First</h1>
+				<h2>Second</h2>
+			</hgroup>
+
+
+			<p>Two headings</p>
+			<hgroup>
+				<h1>First</h1>
+				<h2>Second</h2>
+			</hgroup>
+
+
+			<p>No headings</p>
+			<hgroup>
+				<p>Not a heading</p>
+			</hgroup>
+		</div>
+	</body>
+</html>

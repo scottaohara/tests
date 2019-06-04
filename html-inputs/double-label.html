@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Input with two labels</title>
+		<style>
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			div {
+				max-width: 30em;
+				margin: 1em auto;
+			}
+
+			.test {
+				padding: .75em;
+				border: 1px solid;
+			}
+
+			details {
+				display: block;
+				margin-top: 2em;
+			}
+
+			details :last-child {
+				margin-bottom: 0;
+			}
+
+			details li:not(:last-child) {
+				margin-bottom: .5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Test the effect of two label elements on a single input</h1>
+			<div class="test">
+				<label for="h">
+					Primary
+				</label>
+				<input type="text" id="h">
+				<label for="h">
+				  Secondary
+				</label>
+
+				<details>
+					<summary>Results</summary>
+					<ul>
+						<li>macOS VO + Safari only announces first label as accessible name.</li>
+						<li>macOS VO + Chrome announces both labels as accessible name.</li>
+					</ul>
+				</details>
+			</div>
+
+		</div>
+	</body>
+</html>

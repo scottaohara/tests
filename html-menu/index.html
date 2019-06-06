@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Testing menu element</title>
+		<style>
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			.test {
+				padding: .5em;
+				border: 1px solid;
+			}
+
+			button {
+				font-size: inherit;
+			}
+
+			button:hover,
+			button:focus,
+			a[href]:hover,
+			a[href]:focus {
+				outline: 2px solid;
+				outline-offset: 3px;
+			}
+
+			li {
+				padding: .325em 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Testing the <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">menu element</a></h1>
+
+			<h2>Test 1: Menu with no children</h2>
+			<div class="test">
+				<menu></menu>
+
+				<details>
+					<summary>Test 1 Results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu AX role / reported as ignored by Safari dev tools</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility."</li>
+					</ul>
+				</details>
+			</div>
+
+
+
+			<h2>Test 2: Menu with <code>li</code> children containing text</h2>
+			<div class="test">
+				<menu>
+					<li>Item 1</li>
+					<li>Item 2</li>
+				</menu>
+				<details>
+					<summary>Test 2 Results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu/menuitem children AX roles / reported as ignored by Safari dev tools</li>
+						<li>AX reports LIs as AXGroup</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." Notes LIs as having a generic container.</li>
+					</ul>
+				</details>
+			</div>
+
+			<h2>Test 3: Menu with <code>li</code> children containing links and buttons</h2>
+			<div class="test">
+				<menu>
+					<li><a href="https://google.com">Google</a></li>
+					<li><button onClick="alert('you have been alerted')">Init Alert</button></li>
+				</menu>
+
+				<details>
+					<summary>Test 3 Results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu/menuitem children AX roles / reported as ignored by Safari dev tools</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." Notes LIs as having a generic container. No role change for link or button.</li>
+					</ul>
+				</details>
+			</div>
+
+
+			<h2>Test 4: Example from HTML specification</h2>
+			<div class="test">
+				<menu>
+				  <li><button onclick="copy()"><img src="copy.svg" alt="Copy"></button></li>
+				  <li><button onclick="cut()"><img src="cut.svg" alt="Cut"></button></li>
+				  <li><button onclick="paste()"><img src="paste.svg" alt="Paste"></button></li>
+				</menu>
+				<script>
+					var copy = function () {
+						alert('i copied something')
+					}
+					var cut = function () {
+						alert('something was done cut!')
+					}
+					var paste = function () {
+						alert('Clearly none of these functions actually do anything...')
+					}
+				</script>
+				<details>
+					<summary>Test 4 results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu/menuitem children AX roles / reported as ignored by Safari dev tools</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." Notes LIs as having a generic container. No role change for buttons.</li>
+					</ul>
+
+				</details>
+			</div>
+
+			<h2>Test 5: Menu with link and button children</h2>
+			<div class="test">
+				<menu>
+					<a href="https://google.com">Google</a>
+					<button onClick="alert('you have been alerted')">Init Alert</button>
+				</menu>
+
+				<details>
+					<summary>Test 5 Results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." No role change for link or buttons.</li>
+					</ul>
+				</details>
+			</div>
+
+
+			<h2>Test 6: Menu with checkbox children</h2>
+			<div class="test">
+				<menu>
+					<label><input type="checkbox">Option 1</label>
+					<label><input type="checkbox">Option 2</label>
+				</menu>
+
+				<details>
+					<summary>Test 6 Results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." No role change for checkboxes.</li>
+					</ul>
+				</details>
+			</div>
+
+
+			<h2>Test 7: Menu with input type=image</h2>
+			<div class="test">
+				<menu>
+					<input type="image" src="#" alt="test 1">
+					<input type="image" src="#" alt="test 2">
+				</menu>
+
+				<details>
+					<summary>Test 7 Results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." No role change for image buttons.</li>
+					</ul>
+				</details>
+			</div>
+
+
+			<h2>Test 8: Menu with radio children</h2>
+			<div class="test">
+				<menu>
+					<label><input type="radio" name="r1">Option 1</label>
+					<label><input type="radio" name="r1">Option 2</label>
+				</menu>
+
+				<details>
+					<summary>Test 8 Results</summary>
+					<ul>
+						<li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+						<li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
+						<li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
+						<li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." No role change for radio buttons.</li>
+					</ul>
+				</details>
+			</div>
+		</div>
+	</body>
+</html>

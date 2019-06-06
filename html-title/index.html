@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My page</title>
+</head>
+<body>
+  <h1>
+    Updating the title element
+  </h1>
+
+  <p>Test 1: Update the title by updating the `textContent` of the element.</p>
+  <button onclick="update1()">
+    Update to "Test 1 update"
+  </button>
+
+  <p>Test 2: Update the title by updating the value of `document.title`.</p>
+  <button onclick="update2()">
+    Update to "Test 2 update"
+  </button>
+
+  <script>
+    var title = document.getElementsByTagName('title')[0];
+
+    var update1 = function () {
+      title.textContent = 'Test 1 update'
+    }
+
+    var update2 = function () {
+      document.title = 'Test 2 update'
+    }
+  </script>
+</body>
+</html>

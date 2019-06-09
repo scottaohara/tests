@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Testing meter element</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../-assets/shared.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing meter element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
     <style>
 
     </style>
-	</head>
-	<body>
-		<div id="app">
-			<header>
-				<h1><code>meter</code> element tests</h1>
-				<div class="dates">
-					<p>Published: <time>June 9th, 2019</time></p>
-					<!-- <p>Last Updated: <time>...</time></p> -->
-				</div>
-			</header>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>meter</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <time>June 9th, 2019</time></p>
+          <!-- <p>Last Updated: <time>...</time></p> -->
+        </div>
+      </header>
 
 
-			<div class="test">
-				<h2>Meter with nested text</h2>
-				<div class="test__case">
-					<meter min="0" max="10" value="2">Moderate activity</meter>
-				</div>
-				<div class="test__info"></div>
-			</div>
+      <div class="test">
+        <h2>Meter with nested text</h2>
+        <div class="test__case">
+          <meter min="0" max="10" value="2">Moderate activity</meter>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
 
-			<div class="test">
-				<h2>Meter with title attr</h2>
-				<div class="test__case">
-					<meter min="0" max="10" value="2" title="centimeters"></meter>
-				</div>
-				<div class="test__info"></div>
-			</div>
+      <div class="test">
+        <h2>Meter with title attr</h2>
+        <div class="test__case">
+          <meter min="0" max="10" value="2" title="centimeters"></meter>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
 
-			<div class="test">
-				<h2>Meter with title attr and nested content</h2>
-				<div class="test__case">
-					<meter min="0" max="10" value="2" title="centimeters">2cm</meter>
-				</div>
-				<div class="test__info"></div>
-			</div>
+      <div class="test">
+        <h2>Meter with title attr and nested content</h2>
+        <div class="test__case">
+          <meter min="0" max="10" value="2" title="centimeters">2cm</meter>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
 
-			<div class="test">
-				<h2><code>meter</code> within <code>label</code> element</h2>
-				<div class="test__case">
-					<label>
-					  Test
-					  <meter min="0" max="10" value="2"></meter>
-					</label>
-				</div>
-				<div class="test__info"></div>
-			</div>
+      <div class="test">
+        <h2><code>meter</code> within <code>label</code> element</h2>
+        <div class="test__case">
+          <label>
+            Test
+            <meter min="0" max="10" value="2"></meter>
+          </label>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
 
-			<div class="test">
-				<h2><code>meter</code> with <code>label [for]</code> element</h2>
-				<div class="test__case">
-					<label for="m">
-					  Test
-					</label>
-					<meter min="0" max="10" value="2" id="m"></meter>
-				</div>
-				<div class="test__info"></div>
-			</div>
+      <div class="test">
+        <h2><code>meter</code> with <code>label [for]</code> element</h2>
+        <div class="test__case">
+          <label for="m">
+            Test
+          </label>
+          <meter min="0" max="10" value="2" id="m"></meter>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
 
-			<div class="test">
-				<h2><code>meter</code> with aria-label attr</h2>
-				<div class="test__case">
-					<meter min="0" max="10" value="2" aria-label="centimeters">2cm</meter>
-				</div>
-				<div class="test__info"></div>
-			</div>
+      <div class="test">
+        <h2><code>meter</code> with aria-label attr</h2>
+        <div class="test__case">
+          <meter min="0" max="10" value="2" aria-label="centimeters">2cm</meter>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
-		</div> <!-- /#app -->
-		<script src="../-assets/shared.js"></script>
-	</body>
+    </div> <!-- /#app -->
+    <script src="../-assets/shared.js"></script>
+  </body>
 </html>

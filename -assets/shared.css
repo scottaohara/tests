@@ -13,6 +13,7 @@ body {
 
 body {
   counter-reset: tests;
+  overflow-x: hidden;
 }
 
 #app {
@@ -45,8 +46,9 @@ body {
 .test pre {
 	background: #111;
 	color: #fff;
-	margin-bottom: 0;
+	margin: 0;
 	padding: .75em;
+  overflow: auto;
 }
 
 .test__info details {
@@ -57,6 +59,11 @@ body {
 
 summary {
   cursor: default;
+}
+
+.test__info summary:focus,
+.test__info summary:hover {
+  outline: 2px solid blue;
 }
 
 .test__info summary,

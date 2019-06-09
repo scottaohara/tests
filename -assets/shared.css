@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: arial;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  counter-reset: tests;
+}
+
+#app {
+	margin: auto;
+	max-width: 50em;
+	padding: 1.125em;
+}
+
+
+/**
+ * test wrapper and related info element styles
+ */
+.test {
+	margin: 2em 0 1.25em 0;
+}
+
+.test h2 {
+	margin-top: 0;
+}
+
+.test h2::before {
+  content: "Test " counter(tests) ": ";
+  counter-increment: tests;
+}
+
+.test pre {
+	background: #111;
+	color: #fff;
+	margin-bottom: 0;
+	padding: .75em;
+}
+
+.test__info details {
+	border: 1px solid #ccc;
+	display: block;
+	margin-top: -1px;
+}
+
+.test__info summary,
+.test__info details > div {
+  padding: .75em;
+}
+
+.test__info details > div :last-child {
+  margin-bottom: 0;
+}
+
+.test__info details > div :first-child {
+  margin-top: 0
+}
+
+
+.test__case {
+	border: 1px solid #ccc;
+	padding: .825em;
+}
+
+
+
+
+
+
+/**
+ * Some normalization for elements within tests
+ */
+button,
+input {
+	font-size: inherit;
+}

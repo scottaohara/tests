@@ -1,34 +1,55 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>My page</title>
-</head>
-<body>
-  <h1>
-    Updating the title element
-  </h1>
+  <head>
+    <meta charset="utf-8">
+    <title>Tests to update the title element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          Updating the document's <code>title</code> element
+        </h1>
+        <div class="dates">
+          <p>Published: <time>June 5th, 2019</time></p>
+          <p>Last Updated: <time>June 9th, 2019</time></p>
+        </div>
+      </header>
 
-  <p>Test 1: Update the title by updating the `textContent` of the element.</p>
-  <button onclick="update1()">
-    Update to "Test 1 update"
-  </button>
+      <div class="test">
+        <h2>Update the title by updating its `textContent`.</h2>
+        <div class="test__case">
+          <button onclick="update1()">
+            Update to "Test 1 update"
+          </button>
+          <script>
+            var title = document.getElementsByTagName('title')[0];
+            var update1 = function () {
+              title.textContent = 'Test 1 update'
+            }
+          </script>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
-  <p>Test 2: Update the title by updating the value of `document.title`.</p>
-  <button onclick="update2()">
-    Update to "Test 2 update"
-  </button>
+      <div class="test">
+        <h2>Update the title by updating with `document.title`.</h2>
+        <div class="test__case">
+          <button onclick="update2()">
+            Update to "Test 2 update"
+          </button>
+          <script>
+            var update2 = function () {
+              document.title = 'Test 2 update'
+            }
+          </script>
+        </div>
+        <div class="test__info"></div>
+      </div>
 
-  <script>
-    var title = document.getElementsByTagName('title')[0];
-
-    var update1 = function () {
-      title.textContent = 'Test 1 update'
-    }
-
-    var update2 = function () {
-      document.title = 'Test 2 update'
-    }
-  </script>
-</body>
+    </div> <!-- /#app -->
+    <script src="../-assets/shared.js"></script>
+  </body>
 </html>

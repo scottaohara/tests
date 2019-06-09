@@ -1,832 +1,766 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <title>
       testing for form landmarks
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
     <style>
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-      }
 
-      body {
-        background: #ccc;
-        font-family: arial;
-      }
-
-      #app * {
-        margin: .5em;
-      }
-
-      .test {
-        background: #fff;
-        padding: .325em;
-        border: 1px solid;
-      }
-
-      .results-table-wrap {
-        overflow: auto;
-      }
-
-      #app .results-table-wrap table {
-        border-spacing: 0;
-        border: 1px solid #111;
-        min-width: 820px;
-        margin-left: 0;
-        margin-right: 0;
-        table-layout: fixed;
-        text-align: left;
-        width: 100%;
-      }
-
-      .results-table-wrap caption {
-        text-align: left;
-      }
-
-      .results-table-wrap tbody tr:not(:last-of-type) > *,
-      .results-table-wrap thead tr > * {
-        border-bottom: 1px solid #111;
-      }
-
-      .results-table-wrap td,
-      .results-table-wrap th {
-        padding: .25em;
-      }
-
-      .results-table-wrap td:not(:last-of-type),
-      .results-table-wrap th:not(:last-of-type) {
-        border-right: 1px solid #111;
-      }
-
-      .results-table-wrap td + th,
-      .results-table-wrap th + td {
-        border-left: 1px solid #111;
-      }
-
-      .results-table-wrap .na {
-        background: #eee;
-      }
-
-      .results-table-wrap .na[contenteditable] {
-        background: #fff;
-      }
-
-      .results-table-wrap .partial {
-        background: lightyellow;
-      }
-
-      .results-table-wrap .fail {
-        background: darkred;
-        color: #fff;
-      }
-
-      .results-table-wrap .pass {
-        background: darkgreen;
-        color: #fff;
-      }
-
-
-      /**
-       * color the element to test
-       */
-      form, [role=form] {
-        background: lightyellow;
-      }
     </style>
   </head>
   <body>
-
-
-    <div id="app">
+    <div id="app" class="fullwidth">
       <header>
-        <h1>Testing for forms landmarks</h1>
+        <h1>Testing for form landmarks</h1>
+        <p>Latest versions of screen readers used at time of testing.</p>
         <p>Published: June 3, 2019</p>
-        <p>Latest versions of screen readers used at time of testing</p>
       </header>
 
       <div class="test">
-        <p>div with role=form, no accessible name</p>
-        <div role="form">
-          <label>
-            Name
-            <input>
-          </label>
+        <h2><code>div</code> with <code>role=form</code>, no accessible name</h2>
+        <div class="test__case">
+          <div role="form">
+            <label>
+              Name
+              <input>
+            </label>
+          </div>
         </div>
-
-        <div class="results-table-wrap">
-          <table>
-            <caption>Test 1 results</caption>
-            <thead>
-              <tr>
-                <th>Browser / OS</th>
-                <th>Browser Exposes</th>
-                <th>JAWS</th>
-                <th>NVDA</th>
-                <th>VoiceOver</th>
-                <th>Narrator</th>
-                <th>TalkBack</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Safari 12.1 macOS 10.14.4</th>
-                <td class="">role: AXGroup<br>dev tools - role: form</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Safari 12.2 iOS</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 macOS 10.14.4</th>
-                <td class=""> dev tools - role: form </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Firefox 67 PC</th>
-                <td class="">MSAA / IA2: accRole: form<br></td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Firefox 66.0.5 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Edge (pre-chromium)</th>
-                <td class="">UIA:<br>Localized Control type: form</td>
-                <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>Edge (chromium)</th>
-                <td class="">dev tools - role: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass">landmark found<br></td>
-                <td class="fail"> landmark not found </td>
-                <td class="na">n/a</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>IE11</th>
-                <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form<br></td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass"> landmark found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-
-      <div class="test">
-        <p>form with role=form, no accessible name</p>
-        <form role="form">
-          <label>
-            Name 2
-            <input>
-          </label>
-        </form>
-
-        <div class="results-table-wrap">
-          <table>
-            <caption>Test 2 results</caption>
-            <thead>
-              <tr>
-                <th>Browser / OS</th>
-                <th>Browser Exposes</th>
-                <th>JAWS</th>
-                <th>NVDA</th>
-                <th>VoiceOver</th>
-                <th>Narrator</th>
-                <th>TalkBack</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Safari 12.1 macOS 10.14.4</th>
-                <td class="">role: AXGroup<br>dev tools - role: form</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Safari 12.2 iOS</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 macOS 10.14.4</th>
-                <td class="">dev tools - role: form</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Firefox 67 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Firefox 66.0.5 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Edge (pre-chromium)</th>
-                <td class="">UIA:<br>Localized Control type: form<br></td>
-                <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>Edge (chromium)</th>
-                <td class="">dev tools - role: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass">landmark found</td>
-                <td class="fail"> landmark not found </td>
-                <td class="na">n/a</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>IE11</th>
-                <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="pass"> landmark found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="test__info">
+          <div class="results-table-wrap">
+            <table>
+              <caption>Test 1 results</caption>
+              <thead>
+                <tr>
+                  <th>Browser / OS</th>
+                  <th>Browser Exposes</th>
+                  <th>JAWS</th>
+                  <th>NVDA</th>
+                  <th>VoiceOver</th>
+                  <th>Narrator</th>
+                  <th>TalkBack</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Safari 12.1 macOS 10.14.4</th>
+                  <td class="">role: AXGroup<br>dev tools - role: form</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Safari 12.2 iOS</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 macOS 10.14.4</th>
+                  <td class=""> dev tools - role: form </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Firefox 67 PC</th>
+                  <td class="">MSAA / IA2: accRole: form<br></td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Firefox 66.0.5 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Edge (pre-chromium)</th>
+                  <td class="">UIA:<br>Localized Control type: form</td>
+                  <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>Edge (chromium)</th>
+                  <td class="">dev tools - role: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass">landmark found<br></td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na">n/a</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>IE11</th>
+                  <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form<br></td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass"> landmark found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
 
       <div class="test">
-        <p>div with role=form, with aria-label</p>
-        <div role="form" aria-label="test label">
-          <label>
-            Name 3
-            <input>
-          </label>
+        <h2>form with role=form, no accessible name</h2>
+        <div class="test__case">
+          <form role="form">
+            <label>
+              Name 2
+              <input>
+            </label>
+          </form>
         </div>
 
-        <div class="results-table-wrap">
-          <table>
-            <caption>Test 3 results</caption>
-            <thead>
-              <tr>
-                <th>Browser / OS</th>
-                <th>Browser Exposes</th>
-                <th>JAWS</th>
-                <th>NVDA</th>
-                <th>VoiceOver</th>
-                <th>Narrator</th>
-                <th>TalkBack</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Safari 12.1 macOS 10.14.4</th>
-                <td class="">role: AXGroup<br>dev tools - role: form, label: test label<br></td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Safari 12.2 iOS</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 macOS 10.14.4</th>
-                <td class="">dev tools - role: form, name: test label</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Firefox 67 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Firefox 66.0.5 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Edge (pre-chromium)</th>
-                <td class="">UIA:<br>Localized Control type: form</td>
-                <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>Edge (chromium)</th>
-                <td class="">dev tools - role: form, name: test label</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass">landmark found</td>
-                <td class="fail"> landmark not found </td>
-                <td class="na">n/a</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>IE11</th>
-                <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass"> landmark found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-
-      <div class="test">
-        <p>form with role=form, with aria-label</p>
-        <form role="form" aria-label="test label 2">
-          <label>
-            Name 4
-            <input>
-          </label>
-        </form>
-
-        <div class="results-table-wrap">
-          <table>
-            <caption>Test 4 results</caption>
-            <thead>
-              <tr>
-                <th>Browser / OS</th>
-                <th>Browser Exposes</th>
-                <th>JAWS</th>
-                <th>NVDA</th>
-                <th>VoiceOver</th>
-                <th>Narrator</th>
-                <th>TalkBack</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Safari 12.1 macOS 10.14.4</th>
-                <td class="">AXGroup<br>dev tools - role: form, label: test label 2<br></td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Safari 12.2 iOS</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 macOS 10.14.4</th>
-                <td class="">dev tools - role: form, name: test label 2</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Firefox 67 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Firefox 66.0.5 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Edge (pre-chromium)</th>
-                <td class="">UIA:<br>Localized Control type: form</td>
-                <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>Edge (chromium)</th>
-                <td class="">dev tools - role: form, name: test label 2</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass">landmark found</td>
-                <td class="fail"> landmark not found </td>
-                <td class="na">n/a</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>IE11</th>
-                <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass"> landmark found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="test__info">
+          <div class="results-table-wrap">
+            <table>
+              <caption>Test 2 results</caption>
+              <thead>
+                <tr>
+                  <th>Browser / OS</th>
+                  <th>Browser Exposes</th>
+                  <th>JAWS</th>
+                  <th>NVDA</th>
+                  <th>VoiceOver</th>
+                  <th>Narrator</th>
+                  <th>TalkBack</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Safari 12.1 macOS 10.14.4</th>
+                  <td class="">role: AXGroup<br>dev tools - role: form</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Safari 12.2 iOS</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 macOS 10.14.4</th>
+                  <td class="">dev tools - role: form</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Firefox 67 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Firefox 66.0.5 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Edge (pre-chromium)</th>
+                  <td class="">UIA:<br>Localized Control type: form<br></td>
+                  <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>Edge (chromium)</th>
+                  <td class="">dev tools - role: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na">n/a</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>IE11</th>
+                  <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="pass"> landmark found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
 
       <div class="test">
-        <p>form with no role=form, no accessible name</p>
-        <form>
-          <label>
-            Name 5
-            <input>
-          </label>
-        </form>
+        <h2>div with role=form, with aria-label</h2>
+        <div class="test__case">
+          <div role="form" aria-label="test label">
+            <label>
+              Name 3
+              <input>
+            </label>
+          </div>
+        </div>
 
-        <div class="results-table-wrap">
-          <table>
-            <caption>Test 5 results</caption>
-            <thead>
-              <tr>
-                <th>Browser / OS</th>
-                <th>Browser Exposes</th>
-                <th>JAWS</th>
-                <th>NVDA</th>
-                <th>VoiceOver</th>
-                <th>Narrator</th>
-                <th>TalkBack</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Safari 12.1 macOS 10.14.4</th>
-                <td class="">AXGroup<br>dev tools - role: form (default)<br></td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Safari 12.2 iOS</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 macOS 10.14.4</th>
-                <td class="">dev tools - role: form</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="fail">landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Firefox 67 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="fail">landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Firefox 66.0.5 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Edge (pre-chromium)</th>
-                <td class="">UIA:<br>Localized Control type: group</td>
-                <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
-                <td class="pass">landmark found ( D key)<br></td>
-                <td class="na">n/a</td>
-                <td class="pass">landmark found ( D key)<br></td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>Edge (chromium)</th>
-                <td class="">dev tools - role: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="fail">landmark not found </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na">n/a</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>IE11</th>
-                <td class="">MSAA: accRole: text<br>UIA: currentAriaRole: none</td>
-                <td class="fail"> landmark not found </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="test__info">
+          <div class="results-table-wrap">
+            <table>
+              <caption>Test 3 results</caption>
+              <thead>
+                <tr>
+                  <th>Browser / OS</th>
+                  <th>Browser Exposes</th>
+                  <th>JAWS</th>
+                  <th>NVDA</th>
+                  <th>VoiceOver</th>
+                  <th>Narrator</th>
+                  <th>TalkBack</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Safari 12.1 macOS 10.14.4</th>
+                  <td class="">role: AXGroup<br>dev tools - role: form, label: test label<br></td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Safari 12.2 iOS</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 macOS 10.14.4</th>
+                  <td class="">dev tools - role: form, name: test label</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Firefox 67 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Firefox 66.0.5 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Edge (pre-chromium)</th>
+                  <td class="">UIA:<br>Localized Control type: form</td>
+                  <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>Edge (chromium)</th>
+                  <td class="">dev tools - role: form, name: test label</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na">n/a</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>IE11</th>
+                  <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass"> landmark found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
 
       <div class="test">
-        <p>form with no role=form, with aria-label</p>
-        <form aria-label="test label 3">
-          <label>
-            Name 6
-            <input>
-          </label>
-        </form>
+        <h2>form with role=form, with aria-label</h2>
+        <div class="test__case">
+          <form role="form" aria-label="test label 2">
+            <label>
+              Name 4
+              <input>
+            </label>
+          </form>
+        </div>
 
-        <div class="results-table-wrap">
-          <table>
-            <caption>Test 6 results</caption>
-            <thead>
-              <tr>
-                <th>Browser / OS</th>
-                <th>Browser Exposes</th>
-                <th>JAWS</th>
-                <th>NVDA</th>
-                <th>VoiceOver</th>
-                <th>Narrator</th>
-                <th>TalkBack</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Safari 12.1 macOS 10.14.4</th>
-                <td class="">AXGroup<br>dev tools - role: form (default), label: text label 3<br></td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Safari 12.2 iOS</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 macOS 10.14.4</th>
-                <td class="">dev tools - role: form, label: text label 3</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="fail"> landmark not found </td>
-                <td class="fail">landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Chrome 74 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Firefox 67 PC</th>
-                <td class="">MSAA / IA2: accRole: form</td>
-                <td class="pass"> landmark found </td>
-                <td class="pass">landmark found</td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-              <tr>
-                <th>Firefox 66.0.5 Android 8.1</th>
-                <td class="na"> ??? </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="fail">landmark not found </td>
-              </tr>
-              <tr>
-                <th>Edge (pre-chromium)</th>
-                <td class="">UIA:<br>Localized Control type: group</td>
-                <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-                <td class="pass">landmark found ( D key)</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>Edge (chromium)</th>
-                <td class="">dev tools - role: form, label: text label 3</td>
-                <td class="fail"> landmark not found </td>
-                <td class="fail">landmark not found </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na">n/a</td>
-                <td class="na">n/a</td>
-              </tr>
-              <tr>
-                <th>IE11</th>
-                <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: none</td>
-                <td class="fail"> landmark not found </td>
-                <td class="fail"> landmark not found </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-                <td class="na"> n/a </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="test__info">
+          <div class="results-table-wrap">
+            <table>
+              <caption>Test 4 results</caption>
+              <thead>
+                <tr>
+                  <th>Browser / OS</th>
+                  <th>Browser Exposes</th>
+                  <th>JAWS</th>
+                  <th>NVDA</th>
+                  <th>VoiceOver</th>
+                  <th>Narrator</th>
+                  <th>TalkBack</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Safari 12.1 macOS 10.14.4</th>
+                  <td class="">AXGroup<br>dev tools - role: form, label: test label 2<br></td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Safari 12.2 iOS</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 macOS 10.14.4</th>
+                  <td class="">dev tools - role: form, name: test label 2</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Firefox 67 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Firefox 66.0.5 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Edge (pre-chromium)</th>
+                  <td class="">UIA:<br>Localized Control type: form</td>
+                  <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>Edge (chromium)</th>
+                  <td class="">dev tools - role: form, name: test label 2</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na">n/a</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>IE11</th>
+                  <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: form</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass"> landmark found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>form with no role=form, no accessible name</h2>
+        <div class="test__case">
+          <form>
+            <label>
+              Name 5
+              <input>
+            </label>
+          </form>
+        </div>
+
+        <div class="test__info">
+          <div class="results-table-wrap">
+            <table>
+              <caption>Test 5 results</caption>
+              <thead>
+                <tr>
+                  <th>Browser / OS</th>
+                  <th>Browser Exposes</th>
+                  <th>JAWS</th>
+                  <th>NVDA</th>
+                  <th>VoiceOver</th>
+                  <th>Narrator</th>
+                  <th>TalkBack</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Safari 12.1 macOS 10.14.4</th>
+                  <td class="">AXGroup<br>dev tools - role: form (default)<br></td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Safari 12.2 iOS</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 macOS 10.14.4</th>
+                  <td class="">dev tools - role: form</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="fail">landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Firefox 67 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="fail">landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Firefox 66.0.5 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Edge (pre-chromium)</th>
+                  <td class="">UIA:<br>Localized Control type: group</td>
+                  <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
+                  <td class="pass">landmark found ( D key)<br></td>
+                  <td class="na">n/a</td>
+                  <td class="pass">landmark found ( D key)<br></td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>Edge (chromium)</th>
+                  <td class="">dev tools - role: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="fail">landmark not found </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na">n/a</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>IE11</th>
+                  <td class="">MSAA: accRole: text<br>UIA: currentAriaRole: none</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>form with no role=form, with aria-label</h2>
+        <div class="test__case">
+          <form aria-label="test label 3">
+            <label>
+              Name 6
+              <input>
+            </label>
+          </form>
+        </div>
+        <div class="test__info">
+          <div class="results-table-wrap">
+            <table>
+              <caption>Test 6 results</caption>
+              <thead>
+                <tr>
+                  <th>Browser / OS</th>
+                  <th>Browser Exposes</th>
+                  <th>JAWS</th>
+                  <th>NVDA</th>
+                  <th>VoiceOver</th>
+                  <th>Narrator</th>
+                  <th>TalkBack</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Safari 12.1 macOS 10.14.4</th>
+                  <td class="">AXGroup<br>dev tools - role: form (default), label: text label 3<br></td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Safari 12.2 iOS</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 macOS 10.14.4</th>
+                  <td class="">dev tools - role: form, label: text label 3</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="fail">landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Chrome 74 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Firefox 67 PC</th>
+                  <td class="">MSAA / IA2: accRole: form</td>
+                  <td class="pass"> landmark found </td>
+                  <td class="pass">landmark found</td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+                <tr>
+                  <th>Firefox 66.0.5 Android 8.1</th>
+                  <td class="na"> ??? </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="fail">landmark not found </td>
+                </tr>
+                <tr>
+                  <th>Edge (pre-chromium)</th>
+                  <td class="">UIA:<br>Localized Control type: group</td>
+                  <td class="pass"> landmark found (<kbd>R</kbd> key) </td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                  <td class="pass">landmark found ( D key)</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>Edge (chromium)</th>
+                  <td class="">dev tools - role: form, label: text label 3</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="fail">landmark not found </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na">n/a</td>
+                  <td class="na">n/a</td>
+                </tr>
+                <tr>
+                  <th>IE11</th>
+                  <td class="">MSAA: accRole: grouping<br>UIA: currentAriaRole: none</td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="fail"> landmark not found </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                  <td class="na"> n/a </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
 
-
-
-
-</body></html>
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

@@ -21,6 +21,10 @@ body {
 	padding: 1.125em;
 }
 
+#app.fullwidth {
+  max-width: 100%;
+}
+
 
 /**
  * test wrapper and related info element styles
@@ -51,6 +55,10 @@ body {
 	margin-top: -1px;
 }
 
+summary {
+  cursor: default;
+}
+
 .test__info summary,
 .test__info details > div {
   padding: .75em;
@@ -64,12 +72,84 @@ body {
   margin-top: 0
 }
 
-
 .test__case {
 	border: 1px solid #ccc;
 	padding: .825em;
 }
 
+
+
+/**
+ * Results tables
+ */
+.results-table-wrap {
+  overflow: auto;
+}
+
+.results-table-wrap table {
+  border-spacing: 0;
+  border: 1px solid #111;
+  min-width: 820px;
+  margin-left: 0;
+  margin-right: 0;
+  table-layout: fixed;
+  text-align: left;
+  width: 100%;
+}
+
+.results-table-wrap caption {
+  background: #eee;
+  border: 1px solid #111;
+  border-bottom: 0;
+  padding: .825em;
+  text-align: left;
+}
+
+.results-table-wrap thead th {
+  background: #ddd;
+}
+
+.results-table-wrap tbody tr:not(:last-of-type) > *,
+.results-table-wrap thead tr > * {
+  border-bottom: 1px solid #111;
+}
+
+.results-table-wrap td,
+.results-table-wrap th {
+  padding: .25em;
+}
+
+.results-table-wrap td:not(:last-of-type),
+.results-table-wrap th:not(:last-of-type) {
+  border-right: 1px solid #111;
+}
+
+.results-table-wrap td + th,
+.results-table-wrap th + td {
+  border-left: 1px solid #111;
+}
+
+.results-table-wrap .na {
+  background: #eee;
+}
+
+.results-table-wrap .na[contenteditable] {
+  background: #fff;
+}
+
+.results-table-wrap .partial {
+  background: lightyellow;
+}
+
+.results-table-wrap .fail {
+  background: darkred;
+  color: #fff;
+}
+
+.results-table-wrap .pass {
+  background: darkgreen;
+  color: #fff;
+}
 
 
 

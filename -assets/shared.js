@@ -12,28 +12,32 @@
 	var printPattern;
 	var patternLabel;
 	var resultsLabel;
+	var hasResults;
 
 	var testCase = '.test__case';
 	var testInfo = '.test__info'
-	var testPattern = '.test__info__pattern'
+	var testPattern = '.test__info__pattern';
 	var testResults = '.test__info__results';
 
 	for ( var i = 0; i < tests.length; i++ ) {
 		testArea = tests[i].querySelector(testCase).innerHTML;
 		infoArea = tests[i].querySelector(testInfo);
 
-		infoArea.insertBefore(template.content.cloneNode(true), infoArea.firstChild);
+		// just in case an info area has not been added
+		if ( infoArea ) {
+			infoArea.insertBefore(template.content.cloneNode(true), infoArea.firstChild);
 
-		patternLabel = tests[i].querySelector(testPattern + ' summary');
-		patternLabel.textContent = 'Test ' + (i+1) + ' markup';
+			patternLabel = tests[i].querySelector(testPattern + ' summary');
+			printPattern = tests[i].querySelector(testPattern + ' details code');
+			hasResults = tests[i].querySelector(testResults + ' summary');
 
-		printPattern = tests[i].querySelector(testPattern + ' details code');
-		printPattern.textContent = testArea.trim();
+			patternLabel.textContent = 'Test ' + (i+1) + ' markup';
+			printPattern.textContent = testArea.trim();
 
-		var hasResults = tests[i].querySelector(testResults + ' summary');
-		if ( hasResults ) {
-			resultsLabel = hasResults.textContent;
-			hasResults.textContent = 'Test ' + (i+1) + ' ' + resultsLabel;
+			if ( hasResults ) {
+				resultsLabel = hasResults.textContent;
+				hasResults.textContent = 'Test ' + (i+1) + ' ' + resultsLabel;
+			}
 		}
 	}
 })(document, window);

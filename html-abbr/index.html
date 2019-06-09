@@ -1,18 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Testing abbr element</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
 	</head>
 	<body>
 		<div id="app">
-			<p>
-				<abbr title="Cascading Style Sheets">CSS</abbr>
-			</p>
-			<p>
-				<abbr>HTML</abbr>
-			</p>
-		</div>
+			<header>
+				<h1><code>abbr</code> element tests</h1>
+				<div class="dates">
+					<p>Published: <time>June 9th, 2019</time></p>
+					<!-- <p>Last Updated: <time>...</time></p> -->
+				</div>
+			</header>
+
+
+			<div class="test">
+				<h2><code>abbr</code> with <code>title</code></h2>
+				<div class="test__case">
+					<abbr title="Cascading Style Sheets">CSS</abbr>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>abbr</code> with <code>title</code> within a paragraph</h2>
+				<div class="test__case">
+					<p>
+						I like <abbr title="Cascading Style Sheets">CSS</abbr>
+					</p>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>abbr</code> within a paragraph</h2>
+				<div class="test__case">
+					<p>
+						<abbr>HTML</abbr>
+					</p>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>abbr</code> with <code>aria-label</code> within a paragraph</h2>
+				<div class="test__case">
+					<p>
+						<abbr aria-label="Hyper Text Markup Language">HTML</abbr>
+					</p>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+		</div> <!-- /#app -->
+		<script src="../-assets/shared.js"></script>
 	</body>
 </html>

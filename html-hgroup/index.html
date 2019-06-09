@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Testing hgroup element</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
 		<style>
 			hgroup + p {
 				margin-top: 2em;
@@ -14,24 +15,49 @@
 	</head>
 	<body>
 		<div id="app">
-			<p>One heading</p>
-			<hgroup>
-				<h1>First</h1>
-				<h2>Second</h2>
-			</hgroup>
+			<header>
+				<h1><code>hgroup</code> element tests</h1>
+				<div class="dates">
+          <p>Published: <time>June x, 2019</time></p>
+          <!-- <p>Last Updated: <time>xx, 2019</time></p> -->
+        </div>
+			</header>
 
 
-			<p>Two headings</p>
-			<hgroup>
-				<h1>First</h1>
-				<h2>Second</h2>
-			</hgroup>
+			<div class="test">
+				<h2>One heading</h2>
+				<div class="test__case">
+					<hgroup>
+						<h1>First</h1>
+						<h2>Second</h2>
+					</hgroup>
+				</div>
+				<div class="test__info"></div>
+			</div>
 
 
-			<p>No headings</p>
-			<hgroup>
-				<p>Not a heading</p>
-			</hgroup>
-		</div>
+			<div class="test">
+				<h2>Two headings</h2>
+				<div class="test__case">
+					<hgroup>
+						<h1>First</h1>
+						<h2>Second</h2>
+					</hgroup>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>No headings</h2>
+				<div class="test__case">
+					<hgroup>
+						<p>Not a heading</p>
+					</hgroup>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+		<script src="../-assets/shared.js"></script>
 	</body>
 </html>

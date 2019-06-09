@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing broken images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      .test-size {
+        background: lightyellow;
+        width: 150px;
+        height: 100px;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          Broken Image tests
+        </h1>
+        <div class="dates">
+          <p>Published: <time>January 9, 2019</time></p>
+          <p>Last Updated: <time>June 9, 2019</time></p>
+        </div>
+        <p>
+          Tests to run in different browsers to demonstrate what's rendered
+          as fall back content for broken images.
+        </p>
+
+        <p>
+          As an additional test, add a set height and width to images to show how that may change what fall back content, if any, is rendered.
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" id="show">
+            Add a set height and width to images
+          </label>
+        </p>
+      </header>
+
+
+      <div class="test">
+        <h2>with alt text</h2>
+        <div class="test__case">
+          <img src="asdf.jpg" alt="alt text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with title text and no alt</h2>
+        <div class="test__case">
+          <img src='asdf.jpg' title="title text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with aria-label and no title or alt</h2>
+        <div class="test__case">
+          <img src="asdf.jpg" aria-label="aria label text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with aria-labelledby and no title or alt</h2>
+        <div class="test__case">
+          <img src="asdf.jpg" aria-labelledby="d">
+          <p id=d>aria-labelledby text</p>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with alt and title text</h2>
+        <div class="test__case">
+          <img src='asdf.jpg' alt="alt text" title="title text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with alt and role=presentation</h2>
+        <div class="test__case">
+          <img src='asdf.jpg' alt="alt text" role="presentation">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <script>
+        var check = document.getElementById('show');
+        var tests = document.querySelectorAll('img');
+        // reset on page refresh just in case
+        check.checked = false;
+
+        check.addEventListener('change', function () {
+          for ( var i = 0; i < tests.length; i++ ) {
+            if ( check.checked === true ) {
+              tests[i].classList.add('test-size');
+            }
+            else {
+              tests[i].classList.remove('test-size');
+            }
+          }
+        });
+      </script>
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

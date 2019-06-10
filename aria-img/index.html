@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ARIA role=img</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      [role="img"] {
+        display: inline-block;
+        background: #f00;
+        border: 1px solid #f00;
+        height: 2em;
+        width: 2em;
+      }
+
+      .sr-only:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(100%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing <code>role=img</code></h1>
+        <div class="dates">
+          <p>Published: <time>June 10, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>role=img with aria-label</h2>
+        <div class="test__case">
+          <span role="img" aria-label="A red square"></span>
+        </div>
+
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>role=img with aria-labelledby</h2>
+        <div class="test__case">
+          <span role="img" aria-labelledby="r">
+            <span hidden id="r">a red square</span>
+          </span>
+        </div>
+
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>role=img with title attribute</h2>
+        <div class="test__case">
+          <span role="img" title="a red square"></span>
+        </div>
+
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>role=img with child content</h2>
+        <div class="test__case">
+          <span role="img">
+            <span class="sr-only">a red square</span>
+          </span>
+        </div>
+
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

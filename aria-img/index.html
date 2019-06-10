@@ -37,7 +37,7 @@
       <div class="test">
         <h2>role=img with aria-label</h2>
         <div class="test__case">
-          <span role="img" aria-label="A red square" tabindex="-1"></span>
+          <span role="img" aria-label="A red square"></span>
         </div>
 
         <div class="test__info">
@@ -52,6 +52,29 @@
                   <li>Android Chrome and Firefox: <strong>pass</strong></li>
                   <li>NVDA 2019.1 with Chrome, Firefox, Edge (Chromium), IE11: <strong>pass</strong></li>
                   <li>JAWS 2019 with Chrome, Firefox, Edge (Chromium): <strong>pass</strong></li>
+                  <li><strong>JAWS 2019 with IE11: ignored.</strong></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>role=img with aria-label and tabindex=-1 (IE11 retest)</h2>
+        <div class="test__case">
+          <span role="img" aria-label="A red square" tabindex="-1"></span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expected result: role and accessible name exposed.</p>
+                <p>Note: added <code>tabindex="-1"</code> in an attempt to force IE11/JAWS to recognize the graphic.</p>
+                <ul>
                   <li><strong>JAWS 2019 with IE11: ignored.</strong></li>
                 </ul>
               </div>

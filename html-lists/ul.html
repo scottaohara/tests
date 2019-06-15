@@ -45,11 +45,81 @@
 
 
       <div class="test">
-        <h2><code>ul</code> with <code>li</code> children containing text</h2>
+        <h2><code>ul</code> with <code>li</code> children</h2>
         <div class="test__case">
           <ul>
             <li>Apples</li>
             <li>Oranges</li>
+          </ul>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ul</code> with <code>aria-label</code>, <code>li</code> children</h2>
+        <div class="test__case">
+          <ul aria-label="aria label">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ul>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ul</code> with <code>title</code>, <code>li</code> children</h2>
+        <div class="test__case">
+          <ul title="title">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ul>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ul</code> with <code>title</code> and <code>aria-label</code>, <code>li</code> children</h2>
+        <div class="test__case">
+          <ul aria-label="aria label" title="title">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ul>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ul</code> with <code>aria-label</code>, <code>li</code> children with <code>aria-label</code>s</h2>
+        <div class="test__case">
+          <ul aria-label="aria label">
+            <li aria-label="child aria label">Apples</li>
+            <li aria-label="child aria label">Oranges</li>
+          </ul>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ul</code> with <code>aria-label</code> and <code>title</code>, <code>li</code> children with <code>aria-label</code>, and <code>title</code>s</h2>
+        <div class="test__case">
+          <ul title="title" aria-label="aria label">
+            <li title="child title" aria-label="child aria label">Apples</li>
+            <li title="child title" aria-label="child aria label">Oranges</li>
           </ul>
         </div>
         <div class="test__info">

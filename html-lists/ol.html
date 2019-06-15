@@ -45,7 +45,7 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>li</code> children</h2>
         <div class="test__case">
           <ol>
             <li>Apples</li>
@@ -59,7 +59,77 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>reversed</code> attribute, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>aria-label</code>, <code>li</code> children</h2>
+        <div class="test__case">
+          <ol aria-label="aria label">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>title</code>, <code>li</code> children</h2>
+        <div class="test__case">
+          <ol title="title">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>title</code> and <code>aria-label</code>, <code>li</code> children</h2>
+        <div class="test__case">
+          <ol aria-label="aria label" title="title">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>aria-label</code>, <code>li</code> children with <code>aria-label</code>s</h2>
+        <div class="test__case">
+          <ol aria-label="aria label">
+            <li aria-label="child aria label">Apples</li>
+            <li aria-label="child aria label">Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>aria-label</code> and <code>title</code>, <code>li</code> children with <code>aria-label</code>, and <code>title</code>s</h2>
+        <div class="test__case">
+          <ol title="title" aria-label="aria label">
+            <li title="child title" aria-label="child aria label">Apples</li>
+            <li title="child title" aria-label="child aria label">Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>reversed</code> attribute, with <code>li</code> children</h2>
         <div class="test__case">
           <ol reversed="">
             <li>Apples</li>
@@ -72,7 +142,7 @@
       </div>
 
       <div class="test">
-        <h2><code>ol</code> with <code>start</code> attribute, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>start</code> attribute, with <code>li</code> children</h2>
         <div class="test__case">
           <ol start="5">
             <li>Apples</li>
@@ -86,7 +156,7 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>reversed</code> and <code>start</code> attributes, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>reversed</code> and <code>start</code> attributes, with <code>li</code> children</h2>
         <div class="test__case">
           <ol reversed="" start="5">
             <li>Apples</li>
@@ -100,7 +170,7 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>reversed</code>, <code>start="2"</code> and <code>type="A"</code> attributes, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>reversed</code>, <code>start="2"</code> and <code>type="A"</code> attributes, with <code>li</code> children</h2>
         <div class="test__case">
           <ol reversed="" start="2" type="A">
             <li>Apples</li>
@@ -116,7 +186,7 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>type="i"</code> attribute, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>type="i"</code> attribute, with <code>li</code> children</h2>
         <div class="test__case">
           <ol type="i">
             <li>Apples</li>
@@ -130,7 +200,7 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>type="a"</code> attribute, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>type="a"</code> attribute, with <code>li</code> children</h2>
         <div class="test__case">
           <ol type="a">
             <li>Apples</li>
@@ -144,7 +214,7 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>type="A"</code> attribute, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>type="A"</code> attribute, with <code>li</code> children</h2>
         <div class="test__case">
           <ol type="A">
             <li>Apples</li>
@@ -158,7 +228,7 @@
 
 
       <div class="test">
-        <h2><code>ol</code> with <code>type="I"</code> attribute, with <code>li</code> children containing text</h2>
+        <h2><code>ol</code> with <code>type="I"</code> attribute, with <code>li</code> children</h2>
         <div class="test__case">
           <ol type="I">
             <li>Apples</li>

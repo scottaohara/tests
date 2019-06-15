@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing ol element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      button:hover,
+      button:focus,
+      a[href]:hover,
+      a[href]:focus,
+      input:hover,
+      input:focus {
+        outline: 2px solid;
+        outline-offset: 3px;
+      }
+
+      li {
+        padding: .325em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing the <code>ol</code> element</h1>
+        <div class="dates">
+          <p>Published: <time>June 15, 2019</time></p>
+          <!-- <p>Last Updated: <time>June X, 2019</time></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>ol</code> with no children</h2>
+        <div class="test__case">
+          <ol></ol>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol>
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>reversed</code> attribute, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol reversed="">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>ol</code> with <code>start</code> attribute, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol start="5">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>reversed</code> and <code>start</code> attributes, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol reversed="" start="5">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>reversed</code>, <code>start="2"</code> and <code>type="A"</code> attributes, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol reversed="" start="2" type="A">
+            <li>Apples</li>
+            <li>Oranges</li>
+            <li>Bananas</li>
+            <li>Grapes</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>type="i"</code> attribute, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol type="i">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>type="a"</code> attribute, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol type="a">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>type="A"</code> attribute, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol type="A">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>type="I"</code> attribute, with <code>li</code> children containing text</h2>
+        <div class="test__case">
+          <ol type="I">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>ol</code> with <code>li</code> children containing links and buttons</h2>
+        <div class="test__case">
+          <ol>
+            <li><a href="https://google.com">Google</a></li>
+            <li><button onclick="alert('you have been alerted')">Init Alert</button></li>
+            <li><input type="button" value="Input" onclick="alert('hi')"></li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>li</code> children and <code>list-style: none</code></h2>
+        <div class="test__case">
+          <ol style="list-style: none;">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>role=list</code>, <code>li</code> children and <code>list-style: none</code></h2>
+        <div class="test__case">
+          <ol style="list-style: none;" role="list">
+            <li>Apples</li>
+            <li>Oranges</li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>ol</code> with <code>role=listitem</code> children</h2>
+        <div class="test__case">
+          <ol>
+            <span role="listitem">Apples</span>
+            <span role="listitem">Oranges</span>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+
+    </div> <!-- /#app -->
+
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

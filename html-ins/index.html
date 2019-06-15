@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing ins element</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>ins</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <time>June 9th, 2019</time></p>
+          <!-- <p>Last Updated: <time>...</time></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>ins</code> with no children</h2>
+        <div class="test__case">
+          <ins></ins>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ins</code> with child text nodes</h2>
+        <div class="test__case">
+          <ins>New content</ins>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ins</code>, within a paragraph, with child text nodes</h2>
+        <div class="test__case">
+          <p>This content was here, <ins>this content is new</ins></p>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ins</code>, within a paragraph, with child text nodes and containing a link</h2>
+        <div class="test__case">
+          <p>This content was here, <ins>this content is new, as is this <a href="#!">link</a></ins></p>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ins</code> containing explicit and implicit paragraphs and a link.</h2>
+        <div class="test__case">
+          <ins>
+            <p>This paragraph is new</p>
+            As is this one. And a <a href="#!">link</a>.
+          </ins>
+          <p>
+            This content was here.
+          </p>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

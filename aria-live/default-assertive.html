@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ARIA live regions: Status default</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing ARIA live regions</h1>
+        <div class="dates">
+          <p>Published: <time>June 18, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>aria-live="assertive"</code> in the DOM on page load</h2>
+        <div class="test__case">
+          <!-- <div aria-live="assertive">Assertive text</div> -->
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari and Chrome: not announced on page load or refresh.</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: may be announced on page load and refresh.</li>
+
+                  <li>JAWS 2019 (june) with IE11: not announced on page load or refresh.</li>
+                  <li>JAWS 2019 (june) with Chromium Edge: not announced on page load or refresh.</li>
+                  <li>JAWS 2019 (june) with Chrome: not announced on page load or refresh.</li>
+                  <li>JAWS 2019 (june) with Firefox: not announced on page load or refresh.</li>
+
+                  <li>NVDA 2019.1.1 with IE11:</li>
+                  <li>NVDA 2019.1.1 with Chromium Edge:</li>
+                  <li>NVDA 2019.1.1 with Chrome:</li>
+                  <li>NVDA 2019.1.1 with Firefox:</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

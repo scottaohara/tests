@@ -18,119 +18,17 @@
         </div>
       </header>
 
-      <div class="test">
-        <h2><code>aria-live="polite"</code> in the DOM on page load</h2>
-        <div class="test__case">
-          <div aria-live="polite">Polite text</div>
-        </div>
 
-        <div class="test__info">
-          <div class="test__info__results">
-            <details>
-              <summary>results</summary>
-              <div>
-                <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari and Chrome: not announced on page load or refresh.</li>
-
-                  <li>iOS 12.3.1 VoiceOver with Safari: not announced on page load or refresh.</li>
-
-                  <li>JAWS 2019 (june) with IE11: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Chromium Edge: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Chrome: not announced on page load or refresh.</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
+      <div class="">
+        <h2>Live regions in documents by default</h2>
+        <p>The following test pages were created to test live regions that exist in documents when the page initially loads.</p>
+        <ul>
+          <li><a href="default-polite.html"><code>aria-live=polite</code></a></li>
+          <li><a href="default-assertive.html"><code>aria-live=assertive</code></a></li>
+          <li><a href="default-alert.html"><code>role=alert</code></a></li>
+          <li><a href="default-status.html"><code>role=status</code></a></li>
+        </ul>
       </div>
-
-
-      <div class="test">
-        <h2><code>aria-live="assertive"</code> in the DOM on page load</h2>
-        <div class="test__case">
-          <!-- <div aria-live="assertive">Assertive text</div> -->
-        </div>
-
-        <div class="test__info">
-          <div class="test__info__results">
-            <details>
-              <summary>results</summary>
-              <div>
-                <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari and Chrome: not announced on page load or refresh.</li>
-
-                  <li>iOS 12.3.1 VoiceOver with Safari: may be announced on page load and refresh.</li>
-
-                  <li>JAWS 2019 (june) with IE11: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Chromium Edge: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Chrome: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Firefox:</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="test">
-        <h2><code>role="alert"</code> in the DOM on page load</h2>
-        <div class="test__case">
-          <!-- <div role="alert">Alert text</div> -->
-        </div>
-
-        <div class="test__info">
-          <div class="test__info__results">
-            <details>
-              <summary>results</summary>
-              <div>
-                <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari: Will announce on page load/refresh if VO cursor is focusing, or within the document.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome: not announced on page load/refresh.</li>
-
-                  <li>iOS 12.3.1 VoiceOver with Safari: announced on page load and refresh.</li>
-
-                  <li>JAWS 2019 (june) with IE11: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Chromium Edge: announced on page load and refresh.</li>
-                  <li>JAWS 2019 (june) with Chrome: announced on page load and refresh.</li>
-                  <li>JAWS 2019 (june) with Firefox:</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="test">
-        <h2><code>role="status"</code> in the DOM on page load</h2>
-        <div class="test__case">
-          <!-- <div role="status">Status text</div> -->
-        </div>
-
-        <div class="test__info">
-          <div class="test__info__results">
-            <details>
-              <summary>results</summary>
-              <div>
-                <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari: Will announce on page load/refresh if VO cursor is focusing, or within the document.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome: not announced on page load/refresh.</li>
-
-                  <li>iOS 12.3.1 VoiceOver with Safari: may be announced on page load and refresh.</li>
-
-                  <li>JAWS 2019 (june) with IE11: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Chromium Edge: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Chrome: not announced on page load or refresh.</li>
-                  <li>JAWS 2019 (june) with Firefox:</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-
-
 
       <div class="test">
         <h2><code>aria-live="polite"</code> injected into the DOM with button press</h2>
@@ -164,7 +62,12 @@
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Chromium Edge: not announced.</li>
                   <li>JAWS 2019 (june) with Chrome: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox:</li>
+                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+
+                  <li>NVDA 2019.1.1 with IE11:</li>
+                  <li>NVDA 2019.1.1 with Chromium Edge:</li>
+                  <li>NVDA 2019.1.1 with Chrome: not announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox: not announced.</li>
                 </ul>
               </div>
             </details>
@@ -205,7 +108,12 @@
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Chromium Edge: not announced.</li>
                   <li>JAWS 2019 (june) with Chrome: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox:</li>
+                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+
+                  <li>NVDA 2019.1.1 with IE11:</li>
+                  <li>NVDA 2019.1.1 with Chromium Edge:</li>
+                  <li>NVDA 2019.1.1 with Chrome: not announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox: not announced.</li>
                 </ul>
               </div>
             </details>
@@ -246,7 +154,12 @@
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Chromium Edge: message announced.</li>
                   <li>JAWS 2019 (june) with Chrome: message announced.</li>
-                  <li>JAWS 2019 (june) with Firefox:</li>
+                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+
+                  <li>NVDA 2019.1.1 with IE11:</li>
+                  <li>NVDA 2019.1.1 with Chromium Edge:</li>
+                  <li>NVDA 2019.1.1 with Chrome: message announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox: message announced.</li>
                 </ul>
               </div>
             </details>
@@ -287,7 +200,12 @@
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Chromium Edge: not announced.</li>
                   <li>JAWS 2019 (june) with Chrome: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox:</li>
+                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+
+                  <li>NVDA 2019.1.1 with IE11:</li>
+                  <li>NVDA 2019.1.1 with Chromium Edge:</li>
+                  <li>NVDA 2019.1.1 with Chrome: not announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox: not announced.</li>
                 </ul>
               </div>
             </details>

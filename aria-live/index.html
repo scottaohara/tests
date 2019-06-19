@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ARIA live regions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing ARIA live regions</h1>
+        <div class="dates">
+          <p>Published: <time>June 18, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>aria-live="polite"</code> in the DOM on page load</h2>
+        <div class="test__case">
+          <div aria-live="polite">Polite text</div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>aria-live="assertive"</code> in the DOM on page load</h2>
+        <div class="test__case">
+          <div aria-live="assertive">Assertive text</div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="alert"</code> in the DOM on page load</h2>
+        <div class="test__case">
+          <div role="alert">Alert text</div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="status"</code> in the DOM on page load</h2>
+        <div class="test__case">
+          <div role="status">Status text</div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>aria-live="polite"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectPolite">Inject Polite</button>
+<script>
+  (function () {
+    var btn = document.getElementById('injectPolite');
+    var parent = btn.parentNode;
+    var div = document.createElement('div');
+    div.setAttribute('aria-live', 'polite');
+    div.textContent = "Injected polite announcement";
+
+    btn.addEventListener('click', function () {
+      parent.appendChild(div);
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>aria-live="assertive"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectAssertive">Inject Assertive</button>
+<script>
+  (function () {
+    var btn = document.getElementById('injectAssertive');
+    var parent = btn.parentNode;
+    var div = document.createElement('div');
+    div.setAttribute('aria-live', 'assertive');
+    div.textContent = "Injected assertive announcement";
+
+    btn.addEventListener('click', function () {
+      parent.appendChild(div);
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="alert"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectAlert">Inject Alert</button>
+<script>
+  (function () {
+    var btn = document.getElementById('injectAlert');
+    var parent = btn.parentNode;
+    var div = document.createElement('div');
+    div.setAttribute('role', 'alert');
+    div.textContent = "Injected alert message.";
+
+    btn.addEventListener('click', function () {
+      parent.appendChild(div);
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="status"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectstatus">Inject status</button>
+<script>
+  (function () {
+    var btn = document.getElementById('injectstatus');
+    var parent = btn.parentNode;
+    var div = document.createElement('div');
+    div.setAttribute('role', 'status');
+    div.textContent = "Injected status message.";
+
+    btn.addEventListener('click', function () {
+      parent.appendChild(div);
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

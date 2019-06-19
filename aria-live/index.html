@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>ARIA live regions</title>
+    <title>ARIA live regions: Injecting live regions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../-assets/shared.css">
     <style>
@@ -12,22 +12,12 @@
   <body>
     <div id="app">
       <header>
-        <h1>Testing ARIA live regions</h1>
+        <h1>Testing injecting ARIA live regions</h1>
         <div class="dates">
           <p>Published: <time>June 18, 2019</time></p>
+          <p>Updated: <time>June 19, 2019</time></p>
         </div>
       </header>
-
-      <div class="">
-        <h2>Live regions in documents by default</h2>
-        <p>The following test pages were created to test live regions that exist in documents when the page initially loads.</p>
-        <ul>
-          <li><a href="default-polite.html"><code>aria-live=polite</code></a></li>
-          <li><a href="default-assertive.html"><code>aria-live=assertive</code></a></li>
-          <li><a href="default-alert.html"><code>role=alert</code></a></li>
-          <li><a href="default-status.html"><code>role=status</code></a></li>
-        </ul>
-      </div>
 
       <div class="test">
         <h2><code>aria-live="polite"</code> injected into the DOM with button press</h2>
@@ -54,19 +44,21 @@
               <summary>results</summary>
               <div>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: messaged announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: messaged announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
 
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
                   <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
 
                   <li>NVDA 2019.1.1 with IE11: not announced.</li>
                   <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
                   <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox: not announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
 
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced.</li>
                   <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
@@ -101,19 +93,21 @@
               <summary>results</summary>
               <div>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: messaged announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: messaged announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
 
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
                   <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
 
                   <li>NVDA 2019.1.1 with IE11: not announced.</li>
                   <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
                   <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox: not announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
 
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced.</li>
                   <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
@@ -148,19 +142,21 @@
               <summary>results</summary>
               <div>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: messaged announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: messaged announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
 
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Edge 76 dev: message announced.</li>
                   <li>JAWS 2019 (june) with Chrome 75: message announced.</li>
-                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
 
                   <li>NVDA 2019.1.1 with IE11: not announced.</li>
                   <li>NVDA 2019.1.1 with Edge 76 dev: message announced.</li>
                   <li>NVDA 2019.1.1 with Chrome 75: message announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox: message announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: message announced.</li>
 
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced (twice).</li>
                   <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
@@ -195,25 +191,245 @@
               <summary>results</summary>
               <div>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: messaged announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: messaged announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
 
                   <li>JAWS 2019 (june) with IE11: message announced.</li>
                   <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
                   <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox: message announced.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
 
                   <li>NVDA 2019.1.1 with IE11: not announced.</li>
                   <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
                   <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox: not announced.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
 
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced (twice).</li>
                   <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
             </details>
           </div>
         </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="log"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectLog">Inject log</button>
+          <script>
+            (function () {
+              var btn = document.getElementById('injectLog');
+              var parent = btn.parentNode;
+              var div = document.createElement('div');
+              div.setAttribute('role', 'log');
+              div.textContent = "Injected log message.";
+
+              btn.addEventListener('click', function () {
+                parent.appendChild(div);
+              });
+            })();
+          </script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??.</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??.</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??.</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??.</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??.</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="marquee"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectMarquee">Inject marquee</button>
+          <script>
+            (function () {
+              var btn = document.getElementById('injectMarquee');
+              var parent = btn.parentNode;
+              var div = document.createElement('div');
+              div.setAttribute('role', 'marquee');
+              div.textContent = "Injected marquee message.";
+
+              btn.addEventListener('click', function () {
+                parent.appendChild(div);
+              });
+            })();
+          </script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: not announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: not announced.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??.</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??.</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??.</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??.</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??.</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="timer"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectTimer">Inject timer</button>
+          <script>
+            (function () {
+              var btn = document.getElementById('injectTimer');
+              var parent = btn.parentNode;
+              var div = document.createElement('div');
+              div.setAttribute('role', 'timer');
+              div.textContent = "Injected timer message.";
+
+              btn.addEventListener('click', function () {
+                parent.appendChild(div);
+              });
+            })();
+          </script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: not announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: not announced.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??.</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??.</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??.</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??.</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??.</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>role="progressbar"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectProgress">Inject progressbar</button>
+          <script>
+            (function () {
+              var btn = document.getElementById('injectProgress');
+              var parent = btn.parentNode;
+              var div = document.createElement('div');
+              div.setAttribute('role', 'progressbar');
+              div.setAttribute('aria-label', 'testing');
+              div.setAttribute('aria-valuenow', '50');
+              div.setAttribute('aria-valuemin', '0');
+              div.setAttribute('aria-valuemax', '100');
+              div.textContent = "Injected progressbar message.";
+
+              btn.addEventListener('click', function () {
+                parent.appendChild(div);
+              });
+            })();
+          </script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: not announced.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: not announced.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??.</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??.</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??.</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??.</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??.</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??.</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??.</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <h2>Live regions in documents by default</h2>
+        <p>The following test pages were created to test live regions that exist in documents when the page initially loads.</p>
+        <ul>
+          <li><a href="default-polite.html"><code>aria-live=polite</code></a></li>
+          <li><a href="default-assertive.html"><code>aria-live=assertive</code></a></li>
+          <li><a href="default-alert.html"><code>role=alert</code></a></li>
+          <li><a href="default-status.html"><code>role=status</code></a></li>
+
+          <li><a href="default-marquee.html"><code>role=marquee</code></a></li>
+          <li><a href="default-timer.html"><code>role=timer</code></a></li>
+          <li><a href="default-log.html"><code>role=log</code></a></li>
+
+          <li><a href="default-progressbar.html"><code>role=progressbar</code></a></li>
+        </ul>
       </div>
 
     </div> <!-- /#app -->

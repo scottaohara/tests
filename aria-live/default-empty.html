@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ARIA live regions: Updating live regions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing the updating of ARIA live regions & friends</h1>
+        <div class="dates">
+          <p>Published: <time>June 20, 2019</time></p>
+          <!-- <p>Updated: <time>X</time></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>aria-live="polite"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectPolite">Inject polite content</button>
+          <div aria-live="polite"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectPolite');
+    var region = btn.parentNode.querySelector('[aria-live]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<p>Injected polite content. <a href='#!'>oh hi</a>.</p><ul><li>test</li><li>test2</li></ul>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Announces content as text string, but not list content.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Announces all content as a text string, including bullets.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>aria-live="assertive"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectAssertive">Inject Assertive</button>
+          <div aria-live="assertive"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectAssertive');
+    var region = btn.parentNode.querySelector('[aria-live]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<p>Injected assertive content. <a href='#!'>oh hi</a>.</p><ul><li>test</li><li>test2</li></ul>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Announces content as text string, but not list content.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Announces all content as a text string, including bullets.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="alert"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectAlert">Inject Alert</button>
+          <div role="alert" aria-label="test"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectAlert');
+    var region = btn.parentNode.querySelector('[role]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<p>Injected important content. <a href='#!'>oh hi</a>.</p><ul><li>test</li><li>test2</li></ul>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Announces all content as a text string, including bullets. Navigating to element announces accName and role.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Announces accessible name and all content as a text string, including bullets. Navigating to element announces accName and role.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="status"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectstatus">Inject status</button>
+          <div role="status" aria-label="Test"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectstatus');
+    var region = btn.parentNode.querySelector('[role]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<p>Injected 'this just happened' content. <a href='#!'>oh hi</a>.</p><ul><li>test</li><li>test2</li></ul>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Announces all content as a text string, including bullets. Navigating to element announces accName and role "application status".</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Announces accessible name and all content as a text string, including bullets. Navigating to element announces accName and role "status".</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="log"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectLog">Inject log</button>
+          <div role="log" aria-label="Test"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectLog');
+    var region = btn.parentNode.querySelector('[role]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<p>Injected historical content. <a href='#!'>oh hi</a>.</p><ul><li>test</li><li>test2</li></ul>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Announces all content as a text string, including bullets. Navigating to element announces accName and role.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Announces all content as a text string, including bullets. Navigating to element announces accName and role.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="marquee"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectMarquee">Inject marquee</button>
+          <div role="marquee" aria-label="Test"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectMarquee');
+    var region = btn.parentNode.querySelector('[role]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<p>Injected historical content. <a href='#!'>oh hi</a>.</p><ul><li>test</li><li>test2</li></ul>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: no initial announcement. Default is <code>aria-live=off</code>.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Injected content not announced. Navigating to element announces accName and role.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Injected content not announced. Navigating to element announces accName and role.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>role="timer"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectTimer">Inject timer</button>
+          <div role="timer" aria-label="Test"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectTimer');
+    var region = btn.parentNode.querySelector('[role]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<p>10 minutes remaining. <a href='#!'>oh hi</a>.</p>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: no initial announcement. Default is <code>aria-live=off</code>.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Injected content not announced. Navigating to element announces accName and role.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Injected content not announced. Navigating to element announces accName and role.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>role="progressbar"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectProgress">Update progress bar</button>
+          <div role="progressbar" aria-label="test" aria-valuenow="0" aria-valuemax="100" aria-valuemin="0">0</div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectProgress');
+    var prog = btn.parentNode.querySelector('[role]');
+    var val = 50;
+
+    btn.addEventListener('click', function () {
+      prog.setAttribute('aria-valuenow', val);
+      prog.innerHTML = val;
+      started = true;
+    });
+
+
+    var started = false;
+    function count() {
+      if ( started && val <= 100) {
+        val++
+        prog.setAttribute('aria-valuenow', val);
+        prog.innerHTML = val;
+      }
+    }
+
+    var interval = setInterval(count,1000);
+
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: no initial announcement.</p>
+                <ul>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Injected content / updated value not announced. Navigating to element announces accName and role. When focused "ticking" noise is made to indicate updating.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Injected content / updated value not announced. Navigating to element announces accName and role. When focused "ticking" noise is made to indicate updating.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

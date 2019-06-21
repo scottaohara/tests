@@ -43,8 +43,8 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announces content as text string, but not list content.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Live announces all content as a text string, including bullets.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announcement of content as text string, but not list content.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Live announcement of all content as a text string, including bullets.</li>
 
                   <li>JAWS 2019 (june) with IE11: ??? .</li>
                   <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
@@ -57,8 +57,8 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announces all content as a text string, including bullets.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, including list role, but not in the order it appears on screen and inconsistently with duplicate announcements.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of all content as a text string, including bullets.</li>
                 </ul>
               </div>
             </details>
@@ -91,8 +91,8 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announces content as text string, but not list content.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Live announces all content as a text string, including bullets.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announcement of content as text string, but not list content.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Live announcement of all content as a text string, including bullets.</li>
 
                   <li>JAWS 2019 (june) with IE11: ??? .</li>
                   <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
@@ -105,8 +105,8 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announces all content as a text string, including bullets.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of text string, and list role, only. Link text and list item text are not announced.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of all content as a text string, including bullets.</li>
                 </ul>
               </div>
             </details>
@@ -139,7 +139,7 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announces all content as a text string, including bullets. Navigating to element announces accName and role.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announcement of all content as a text string, including bullets. Navigating to element announces accName and role.</li>
                   <li>macOS 10.14.4 VoiceOver with Chrome 75: Announces accessible name and all content as a text string, including bullets. Navigating to element announces accName and role.</li>
 
                   <li>JAWS 2019 (june) with IE11: ??? .</li>
@@ -153,8 +153,8 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made. Navigating to content, no role or accName announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announces all content as a text string, including bullets. Navigating to element does not announce accName or role.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Alert role and accessible name announced. Live announcement of text string, and list role, only. Link text and list item text are not announced.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of all content as a text string, including bullets. Navigating to element does not announce accName or role.</li>
                 </ul>
               </div>
             </details>
@@ -187,7 +187,7 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announces all content as a text string, including bullets. Navigating to element announces accName and role "application status".</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announcement of all content as a text string, including bullets. Navigating to element announces accName and role "application status".</li>
                   <li>macOS 10.14.4 VoiceOver with Chrome 75: Announces accessible name and all content as a text string, including bullets. Navigating to element announces accName and role "status".</li>
 
                   <li>JAWS 2019 (june) with IE11: ??? .</li>
@@ -201,8 +201,8 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made. Navigating to content, no role or accName announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announces all content as a text string, including bullets. Navigating to element does not announce accName or role.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of all content as a text string, including bullets. List role announced. Status role and accessible name announced. Announcement of content not in order, and contains duplicate announcements.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of all content as a text string, including bullets. Navigating to element does not announce accName or role.</li>
                 </ul>
               </div>
             </details>
@@ -235,8 +235,8 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announces all content as a text string, including bullets. Navigating to element announces accName and role.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Live announces all content as a text string, including bullets. Navigating to element announces accName and role.</li>
+                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: Live announcement of all content as a text string, including bullets. Navigating to element announces accName and role.</li>
+                  <li>macOS 10.14.4 VoiceOver with Chrome 75: Live announcement of all content as a text string, including bullets. Navigating to element announces accName and role.</li>
 
                   <li>JAWS 2019 (june) with IE11: ??? .</li>
                   <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
@@ -249,8 +249,8 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made. Navigating to content, no role or accName announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announces all content as a text string, including bullets. Navigating to element does not announce accName or role.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of all content as a text string, including bullets. List role announced. Log role and accessible name announced. Contained duplicate announcements.</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of all content as a text string, including bullets. Navigating to element does not announce accName or role.</li>
                 </ul>
               </div>
             </details>
@@ -297,7 +297,7 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made. Navigating to content, no role or accName announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: No live announcement made. Navigating to content, no role or accName announced.</li>
                   <li>iOS 12.3.1 VoiceOver with Safari: Injected content not announced. Navigating to element does not announce accName or role.</li>
                 </ul>
               </div>
@@ -345,7 +345,7 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made. Navigating to content, no role or accName announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: No live announcement made. Navigating to content, no role or accName announced.</li>
                   <li>iOS 12.3.1 VoiceOver with Safari: Injected content not announced. Navigating to element does not announce accName or role.</li>
                 </ul>
               </div>
@@ -410,7 +410,7 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: No live announcement made. Navigating to element announces accName but not role. No indication of dynamic updates made.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: No live announcement made. Navigating to element announces accName and "progress indicator" role. Current progress value not announced.</li>
                   <li>iOS 12.3.1 VoiceOver with Safari: No live announcement made. Navigating to element announces accName but not role. No indication of dynamic updates made.</li>
                 </ul>
               </div>
@@ -418,6 +418,11 @@
           </div>
         </div>
       </div>
+
+      <h2>Notes:</h2>
+      <p>
+        When testing this page with Talkback and Chrome, the accessible name and roles of various live regions were automatically announced on page load (e.g., alert, status and log).
+      </p>
 
     </div> <!-- /#app -->
 

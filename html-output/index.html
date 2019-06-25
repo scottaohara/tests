@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing output</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          The output element
+        </h1>
+        <div class="dates">
+          <p>Published: <time>June 24, 2019</time></p>
+          <!-- <p>Last Updated: <time>X, 2019</time></p> -->
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2>...</h2>
+        <div class="test__case">
+          <button onClick="update()">Update</button>
+          <output id="aa"></output>
+          <script>
+            var output = document.getElementById('aa');
+
+            var update = function () {
+              output.value = 'Test content'
+            }
+          </script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>output with aria-label</h2>
+        <div class="test__case">
+          <button onClick="update2()">Update</button>
+          <output id="bb" aria-label="Update area"></output>
+          <script>
+            var output2 = document.getElementById('bb');
+
+            var update2 = function () {
+              output2.value = 'Test content'
+            }
+          </script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>output with default value</h2>
+        <div class="test__case">
+          <button onClick="update3()">Update</button>
+          <output id="cc" value="default">Default</output>
+          <script>
+            var output3 = document.getElementById('cc');
+
+            var update3 = function () {
+              output3.value = 'Test content'
+            }
+          </script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+
+
+
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

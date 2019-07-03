@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing an auto-updated progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      .mt {
+        margin-top: .5em;
+      }
+      label + progress {
+        margin-left: .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          Auto updating an unnamed <code>progress</code> element
+        </h1>
+        <div class="dates">
+          <p>Published: <time>July 3, 2019</time></p>
+          <!-- <p>Last Updated: <time>X, 2019</time></p> -->
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2>Updated by 10% increments until complete</h2>
+        <div class="test__case">
+          <div class="mt">
+            <progress id="p1" value="0" max="100">0%</progress>
+          </div>
+          <script>
+            var progress = document.getElementById('p1');
+            var updating = setInterval( function() {
+                progress.value += 10;
+                progress.textContent = progress.value + '%';
+                if ( progress.value >= 100 ) {
+                  clearInterval(updating);
+                }
+            }, 1000);
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: When focused with VC, role and current value announced. No live announcements made.</li>
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75: When focused with VC, role and current value announced. No live announcements made.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

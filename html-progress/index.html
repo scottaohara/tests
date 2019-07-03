@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      .mt {
+        margin-top: .5em;
+      }
+      label + progress {
+        margin-left: .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          The <code>progress</code> element
+        </h1>
+        <div class="dates">
+          <p>Published: <time>July 3, 2019</time></p>
+          <!-- <p>Last Updated: <time>X, 2019</time></p> -->
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2>Update <code>progress</code> element, named by <code>label</code>, by checking checkboxes</h2>
+        <div class="test__case">
+          <label>
+            <input type="checkbox" id="c3">
+            Task 1
+          </label>
+          <label>
+            <input type="checkbox" id="c4">
+            Task 2
+          </label>
+         <div class="mt">
+            <label for="p2">My tasks</label>
+            <progress id="p2" value="0" max="100">0%</progress>
+          </div>
+          <script>
+            var progress2 = document.getElementById('p2');
+            var pValue2 = progress2.value;
+            var task1b = document.getElementById('c3');
+            var task2b = document.getElementById('c4');
+
+            var update = function () {
+              if ( this.checked ) {
+                pValue2 = pValue2+50;
+              }
+              else {
+                pValue2 = pValue2-50;
+              }
+              progress2.value = pValue2;
+              progress2.textContent = pValue2+"%";
+            }
+
+            task1b.addEventListener('change', update, false);
+            task2b.addEventListener('change', update, false);
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Note: <abbr>VC</abbr> is short for "virtual cursor".</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: When focused with VC, accessible name, role and current value announced. No live announcements made.</li>
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75: When focused with VC, accessible name, role and current value announced. No live announcements made.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Update <code>progress</code> element, named by <code>aria-label</code>, by checking checkboxes</h2>
+        <div class="test__case">
+          <label>
+            <input type="checkbox" id="c5">
+            Task 1
+          </label>
+          <label>
+            <input type="checkbox" id="c6">
+            Task 2
+          </label>
+         <div class="mt">
+            <progress aria-label="ARIA label" id="p3" value="0" max="100">0%</progress>
+          </div>
+          <script>
+            var progress3 = document.getElementById('p3');
+            var pValue3 = progress3.value;
+            var task1c = document.getElementById('c5');
+            var task2c = document.getElementById('c6');
+
+            var update = function () {
+              if ( this.checked ) {
+                pValue3 = pValue3+50;
+              }
+              else {
+                pValue3 = pValue3-50;
+              }
+              progress3.value = pValue3;
+              progress3.textContent = pValue3+"%";
+            }
+
+            task1c.addEventListener('change', update, false);
+            task2c.addEventListener('change', update, false);
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: When focused with VC, accessible name, role and current value announced. No live announcements made.</li>
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75: When focused with VC, accessible name, role and current value announced. No live announcements made.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
+                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <script>
+        (function () {
+          var checks = document.querySelectorAll('input[type="checkbox"]');
+
+          for ( var i = 0; i < checks.length; i++ ) {
+            checks[i].checked = false;
+          }
+        })();
+      </script>
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

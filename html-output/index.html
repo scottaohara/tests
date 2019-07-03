@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../-assets/shared.css">
     <style>
-
+      details li {
+        margin-top: .325em;
+      }
+      li.change-at {
+        margin-top: 1em;
+      }
     </style>
   </head>
   <body>
@@ -19,7 +24,14 @@
           <p>Published: <time>June 24, 2019</time></p>
           <p>Last Updated: <time>July 3, 2019</time></p>
         </div>
-        <p>Note: the <code>output</code> element allows for only <a href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">phrasing content</a> as child elements.</p>
+        <p>Note: the <code>output</code> element allows for only <a href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">phrasing content</a> as child elements. The following tests will inject a text string and a single link into each test case's <code>output</code> element.</p>
+        <p>
+          An additional test file has been created to <a href="inject-text-only.html">test injecting text strings only</a> into <code>output</code> elements that have accessible names.
+        </p>
+
+        <p>Note: Firefox MSAA accRole="output", IA2 role="section".</p>
+        <p>Chrome MSAA and IA2 report as "status bar".</p>
+
       </header>
 
       <div class="important">
@@ -32,15 +44,15 @@
       <div class="test">
         <h2>Add content to an empty output</h2>
         <div class="test__case">
-          <button onClick="update()">Update</button>
-          <output id="aa"></output>
-          <script>
-            var output = document.getElementById('aa');
+<button onClick="update()">Update</button>
+<output id="aa"></output>
+<script>
+  var output = document.getElementById('aa');
 
-            var update = function () {
-              output.innerHTML = "test content <a href='#'>and link</a>.";
-            }
-          </script>
+  var update = function () {
+    output.innerHTML = "test content <a href='#'>and link</a>.";
+  }
+</script>
         </div>
         <div class="test__info">
           <div class="test__info__results">
@@ -49,23 +61,36 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of content. Without accessible name, no role is announced when navigating to output content.</li>
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of content. Without accessible name, no role is announced when navigating to output content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no role.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no role.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br>
+                    No live announcement made. Navigating to content, no role announced.</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no role.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, "status" role, and then repeats non-link content.</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no role. Element cannot be discovered prior to content injection.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
+                    Live announcement of content, "status" role, and then repeats non-link content.</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. Without accessible name, no role is announced when navigating to output content.
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.
                 </ul>
               </div>
             </details>
@@ -77,15 +102,15 @@
       <div class="test">
         <h2>Add content to an empty <code>output</code> with <code>aria-label</code></h2>
         <div class="test__case">
-          <button onClick="updateARIA()">Update</button>
-          <output id="bb" aria-label="ARIA label"></output>
-          <script>
-            var outputARIA = document.getElementById('bb');
+<button onClick="updateARIA()">Update</button>
+<output id="bb" aria-label="ARIA label"></output>
+<script>
+  var outputARIA = document.getElementById('bb');
 
-            var updateARIA = function () {
-              outputARIA.innerHTML = "test content <a href='#'>and link</a>.";
-            }
-          </script>
+  var updateARIA = function () {
+    outputARIA.innerHTML = "test content <a href='#'>and link</a>.";
+  }
+</script>
         </div>
         <div class="test__info">
           <div class="test__info__results">
@@ -94,23 +119,36 @@
               <div>
                 <p>Expectation: should announce flattened text string and accessible name.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', output".</li>
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status".</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br>
+                    Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', output".</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br>
+                    Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status".</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or no role.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br>
+                    Live announcement of accessible name and injected content. Cannot navigate to element with virtual cursor prior to content injection. Accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    Live announcement of accessible name and injected content. Cannot navigate to element with virtual cursor prior to content injection. Accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Navigating to element prior to injecting content will announce accessible name, but no role.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br>
+                    No live announcement made. Navigating to content, no role announced, but announces "edit" prior to visible content.</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to injecting content announces its accessible name, but no role. Navigating after announces no accessible name.</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to injecting content announces its accessible name, but no role. Navigating after announces no accessible name.</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be navigated to without injected content.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be discovered prior to content injection.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
+                    Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>
@@ -140,23 +178,36 @@
               <div>
                 <p>Expectation: should announce flattened text string and accessible name.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or no role.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br>
+                    Live announcement of accessible name and injected content. Cannot navigate to element with virtual cursor prior to content injection. Accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    Live announcement of accessible name and injected content. Cannot navigate to element with virtual cursor prior to content injection. Accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, including the visible label, but no role. Navigating to element prior to injecting content will announce accessible name from label, and then accessible name repeated for the <code>output</code> element itself, but no role announcement.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br>
+                    No live announcement made. Navigating to content, no role announced.</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to injecting content announces its accessible name, but no role. Navigating after announces no accessible name.</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to injecting content announces its accessible name, but no role. Navigating after announces no accessible name.</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be navigated to without injected content.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be discovered prior to content injection.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
+                    Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>
@@ -165,19 +216,18 @@
       </div>
 
 
-
       <div class="test">
         <h2>Add content to an empty output with <code>title</code> attribute</h2>
         <div class="test__case">
-          <button onClick="updateT()">Update</button>
-          <output id="ttt" title="title attribute"></output>
-          <script>
-            var outputT = document.getElementById('ttt');
+<button onClick="updateT()">Update</button>
+<output id="ttt" title="title attribute"></output>
+<script>
+  var outputT = document.getElementById('ttt');
 
-            var updateT = function () {
-              outputT.innerHTML = "test content <a href='#'>and link</a>.";
-            }
-          </script>
+  var updateT = function () {
+    outputT.innerHTML = "test content <a href='#'>and link</a>.";
+  }
+</script>
         </div>
         <div class="test__info">
           <div class="test__info__results">
@@ -186,23 +236,36 @@
               <div>
                 <p>Expectation: should announce accessible name and flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content after activating the update button. <strong>Before</strong> activating the update button, the <code>title</code> attribute provides the <code>output</code> with an accessible name, and if navigated to, VO will announce "accessible name, output".</li>
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status".</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content after activating the update button. <strong>Before</strong> activating the update button, the <code>title</code> attribute provides the <code>output</code> with an accessible name, and if navigated to, VO will announce "accessible name, output".</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br>
+                    Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status".</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br>
+                    No live announcement made. Navigating to element before or after pressing update button will announce content, but no accessible name or no role.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br>
+                    Live announcement of accessible name and injected content. Cannot navigate to element with virtual cursor prior to content injection. Accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    Live announcement of accessible name and injected content. Cannot navigate to element with virtual cursor prior to content injection. Accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Navigating to element prior to injecting content will announce accessible name, but no role.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br>
+                    No live announcement made. Navigating to content, no role announced.</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to injecting content announces its accessible name, but no role. Navigating after announces no accessible name.</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to injecting content announces its accessible name, but no role. Navigating after announces no accessible name.</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be navigated to without injected content.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be discovered prior to content injection.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
+                    Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>
@@ -211,19 +274,18 @@
       </div>
 
 
-
       <div class="test">
         <h2>Update content in an output with default text</h2>
         <div class="test__case">
-          <button onClick="updateC()">Update</button>
-          <output id="cc">Test default string</output>
-          <script>
-            var outputC = document.getElementById('cc');
+<button onClick="updateC()">Update</button>
+<output id="cc">Test default string</output>
+<script>
+  var outputC = document.getElementById('cc');
 
-            var updateC = function () {
-              outputC.innerHTML = "test content <a href='#'>and link</a>.";
-            }
-          </script>
+  var updateC = function () {
+    outputC.innerHTML = "test content <a href='#'>and link</a>.";
+  }
+</script>
         </div>
         <div class="test__info">
           <div class="test__info__results">
@@ -232,24 +294,36 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of content. Without accessible name, no role is announced when navigating to output content. If quickly navigating to the output after updating, VoiceOver may announce "Default, dimmed" per the original content that was within the <code>output</code> element.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content. If quickly navigating to the output after updating, VoiceOver may announce "Default, dimmed" per the original content that was within the <code>output</code> element.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
 
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of content. Without accessible name, no role is announced when navigating to output content.</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br>
+                    No live announcement made. Navigating to element after pressing update button will announce content, but no role.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br>
+                    Live announcement of injected content, followed by accessible name. No role is announced when navigating to output content. When navigating to element, accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    Live announcement of injected content, followed by accessible name. No role is announced when navigating to output content. When navigating to element, accessible name only announced if using <kbd>Tab</kbd> key to focus link, accessible name will then announce twice. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element before or after pressing update button will announce content, but no role.</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br>
+                    No live announcement made. Navigating to content, no role announced.</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br>
+                    Live announcement of injected content. No role is announced when navigating to output content.</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element will announce content, but no role.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br>
+                    No live announcement made. Navigating to element before or after pressing update button will announce content, but no role.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
+                    Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the initial text string, and then the status role. After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the initial text string, and then the status role. After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
-
-                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>
@@ -261,15 +335,15 @@
       <div class="test">
         <h2>Update content in an output with default text and accessible name from <code>aria-label</code></h2>
         <div class="test__case">
-          <button onClick="updateD()">Update</button>
-          <output id="dd" aria-label="ARIA label">Default text string</output>
-          <script>
-            var outputD = document.getElementById('dd');
+<button onClick="updateD()">Update</button>
+<output id="dd" aria-label="ARIA label">Default text string</output>
+<script>
+  var outputD = document.getElementById('dd');
 
-            var updateD = function () {
-              outputD.innerHTML = "test content <a href='#'>and link</a>.";
-            }
-          </script>
+  var updateD = function () {
+    outputD.innerHTML = "test content <a href='#'>and link</a>.";
+  }
+</script>
         </div>
         <div class="test__info">
           <div class="test__info__results">
@@ -278,24 +352,37 @@
               <div>
                 <p>Expectation: should announce flattened text string and accessible name.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of accessible name, followed by content. VoiceOver can navigate to <code>output</code> and will announce "'accessible name', output". VoiceOver can then navigate into the <code>output</code> to announce the default or injected content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br>
+                    Live announcement of accessible name, followed by content. VoiceOver can navigate to <code>output</code> and will announce "'accessible name', output". VoiceOver can then navigate into the <code>output</code> to announce the default or injected content.</li>
 
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status". VoiceOver can then navigate into the <code>output</code> to announce the default or injected content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br>
+                    Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status". VoiceOver can then navigate into the <code>output</code> to announce the default or injected content.</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br>
+                    No live announcement made. Navigating to element before or after pressing update button will announce content, but no accessible name or no role.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br>
+                    ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    Live announcement of accessible name and injected content. No role is announced when navigating to output content.</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element before or after pressing update button will announce content, but no accessible name or role.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br>
+                    No live announcement made. Navigating to content, no role announced, but announces "edit" prior to visible content.</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to, or after injecting content does not announce accessible name or role.</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br>
+                    Live announcement of injected content, followed by accessible name. Navigating to element prior to, or after injecting content does not announce accessible name or role.</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br>
+                    No live announcement made. Navigating to element will announce content, but no accessible name or role.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? </li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br>
+                    No live announcement made. Navigating to element before or after pressing update button will announce content, but no accessible name or role.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
+                    Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the accessible name, and status role, but not the visible content on screen. After injecting content, TalkBack will navigate to injected content and not announce role, or accessible name.</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: ?? </li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br>
+                    Live announcement of injected content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>

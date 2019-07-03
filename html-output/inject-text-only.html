@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing output: injecting text into named output</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          The <code>output</code> elements with accessible names.
+        </h1>
+        <div class="dates">
+          <p>Published: <time>July 3, 2019</time></p>
+          <!-- <p>Last Updated: <time>X, 2019</time></p> -->
+        </div>
+        <p>Note: <a href="index.html">review additional tests</a> for more detailed announcements. These tests are solely looking to determine if the visible text and accessible names are accessible.</p>
+      </header>
+
+      <div class="important">
+        <p>Important note concerning TalkBack:</p>
+        <p>
+          If <code>output</code> elements are given an accessible name, or contain content by default, TalkBack paired with Chrome will auto-announce the accessible name, any default content, and role (status) of at least one, if not all, instances of <code>output</code>s on initial document load or refresh.
+        </p>
+      </div>
+
+
+      <div class="test">
+        <h2>Add content to an empty <code>output</code> with <code>aria-label</code></h2>
+        <div class="test__case">
+          <button onClick="updateARIA()">Update</button>
+          <output id="bb" aria-label="ARIA label"></output>
+          <script>
+            var outputARIA = document.getElementById('bb');
+
+            var updateARIA = function () {
+              outputARIA.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible.</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', output".</li>
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status".</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Add content to an empty output with <code>label</code> association</h2>
+        <div class="test__case">
+          <button onClick="update2b()">Update</button>
+          <label for="bbb">label:</label>
+          <output id="bbb"></output>
+          <script>
+            var output2b = document.getElementById('bbb');
+
+            var update2b = function () {
+              output2b.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible.</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: ??? .</li>
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75: ??? .</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Add content to an empty output with <code>title</code> attribute</h2>
+        <div class="test__case">
+          <button onClick="updateT()">Update</button>
+          <output id="ttt" title="title attribute"></output>
+          <script>
+            var outputT = document.getElementById('ttt');
+
+            var updateT = function () {
+              outputT.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible.</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: ??? .</li>
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75:??? .</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Update content in an output with default text and accessible name from <code>aria-label</code></h2>
+        <div class="test__case">
+          <button onClick="updateD()">Update</button>
+          <output id="dd" aria-label="ARIA label">Default text string</output>
+          <script>
+            var outputD = document.getElementById('dd');
+
+            var updateD = function () {
+              outputD.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string.</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: ??? .</li>
+
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75: ??? .</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? </li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

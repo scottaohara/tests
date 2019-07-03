@@ -22,6 +22,12 @@
         <p>Note: the <code>output</code> element allows for only <a href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">phrasing content</a> as child elements.</p>
       </header>
 
+      <div class="important">
+        <p>Important note concerning TalkBack:</p>
+        <p>
+          If <code>output</code> elements are given an accessible name, or contain content by default, TalkBack paired with Chrome will auto-announce the accessible name, any default content, and role (status) of at least one, if not all, instances of <code>output</code>s on initial document load or refresh.
+        </p>
+      </div>
 
       <div class="test">
         <h2>Add content to an empty output</h2>
@@ -57,8 +63,9 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, "status" role, and then repeats non-link content.</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. Without accessible name, no role is announced when navigating to output content.
                 </ul>
               </div>
             </details>
@@ -101,8 +108,9 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>
@@ -146,8 +154,9 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>
@@ -166,7 +175,7 @@
             var outputT = document.getElementById('ttt');
 
             var updateT = function () {
-              outputT.innerHTML = "test content <a href='#'>and link</a>.";
+              outputT.innerHTML = "test content.";
             }
           </script>
         </div>
@@ -191,8 +200,9 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>
@@ -237,8 +247,9 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? .</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the initial text string, and then the status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
                 </ul>
               </div>
             </details>

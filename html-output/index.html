@@ -213,7 +213,7 @@
 
 
       <div class="test">
-        <h2>Update content an output with default text</h2>
+        <h2>Update content in an output with default text</h2>
         <div class="test__case">
           <button onClick="updateC()">Update</button>
           <output id="cc">Test default string</output>
@@ -221,7 +221,7 @@
             var outputC = document.getElementById('cc');
 
             var updateC = function () {
-              outputC.innerHTML = "test content.";
+              outputC.innerHTML = "test content <a href='#'>and link</a>.";
             }
           </script>
         </div>
@@ -247,9 +247,55 @@
                   <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
 
                   <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the initial text string, and then the status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the initial text string, and then the status role. After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
                   <li>iOS 12.3.1 VoiceOver with Safari: Live announcement of content. No accessible name is announced, nor is a role or accessible name announced when navigating to output content.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Update content in an output with default text and accessible name from <code>aria-label</code></h2>
+        <div class="test__case">
+          <button onClick="updateD()">Update</button>
+          <output id="dd" aria-label="ARIA label">Default text string</output>
+          <script>
+            var outputD = document.getElementById('dd');
+
+            var updateD = function () {
+              outputD.innerHTML = "test content <a href='#'>and link</a>.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce flattened text string and accessible name.</p>
+                <ul>
+                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of accessible name, followed by content. VoiceOver can navigate to <code>output</code> and will announce "'accessible name', output". VoiceOver can then navigate into the <code>output</code> to announce the default or injected content.</li>
+
+                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status". VoiceOver can then navigate into the <code>output</code> to announce the default or injected content.</li>
+
+                  <li>JAWS 2019 (june) with IE11: ??? .</li>
+                  <li>JAWS 2019 (june) with Edge 76 dev: ??? .</li>
+                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
+                  <li>JAWS 2019 (june) with Firefox 67.0.3: ?? .</li>
+
+                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
+                  <li>NVDA 2019.1.1 with Edge 76 dev: ??? .</li>
+                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
+                  <li>NVDA 2019.1.1 with Firefox 67.0.3: ??? .</li>
+
+                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: ?? .</li>
+                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? </li>
+
+                  <li>iOS 12.3.1 VoiceOver with Safari: ?? </li>
                 </ul>
               </div>
             </details>

@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../-assets/shared.css">
     <style>
-
+      details li {
+        margin-top: .325em;
+      }
+      li.change-at {
+        margin-top: 1em;
+      }
     </style>
   </head>
   <body>
@@ -48,25 +53,25 @@
             <details>
               <summary>results</summary>
               <div>
-                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible.</p>
+                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible. Role should be announced either in live announcement, or when navigated to.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', output".</li>
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: Live announcement of accessible name, followed by content. Navigating to element announces "'accessible name', status".</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Live announcement of accessible name, followed by injected content. Navigating to element announces "'accessible name', output". VO can enter element and announce visible content. VO can navigate to the <code>output</code> and its accessible name and role will announce, without injected content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Live announcement of accessible name, followed by injected content. Navigating to element announces "'accessible name', status". VO can enter element and announce visible content. VO can navigate to the <code>output</code> and its accessible name and role will announce, without injected content.</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name. <code>output</code> is not accessible without injected content.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> Live announcement of injected content, intended accessible name not announced. When navigated to, visible text announced, but not intended accessible name. <code>output</code> is not accessible without injected content.</li>
                 </ul>
               </div>
             </details>
@@ -95,25 +100,25 @@
             <details>
               <summary>results</summary>
               <div>
-                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible.</p>
+                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible. Role should be announced either in live announcement, or when navigated to.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: ??? .</li>
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: ??? .</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Live announcement of accessible name, followed by injected content. Navigating to element announces "'label', 'injected content'". No role is announced. Webkit does not appear to properly associate a <code>label</code> with an <code>output</code> even though its an element that can be labelled.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Live announcement injected content. Navigating to element announces "'label', 'injected content'". No role is announced. Blink does not appear to properly associate a <code>label</code> with an <code>output</code> even though its an element that can be labelled.</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name. <code>output</code> is not accessible without injected content.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> Live announcement of injected content, intended accessible name not announced. When navigated to, visible text announced, but not intended accessible name. <code>output</code> is not accessible without injected content.</li>
                 </ul>
               </div>
             </details>
@@ -141,25 +146,25 @@
             <details>
               <summary>results</summary>
               <div>
-                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible.</p>
+                <p>Expectation: should announce flattened text string and accessible name. Visible text should be accessible. Role should be announced either in live announcement, or when navigated to.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: ??? .</li>
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75:??? .</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Live announcement of injected content. Navigating to element announces the injected content. VO can navigate to the <code>output</code> and its accessible name and output role will announce if there is no subtree content. The <code>title</code> is not treated as an accessible description when subtree content exists.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Live announcement of accessible name, followed by injected content. Navigating to element announces "'accessible name', status". VO can enter element and announce visible content. VO can navigate to the <code>output</code> and its accessible name and role will announce, without injected content. The <code>title</code> is not treated as an accessible description when subtree content exists.</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ??? .</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name (nor as accessible description). <code>output</code> is not accessible without injected content.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
 
-                  <li>iOS 12.3.1 VoiceOver with Safari: ??? .</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> Live announcement of injected content, intended accessible name not announced. When navigated to, visible text announced, but not intended accessible name (nor as accessible description). <code>output</code> is not accessible without injected content.</li>
                 </ul>
               </div>
             </details>
@@ -189,24 +194,23 @@
               <div>
                 <p>Expectation: should announce flattened text string.</p>
                 <ul>
-                  <li>macOS 10.14.5 VoiceOver with Safari 12.1.1: ??? .</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Live announcement of accessible name, followed by injected content. Navigating to element, before or after injection, announces "'accessible name', output". VO can enter element and announce visible content.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Live announcement of accessible name, followed by injected content. Navigating to element, before or after injection, announces "'accessible name', status". VO can enter element and announce visible content.</li>
 
-                  <li>macOS 10.14.5 VoiceOver with Chrome 75: ??? .</li>
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name.</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>JAWS 2019 (june) with IE11: ??? .</li>
-                  <li>JAWS 2019 (june) with Edge 77 dev: ??? .</li>
-                  <li>JAWS 2019 (june) with Chrome 75: ??? .</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 67.0.4:</b><br> ??? .</li>
 
-                  <li>NVDA 2019.1.1 with IE11: ??? .</li>
-                  <li>NVDA 2019.1.1 with Edge 77 dev: ??? .</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: ??? .</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.4: ??? .</li>
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> No live announcement of injected content. When navigated to, visible text announced, but not intended accessible name.</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75: ?? </li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): ??? .</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: ?? </li>
-
-                  <li>iOS 12.3.1 VoiceOver with Safari: ?? .</li>
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari: Live announcement of injected content, intended accessible name not announced, before or after injected content. When navigated to, visible text announced, but not intended accessible name.</li>
                 </ul>
               </div>
             </details>

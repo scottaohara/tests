@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing output: adding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      div > small {
+        display: block;
+        margin-left: 2em;
+      }
+      fieldset > div:not(:first-of-type) {
+        margin-top: .75em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          <code>output</code> used for mathing
+        </h1>
+        <div class="dates">
+          <p>Published: <time>July 4, 2019</time></p>
+          <!-- <p>Last Updated: <time>X, 2019</time></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Check items to update total</h2>
+        <div class="test__case">
+          <div id="demo">
+            <form method="POST" action="#!">
+              <h3>Finalize your cable package (demo)</h3>
+              <fieldset>
+                <legend>Package options</legend>
+                <div>
+                  <label>
+                    <input type="checkbox" name="a" id="l" value="15">
+                    Include land line
+                  </label>
+                  <small id="l">so telemarketers can interrupt your dinner.</small>
+                </div>
+                <div>
+                  <label>
+                    <input type="checkbox" name="b" value="10">
+                    Basic cable
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input type="checkbox" name="c" value="90" aria-describedby="s">
+                    Basic cable+
+                  </label>
+                  <small id="s">Essentially basic cable, but with channels you might actually watch.</small>
+                </div>
+                <div>
+                  <label>
+                    <input type="checkbox" name="d" value="20">
+                    Internet that actually works, sometimes
+                  </label>
+                </div>
+              </fieldset>
+
+              <div style="text-align: right; margin-top: 1em">
+                <label>
+                  Your total:
+                  <output name="now">$0</output>
+                </label>
+              </div>
+
+              <div style="text-align: center">
+                <button type="submit">
+                  Take my money!
+                </button>
+
+                <button type="reset">
+                  Wait, lemme start over
+                </button>
+              </div>
+            </form>
+          </div>
+          <script>
+            var options = document.querySelectorAll('input[type="checkbox"]');
+            var reset = document.querySelector('[type="reset"]');
+            var current = document.querySelector('[name="now"]');
+            var total = 0;
+            var okGo = document.querySelector('[type="submit"]');
+            var demo = document.getElementById('demo');
+            var success = `
+              <div style="text-align: center; font-size: 2em;" tabindex="-1">
+                <p>Thank you for your money. We have taken it.</p>
+                <small>Refresh your browser to restart the demo.</small>
+              </div>
+            `;
+
+            // disable reset button on page load/refresh
+            reset.disabled = true
+
+            var submission = function () {
+              demo.innerHTML = success;
+              demo.querySelector('div').focus();
+            };
+
+
+            var update = function () {
+              if ( this.checked ) {
+                total = total + Number(this.value);
+              }
+              else {
+                total = total - Number(this.value);
+              }
+              current.textContent = '$'+total;
+
+              if ( total === 0 ) {
+                reset.disabled = true;
+              }
+              else {
+                reset.disabled = false;
+              }
+            };
+
+
+            for ( var i = 0; i < options.length; i++ ) {
+              // ensure checkboxes get reset on page load/refresh
+              options[i].checked = false;
+
+              var cost = document.createElement('small');
+              cost.textContent = '(+ $' + options[i].value + ')';
+              options[i].parentNode.appendChild(cost);
+              options[i].addEventListener('change', update, false);
+            }
+
+            okGo.addEventListener('click', submission, false);
+
+            reset.addEventListener('click', function () {
+              total = 0;
+              current.textContent = '$0';
+            });
+          </script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

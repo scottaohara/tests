@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing output: basic patterns to test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          <code>output</code> element test cases
+        </h1>
+        <div class="dates">
+          <p>Published: <time>July 4, 2019</time></p>
+
+          <p>Note that <b>Firefox</b> MSAA accRole="output", IA2 role="section". While <b>Chrome</b> MSAA and IA2 report as "status bar".</p>
+          <p>Per <a href="https://w3c.github.io/html-aam/#el-output">HTML AAM</a>, <code>output</code> should map to <a href="https://www.w3.org/TR/wai-aria-1.1/#status">ARIA's <code>role=status</code></a>.
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Inject content into empty output</h2>
+        <div class="test__case">
+<button onClick="update()">Update 1</button>
+<output id="aa"></output>
+<script>
+  var output = document.getElementById('aa');
+
+  var update = function () {
+    output.innerHTML = "Injected content <a href='#'>with a link</a>.";
+  }
+</script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>Inject content into labelled empty output</h2>
+        <div class="test__case">
+<button onClick="update()">Update 2</button>
+<label for="bb">Result:</label> <output id="bb"></output>
+<script>
+  var output = document.getElementById('bb');
+
+  var update = function () {
+    output.innerHTML = "Injected content.";
+  }
+</script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>Inject content into labelled (by aria-label) empty output</h2>
+        <div class="test__case">
+<button onClick="update()">Update 3</button>
+<output aria-label="ARIA labelled" id="cc"></output>
+<script>
+  var output = document.getElementById('cc');
+
+  var update = function () {
+    output.innerHTML = "Injected content.";
+  }
+</script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

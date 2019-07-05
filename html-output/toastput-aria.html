@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing output and ARIA: basis for a "toast" component</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      details li {
+        margin-top: .325em;
+      }
+      li.change-at {
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          <code>output</code> and ARIA <code>role="status"</code> used to construct a "toast" component
+        </h1>
+        <div class="dates">
+          <p>Published: <time>July 5, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Activate the button, get a "toast"</h2>
+        <div class="test__case">
+          <button onclick="toasty('By the power of CSS, and ARIA, I am a more robustly announced popup message!', 3000)">Press Me</button>
+          <div class="toast">
+
+            <output role="status"></output>
+            <!-- note button is not within output as this
+              should NOT be part of the live announcement. -->
+            <button onclick="quickDismiss()" aria-label="Dismiss">X</button>
+          </div>
+          <style>
+            .toast {
+              background: #61728b;
+              border: 1px solid;
+              border-radius: 2px;
+              bottom: .5em;
+              color: #fff;
+              left: 0;
+              margin: auto;
+              max-width: 30em;
+              opacity: 0;
+              padding: .75em;
+              position: fixed;
+              transform: translateY(0);
+              transition:
+                transform .2s ease-in-out,
+                opacity .2s ease-in-out;
+              right: 0;
+            }
+
+            .toast p {
+              margin: 0;
+            }
+
+            .toast.popped {
+              opacity: 1;
+              transform: translateY(-4em);
+            }
+
+            .toast button {
+              border: 0;
+              border-left: 1px solid #fff;
+              color: #fff;
+              background: none;
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              z-index: 5;
+            }
+            .toast button:hover,
+            .toast button:focus {
+              background: #000;
+            }
+          </style>
+          <script>
+            // quick n' simple proof of concept JS
+            var toastWrapper = document.querySelector('.toast');
+            var toast = toastWrapper.querySelector('output');
+            var timer;
+            var init;
+
+            var toasty = function ( string, duration ) {
+              init = event.target;
+              toast.innerHTML = '<p>' + string + '</p>';
+              toastWrapper.classList.add('popped');
+              timer = setTimeout(autoDismiss, duration);
+            };
+
+            var quickDismiss = function ( ) {
+              init.focus();
+              autoDismiss();
+            };
+
+            var autoDismiss = function () {
+              toastWrapper.classList.remove('popped');
+
+              timer = setTimeout(function () {
+                toast.innerHTML = ' ';
+                timer = undefined;
+              }, 1000);
+            }
+          </script>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

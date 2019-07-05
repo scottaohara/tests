@@ -89,11 +89,18 @@
   var init;
 
   var toasty = function ( string, duration ) {
+    if ( typeof timer === 'number' ) {
+      clear();
+    }
     init = event.target;
     toast.innerHTML = '<p>' + string + '</p>';
     toastWrapper.classList.add('popped');
     timer = setTimeout(autoDismiss, duration);
   };
+
+  var clear = function () {
+    window.clearTimeout(timer);
+  }
 
   var quickDismiss = function ( ) {
     init.focus();

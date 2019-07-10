@@ -28,6 +28,7 @@
       <div class="test">
         <h2>Activate the button, get a "toast"</h2>
         <p>Activating the "press me" button will inject content into an <code>output</code> element, with <code>role=status</code> to increase browser support.  CSS and JavaScript are then used to visually reveal and dismiss the message.</p>
+        <p>The dismiss button of the "toast" is not a child of the <code>output</code> element, but rather a sibling to it.  This is so that it is not part of the live announcement of the element. Activating the dismiss button will return focus to the invoking element, so keyboard focus does not become 'lost'.</p>
         <div class="test__case">
 <button onclick="toasty('By the power of readily available HTML, CSS and JS, and also ARIA due to support gaps, I am a popup message!', 5000)">Press Me</button>
 <div class="toast">

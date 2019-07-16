@@ -131,10 +131,11 @@ summary {
   border-right: 1px solid #111;
 }
 
-.results-table-wrap td + th,
-.results-table-wrap th + td {
-  border-left: 1px solid #111;
+.results-table-wrap td:first-child,
+.results-table-wrap th:first-child {
+  border-right: 1px solid #111;
 }
+
 
 .results-table-wrap .na {
   background: #eee;

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing a custom element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      [tabindex]:focus {
+        outline: 2px solid;
+      }
+      .results-table-wrap table {
+        border-left: 0;
+      }
+      th:first-child {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        border-left: 1px solid #111;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing a custom element</h1>
+        <div class="dates">
+          <p>Published: <time>July 16, 2019</time></p>
+        </div>
+        <p>
+          The following results were tested on Windows 10, and macOS 10.14.5 machines.
+        </p>
+      </header>
+
+      <div class="test">
+        <h2>Custom element with no subtree</h2>
+        <div class="test__case">
+          <my-element></my-element>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 80px">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>ARIA / Browser output</th>
+                        <td>
+
+                          Webkit: No matching ARIA role. Marked as ignored.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA + IA2</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>Not exposed</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Custom element with no subtree, tabindex=0</h2>
+        <div class="test__case">
+          <my-element tabindex="0"></my-element>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 80px">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>ARIA / Browser output</th>
+                        <td>
+
+                          Webkit: No matching ARIA role. Marked as ignored.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA + IA2</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>Not exposed.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Custom element with static text content</h2>
+        <div class="test__case">
+          <my-element>My text</my-element>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 80px">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>ARIA / Browser output</th>
+                        <td>
+
+                          Webkit: No matching ARIA role. Marked as ignored.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA + IA2</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>Role: AXGroup</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Custom element with static text content and tabindex=0</h2>
+        <div class="test__case">
+          <my-element tabindex="0">My text</my-element>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 80px">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>ARIA / Browser output</th>
+                        <td>
+
+                          Webkit: No matching ARIA role.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA + IA2</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>Role: AXGroup</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Custom element with empty subtree and aria-label</h2>
+        <div class="test__case">
+          <my-element aria-label="ARIA label"></my-element>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 80px">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>ARIA / Browser output</th>
+                        <td>
+                          Webkit: No matching ARIA role. Exposes ARIA label.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA + IA2</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>Not exposed.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Custom element with text content and aria-label</h2>
+        <div class="test__case">
+          <my-element aria-label="ARIA label">My text</my-element>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 80px">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>ARIA / Browser output</th>
+                        <td>
+
+                          Webkit: No matching ARIA role. Exposes ARIA label.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA + IA2</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>Role: AXGroup</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Custom element with text content, aria-label and tabindex=0</h2>
+        <div class="test__case">
+          <my-element aria-label="ARIA label" tabindex="0">My text</my-element>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 80px">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>ARIA / Browser output</th>
+                        <td>
+                          Webkit: No matching ARIA role. Exposes ARIA label.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA + IA2</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>Role: AXGroup</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Requiring checkboxes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      [role="checkbox"] {
+        height: 1.5em;
+        width: 1.5em;
+        border: 2px solid;
+        display: inline-block;
+      }
+      [role="checkbox"]:focus {
+        outline: 2px solid transparent;
+        box-shadow: 0 0 1px 3px lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing required checkboxes</h1>
+        <div class="dates">
+          <p>Published: <time>July 16, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Checkbox with <code>required</code> attribute</h2>
+        <div class="test__case">
+          <input type="checkbox" aria-label="Test 1" aria-required="true">
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expected result: should announce as required.</p>
+                <ul>
+                  <li>
+                    <b>macOS 10.14.5 Safari 12.1.1:</b><br>
+                    Pass
+                  </li>
+                  <li>
+                    <b>macOS 10.14.5 Chrome 75:</b><br>
+                    Pass
+                  </li>
+
+                  <li>
+                    <b>JAWS 2019 (june) with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>NVDA 2019.1 with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>Android Firefox:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>Android Chrome:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>iOS 12.3.1 Safari:</b><br>
+                    ???
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Checkbox with <code>aria-required=true</code></h2>
+        <div class="test__case">
+          <input type="checkbox" aria-label="Test 2" aria-required="true">
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expected result: should announce as required.</p>
+                <ul>
+                  <li>
+                    <b>macOS 10.14.5 Safari 12.1.1:</b><br>
+                    Pass.
+                  </li>
+                  <li>
+                    <b>macOS 10.14.5 Chrome 75:</b><br>
+                    Pass.
+                  </li>
+
+                  <li>
+                    <b>JAWS 2019 (june) with IE11:</b><br>
+                    Pass.
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>NVDA 2019.1 with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>Android Firefox:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>Android Chrome:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>iOS 12.3.1 Safari:</b><br>
+                    ???
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Checkbox with <code>aria-required=false</code></h2>
+        <div class="test__case">
+          <input type="checkbox" aria-label="Test 3" aria-required="false">
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expected result: should NOT announce as required.</p>
+                <ul>
+                  <li>
+                    <b>macOS 10.14.5 Safari 12.1.1:</b><br>
+                    Pass
+                  </li>
+                  <li>
+                    <b>macOS 10.14.5 Chrome 75:</b><br>
+                    Pass
+                  </li>
+
+                  <li>
+                    <b>JAWS 2019 (june) with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>NVDA 2019.1 with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>Android Firefox:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>Android Chrome:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>iOS 12.3.1 Safari:</b><br>
+                    ???
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>ARIA Checkbox with <code>aria-required=true</code></h2>
+        <div class="test__case">
+          <div role="checkbox" aria-label="Test 4" aria-checked="false" tabindex="0" aria-required="true"></div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expected result: should announce as required.</p>
+                <ul>
+                  <li>
+                    <b>macOS 10.14.5 Safari 12.1.1:</b><br>
+                    Pass
+                  </li>
+                  <li>
+                    <b>macOS 10.14.5 Chrome 75:</b><br>
+                    Pass
+                  </li>
+
+                  <li>
+                    <b>JAWS 2019 (june) with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>NVDA 2019.1 with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>Android Firefox:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>Android Chrome:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>iOS 12.3.1 Safari:</b><br>
+                    ???
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>ARIA Checkbox with <code>aria-required=false</code></h2>
+        <div class="test__case">
+          <div role="checkbox" aria-label="Test 5" aria-checked="false" tabindex="0" aria-required="false"></div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expected result: should NOT announce as required.</p>
+                <ul>
+                  <li>
+                    <b>macOS 10.14.5 Safari 12.1.1:</b><br>
+                    Pass
+                  </li>
+                  <li>
+                    <b>macOS 10.14.5 Chrome 75:</b><br>
+                    Pass
+                  </li>
+
+                  <li>
+                    <b>JAWS 2019 (june) with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>JAWS 2019 (june) with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>NVDA 2019.1 with IE11:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Edge 77 (dev):</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Chrome 75:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>NVDA 2019.1 with Firefox 68:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>Android Firefox:</b><br>
+                    ???
+                  </li>
+                  <li>
+                    <b>Android Chrome:</b><br>
+                    ???
+                  </li>
+
+                  <li>
+                    <b>iOS 12.3.1 Safari:</b><br>
+                    ???
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>ARIA Checkbox with <code>required</code> attribute</h2>
+        <div class="test__case">
+          <div role="checkbox" aria-label="Test 6" aria-checked="false" tabindex="0" required></div>
+        </div>
+
+        <div class="test__info">
+
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

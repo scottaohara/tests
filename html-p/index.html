@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Paragraph element tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing the <code>p</code> element</h1>
+        <div class="dates">
+          <p>Published: <time>July 16, 2019</time></p>
+        </div>
+      </header>
+
+
+			<!--
+				For aria-labelledby/describedby tests
+			-->
+			<div hidden id="by">ARIA labelled by</div>
+			<div hidden id="desc">Description</div>
+
+
+			<div class="test">
+				<h2>Empty <code>p</code></h2>
+				<div class="test__case">
+					<p></p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2>Empty <code>p</code> with <code>title</code></h2>
+				<div class="test__case">
+					<p title="title"></p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2>Empty <code>p</code> with <code>title</code> and <code>tabindex=0</code></h2>
+				<div class="test__case">
+					<p title="title" tabindex="0"></p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2>Empty <code>p</code> with <code>title</code>, <code>aria-label</code> and <code>tabindex=0</code></h2>
+				<div class="test__case">
+					<p title="title" tabindex="0" aria-label="ARIA label"></p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2>Empty <code>p</code> with <code>title</code>, and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p title="title" aria-label="ARIA label"></p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>title</code>, and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p title="title" aria-label="ARIA label">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>title</code>, <code>tabindex=0</code> and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p title="title" aria-label="ARIA label" tabindex="0">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>title</code>, <code>aria-labelledby</code>, <code>tabindex=0</code> and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p title="title" aria-label="ARIA label" aria-labelledby="by" tabindex="0">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>title</code>, <code>contenteditable</code> <code>aria-labelledby</code>, <code>tabindex=0</code> and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p title="title" contenteditable="true" aria-label="ARIA label" aria-labelledby="by" tabindex="0">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>title</code>, and <code>contenteditable</code></h2>
+				<div class="test__case">
+					<p title="title" contenteditable="true">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>aria-label</code>, and <code>contenteditable</code></h2>
+				<div class="test__case">
+					<p aria-label="ARIA label" contenteditable="true">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>dir="rtl"</code>, and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p aria-label="ARIA label" dir="rtl">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>draggable="true"</code>, and <code>title</code></h2>
+				<div class="test__case">
+					<p title="title" draggable="true">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>aria-describedby</code>, and <code>title</code></h2>
+				<div class="test__case">
+					<p title="title" aria-describedby="desc">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>aria-describedby</code>, and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p aria-label="ARIA label" aria-describedby="desc">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>p</code> with <code>aria-describedby</code>, <code>title</code> and <code>aria-label</code></h2>
+				<div class="test__case">
+					<p aria-label="ARIA label" title="title" aria-describedby="desc">My paragraph.</p>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+			</div>
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

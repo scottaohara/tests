@@ -59,21 +59,28 @@
                       <tr>
                         <th>ARIA / Browser output</th>
                         <td>
-
                           Webkit: No matching ARIA role. Marked as ignored.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Marked as ignored.
+                          <br>
+                          Gecko: ignored
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>Not exposed</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>Not exposed</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>Not exposed</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -118,19 +125,35 @@
                         <td>
 
                           Webkit: No matching ARIA role. Marked as ignored.
+                          <br>
+                          Chromium: exposed as "GenericContainer" without a name.
+                          <br>
+                          Gecko: exposed as role: "text" without a name.
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Role: Section
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accRole: "MY-ELEMENT"<br>
+                          accState: focusable, offscreen
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -175,19 +198,27 @@
                         <td>
 
                           Webkit: No matching ARIA role. Marked as ignored.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Marked as ignored.
+                          <br>
+                          Gecko: exposed as role: "text leaf".
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>Not exposed</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>Not exposed</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>Not exposed</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -231,19 +262,38 @@
                         <td>
 
                           Webkit: No matching ARIA role.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Name from Contents.
+                          <br>
+                          Gecko: exposed as role: "text".
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Name: "My Text"<br>
+                          Role: Section
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accName: "My text"<br>
+                          accRole: "MY-ELEMENT"<br>
+                          accState: focusable
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom<br>
+                          CurrentName: "My text"
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -287,19 +337,38 @@
                         <th>ARIA / Browser output</th>
                         <td>
                           Webkit: No matching ARIA role. Exposes ARIA label.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Name from aria-label.
+                          <br>
+                          Gecko: exposed as role: "text". Name from aria-label.
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Name: "ARIA label"<br>
+                          Role: Section
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accName: "ARIA label"<br>
+                          accRole: MY-ELEMENT<br>
+                          accState: offscreen
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom<br>
+                          CurrentName: "ARIA label"
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -344,19 +413,38 @@
                         <td>
 
                           Webkit: No matching ARIA role. Exposes ARIA label.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Name from aria-label.
+                          <br>
+                          Gecko: exposed as role: "text". Name from aria-label.
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Name: "ARIA label"<br>
+                          Role: Section
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accName: "ARIA label"<br>
+                          accRole: MY-ELEMENT<br>
+                          accState: normal
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom<br>
+                          CurrentName: "ARIA label"
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -400,19 +488,38 @@
                         <th>ARIA / Browser output</th>
                         <td>
                           Webkit: No matching ARIA role. Exposes ARIA label.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Name from aria-label.
+                          <br>
+                          Gecko: exposed as role: "text". Name from aria-label.
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Name: "ARIA label"<br>
+                          Role: Section
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accName: "ARIA label"<br>
+                          accRole: MY-ELEMENT<br>
+                          accState: focusable
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom<br>
+                          CurrentName: "ARIA label"
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -457,19 +564,42 @@
                         <th>ARIA / Browser output</th>
                         <td>
                           Webkit: No matching ARIA role. Exposes ARIA label. Title exposed.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Name from aria-labelledby. Description exposed.
+                          <br>
+                          Gecko: exposed as role: "text". Name from aria-labelledby. Description exposed.
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Name: My Label<br>
+                          Role: Section<br>
+                          Description: "title"
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accName: "My label"<br>
+                          accRole: MY-ELEMENT<br>
+                          accState: normal<br>
+                          accDescription: "title"
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom<br>
+                          CurrentName: "My label"<br>
+                          CurrentHelpText: "title"<br>
+                          CurrentLabelledBy: --
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -513,19 +643,35 @@
                         <th>ARIA / Browser output</th>
                         <td>
                           Webkit: No matching ARIA role. Label from title attr. Marked as ignored.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Name from title attr.
+                          <br>
+                          Gecko: exposed as role: "text". Name from title attr.
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Name: "title"<br>
+                          Role: Section
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accState: normal
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
@@ -569,19 +715,36 @@
                         <th>ARIA / Browser output</th>
                         <td>
                           Webkit: No matching ARIA role. Label from title attr.
+                          <br>
+                          Chromium: exposed as "GenericContainer". Name from Contents. Description exposed.
+                          <br>
+                          Gecko: exposed as role: "text". Name from title attr.
                         </td>
                       </tr>
                       <tr>
-                        <th>MSAA + IA2</th>
-                        <td></td>
+                        <th>IA2</th>
+                        <td>
+                          Name: "My text"<br>
+                          Role: Section
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>
+                          accState: focusable<br>
+                          accDescription: "title"
+                        </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td></td>
+                        <td>
+                          CurrentAriaRole: None<br>
+                          CurrentControlType: UIA_Custom
+                        </td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td></td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>

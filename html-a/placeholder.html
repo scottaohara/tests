@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Anchor element placeholder tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+      blockquote {
+        font-size: 1.2em;
+        border-left: 4px solid;
+        margin-left: 0;
+        padding-left: 1.25em;
+      }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing the <code>a</code> element as a placeholder link</h1>
+        <div class="dates">
+          <p>Published: <time>July 17, 2019</time></p>
+        </div>
+      </header>
+
+			<!--
+				For aria-labelledby/describedby tests
+			-->
+			<div hidden id="by">ARIA labelled by</div>
+			<div hidden id="desc">Description</div>
+
+      <div class="test">
+        <h2><code>a</code> with text content</h2>
+        <div class="test__case">
+          <a>My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+			<div class="test">
+        <h2>Empty <code>a</code> with <code>title</code></h2>
+        <div class="test__case">
+          <a title="title"></a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+			<div class="test">
+				<h2>Empty <code>a</code> with <code>title</code> and <code>tabindex=0</code></h2>
+				<div class="test__case">
+					<a title="title" tabindex="0"></a>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+      <div class="test">
+        <h2><code>a</code> with <code>title</code>, and <code>aria-describedby</code></h2>
+        <div class="test__case">
+          <a title="title" aria-describedby="desc">My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <div class="test">
+        <h2><code>a</code> with <code>aria-describedby</code></h2>
+        <div class="test__case">
+          <a aria-describedby="desc">My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+			<div class="test">
+				<h2><code>a</code> with <code>title</code>, and <code>aria-label</code></h2>
+				<div class="test__case">
+					<a title="title" aria-label="ARIA label">My anchor</a>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+        <h2><code>a</code> with <code>title</code>, <code>aria-labelledby</code>, and <code>aria-label</code></h2>
+        <div class="test__case">
+          <a title="title" aria-label="ARIA label" aria-labelledby="by">My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <div class="test">
+        <h2><code>a</code> with <code>title</code>, <code>tabindex=0</code>, <code>aria-labelledby</code>, and <code>aria-label</code></h2>
+        <div class="test__case">
+          <a tabindex="0" title="title" aria-label="ARIA label" aria-labelledby="by">My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <div class="test">
+        <h2><code>a</code> with <code>tabindex=0</code>, and <code>onClick</code></h2>
+        <div class="test__case">
+          <a tabindex="0" onclick="alert('not a link')">My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>a</code> with <code>onClick</code></h2>
+        <div class="test__case">
+          <a onclick="alert('not a link')">My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <div class="test">
+        <h2><code>a</code> with <code>aria-label</code> and <code>onClick</code></h2>
+        <div class="test__case">
+          <a aria-label="ARIA label" onclick="alert('not a link')">My anchor</a>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

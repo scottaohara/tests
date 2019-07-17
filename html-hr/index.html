@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Horizontal Rule (hr) and role=separator tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+			/**
+			 * div separator styles
+			 */
+			div[role="separator"] {
+				height: 3px;
+				background: #000;
+				border-top: #fff 1px solid;
+				font-size: 1px;
+				color: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+        <h1>Testing <code>hr</code> and <code>role=separator</code></h1>
+        <div class="dates">
+          <p>Published: <time>July 16, 2019</time></p>
+        </div>
+      </header>
+
+			<!--
+				For aria-labelledby tests
+			-->
+			<div hidden id="by">ARIA labelled by</div>
+
+
+			<div class="test">
+				<h2><code>hr</code></h2>
+				<div class="test__case">
+					<hr>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>tabindex=0</code></h2>
+				<div class="test__case">
+					<hr tabindex="0">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>title</code></h2>
+				<div class="test__case">
+					<hr title="Title attribute">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>tabindex=0</code> and <code>title</code></h2>
+				<div class="test__case">
+					<hr title="Title attribute" tabindex="0">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>aria-label</code></h2>
+				<div class="test__case">
+					<hr aria-label="ARIA label">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>aria-labeledby</code></h2>
+				<div class="test__case">
+					<hr aria-labelledby="by">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>aria-label</code> and <code>aria-labeledby</code></h2>
+				<div class="test__case">
+					<hr aria-label="ARIA label" aria-labelledby="by">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>aria-label</code> and <code>title</code></h2>
+				<div class="test__case">
+					<hr aria-label="ARIA label" title="Title attribute">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>tabindex=0</code> and <code>aria-label</code></h2>
+				<div class="test__case">
+					<hr aria-label="ARIA label" tabindex="0">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>tabindex=0</code> and <code>aria-labelledby</code></h2>
+				<div class="test__case">
+					<hr aria-labelledby="by" tabindex="0">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>role=separator</code></h2>
+				<div class="test__case">
+					<hr role="separator">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>role=separator</code> with <code>tabindex=0</code></h2>
+				<div class="test__case">
+					<hr role="separator" tabindex="0">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>role=separator</code> and <code>title</code></h2>
+				<div class="test__case">
+					<hr role="separator" title="Title attribute">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hr</code> with <code>role=separator</code>, <code>tabindex=0</code> and <code>title</code></h2>
+				<div class="test__case">
+					<hr role="separator" title="Title attribute" tabindex="0">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>div</code> with <code>role=separator</code></h2>
+				<div class="test__case">
+					<div role="separator"></div>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>div</code> with <code>role=separator</code> and <code>tabindex=0</code></h2>
+				<div class="test__case">
+					<div role="separator"
+						tabindex="0"></div>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>div</code> with <code>role=separator</code> and <code>tabindex=0</code> and <code>aria-label</code></h2>
+				<div class="test__case">
+					<div role="separator"
+					  aria-label="ARIA label"
+						tabindex="0"></div>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>div</code> with <code>role=separator</code> and <code>tabindex=0</code> and <code>title</code></h2>
+				<div class="test__case">
+					<div role="separator"
+					  title="Title attribute"
+						tabindex="0"></div>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>div</code> with <code>role=separator</code> and <code>tabindex=0</code>, <code>aria-label</code> and <code>title</code></h2>
+				<div class="test__case">
+					<div role="separator"
+					  title="Title attribute"
+					  aria-label="ARIA label"
+						tabindex="0"></div>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>div</code> with <code>role=separator</code> with child content</h2>
+				<div class="test__case">
+					<div role="separator">Child text</div>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+			<!--
+				Decorative tests
+			-->
+
+			<div class="test">
+				<h2><code>hr</code> with <code>role=presentation</code></h2>
+				<div class="test__case">
+					<hr role="presentation">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>hr</code> with <code>role=none</code></h2>
+				<div class="test__case">
+					<hr role="none">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+			<div class="test">
+				<h2><code>hr</code> with <code>aria-hidden=true</code></h2>
+				<div class="test__case">
+					<hr aria-hidden="true">
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+
+		</div> <!-- /#app -->
+
+		<script src="../-assets/shared.js"></script>
+	</body>
+</html>

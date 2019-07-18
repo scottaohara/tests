@@ -26,12 +26,14 @@
         <h1>Testing a custom element</h1>
         <div class="dates">
           <p>Published: <time>July 16, 2019</time></p>
+          <p>Updated: <time>July 18, 2019</time></p>
         </div>
         <p>
           The following results were tested on Windows 10, and macOS 10.14.5 machines.
         </p>
       </header>
 
+      <!-- 1 -->
       <div class="test">
         <h2>Custom element with no subtree</h2>
         <div class="test__case">
@@ -95,7 +97,7 @@
         </div>
       </div>
 
-
+      <!-- 2 -->
       <div class="test">
         <h2>Custom element with no subtree, tabindex=0</h2>
         <div class="test__case">
@@ -123,7 +125,6 @@
                       <tr>
                         <th>ARIA / Browser output</th>
                         <td>
-
                           Webkit: No matching ARIA role. Marked as ignored.
                           <br>
                           Chromium: exposed as "GenericContainer" without a name.
@@ -134,7 +135,7 @@
                       <tr>
                         <th>IA2</th>
                         <td>
-                          Role: Section
+                          Role: Section (chromium)  /  Text frame (gecko)
                         </td>
                       </tr>
                       <tr>
@@ -168,7 +169,7 @@
         </div>
       </div>
 
-
+      <!-- 3 -->
       <div class="test">
         <h2>Custom element with static text content</h2>
         <div class="test__case">
@@ -196,7 +197,6 @@
                       <tr>
                         <th>ARIA / Browser output</th>
                         <td>
-
                           Webkit: No matching ARIA role. Marked as ignored.
                           <br>
                           Chromium: exposed as "GenericContainer". Marked as ignored.
@@ -233,6 +233,7 @@
         </div>
       </div>
 
+      <!-- 4 -->
       <div class="test">
         <h2>Custom element with static text content and tabindex=0</h2>
         <div class="test__case">
@@ -260,7 +261,6 @@
                       <tr>
                         <th>ARIA / Browser output</th>
                         <td>
-
                           Webkit: No matching ARIA role.
                           <br>
                           Chromium: exposed as "GenericContainer". Name from Contents.
@@ -271,8 +271,8 @@
                       <tr>
                         <th>IA2</th>
                         <td>
-                          Name: "My Text"<br>
-                          Role: Section
+                          Name: "My Text" / no name (gecko)<br>
+                          Role: Section (chromium)  /  Text frame (gecko)
                         </td>
                       </tr>
                       <tr>
@@ -308,7 +308,7 @@
         </div>
       </div>
 
-
+      <!-- 5 -->
       <div class="test">
         <h2>Custom element with empty subtree and aria-label</h2>
         <div class="test__case">
@@ -347,7 +347,7 @@
                         <th>IA2</th>
                         <td>
                           Name: "ARIA label"<br>
-                          Role: Section
+                          Role: Role: Section (chromium)  /  Text frame (gecko)
                         </td>
                       </tr>
                       <tr>
@@ -383,7 +383,7 @@
         </div>
       </div>
 
-
+      <!-- 6 -->
       <div class="test">
         <h2>Custom element with text content and aria-label</h2>
         <div class="test__case">
@@ -411,7 +411,6 @@
                       <tr>
                         <th>ARIA / Browser output</th>
                         <td>
-
                           Webkit: No matching ARIA role. Exposes ARIA label.
                           <br>
                           Chromium: exposed as "GenericContainer". Name from aria-label.
@@ -423,7 +422,7 @@
                         <th>IA2</th>
                         <td>
                           Name: "ARIA label"<br>
-                          Role: Section
+                          Role: Section (chromium)  /  Text frame (gecko)
                         </td>
                       </tr>
                       <tr>
@@ -459,7 +458,7 @@
         </div>
       </div>
 
-
+      <!-- 7 -->
       <div class="test">
         <h2>Custom element with text content, aria-label and tabindex=0</h2>
         <div class="test__case">
@@ -498,7 +497,7 @@
                         <th>IA2</th>
                         <td>
                           Name: "ARIA label"<br>
-                          Role: Section
+                          Role: Section (chromium)  /  Text frame (gecko)
                         </td>
                       </tr>
                       <tr>
@@ -534,7 +533,7 @@
         </div>
       </div>
 
-
+      <!-- 8 -->
       <div class="test">
         <h2>Custom element with text content, aria-labelledby and title attributes</h2>
         <div class="test__case">
@@ -574,7 +573,7 @@
                         <th>IA2</th>
                         <td>
                           Name: My Label<br>
-                          Role: Section<br>
+                          Role: Section (chromium)  /  Text frame (gecko)
                           Description: "title"
                         </td>
                       </tr>
@@ -584,7 +583,8 @@
                           accName: "My label"<br>
                           accRole: MY-ELEMENT<br>
                           accState: normal<br>
-                          accDescription: "title"
+                          accDescription: "title"<br>
+                          accHelp: "title"
                         </td>
                       </tr>
                       <tr>
@@ -614,7 +614,7 @@
         </div>
       </div>
 
-
+      <!-- 9 -->
       <div class="test">
         <h2>Custom element with text content, and title attribute</h2>
         <div class="test__case">
@@ -653,20 +653,25 @@
                         <th>IA2</th>
                         <td>
                           Name: "title"<br>
-                          Role: Section
+                          Role: Section (chromium)  /  Text frame (gecko)
                         </td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
                         <td>
+                          accName: "title"<br>
+                          accRole: MY-ELEMENT<br>
                           accState: normal
+                          accHelp: "title"
                         </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
                         <td>
                           CurrentAriaRole: None<br>
-                          CurrentControlType: UIA_Custom
+                          CurrentControlType: UIA_Custom<br>
+                          CurrentName: "title"
+                          CurrentHelpText: "title"
                         </td>
                       </tr>
                       <tr>
@@ -686,7 +691,7 @@
         </div>
       </div>
 
-
+      <!-- 10 -->
       <div class="test">
         <h2>Custom element with text content, tabindex=0 and title attribute</h2>
         <div class="test__case">
@@ -724,22 +729,28 @@
                       <tr>
                         <th>IA2</th>
                         <td>
-                          Name: "My text"<br>
-                          Role: Section
+                          Name: "My text" (chromium / "title" (gecko)<br>
+                          Role: Section (chromium)  /  Text frame (gecko)
+                          Description: "title"
                         </td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
                         <td>
+                          accName: "My text"<br>
+                          accRole: MY-ELEMENT<br>
                           accState: focusable<br>
-                          accDescription: "title"
+                          accDescription: "title"<br>
+                          accHelp: "title"
                         </td>
                       </tr>
                       <tr>
                         <th>UIA</th>
                         <td>
                           CurrentAriaRole: None<br>
-                          CurrentControlType: UIA_Custom
+                          CurrentControlType: UIA_Custom<br>
+                          CurrentName: "My text"<br>
+                          CurrentHelpText: "title"
                         </td>
                       </tr>
                       <tr>
@@ -758,8 +769,6 @@
           </div>
         </div>
       </div>
-
-
 
     </div> <!-- /#app -->
 

@@ -17,15 +17,28 @@
       li {
         padding: .325em 0;
       }
+
+      [tabindex]:focus {
+        outline: 2px solid;
+      }
+      .results-table-wrap table {
+        border-left: 0;
+      }
+      th:first-child {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        border-left: 1px solid #111;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <header>
-        <h1>Testing the <code>menu</code> element</h1>
+        <h1>The <code>menu</code> element</h1>
         <div class="dates">
           <p>Published: <time>June 5, 2019</time></p>
-          <p>Last Updated: <time>June 9, 2019</time></p>
+          <p>Last Updated: <time>July 17, 2019</time></p>
         </div>
         <p>
           Note: <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element"><code>menu</code></a> does not allow direct children other than <code>li</code> elements.
@@ -41,12 +54,62 @@
           <div class="test__info__results">
             <details>
               <summary>results</summary>
-              <ul>
-                <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                <li>Completely ignored, no menu AX role / reported as ignored by Safari dev tools</li>
-                <li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
-                <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility."</li>
-              </ul>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Webkit a11y tree:</th>
+                        <td>role: "No matching ARIA role". Ignored.</td>
+                      </tr>
+                      <tr>
+                        <th>Chromium a11y tree:</th>
+                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                      </tr>
+                      <tr>
+                        <th>Gecko a11y tree:</th>
+                        <td>role: "text container"</td>
+                      </tr>
+                      <tr>
+                        <th>IA2</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Notes:</p>
+                <ul>
+                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+                  <li>Completely ignored, no menu AX role</li>
+                  <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility."</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
@@ -65,13 +128,63 @@
           <div class="test__info__results">
             <details>
               <summary>results</summary>
-              <ul>
-                <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                <li>Completely ignored, no menu/menuitem children AX roles / reported as ignored by Safari dev tools</li>
-                <li>AX reports LIs as AXGroup</li>
-                <li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
-                <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." Notes LIs as having a generic container.</li>
-              </ul>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Webkit a11y tree:</th>
+                        <td>role: "No matching ARIA role". Ignored.</td>
+                      </tr>
+                      <tr>
+                        <th>Chromium a11y tree:</th>
+                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                      </tr>
+                      <tr>
+                        <th>Gecko a11y tree:</th>
+                        <td>role: "text container"</td>
+                      </tr>
+                      <tr>
+                        <th>IA2</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Notes:</p>
+                <ul>
+                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+                  <li>Completely ignored, no menu/menuitem children AX roles</li>
+                  <li>AX reports LIs as AXGroup</li>
+
+                </ul>
+              </div>
             </details>
           </div>
         </div>
@@ -91,12 +204,62 @@
           <div class="test__info__results">
             <details>
               <summary>results</summary>
-              <ul>
-                <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                <li>Completely ignored, no menu/menuitem children AX roles / reported as ignored by Safari dev tools</li>
-                <li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
-                <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." Notes LIs as having a generic container. No role change for link or button.</li>
-              </ul>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Webkit a11y tree:</th>
+                        <td>role: "No matching ARIA role". Ignored.</td>
+                      </tr>
+                      <tr>
+                        <th>Chromium a11y tree:</th>
+                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                      </tr>
+                      <tr>
+                        <th>Gecko a11y tree:</th>
+                        <td>role: "text container"</td>
+                      </tr>
+                      <tr>
+                        <th>IA2</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Notes:</p>
+                <ul>
+                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+                  <li>Completely ignored, no menu/menuitem children AX roles</li>
+                  <li>macOS Chrome  No role change for link or button.</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
@@ -117,13 +280,62 @@
           <div class="test__info__results">
             <details>
               <summary>results</summary>
-              <ul>
-                <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                <li>Completely ignored, no menu/menuitem children AX roles / reported as ignored by Safari dev tools</li>
-                <li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
-                <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." Notes LIs as having a generic container. No role change for buttons.</li>
-              </ul>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Webkit a11y tree:</th>
+                        <td>role: "No matching ARIA role". Ignored.</td>
+                      </tr>
+                      <tr>
+                        <th>Chromium a11y tree:</th>
+                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                      </tr>
+                      <tr>
+                        <th>Gecko a11y tree:</th>
+                        <td>role: "text container"</td>
+                      </tr>
+                      <tr>
+                        <th>IA2</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
 
+                <p>Notes:</p>
+                <ul>
+                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+                  <li>Completely ignored, no menu/menuitem children AX roles</li>
+                  <li>macOS Chrome  No role change for buttons.</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
@@ -142,12 +354,62 @@
           <div class="test__info__results">
             <details>
               <summary>results</summary>
-              <ul>
-                <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
-                <li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
-                <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." No role change for checkboxes.</li>
-              </ul>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Webkit a11y tree:</th>
+                        <td>role: "No matching ARIA role". Ignored.</td>
+                      </tr>
+                      <tr>
+                        <th>Chromium a11y tree:</th>
+                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                      </tr>
+                      <tr>
+                        <th>Gecko a11y tree:</th>
+                        <td>role: "text container"</td>
+                      </tr>
+                      <tr>
+                        <th>IA2</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Notes:</p>
+                <ul>
+                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+                  <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
+                  <li>macOS Chrome  No role change for checkboxes.</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
@@ -166,12 +428,62 @@
           <div class="test__info__results">
             <details>
               <summary>results</summary>
-              <ul>
-                <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
-                <li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
-                <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." No role change for image buttons.</li>
-              </ul>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Webkit a11y tree:</th>
+                        <td>role: "No matching ARIA role". Ignored.</td>
+                      </tr>
+                      <tr>
+                        <th>Chromium a11y tree:</th>
+                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                      </tr>
+                      <tr>
+                        <th>Gecko a11y tree:</th>
+                        <td>role: "text container"</td>
+                      </tr>
+                      <tr>
+                        <th>IA2</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Notes:</p>
+                <ul>
+                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+                  <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
+                  <li>macOS Chrome  No role change for image buttons.</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
@@ -190,12 +502,62 @@
           <div class="test__info__results">
             <details>
               <summary>results</summary>
-              <ul>
-                <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
-                <li>macOS Firefox accessibility dev panel exposes it as a "text container"</li>
-                <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility." No role change for radio buttons.</li>
-              </ul>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Mappings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Webkit a11y tree:</th>
+                        <td>role: "No matching ARIA role". Ignored.</td>
+                      </tr>
+                      <tr>
+                        <th>Chromium a11y tree:</th>
+                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                      </tr>
+                      <tr>
+                        <th>Gecko a11y tree:</th>
+                        <td>role: "text container"</td>
+                      </tr>
+                      <tr>
+                        <th>IA2</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>MSAA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>UIA</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>ATK</th>
+                        <td>...</td>
+                      </tr>
+                      <tr>
+                        <th>AX</th>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Notes:</p>
+                <ul>
+                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
+                  <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
+                  <li>macOS Chrome  No role change for radio buttons.</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>

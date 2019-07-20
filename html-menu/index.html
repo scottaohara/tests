@@ -29,6 +29,7 @@
         position: sticky;
         left: 0;
         border-left: 1px solid #111;
+        background-color: #fefefe;
       }
     </style>
   </head>
@@ -38,7 +39,7 @@
         <h1>The <code>menu</code> element</h1>
         <div class="dates">
           <p>Published: <time>June 5, 2019</time></p>
-          <p>Last Updated: <time>July 17, 2019</time></p>
+          <p>Last Updated: <time>July 20, 2019</time></p>
         </div>
         <p>
           Note: <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element"><code>menu</code></a> does not allow direct children other than <code>li</code> elements.
@@ -52,7 +53,7 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details open>
               <summary>results</summary>
               <div>
                 <div class="results-table-wrap">
@@ -73,7 +74,7 @@
                       </tr>
                       <tr>
                         <th>Chromium a11y tree:</th>
-                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
+                        <td>Accessibility node not exposed. "Element not interesting for accessibility."</td>
                       </tr>
                       <tr>
                         <th>Gecko a11y tree:</th>
@@ -81,23 +82,23 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td>...</td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
-                        <td>...</td>
+                        <td>Element ignored/not mapped.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -106,8 +107,6 @@
                 <p>Notes:</p>
                 <ul>
                   <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                  <li>Completely ignored, no menu AX role</li>
-                  <li>macOS Chrome accessibility panel notes: "Element not interesting for accessibility."</li>
                 </ul>
               </div>
             </details>
@@ -126,7 +125,7 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details open>
               <summary>results</summary>
               <div>
                 <div class="results-table-wrap">
@@ -155,23 +154,24 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td>...</td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
-                        <td>...</td>
+                        <td>Element ignored/not mapped.<br>
+                          List items mapped to AXGroup with AXListMarker children.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -180,9 +180,6 @@
                 <p>Notes:</p>
                 <ul>
                   <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                  <li>Completely ignored, no menu/menuitem children AX roles</li>
-                  <li>AX reports LIs as AXGroup</li>
-
                 </ul>
               </div>
             </details>
@@ -202,7 +199,7 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details open>
               <summary>results</summary>
               <div>
                 <div class="results-table-wrap">
@@ -231,23 +228,26 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td>...</td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
-                        <td>...</td>
+                        <td>element ignored/not mapped.<br>
+                          List items mapped to AXGroup with AXListMarker children.<br>
+                          No mapping change to link or button elements in regards to a menu representing "toolbar" semantics.
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -256,8 +256,6 @@
                 <p>Notes:</p>
                 <ul>
                   <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                  <li>Completely ignored, no menu/menuitem children AX roles</li>
-                  <li>macOS Chrome  No role change for link or button.</li>
                 </ul>
               </div>
             </details>
@@ -278,7 +276,7 @@
 
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details open>
               <summary>results</summary>
               <div>
                 <div class="results-table-wrap">
@@ -307,23 +305,26 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td>...</td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
-                        <td>...</td>
+                        <td>Element ignored/not mapped.<br>
+                          List items mapped to AXGroup with AXListMarker children.<br>
+                          No mapping change to button elements in regards to a menu representing "toolbar" semantics.
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -332,8 +333,7 @@
                 <p>Notes:</p>
                 <ul>
                   <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                  <li>Completely ignored, no menu/menuitem children AX roles</li>
-                  <li>macOS Chrome  No role change for buttons.</li>
+
                 </ul>
               </div>
             </details>
@@ -352,7 +352,7 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details open>
               <summary>results</summary>
               <div>
                 <div class="results-table-wrap">
@@ -381,23 +381,27 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td>...</td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
-                        <td>...</td>
+                        <td>
+                          Element ignored/not mapped.<br>
+                          List items mapped to AXGroup with AXListMarker children.<br>
+                          No mapping change to checkbox inputs in regards to a menu representing "toolbar" semantics.
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -406,82 +410,7 @@
                 <p>Notes:</p>
                 <ul>
                   <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                  <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
-                  <li>macOS Chrome  No role change for checkboxes.</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
 
-
-      <div class="test">
-        <h2><code>menu</code> with input type=image</h2>
-        <div class="test__case">
-          <menu>
-            <li><input type="image" src="#" alt="test 1"></li>
-            <li><input type="image" src="#" alt="test 2"></li>
-          </menu>
-        </div>
-        <div class="test__info">
-          <div class="test__info__results">
-            <details>
-              <summary>results</summary>
-              <div>
-                <div class="results-table-wrap">
-                  <table style="min-width: 600px;">
-                    <colgroup>
-                      <col style="width: 90px">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>API</th>
-                        <th>Mappings</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>Webkit a11y tree:</th>
-                        <td>role: "No matching ARIA role". Ignored.</td>
-                      </tr>
-                      <tr>
-                        <th>Chromium a11y tree:</th>
-                        <td>Accessibility node not exposed. Element not interesting for accessibility.</td>
-                      </tr>
-                      <tr>
-                        <th>Gecko a11y tree:</th>
-                        <td>role: "text container"</td>
-                      </tr>
-                      <tr>
-                        <th>IA2</th>
-                        <td>...</td>
-                      </tr>
-                      <tr>
-                        <th>MSAA</th>
-                        <td>...</td>
-                      </tr>
-                      <tr>
-                        <th>UIA</th>
-                        <td>...</td>
-                      </tr>
-                      <tr>
-                        <th>ATK</th>
-                        <td>...</td>
-                      </tr>
-                      <tr>
-                        <th>AX</th>
-                        <td>...</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <p>Notes:</p>
-                <ul>
-                  <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                  <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
-                  <li>macOS Chrome  No role change for image buttons.</li>
                 </ul>
               </div>
             </details>
@@ -500,7 +429,7 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details open>
               <summary>results</summary>
               <div>
                 <div class="results-table-wrap">
@@ -529,23 +458,27 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td>...</td>
+                        <td contenteditable=true>...</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
-                        <td>...</td>
+                        <td>???</td>
                       </tr>
                       <tr>
                         <th>AX</th>
-                        <td>...</td>
+                        <td>
+                          Element ignored/not mapped.<br>
+                          List items mapped to AXGroup with AXListMarker children.<br>
+                          No mapping change to radio input elements in regards to a menu representing "toolbar" semantics.
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -554,8 +487,7 @@
                 <p>Notes:</p>
                 <ul>
                   <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-                  <li>Completely ignored, no menu/menuitem children AX roles / <code>menu</code> noted as having no matching ARIA role by Safari dev tools</li>
-                  <li>macOS Chrome  No role change for radio buttons.</li>
+
                 </ul>
               </div>
             </details>

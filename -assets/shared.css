@@ -34,16 +34,16 @@ body {
 	margin: 2em 0 1.25em 0;
 }
 
-.test h2 {
+.test > h2 {
 	margin-top: 0;
 }
 
-.test h2::before {
+.test > h2::before {
   content: "Test " counter(tests) ": ";
   counter-increment: tests;
 }
 
-.test pre {
+.test__info pre {
 	background: #111;
 	color: #fff;
 	margin: 0;
@@ -57,7 +57,7 @@ body {
 	margin-top: -1px;
 }
 
-summary {
+.test__info summary {
   cursor: default;
 }
 

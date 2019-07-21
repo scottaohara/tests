@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Testing hgroup element</title>
+		<title>Testing the hgroup element</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../-assets/shared.css">
 		<style>
@@ -18,14 +18,29 @@
 			<header>
 				<h1><code>hgroup</code> element tests</h1>
 				<div class="dates">
-          <p>Published: <time>June x, 2019</time></p>
+          <p>Published: <time>July 21, 2019</time></p>
           <!-- <p>Last Updated: <time>xx, 2019</time></p> -->
         </div>
+
+        <p>
+        	The <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>hgroup</code></a> element can only have heading elements (<code>h1-h6</code>) as direct children.
+        </p>
 			</header>
 
 
 			<div class="test">
-				<h2>One heading</h2>
+				<h2><code>hgroup</code> with <code>h3</code></h2>
+				<div class="test__case">
+					<hgroup>
+						<h3>First</h3>
+					</hgroup>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>hgroup</code> with <code>h1</code> and <code>h2</code></h2>
 				<div class="test__case">
 					<hgroup>
 						<h1>First</h1>
@@ -37,11 +52,11 @@
 
 
 			<div class="test">
-				<h2>Two headings</h2>
+				<h2><code>hgroup</code> with <code>h1</code> and <code>h1</code></h2>
 				<div class="test__case">
 					<hgroup>
 						<h1>First</h1>
-						<h2>Second</h2>
+						<h1>Second</h1>
 					</hgroup>
 				</div>
 				<div class="test__info"></div>
@@ -49,14 +64,16 @@
 
 
 			<div class="test">
-				<h2>No headings</h2>
+				<h2><code>hgroup</code> with <code>h1</code> and <code>h1</code></h2>
 				<div class="test__case">
 					<hgroup>
-						<p>Not a heading</p>
+						<h5>Small</h5>
+						<h1>Large text here</h1>
 					</hgroup>
 				</div>
 				<div class="test__info"></div>
 			</div>
+
 
 		<script src="../-assets/shared.js"></script>
 	</body>

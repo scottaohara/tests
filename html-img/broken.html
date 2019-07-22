@@ -22,7 +22,7 @@
         </h1>
         <div class="dates">
           <p>Published: <time>January 9, 2019</time></p>
-          <p>Last Updated: <time>June 9, 2019</time></p>
+          <p>Last Updated: <time>July 22, 2019</time></p>
         </div>
         <p>
           Tests to run in different browsers to demonstrate what's rendered
@@ -62,7 +62,7 @@
       <div class="test">
         <h2>with aria-label and no title or alt</h2>
         <div class="test__case">
-          <img src="asdf.jpg" aria-label="aria label text">
+          <img src="asdf.jpg" aria-label="aria label">
         </div>
         <div class="test__info"></div>
       </div>
@@ -91,6 +91,15 @@
         <h2>with alt and role=presentation</h2>
         <div class="test__case">
           <img src='asdf.jpg' alt="alt text" role="presentation">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with empty alt and aria-label</h2>
+        <div class="test__case">
+          <img src='asdf.jpg' alt="" aria-label="ARIA label">
         </div>
         <div class="test__info"></div>
       </div>

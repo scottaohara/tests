@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing output: accessible name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      details li {
+        margin-top: .325em;
+      }
+      li.change-at {
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          Testing <code>output</code> element's exposed and announced accessible name.
+        </h1>
+        <div class="dates">
+          <p>Published: <time datetime="2019-07-26">July 26, 2019</time></p>
+          <!-- <p>Last Updated: <time>MONTH xx, 2019</time></p> -->
+        </div>
+        <p>Note: <a href="index.html">review additional tests</a>.</p>
+      </header>
+
+      <div class="important">
+        <p>Important note concerning TalkBack:</p>
+        <p>
+          If <code>output</code> elements are given an accessible name, or contain content by default, TalkBack paired with Chrome will auto-announce the accessible name, any default content, and role (status) of at least one, if not all, instances of <code>output</code>s on initial document load or refresh.
+        </p>
+      </div>
+
+
+      <div class="test">
+        <h2>Add content to an empty <code>output</code> with <code>aria-label</code></h2>
+        <div class="test__case">
+          <button onClick="updateARIA()">Update</button>
+          <output id="gg" aria-label="ARIA label"></output>
+          <script>
+            var outputARIA = document.getElementById('gg');
+
+            var updateARIA = function () {
+              outputARIA.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: <code>aria-label</code> provides accessible name when <code>output</code> is empty, or has injected content.</p>
+                <ul>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Pass.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Pass. (ignored by VoiceOver when contains no content.)</li>
+
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> ??? .</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Empty <code>output</code> with <code>aria-label</code> and <code>label</code> element.</h2>
+        <div class="test__case">
+          <button onClick="updateARIAb()">Update</button>
+          <label for="bbb">
+            Label element
+          </label>
+          <output id="bbb" aria-label="ARIA label"></output>
+          <script>
+            var outputARIAb = document.getElementById('bbb');
+
+            var updateARIAb = function () {
+              outputARIAb.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: <code>aria-label</code> will overwrite <code>label</code> and provide accessible name when <code>output</code> is empty, or has injected content.</p>
+                <ul>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Pass.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Pass. (ignored by VoiceOver when contains no content.)</li>
+
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> ??? .</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Empty output with <code>label</code> association</h2>
+        <div class="test__case">
+          <button onClick="update2b()">Update</button>
+          <label for="aaa">label:</label>
+          <output id="aaa"></output>
+          <script>
+            var output2b = document.getElementById('aaa');
+
+            var update2b = function () {
+              output2b.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: <code>label</code> provides accessible name when <code>output</code> is empty, or has injected content.</p>
+                <ul>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Pass. <br>
+                    Notes: <code>output</code> ignored by VO when empty. When content is injected announcement of label text and output text combined. "label:" exposed as accName.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Pass. <br>
+                    Notes: <code>output</code> ignored by VO when empty. When content is injected announcement of label text and output text is separate. "label:" exposed as accName.</li>
+
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> ??? .</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Empty output with <code>title</code> attribute</h2>
+        <div class="test__case">
+          <button onClick="updateT()">Update</button>
+          <output id="ttt" title="title attribute"></output>
+          <script>
+            var outputT = document.getElementById('ttt');
+
+            var updateT = function () {
+              outputT.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: <code>title</code> provides accessible name when <code>output</code> is empty, or has injected content.</p>
+                <ul>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Partial.
+                    <br>
+                    Notes: Without injected content, <code>title</code> produces accessible name. With injected content <code>title</code> ignored by VO and <code>title</code> value exposed as AX "Help".</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Pass.</li>
+
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> ??? .</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>output</code> with default text, <code>label</code> association, and <code>title</code> attribute</h2>
+        <div class="test__case">
+          <button onClick="updateT22a()">Update</button>
+          <label for="ttt22a">label element</label>
+          <output id="ttt22a" title="title attribute">Default text</output>
+          <script>
+            var outputT22 = document.getElementById('ttt22a');
+
+            var updateT22a = function () {
+              outputT22.innerHTML = "New content.";
+            }
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: <code>title</code> provides accessible name to <code>output</code>.</p>
+                <ul>
+                  <li><b>macOS 10.14.5 VoiceOver with Safari 12.1.1:</b><br> Pass. <br>
+                    Label text and output text combined by VO. "label:" exposed as accName. Description from title, but title not announced by VO.</li>
+                  <li><b>macOS 10.14.5 VoiceOver with Chrome 75:</b><br> Pass. <br>
+                    Notes: Announcement of label text and output text is separate. "label:" exposed as accName. Description from title, but title not announced by VO.</li>
+
+                  <li class="change-at"><b>JAWS 2019 (june) with IE11:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Chrome 75:</b><br> ??? .</li>
+                  <li><b>JAWS 2019 (june) with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>NVDA 2019.1.1 with IE11:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Edge 77 dev:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Chrome 75:</b><br> ??? .</li>
+                  <li><b>NVDA 2019.1.1 with Firefox 68:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview):</b><br> ??? .</li>
+                  <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br> ??? .</li>
+
+                  <li class="change-at"><b>iOS 12.3.1 VoiceOver with Safari:</b><br> ??? .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

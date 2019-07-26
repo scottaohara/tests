@@ -21,59 +21,112 @@
           <p>Published: <time>July 21, 2019</time></p>
           <!-- <p>Last Updated: <time>xx, 2019</time></p> -->
         </div>
-
-        <p>
-        	The <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>hgroup</code></a> element can only have heading elements (<code>h1-h6</code>) as direct children.
-        </p>
 			</header>
 
+			<main>
+				<details>
+					<summary><code>hgroup</code> information</summary>
+					<div>
+						<p>
+		        	The <code>hgroup</code> element can only have heading elements (<code>h1-h6</code>) as direct children.
+		        </p>
 
-			<div class="test">
-				<h2><code>hgroup</code> with <code>h3</code></h2>
-				<div class="test__case">
-					<hgroup>
-						<h3>First</h3>
-					</hgroup>
+						<p>Quoted from the <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element">HTML specification</a>:</p>
+						<blockquote>
+							<p>The <code>hgroup</code> element represents the heading of a section, which consists of all the <code>h1-h6</code> element children of the <code>hgroup</code> element. The element is used to group a set of <code>h1-h6</code> elements when the heading has multiple levels, such as subheadings, alternative titles, or taglines.
+
+							<p>The rank of an <code>hgroup</code> element is the rank of the highest-ranked <code>h1-h6</code> element descendant of the <code>hgroup</code> element, if there are any such elements, or otherwise the same as for an h1 element (the highest rank). Other <code>h1-h6</code> elements of heading content in the <code>hgroup</code> element indicate subheadings or subtitles or (secondary) alternative titles.
+
+							<p>The section on headings and sections defines how <code>hgroup</code> elements are assigned to individual sections.
+						</blockquote>
+					</div>
+				</details>
+
+				<div class="test">
+					<h2><code>hgroup</code> with <code>h3</code></h2>
+					<div class="test__case">
+						<hgroup>
+							<h3>First</h3>
+						</hgroup>
+					</div>
+					<div class="test__info">
+						<div class="test__info__results">
+	            <details open>
+	              <summary>results</summary>
+	              <div>
+	              	<p>
+	              		Expectation: <code>hgroup</code> exposed as <code>h3</code>.
+	              	</p>
+	              </div>
+	            </details>
+	          </div>
+					</div>
 				</div>
-				<div class="test__info"></div>
-			</div>
 
 
-			<div class="test">
-				<h2><code>hgroup</code> with <code>h1</code> and <code>h2</code></h2>
-				<div class="test__case">
-					<hgroup>
-						<h1>First</h1>
-						<h2>Second</h2>
-					</hgroup>
+				<div class="test">
+					<h2><code>hgroup</code> with <code>h1</code> and <code>h2</code></h2>
+					<div class="test__case">
+						<hgroup>
+							<h1>First</h1>
+							<h2>Second</h2>
+						</hgroup>
+					</div>
+					<div class="test__info">
+						<div class="test__info__results">
+	            <details open>
+	              <summary>results</summary>
+	              <div>
+
+	              </div>
+	            </details>
+	          </div>
+					</div>
 				</div>
-				<div class="test__info"></div>
-			</div>
 
 
-			<div class="test">
-				<h2><code>hgroup</code> with <code>h1</code> and <code>h1</code></h2>
-				<div class="test__case">
-					<hgroup>
-						<h1>First</h1>
-						<h1>Second</h1>
-					</hgroup>
+				<div class="test">
+					<h2><code>hgroup</code> with <code>h1</code> and <code>h1</code></h2>
+					<div class="test__case">
+						<hgroup>
+							<h1>First</h1>
+							<h1>Second</h1>
+						</hgroup>
+					</div>
+					<div class="test__info">
+						<div class="test__info__results">
+	            <details open>
+	              <summary>results</summary>
+	              <div>
+
+	              </div>
+	            </details>
+	          </div>
+					</div>
 				</div>
-				<div class="test__info"></div>
-			</div>
 
 
-			<div class="test">
-				<h2><code>hgroup</code> with <code>h1</code> and <code>h1</code></h2>
-				<div class="test__case">
-					<hgroup>
-						<h5>Small</h5>
-						<h1>Large text here</h1>
-					</hgroup>
+				<div class="test">
+					<h2><code>hgroup</code> with <code>h5</code> and <code>h1</code></h2>
+					<div class="test__case">
+						<hgroup>
+							<h5>Small</h5>
+							<h1>Large text here</h1>
+						</hgroup>
+					</div>
+					<div class="test__info">
+						<div class="test__info__results">
+	            <details open>
+	              <summary>results</summary>
+	              <div>
+
+	              </div>
+	            </details>
+	          </div>
+					</div>
 				</div>
-				<div class="test__info"></div>
-			</div>
 
+			</main>
 
 		<script src="../-assets/shared.js"></script>
 	</body>

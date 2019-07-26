@@ -18,8 +18,8 @@
 			<header>
 				<h1><code>hgroup</code> element tests</h1>
 				<div class="dates">
-          <p>Published: <time>July 21, 2019</time></p>
-          <!-- <p>Last Updated: <time>xx, 2019</time></p> -->
+          <p>Published: <time datetime="2019-07-21">July 21, 2019</time></p>
+          <p>Last Updated: <time datetime="2019-07-26">July 26, 2019</time></p>
         </div>
 			</header>
 
@@ -57,6 +57,56 @@
 	              	<p>
 	              		Expectation: <code>hgroup</code> exposed as <code>h3</code>.
 	              	</p>
+	              	<div class="results-table-wrap">
+	                  <table style="min-width: 600px;">
+	                    <colgroup>
+	                      <col style="width: 90px">
+	                    </colgroup>
+	                    <thead>
+	                      <tr>
+	                        <th>Browser</th>
+	                        <th>Meets expectation?</th>
+	                      </tr>
+	                    </thead>
+	                    <tbody>
+	                      <tr>
+	                        <th>Safari:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h3</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Chrome:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h3</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Firefox:</th>
+	                        <td>
+	                        	False<br>
+	                        	MSAA <code>accRole: hgroup</code>, exposed as "text container" in Firefox a11y dev tools. <code>h3</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>IE11:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h3</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Edge:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h3</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                    </tbody>
+	                  </table>
+	                </div>
 	              </div>
 	            </details>
 	          </div>
@@ -77,7 +127,58 @@
 	            <details open>
 	              <summary>results</summary>
 	              <div>
-
+	              	<p>
+	              		Expectation: <code>hgroup</code> exposed as <code>h1</code>.
+	              	</p>
+	              	<div class="results-table-wrap">
+	                  <table style="min-width: 600px;">
+	                    <colgroup>
+	                      <col style="width: 90px">
+	                    </colgroup>
+	                    <thead>
+	                      <tr>
+	                        <th>Browser</th>
+	                        <th>Meets expectation?</th>
+	                      </tr>
+	                    </thead>
+	                    <tbody>
+	                      <tr>
+	                        <th>Safari:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code> and <code>h2</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Chrome:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code> and <code>h2</code> exposed to document outline.
+	                        </td>
+	                      <tr>
+	                        <th>Firefox:</th>
+	                        <td>
+	                        	False<br>
+	                        	MSAA <code>accRole: hgroup</code>, exposed as "text container" in Firefox a11y dev tools. <code>h1</code> and <code>h2</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>IE11:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code> and <code>h2</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Edge:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code> and <code>h2</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                    </tbody>
+	                  </table>
+	                </div>
 	              </div>
 	            </details>
 	          </div>
@@ -98,7 +199,59 @@
 	            <details open>
 	              <summary>results</summary>
 	              <div>
-
+	              	<p>
+	              		Expectation: <code>hgroup</code> exposed as <code>h1</code>.
+	              	</p>
+	              	<div class="results-table-wrap">
+	                  <table style="min-width: 600px;">
+	                    <colgroup>
+	                      <col style="width: 90px">
+	                    </colgroup>
+	                    <thead>
+	                      <tr>
+	                        <th>Browser</th>
+	                        <th>Meets expectation?</th>
+	                      </tr>
+	                    </thead>
+	                    <tbody>
+	                      <tr>
+	                        <th>Safari:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code>s exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Chrome:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code>s exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Firefox:</th>
+	                        <td>
+	                        	False<br>
+	                        	MSAA <code>accRole: hgroup</code>, exposed as "text container" in Firefox a11y dev tools. <code>h1</code>s exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>IE11:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code>s exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Edge:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h1</code>s exposed to document outline.
+	                        </td>
+	                      </tr>
+	                    </tbody>
+	                  </table>
+	                </div>
 	              </div>
 	            </details>
 	          </div>
@@ -119,7 +272,59 @@
 	            <details open>
 	              <summary>results</summary>
 	              <div>
-
+	              	<p>
+	              		Expectation: <code>hgroup</code> exposed as <code>h1</code>.
+	              	</p>
+	              	<div class="results-table-wrap">
+	                  <table style="min-width: 600px;">
+	                    <colgroup>
+	                      <col style="width: 90px">
+	                    </colgroup>
+	                    <thead>
+	                      <tr>
+	                        <th>Browser</th>
+	                        <th>Meets expectation?</th>
+	                      </tr>
+	                    </thead>
+	                    <tbody>
+	                      <tr>
+	                        <th>Safari:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h5</code> and <code>h1</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Chrome:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h5</code> and <code>h1</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Firefox:</th>
+	                        <td>
+	                        	False<br>
+	                        	MSAA <code>accRole: hgroup</code>, exposed as "text container" in Firefox a11y dev tools. <code>h5</code> and <code>h1</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>IE11:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h5</code> and <code>h1</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                        <th>Edge:</th>
+	                        <td>
+	                        	False<br>
+	                        	<code>hgroup</code> ignored by browser / not exposed by a11y APIs. <code>h5</code> and <code>h1</code> exposed to document outline.
+	                        </td>
+	                      </tr>
+	                    </tbody>
+	                  </table>
+	                </div>
 	              </div>
 	            </details>
 	          </div>

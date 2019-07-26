@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Details and summary elements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      input[type="image"] {
+        height: 80px;
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing <code>details</code> and <code>summary</code></h1>
+        <div class="dates">
+          <p>
+            Published: <time datetime="2019-07-26">July 26, 2019</time>
+          </p>
+          <!-- <p>Last Updated: <time>...</time></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>details</code> without <code>summary</code></h2>
+        <div class="test__case">
+          <details>
+            Information here
+          </details>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div></div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>details</code> with <code>summary</code>, but no child content</h2>
+        <div class="test__case">
+          <details>
+            <summary></summary>
+            Information here
+          </details>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div></div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>details</code> with <code>summary</code>, with <code>title</code> but no child content</h2>
+        <div class="test__case">
+          <details>
+            <summary title="title"></summary>
+            Information here
+          </details>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div></div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>details</code> with <code>title</code> and <code>summary</code> with no child content</h2>
+        <div class="test__case">
+          <details title="title">
+            <summary></summary>
+            Information here
+          </details>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>VO + Safari will announce the accName of <code>summary</code> as the value of the <code>details</code> <code>title</code> attribute.</p>
+                <p>VO + Chrome will announce the <code>details</code> as a group with <code>title</code> as the accName. <code>summary</code> will be given no accName.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

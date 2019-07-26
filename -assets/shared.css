@@ -49,6 +49,8 @@ body {
 	margin: 0;
 	padding: .75em;
   overflow: auto;
+  -moz-tab-size: 2;
+  tab-size: 2;
 }
 
 .test__info details {
@@ -96,9 +98,9 @@ body {
 .results-table-wrap table {
   border-spacing: 0;
   border: 1px solid #111;
-  min-width: 820px;
   margin-left: 0;
   margin-right: 0;
+  min-width: 820px;
   table-layout: fixed;
   text-align: left;
   width: 100%;

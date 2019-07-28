@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Data element tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing the <code>data</code> element</h1>
+        <div class="dates">
+          <p>Published: <time datetime="2019-07-27">July 27, 2019</time></p>
+        </div>
+        <p>
+          The <a href="https://html.spec.whatwg.org/#the-data-element"><code>data</code></a> element MUST always have a <code>value</code> attribute.
+        </p>
+      </header>
+
+
+			<!--
+				For aria-labelledby/describedby tests
+			-->
+			<div hidden id="by">ARIA labelled by</div>
+			<div hidden id="desc">Description</div>
+
+
+			<div class="test">
+        <h2><code>data</code></h2>
+        <div class="test__case">
+          <data value="10">Ten</data>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>data</code> with <code>tabindex="-1"</code> and button to update (once)</h2>
+        <div class="test__case">
+          <button data-test>Update (+ 1)</button>
+          <data data-test value="10" tabindex="-1">Ten</data>
+          <script>
+            var btn = document.querySelector('button[data-test]');
+            var test = document.querySelector('data[data-test]');
+
+            btn.addEventListener('click', function () {
+              test.value = 11;
+              test.textContent = 'Eleven';
+              btn.disabled = true;
+              test.focus();
+            });
+          </script>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>data</code> with <code>title</code></h2>
+        <div class="test__case">
+          <data value="10" title="title">Ten</data>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>data</code> with <code>aria-label</code></h2>
+        <div class="test__case">
+          <data value="10" aria-label="ARIA label">Ten</data>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>data</code> with <code>aria-label</code> and <code>title</code></h2>
+        <div class="test__case">
+          <data value="10" aria-label="ARIA label" title="title">Ten</data>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>data</code> with <code>tabindex=0</code></h2>
+        <div class="test__case">
+          <data value="10" tabindex="0">Ten</data>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>data</code> with <code>tabindex=0</code> and <code>title</code></h2>
+        <div class="test__case">
+          <data value="10" tabindex="0" title="title">Ten</data>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>data</code> with <code>tabindex=0</code>, <code>aria-label</code> and <code>title</code></h2>
+        <div class="test__case">
+          <data value="10" aria-label="ARIA label" title="title" tabindex="0">Ten</data>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

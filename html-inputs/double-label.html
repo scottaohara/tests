@@ -460,7 +460,631 @@
 				</div>
 			</div>
 
-		</div> <!-- /#app -->
+
+<details>
+  <summary>
+    Browser and screen reader versions:
+  </summary>
+  <ul>
+    <li>Firefox Android 68</li>
+    <li>Firefox 68.0.1 PC</li>
+    <li>Safari iOS 12.3.1</li>
+    <li>Safari 12.1.1 macOS 10.14.5</li>
+    <li>Chrome Android xx</li>
+    <li>Chrome 75 mac/PC</li>
+    <li>Edge 77 (dev)</li>
+    <li>IE11</li>
+    <li>JAWS 2019 (june)</li>
+    <li>TalkBack 7.3 on Android 8.1</li>
+    <li>NVDA 2019.1.1</li>
+  </ul>
+</details>
+
+<details>
+  <summary>
+    Platform A11y API notes
+  </summary>
+  <p>
+    input type=color:<br>
+    Firefox PC - MSAA / IA2: push button<br>
+    Firefox PC - UIA: UIA_Button<br><br>
+    Chromium - MSAA accRole: editable text. IA2: Color Chooser. UIA: UIA_Edit<br>
+    Chromium - accName "Primary Secondary"
+  </p>
+  <p>
+    input type=file:<br>
+    Firefox PC - MSAA/IA2 expose "PrimarySecondary" as the accessible name.  NVDA and TalkBack(?) each appear to bypass the <code>input</code>'s name and instead expose the subtree of the file input.<br>
+    Firefox PC - MSAA / IA2: push button<br>
+    Firefox PC - UIA: UIA_Button<br><br>
+    Chromium - MSAA/IA2 accValue/Value "No file chosen"<br>
+    Chromium - exposed as Push button
+  </p>
+  <p>
+    input type=button<br>
+    Chromium - MSAA/IA2 expose value as accDescription/Description when label(s) provides accessible name.
+  </p>
+  <p>
+    output<br>
+    Firefox PC - MSAA/IA2 expose "PrimarySecondary" as the accessible name.<br>
+  </p>
+  <p>
+    meter<br>
+    Firefox PC - MSAA/IA2 expose "PrimarySecondary" as the accessible name.<br>
+    Firefox PC - MSAA accRole: meter. IA2 Role: Text Frame.<br><br>
+    Chromium - MSAA/IA2/UIA all expose "Primary Secondary" as accessible name.<br>
+    Chromium - MSAA/IA2/UIA roles: progress bar and UIA_ProgressBar (should be updated)
+  </p>
+  <p>
+    progress<br>
+    Firefox PC - MSAA/IA2 expose "PrimarySecondary" as the accessible name. Seems NVDA/JAWS should be updated to announce labels on progress bar.
+    <br><br>
+    Chromium -
+  </p>
+  <p>
+    button<br>
+    Firefox PC - w/out text: MSAA/IA2 expose "PrimarySecondaryPrimarySecondary" as accName.<br>
+    Firefox PC / Chromium - with text: MSAA/IA2 only expose "Text" as accName.<br>
+    Chromium - w/out text: MSAA/IA2/UIA expose "Primary Secondary Primary Secondary" as accName.
+  </p>
+</details>
+
+<p>
+  Expectation: Both labels should contribute to accessible name of element. Screen readers should announce both labels.
+</p>
+
+</div> <!-- /#app -->
+
+
+<div class="results-table-wrap large">
+
+  <table style="min-width: 600px;">
+    <colgroup>
+      <col style="width: 90px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">Browser / Screen Reader</th>
+        <th scope="col">Firefox JAWS</th>
+        <th scope="col">Firefox NVDA</th>
+        <th scope="col">Firefox TalkBack</th>
+        <th scope="col">Chrome + JAWS</th>
+        <th scope="col">Chrome + NVDA</th>
+        <th scope="col">Chrome + TalkBack</th>
+        <th scope="col">Chrome + VoiceOver (macOS)</th>
+        <th scope="col">Safari + VoiceOver (macOS)</th>
+        <th scope="col">Safari + VoiceOver (iOS)</th>
+        <th scope="col">IE11 + JAWS</th>
+        <th scope="col">IE11 + NVDA</th>
+        <th scope="col">Edge + JAWS</th>
+        <th scope="col">Edge + NVDA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>input=text</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=search</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=tel</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=url</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=email</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=password</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+      <tr><th>input=month</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=date</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="fail">Fail<br>TalkBack does not announce labels for segmented date input.<br></td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=week</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=time</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="fail">Fail<br>TalkBack does not announce labels for segmented time input.<br></td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=datetime-local</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=number</th>
+        <td class="pass">Pass<br>Repeats first label<br></td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=range</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=color</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="fail">Fail (JAWS ignores)<br><br>No announcement made.<br>Both labels are exposed.</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>(no role announcement)</td> <!-- C NVDA -->
+        <td class="fail">Fail<br>announced as hex value<br></td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="fail">Fail (JAWS ignores)<br><br>No announcement made.<br>Both labels are exposed.</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>(no role announcement)<br></td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=checkbox</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>announces second label THEN first label.&nbsp; NOTE: if both labels are in the DOM prior to the input, then only the first label will be announced.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=radio</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=file</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="fail">Fail<br>Does not announce either label, only announces "Browse, no file selected."<br></td> <!-- FF NVDA -->
+        <td class="fail">Fail<br>Does not announce either label, only announces "Browse button"<br></td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=submit</th>
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- FF JAWS -->
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).<br>Does not announce "Submit"</td> <!-- FF TB -->
+
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- C NVDA -->
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- C TB -->
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label. "Submit primary"</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label. Does not announce "Submit"</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>Does not announce either label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.<br>Does not announce "Submit"</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>Does not announce "Submit"</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=image</th>
+        <td class="pass">Pass<br>Does not announce "alt"</td> <!-- FF JAWS -->
+        <td class="pass">Pass<br>Does not announce "alt"</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).<br>Does not announce "alt"</td> <!-- FF TB -->
+
+        <td class="pass">Pass<br>Announces "Primary Secondary Alt"</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>Does not announce "alt"</td> <!-- C NVDA -->
+        <td class="pass">Pass<br>Does not announce "alt"</td> <!-- C TB -->
+        <td class="pass">Pass<br>Does not announce "alt"</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label. "Primary, alt"</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.<br>Does not announce "alt"</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>Does not announce either label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>Does not announce either label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass<br>Announces "Primary Secondary Alt"</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>Does not announce "alt"</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=reset</th>
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- FF JAWS -->
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).<br>Does not announce "Reset"</td> <!-- FF TB -->
+
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- C NVDA -->
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- C TB -->
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label. "Reset primary"</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.<br>Does not announce "Reset"</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>Does not announce either label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.<br>Does not announce "Reset"</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>Does not announce "Reset"</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>input=button</th>
+        <td class="pass">Pass<br>Does not announce "Value"</td> <!-- FF JAWS -->
+        <td class="pass">Pass<br>Does not announce "Value"<br></td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).<br>Does not announce "Value"</td> <!-- FF TB -->
+
+        <td class="pass">Pass<br>"Value" announced as accessible description.</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>"Value" announced as accessible description.</td> <!-- C NVDA -->
+        <td class="pass">Pass<br>"Value" announced as accessible description.</td> <!-- C TB -->
+        <td class="pass">Pass<br>"Value" announced as accessible description.<br></td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label. "Value primary"</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.<br>Does not announce "Value"</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>Does not announce either label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.<br>Does not announce "Value"</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass<br>Announces "Primary Secondary Value"</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>Announces "Primary Secondary Value"</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>select</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>textarea</th>
+        <td class="pass">Pass</td> <!-- FF JAWS -->
+        <td class="pass">Pass</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="pass">Pass</td> <!-- C JAWS -->
+        <td class="pass">Pass</td> <!-- C NVDA -->
+        <td class="pass">Pass</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass</td> <!-- E JAWS -->
+        <td class="pass">Pass<br></td> <!-- E NVDA -->
+      </tr>
+        <tr><th>output</th>
+        <td class="pass">Pass<br>Exposes both labels as accessible name. JAWS virtual cursor only announces visible text.</td> <!-- FF JAWS -->
+        <td class="pass">Pass<br>Exposes both labels as accessible name. NVDA virtual cursor only announces visible text.</td> <!-- FF NVDA -->
+        <td class="fail">Fail<br>No role announced or accessible name from labels announced when focusing output.<br></td> <!-- FF TB -->
+
+        <td class="pass">Pass<br>Exposes both labels as accessible name. JAWS virtual cursor only announces visible text.</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>Exposes both labels as accessible name. NVDA virtual cursor only announces visible text.</td> <!-- C NVDA -->
+        <td class="pass">Pass<br>But contents of output are not announced.<br></td> <!-- C TB -->
+        <td class="fail">Fail<br>Both labels exposed as accessible name but no role announced or accessible name from labels announced when focusing output.</td> <!-- C VOm -->
+
+        <td class="pass">Pass<br>Announces as: "Primaryvalue Secondary" or "PrimarySecondary" if no text within output.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>Role not exposed by IE</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>Role not exposed by IE</td> <!-- IE NVDA -->
+
+        <td class="pass">Pass<br>Exposes both labels as accessible name. JAWS virtual cursor only announces visible text.</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>Exposes both labels as accessible name. NVDA virtual cursor only announces visible text.</td> <!-- E NVDA -->
+      </tr>
+        <tr><th>meter</th>
+        <td class="pass">Pass<br>But value of meter not announced.</td> <!-- FF JAWS -->
+        <td class="pass">Pass<br>But value of meter not announced. No role announced.<br></td> <!-- FF NVDA -->
+        <td class="fail">Fail<br>Element ignored.<br></td> <!-- FF TB -->
+
+        <td class="fail">Fail<br>Exposes both labels as accessible name. JAWS virtual cursor only announces value and role of meter.</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>(element announced as progress bar). No value announced.<br></td> <!-- C NVDA -->
+        <td class="pass">Pass<br>But value of meter not announced.<br></td> <!-- C TB -->
+        <td class="pass">Pass<br></td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>ignored</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>Element not rendered by IE</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>Element not rendered by IE</td> <!-- IE NVDA -->
+
+        <td class="fail">Fail<br>Exposes both labels as accessible name. JAWS virtual cursor only announces value and role of meter.</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>(element announced as progress bar). No value announced.<br></td> <!-- E NVDA -->
+      </tr>
+      <tr>
+        <th>progress</th>
+        <td class="fail">Fail<br>Exposes both labels as accessible name. JAWS virtual cursor only announces value and role for progress bar.</td> <!-- FF JAWS -->
+        <td class="fail">Fail<br>Exposes both labels as accessible name. NVDA virtual cursor only announces value and role for progress bar.</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>(but no space between words).</td> <!-- FF TB -->
+
+        <td class="fail">Fail<br>Exposes both labels as accessible name. JAWS virtual cursor only announces value and role for progress bar.</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>But value of progress not announced</td> <!-- C NVDA -->
+        <td class="pass">Pass<br>But value of progress not announced</td> <!-- C TB -->
+        <td class="pass">Pass</td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>only exposes second label.<br>JAWS does not announce.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>only exposes second label.<br>NVDA does not announce.</td> <!-- IE NVDA -->
+
+        <td class="fail">Fail<br>Exposes both labels as accessible name. JAWS virtual cursor only announces value and role for progress bar.</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>But value of progress not announced</td> <!-- E NVDA -->
+      </tr>
+
+      <tr>
+        <th>button</th>
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- FF JAWS -->
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- FF NVDA -->
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice (and no space between words).<br>If button contains text, labels not used for accessible name.</td> <!-- FF TB -->
+
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- C JAWS -->
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- C NVDA -->
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- C TB -->
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.<br></td> <!-- C VOm -->
+
+        <td class="fail">Fail<br>only exposes first label.<br>If button contains content, will announce as "button text, first label"<br></td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
+
+        <td class="fail">Fail<br>If button contains no text, second label may be announced OR button's Value.<br>If button contains text, labels not used for accessible name.<br></td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>If button contains no text, second label announced. <br>If button contains text, labels not used for accessible name.<br></td> <!-- IE NVDA -->
+
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- E JAWS -->
+        <td class="fail">Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- E NVDA -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
 
 		<script src="../-assets/shared.js"></script>
 	</body>

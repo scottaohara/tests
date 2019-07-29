@@ -95,6 +95,15 @@ body {
   overflow: auto;
 }
 
+.results-table-wrap.large table {
+  table-layout: auto;
+}
+
+.results-table-wrap.large td {
+  padding: .5em;
+  vertical-align: top;
+}
+
 .results-table-wrap table {
   border-spacing: 0;
   border: 1px solid #111;

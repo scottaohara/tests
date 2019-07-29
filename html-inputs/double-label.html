@@ -1,116 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Input with two labels</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../-assets/shared.css">
-    <style>
-      details li:not(:last-child) {
-        margin-bottom: .5em;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <h1>Test the effect of two label elements on a single input</h1>
-        <div class="dates">
-          <p>
-            Published: <time>June 6, 2019</time>
-          </p>
-          <!-- <p>Last Updated: <time>...</time></p> -->
-        </div>
-      </header>
+	<head>
+		<meta charset="utf-8">
+		<title>Inputs with two labels</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+			details li:not(:last-child) {
+				margin-bottom: .5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1>Test the effect of two label elements on a single input</h1>
+				<div class="dates">
+					<p>
+						Published: <time datetime="2019-06-06">June 6, 2019</time>
+					</p>
+					<p>Last Updated: <time datetime="2019-07-29">July 29, 2019</time></p>
+				</div>
+				<p>Tested with latest versions of screen readers and browsers available at time of publish.</p>
+			</header>
 
-      <div class="test">
-        <h2>Two <code>label</code> elements for one <code>input</code></h2>
-        <div class="test__case">
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=text</code></h2>
+				<div class="test__case">
 <label for="h">
-  Primary
+	Primary
 </label>
 <input type="text" id="h">
 <label for="h">
-  Secondary
+	Secondary
 </label>
-        </div>
-        <div class="test__info">
-          <div class="test__info__results">
-            <details>
-              <summary>results</summary>
-              <div>
-                <p>Tested with latest versions of screen readers and browsers available at time of publish.</p>
-                <ul>
-                  <li>
-                    iOS VO &amp; Safari
-                    only announces <strong>first label</strong> as accessible name.
-                  </li>
-                  <li>
-                    macOS VO &amp; Safari
-                    only announces <strong>first label</strong> as accessible name.
-                  </li>
-                  <li>
-                    macOS VO &amp; Chrome
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
 
-                  <li>
-                    TalkBack &amp; Firefox
-                    announces <strong>both labels</strong> as accessible name (no space between words).
-                  </li>
-                  <li>
-                    TalkBack &amp; Chrome
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=search</code></h2>
+				<div class="test__case">
+<label for="srch">
+	Primary
+</label>
+<input type="search" id="srch">
+<label for="srch">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
 
-                  <li>
-                    JAWS &amp; Chrome
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
-                  <li>
-                    JAWS &amp; Firefox
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
-                  <li>
-                    JAWS &amp; IE11 only announces the <strong>second label</strong> as accessible name.
-                  </li>
-                  <li>
-                    JAWS &amp; pre-Chromium Edge
-                    only announces the <strong>second label</strong> as accessible name.
-                  </li>
-                  <li>
-                    JAWS &amp; Chromium Edge
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
 
-                  <li>
-                    NVDA &amp; Chrome
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
-                  <li>
-                    NVDA &amp; Firefox
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
-                  <li>
-                    NVDA &amp; IE11 only announces the <strong>second label</strong> as accessible name.
-                  </li>
-                  <li>
-                    NVDA &amp; pre-Chromium Edge
-                    only announces the <strong>second label</strong> as accessible name.
-                  </li>
-                  <li>
-                    NVDA &amp; Chromium Edge
-                    announces <strong>both labels</strong> as accessible name.
-                  </li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=tel</code></h2>
+				<div class="test__case">
+<label for="tel">
+	Primary
+</label>
+<input type="tel" id="tel">
+<label for="tel">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
 
-    </div> <!-- /#app -->
 
-    <script src="../-assets/shared.js"></script>
-  </body>
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=url</code></h2>
+				<div class="test__case">
+<label for="url">
+	Primary
+</label>
+<input type="url" id="url">
+<label for="url">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=email</code></h2>
+				<div class="test__case">
+<label for="email">
+	Primary
+</label>
+<input type="email" id="email">
+<label for="email">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=password</code></h2>
+				<div class="test__case">
+<label for="password">
+	Primary
+</label>
+<input type="password" id="password">
+<label for="password">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=month</code></h2>
+				<div class="test__case">
+<label for="month">
+	Primary
+</label>
+<input type="month" id="month">
+<label for="month">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=date</code></h2>
+				<div class="test__case">
+<label for="date">
+	Primary
+</label>
+<input type="date" id="date">
+<label for="date">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=week</code></h2>
+				<div class="test__case">
+<label for="week">
+	Primary
+</label>
+<input type="week" id="week">
+<label for="week">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=time</code></h2>
+				<div class="test__case">
+<label for="time">
+	Primary
+</label>
+<input type="time" id="time">
+<label for="time">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=datetime-local</code></h2>
+				<div class="test__case">
+<label for="datetime-local">
+	Primary
+</label>
+<input type="datetime-local" id="datetime-local">
+<label for="datetime-local">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=number</code></h2>
+				<div class="test__case">
+<label for="number">
+	Primary
+</label>
+<input type="number" id="number">
+<label for="number">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=range</code></h2>
+				<div class="test__case">
+<label for="range">
+	Primary
+</label>
+<input type="range" id="range">
+<label for="range">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=color</code></h2>
+				<div class="test__case">
+<label for="color">
+	Primary
+</label>
+<input type="color" id="color">
+<label for="color">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input type=checkbox</code></h2>
+				<div class="test__case">
+<label for="c">
+	Primary
+</label>
+<input type="checkbox" id="c">
+<label for="c">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input type=radio</code></h2>
+				<div class="test__case">
+<label for="r">
+	Primary
+</label>
+<input type="radio" id="r">
+<label for="r">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=file</code></h2>
+				<div class="test__case">
+<label for="file">
+	Primary
+</label>
+<input type="file" id="file">
+<label for="file">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=submit</code></h2>
+				<div class="test__case">
+<label for="submit">
+	Primary
+</label>
+<input type="submit" id="submit">
+<label for="submit">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=image</code></h2>
+				<div class="test__case">
+<label for="image">
+	Primary
+</label>
+<input type="image" alt="alt" id="image">
+<label for="image">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=reset</code></h2>
+				<div class="test__case">
+<label for="reset">
+	Primary
+</label>
+<input type="reset" id="reset">
+<label for="reset">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>input=button</code></h2>
+				<div class="test__case">
+<label for="button">
+	Primary
+</label>
+<input type="button" value="Value" id="button">
+<label for="button">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>select</code></h2>
+				<div class="test__case">
+<label for="select">
+	Primary
+</label>
+<select id="select"><option>Item 1</option><option>Item 2</option></select>
+<label for="select">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>textarea</code></h2>
+				<div class="test__case">
+<label for="textarea">
+	Primary
+</label>
+<textarea id="textarea"></textarea>
+<label for="textarea">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>output</code></h2>
+				<div class="test__case">
+<label for="output">
+	Primary
+</label>
+<output id="output">value</output>
+<label for="output">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>meter</code></h2>
+				<div class="test__case">
+<label for="m">
+	Primary
+</label>
+<meter value="10" min="0" max="100" id="m"></meter>
+<label for="m">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+			<div class="test">
+				<h2>Two <code>label</code> elements for one <code>progress</code></h2>
+				<div class="test__case">
+<label for="pr">
+	Primary
+</label>
+<progress id="pr"></progress>
+<label for="pr">
+	Secondary
+</label>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+		</div> <!-- /#app -->
+
+		<script src="../-assets/shared.js"></script>
+	</body>
 </html>

@@ -485,6 +485,12 @@
     Platform A11y API notes
   </summary>
   <p>
+  	Webkit / AX will consistently drop the second label from an element's accessible name.
+  </p>
+  <p>
+  	IE11 / MSAA will consistently drop the first label if an element is provided 2 for its accessible name.
+  </p>
+  <p>
     input type=color:<br>
     Firefox PC - MSAA / IA2: push button<br>
     Firefox PC - UIA: UIA_Button<br><br>

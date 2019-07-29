@@ -1065,23 +1065,37 @@
 
       <tr>
         <th>button</th>
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- FF JAWS -->
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- FF NVDA -->
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice (and no space between words).<br>If button contains text, labels not used for accessible name.</td> <!-- FF TB -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels.
+					If button contains text, the labels will overwrite the visible text.</td> <!-- FF JAWS -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels.
+					If button contains text, the labels will overwrite the visible text.</td> <!-- FF NVDA -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels announced.
+					If button contains text, the labels will overwrite the visible text.</td> <!-- FF TB -->
 
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- C JAWS -->
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- C NVDA -->
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- C TB -->
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.<br></td> <!-- C VOm -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels announced but twice. If button contains text, the labels will overwrite the visible text.</td> <!-- C JAWS -->
+        <td class="pass">Pass<br>If button contains no text, both labels.<br>If button contains text, the labels will overwrite the visible text.</td> <!-- C NVDA -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels announced.
+					If button contains text, the labels will overwrite the visible text.</td> <!-- C TB -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels announced.
+					If button contains text, the labels will overwrite the visible text.</td> <!-- C VOm -->
 
-        <td class="fail" contenteditable>Fail<br>only exposes first label.<br>If button contains content, will announce as "button text, first label"</td> <!-- S VOm -->
-        <td class="fail" contenteditable>Fail<br>only exposes first label.</td> <!-- S VOi -->
+        <td class="fail">Fail<br>only exposes first label.<br>If button contains content, will announce as "button text, first label"</td> <!-- S VOm -->
+        <td class="fail">Fail<br>only exposes first label.</td> <!-- S VOi -->
 
-        <td class="fail" contenteditable>Fail<br>If button contains no text, second label may be announced OR button's Value.<br>If button contains text, labels not used for accessible name.<br></td> <!-- IE JAWS -->
-        <td class="fail" contenteditable>Fail<br>If button contains no text, second label announced. <br>If button contains text, labels not used for accessible name.<br></td> <!-- IE NVDA -->
+        <td class="fail">Fail<br>If button contains no text, second label may be announced OR button's Value.<br>If button contains text, labels not used for accessible name.</td> <!-- IE JAWS -->
+        <td class="fail">Fail<br>If button contains no text, second label announced or "blank" if navigating by virtual cursor. <br>If button contains text, labels not used for accessible name.</td> <!-- IE NVDA -->
 
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- E JAWS -->
-        <td class="fail" contenteditable>Fail<br>If button contains no text, both labels announced but twice.<br>If button contains text, labels not used for accessible name.</td> <!-- E NVDA -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels announced but twice. If button contains text, the labels will overwrite the visible text.</td> <!-- E JAWS -->
+        <td class="pass">Pass<br>
+					If button contains no text, both labels.
+					If button contains text, the labels will overwrite the visible text.</td> <!-- E NVDA -->
       </tr>
     </tbody>
   </table>

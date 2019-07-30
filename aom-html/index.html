@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AOM of HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing <code>button</code> AOM</h1>
+        <div class="dates">
+          <p>Published: <time datetime="2019-07-29">July 29, 2019</time></p>
+        </div>
+        <p>
+          Playing with the AOM and native HTML attributes to create assertions for a11y properties.
+        </p>
+      </header>
+
+      <div class="test">
+        <h2><code>button</code> with accName from content</h2>
+        <div class="test__case">
+          <button>Hello</button>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+
+                <div class="test__info__results__aom"></div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>button</code> with accName from aria-labelldby</h2>
+        <div class="test__case">
+          <button aria-describedby="d" title="My title" value="My value" aria-labelledby="n" aria-label="ARIA">Hello</button>
+          <div id="n">My name</div>
+          <div id="d">My description</div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+
+                <div class="test__info__results__aom"></div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>button</code> with accName from wrapping label</h2>
+        <div class="test__case">
+          <label>
+            My Label
+            <button title="My title" value="My value">Hello</button>
+          </label>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <div class="test__info__results__aom"></div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>button</code> with accName from sibling label</h2>
+        <div class="test__case">
+          <label for="b">
+            My sibling label
+          </label>
+          <button id="b" title="My title" value="My value">Hello</button>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <div class="test__info__results__aom"></div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+    <script src="../-assets/aom.js"></script>
+  </body>
+</html>

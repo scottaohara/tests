@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Heading patterns</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing heading element patterns</h1>
+        <div class="dates">
+          <p>Published: <span>July 31, 2019</span></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Heading containing span</h2>
+        <div class="test__case">
+          <h1>
+            <span role="presentation">Introducing</span>
+            Name of thing
+          </h1>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Heading with aria-label containing span </h2>
+        <div class="test__case">
+          <h1 aria-label="something else">
+            <span>Introducing</span>
+            Name of thing
+          </h1>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Heading with aria-label containing span with aria-hidden=true </h2>
+        <div class="test__case">
+          <h1 aria-label="something else">
+            <span aria-hidden="true">Introducing
+            Name of thing</span>
+          </h1>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+		</div> <!-- /#app -->
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

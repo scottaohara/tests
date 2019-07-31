@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Testing CSS effects on text</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing CSS effects on text</h1>
+        <div class="dates">
+          <p>Published: <span>July 31, 2019</span></p>
+        </div>
+      </header>
+
+
+			<div class="test">
+        <h2>All uppercase</h2>
+        <div class="test__case">
+          <p>
+            THIS TEXT IS WRITTEN IN UPPERCASE
+          </p>
+          <p>
+            <span>THIS TEXT IS WRITTEN IN UPPERCASE</span>
+          </p>
+          <a href="#!">
+            THIS TEXT IS WRITTEN IN UPPERCASE
+          </a><br>
+          <button>
+            THIS TEXT IS WRITTEN IN UPPERCASE
+          </button>
+          <h2>
+            THIS TEXT IS WRITTEN IN UPPERCASE
+          </h2>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Uppercased by CSS</h2>
+        <div class="test__case">
+          <p style="text-transform: uppercase;">
+            This text is written in lowercase.
+          </p>
+          <p>
+            <span style="text-transform: uppercase;">This text is written in lowercase.</span>
+          </p>
+          <a href="#!" style="text-transform: uppercase;">
+            This text is written in lowercase.
+          </a><br>
+          <button style="text-transform: uppercase;">
+            This text is written in lowercase.
+          </button>
+          <h2 style="text-transform: uppercase;">
+            THIS TEXT IS WRITTEN IN UPPERCASE
+          </h2>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

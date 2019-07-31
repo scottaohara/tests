@@ -30,7 +30,7 @@
       <header>
         <h1>Testing ARIA roles against HTML native semantics</h1>
         <div class="dates">
-          <p>Published: <time>July 30, 2019</time></p>
+          <p>Published: <time datetime="2019-07-31">July 31, 2019</time></p>
         </div>
       </header>
 
@@ -45,7 +45,16 @@
 
         <div class="test__info">
           <div class="test__info__results">
-
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>
+                  ARIA + HTML exposed as:<br>
+                  Role: AXGroup <br>
+                  Subrole: AXDeleteStyleGroup
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -62,7 +71,16 @@
 
         <div class="test__info">
           <div class="test__info__results">
-
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>
+                  ARIA + HTML exposed as:<br>
+                  Role: AXGroup <br>
+                  Subrole: AXInsertStyleGroup
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -79,7 +97,16 @@
 
         <div class="test__info">
           <div class="test__info__results">
-
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>
+                  ARIA + HTML exposed as:<br>
+                  Role: AXGroup <br>
+                  Subrole: AXSubscriptStyleGroup
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -96,24 +123,42 @@
 
         <div class="test__info">
           <div class="test__info__results">
-
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>
+                  ARIA + HTML exposed as:<br>
+                  Role: AXGroup <br>
+                  Subrole: AXSuperscriptStyleGroup
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
 
 
       <div class="test">
-        <h2><code>time</code> vs <code>role=superscript</code></h2>
+        <h2><code>time</code> vs <code>role=time</code></h2>
         <div class="test__case">
           <p>
-          <time datetime="2019-07-30">July 30 2019</time>
+          <time datetime="2019-07-30">07.30.2019</time>
           <p>
           <span role="time">July 30 2019</span>
         </div>
 
         <div class="test__info">
           <div class="test__info__results">
-
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>
+                  ARIA + HTML exposed as:<br>
+                  Role: AXGroup <br>
+                  Subrole: AXTimeGroup
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>

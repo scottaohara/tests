@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ARIA vs HTML role semantics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      [role="img"] {
+        display: inline-block;
+        background: #f00;
+        border: 1px solid #f00;
+        height: 2em;
+        width: 2em;
+      }
+
+      .sr-only:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(100%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing ARIA roles against HTML native semantics</h1>
+        <div class="dates">
+          <p>Published: <time>July 30, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>del</code> vs <code>role=deletion</code></h2>
+        <div class="test__case">
+          <p>
+          <del>Text to be removed</del>
+          <p>
+          <span role="deletion">Text to be removed</span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ins</code> vs <code>role=insertion</code></h2>
+        <div class="test__case">
+          <p>
+          <ins>Text to be added</ins>
+          <p>
+          <span role="insertion">Text to be added</span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>sub</code> vs <code>role=subscript</code></h2>
+        <div class="test__case">
+          <p>
+          <sub>Subbed</sub>
+          <p>
+          <span role="subscript">Subbed</span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>sup</code> vs <code>role=superscript</code></h2>
+        <div class="test__case">
+          <p>
+          <sub>Supped</sub>
+          <p>
+          <span role="superscript">Supped</span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>time</code> vs <code>role=superscript</code></h2>
+        <div class="test__case">
+          <p>
+          <time datetime="2019-07-30">July 30 2019</time>
+          <p>
+          <span role="time">July 30 2019</span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

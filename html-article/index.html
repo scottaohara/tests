@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Article element and role tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing Article element and role</h1>
+        <div class="dates">
+          <p>Published: <time>August 1, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>role="article" with aria-label</h2>
+        <div class="test__case">
+          <div role="article" aria-label="Hi there">
+            Content goes here
+          </div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>role="article" without aria-label</h2>
+        <div class="test__case">
+          <div role="article">
+            Content goes here
+          </div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>article element without aria-label</h2>
+        <div class="test__case">
+          <article>
+            Content goes here
+          </article>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>article element with aria-label</h2>
+        <div class="test__case">
+          <article aria-label="hi there">
+            Content goes here
+          </article>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

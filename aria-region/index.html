@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ARIA role=region</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing <code>role=region</code></h1>
+        <div class="dates">
+          <p>Published: <time>August 1, 2019</time></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>role=region with aria-label</h2>
+        <div class="test__case">
+          <span role="region" aria-label="A landmark!">I should be a landmark</span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>role=region without aria-label</h2>
+        <div class="test__case">
+          <span role="region">I am an element with role=region</span>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

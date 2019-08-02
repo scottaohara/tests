@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>what the span?</title>
+
+		<style>
+			#app {
+				margin: 0 auto;
+				max-width:  36rem;
+			}
+
+			.test {
+				border: 1px solid;
+				padding: 1em;
+			}
+
+			details {
+				display: block;
+				margin-top: 1em;
+			}
+
+			.test details {
+				margin: auto
+			}
+
+			strong {
+				font-size: 120%;
+			}
+
+			.breakdown {
+				margin-top: .625em;
+			}
+			.breakdown span:not(:last-child) {
+				display: inline-block;
+				margin-right: .5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Testing the effects of aria-label on span elements</h1>
+			<p><b>May 30, 2019</b>: Tested with latest browser and screen reader versions on available devices. (13 total pairings for each test)</p>
+
+
+			<h2>Test 1: Span with aria-label</h2>
+			<div class="test">
+				<span aria-label="I'm hidden content"></span>
+			</div>
+			<details open>
+				<summary>test 1 results</summary>
+				<div class="breakdown">
+					<span>Announces: 8</span>
+					<span>Ignores: 5</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>announces aria-label</strong></li>
+					<li>JAWS with Chrome <strong>ignores span</strong></li>
+					<li>JAWS with Edge (chromium) <strong>ignores span</strong></li>
+					<li>JAWS with IE11 <strong>announces aria-label</strong></li>
+
+					<li>NVDA with Firefox <strong>ignores span</strong></li>
+					<li>NVDA with Chrome <strong>announces aria-label</strong></li>
+					<li>NVDA with Edge (chromium) <strong>announces aria-label</strong></li>
+					<li>NVDA with IE11 <strong>announces aria-label</strong></li>
+
+					<li>VO with Safari <strong>announces aria-label</strong>, promotes span to group</li>
+					<li>VO with Chrome <strong>announces aria-label</strong>, promotes span to group</li>
+
+					<li>iOS VO with Safari <strong>ignores span</strong></li>
+
+					<li>TalkBack with Firefox <strong>ignores span</strong></li>
+					<li>TalkBack with Chrome <strong>announces aria-label</strong></li>
+				</ul>
+			</details>
+
+
+			<h2>Test 2: Span with visible text and aria-label</h2>
+			<div class="test">
+				<span aria-label="I'm hidden content">visible text</span>
+			</div>
+			<details open>
+				<summary>test 2 results</summary>
+				<div class="breakdown">
+					<span>Announces: 3</span>
+					<span>Ignores: 10</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>ignores aria-label</strong></li>
+					<li>JAWS with Chrome <strong>ignores aria-label</strong></li>
+					<li>JAWS with Edge (chromium) <strong>ignores aria-label</strong></li>
+					<li>JAWS with IE11 <strong>ignores aria-label</strong></li>
+
+					<li>NVDA with Firefox <strong>ignores aria-label</strong></li>
+					<li>NVDA with Chrome <strong>ignores aria-label</strong></li>
+					<li>NVDA with Edge (chromium) <strong>ignores aria-label</strong></li>
+					<li>NVDA with IE11 <strong>ignores aria-label</strong></li>
+
+					<li>VO with Safari <strong>announces aria-label</strong>, promotes span to group. Will also announce visible text as separate stop.</li>
+					<li>VO with Chrome <strong>announces aria-label</strong>, promotes span to group. Will also announce visible text as separate stop.</li>
+
+					<li>iOS VO with Safari <strong>ignores aria-label</strong></li>
+
+					<li>TalkBack with Firefox <strong>ignores aria-label</strong></li>
+					<li>TalkBack with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+				</ul>
+			</details>
+
+
+			<h2>Test 3: Link containing span with visible text and aria-label</h2>
+			<div class="test">
+				<a href="#">
+					<span aria-label="I'm hidden content">visible text</span>
+				</a>
+			</div>
+			<details open>
+				<summary>test 3 results</summary>
+				<div class="breakdown">
+					<span>Announces: 5</span>
+					<span>Ignores: 8</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>ignores aria-label</strong></li>
+					<li>JAWS with Chrome <strong>ignores aria-label</strong></li>
+					<li>JAWS with Edge (chromium) <strong>ignores aria-label</strong></li>
+					<li>JAWS with IE11 <strong>ignores aria-label</strong></li>
+
+					<li>NVDA with Firefox <strong>ignores aria-label</strong></li>
+					<li>NVDA with Chrome <strong>ignores aria-label</strong></li>
+					<li>NVDA with Edge (chromium) <strong>ignores aria-label</strong></li>
+					<li>NVDA with IE11 <strong>ignores aria-label</strong></li>
+
+					<li>VO with Safari <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>VO with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+
+					<li>iOS VO with Safari <strong>announces aria-label and excludes</strong> visible text</li>
+
+					<li>TalkBack with Firefox <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>TalkBack with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+				</ul>
+			</details>
+
+
+			<h2>Test 4: Link containing span with aria-label</h2>
+			<div class="test">
+				<a href="#">
+					<span aria-label="I'm hidden content"></span>
+				</a>
+			</div>
+			<details open>
+				<summary>test 4 results</summary>
+				<div class="breakdown">
+					<span>Announces: 12</span>
+					<span>Ignores: 1</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>JAWS with Chrome <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>JAWS with Edge (chromium) <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>JAWS with IE11 <strong>announces aria-label</strong> as accessible name of link</li>
+
+					<li>NVDA with Firefox <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>NVDA with Chrome <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>NVDA with Edge (chromium) <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>NVDA with IE11 <strong>announces aria-label</strong> as accessible name of link</li>
+
+					<li>VO with Safari <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>VO with Chrome <strong>announces aria-label</strong> as accessible name of link</li>
+
+					<li>iOS VO with Safari <strong>ignores</strong> the link</li>
+
+					<li>TalkBack with Firefox <strong>announces aria-label</strong> as accessible name of link</li>
+					<li>TalkBack with Chrome <strong>announces aria-label</strong> as accessible name of link</li>
+				</ul>
+			</details>
+
+
+			<h2>Test 5: Button containing span with visible text and aria-label</h2>
+			<div class="test">
+				<button>
+					<span aria-label="I'm hidden content">visible text</span>
+				</button>
+			</div>
+			<details open>
+				<summary>test 5 results</summary>
+				<div class="breakdown">
+					<span>Announces: 10</span>
+					<span>Ignores: 3</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>JAWS with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>JAWS with Edge (chromium) <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>JAWS with IE11 <strong>ignores aria-label</strong></li>
+
+					<li>NVDA with Firefox <strong>ignores aria-label</strong></li>
+					<li>NVDA with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>NVDA with Edge (chromium) <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>NVDA with IE11 <strong>ignores aria-label</strong></li>
+
+					<li>VO with Safari <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>VO with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+
+					<li>iOS VO with Safari <strong>announces aria-label and excludes</strong> visible text</li>
+
+					<li>TalkBack with Firefox <strong>announces aria-label, button role, aria-label again and then visible text</strong></li>
+					<li>TalkBack with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+				</ul>
+			</details>
+
+
+			<h2>Test 6: Button containing span with aria-label</h2>
+			<div class="test">
+				<button><span aria-label="I'm hidden content"></span></button>
+			</div>
+			<details open>
+				<summary>test 6 results</summary>
+				<div class="breakdown">
+					<span>Announces: 13</span>
+					<span>Ignores: 0</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>JAWS with Chrome <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>JAWS with Edge (chromium) <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>JAWS with IE11 <strong>announces aria-label</strong> as accessible name of button</li>
+
+					<li>NVDA with Firefox <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>NVDA with Chrome <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>NVDA with Edge (chromium) <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>NVDA with IE11 <strong>announces aria-label</strong> as accessible name of button</li>
+
+					<li>VO with Safari <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>VO with Chrome <strong>announces aria-label</strong> as accessible name of button</li>
+
+					<li>iOS VO with Safari <strong>announces aria-label</strong> as accessible name of button</li>
+
+					<li>TalkBack with Firefox <strong>announces aria-label</strong> as accessible name of button</li>
+					<li>TalkBack with Chrome <strong>announces aria-label</strong> as accessible name of button</li>
+				</ul>
+			</details>
+
+
+			<h2>Test 7: Summary containing span with visible text and aria-label</h2>
+			<div class="test">
+				<details open>
+					<summary>
+						<span aria-label="I'm hidden content">visible text</span>
+					</summary>
+					oh hi
+				</details>
+			</div>
+			<details open>
+				<summary>test 7 results</summary>
+				<div class="breakdown">
+					<span>Announces: 6</span>
+					<span>Ignores: 7</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>JAWS with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>JAWS with Edge (chromium) <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>JAWS with IE11 <strong>ignores aria-label</strong> on span in unsupported summary</li>
+
+					<li>NVDA with Firefox <strong>ignores aria-label</strong></li>
+					<li>NVDA with Chrome <strong>ignores aria-label</strong></li>
+					<li>NVDA with Edge (chromium) <strong>ignores aria-label</strong></li>
+					<li>NVDA with IE11 <strong>ignores aria-label</strong> on span in unsupported summary</li>
+
+					<li>VO with Safari <strong>announces aria-label and excludes</strong> visible text</li>
+					<li>VO with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+
+					<li>iOS VO with Safari <strong>ignores aria-label</strong></li>
+
+					<li>TalkBack with Firefox <strong>ignores aria-label</strong></li>
+					<li>TalkBack with Chrome <strong>announces aria-label and excludes</strong> visible text</li>
+				</ul>
+			</details>
+
+
+			<h2>Test 8: Summary containing span with aria-label</h2>
+			<div class="test">
+				<details open>
+					<summary>
+						<span aria-label="I'm hidden content"></span>
+					</summary>
+					oh hi
+				</details>
+			</div>
+			<details open>
+				<summary>test 8 results</summary>
+				<div class="breakdown">
+					<span>Announces: 11</span>
+					<span>Ignores: 2</span>
+				</div>
+				<ul>
+					<li>JAWS with Firefox <strong>announces aria-label</strong> as accessible name of summary</li>
+					<li>JAWS with Chrome <strong>announces aria-label</strong> as accessible name of summary</li>
+					<li>JAWS with Edge (chromium) <strong>announces aria-label</strong> as accessible name of summary</li>
+					<li>JAWS with IE11 <strong>announces aria-label</strong> on span in unsupported summary</li>
+
+					<li>NVDA with Firefox <strong>announces aria-label</strong> as accessible name of summary</li>
+					<li>NVDA with Chrome <strong>announces aria-label</strong> as accessible name of summary</li>
+					<li>NVDA with Edge (chromium) <strong>announces aria-label</strong> as accessible name of summary</li>
+					<li>NVDA with IE11 <strong>announces aria-label</strong> on span in unsupported summary</li>
+
+					<li>VO with Safari <strong>announces aria-label</strong> as accessible name of summary</li>
+					<li>VO with Chrome <strong>announces aria-label</strong> as accessible name of summary</li>
+
+					<li>iOS VO with Safari <strong>ignores summary element</strong></li>
+
+					<li>TalkBack with Firefox <strong>ignores summary element</strong></li>
+					<li>TalkBack with Chrome <strong>announces aria-label</strong> as accessible name of summary ("disclosure triangle")</li>
+				</ul>
+			</details>
+
+
+
+		</div>
+	</body>
+</html>

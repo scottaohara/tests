@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing fieldset and legend</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>fieldset</code> and <code>legend</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <span>August 2nd, 2019</span></p>
+          <!-- <p>Last Updated: <time>...</time></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>fieldset</code> with no <code>legend</code></h2>
+        <div class="test__case">
+          <fieldset>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>fieldset</code> with no <code>legend</code> and an <code>aria-label</code></h2>
+        <div class="test__case">
+          <fieldset aria-label="ARIA label">
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with no <code>legend</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <fieldset title="title">
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with no <code>legend</code> and an <code>aria-label</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <fieldset aria-label="ARIA label" title="title">
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> and an <code>aria-label</code></h2>
+        <div class="test__case">
+          <fieldset aria-label="ARIA label">
+            <legend>Legend</legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> and an <code>aria-label</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <fieldset aria-label="ARIA label" title="title">
+            <legend>Legend</legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <fieldset title="title">
+            <legend>Legend</legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code></h2>
+        <div class="test__case">
+          <fieldset>
+            <legend>Legend</legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> which has a <code>title</code></h2>
+        <div class="test__case">
+          <fieldset>
+            <legend title="title">Legend</legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              Results here
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> which has an <code>aria-label</code></h2>
+        <div class="test__case">
+          <fieldset>
+            <legend aria-label="ARIA label">Legend</legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>AXFieldset exposed as "ARIA label, group"</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> which has an <code>aria-label</code> and no inner text</h2>
+        <div class="test__case">
+          <fieldset>
+            <legend aria-label="ARIA label"></legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>AXFieldset exposed as "ARIA label, group"</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> which has a <code>title</code> and no inner text</h2>
+        <div class="test__case">
+          <fieldset>
+            <legend title="title"></legend>
+            <input type="text">
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>AXFieldset exposed as "title, group"</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

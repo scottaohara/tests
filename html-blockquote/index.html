@@ -14,6 +14,10 @@
 					<p>Published: <span>August 3, 2019</span></p>
 					<!-- <p>Last Updated: <span>...</span></p> -->
 				</div>
+				<p>
+					Note: navigate by blockquotes with NVDA by use of <kbd>Q</kbd> button.
+					<kbd>CTRL+INSERT+Q</kbd> to open JAWS dialog of blockquotes.
+				</p>
 			</header>
 
 
@@ -22,7 +26,20 @@
 				<div class="test__case">
 					<blockquote></blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX ignores empty <code>blockquote</code>.</p>
+								<p>FF: IA2 ignores empty <code>blockquote</code>. MSAA accRole: "grouping".</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom</p>
+								<p>FF/Chrome + NVDA: ignored</p>
+								<p>FF/Chrome + JAWS: ignored</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
@@ -31,7 +48,20 @@
 				<div class="test__case">
 					<blockquote cite="http://html5doctor.com/cite-and-blockquote-reloaded/"></blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX ignores <code>blockquote</code>.</p>
+								<p>FF IA2 ignores empty <code>blockquote</code>. MSAA accRole: "grouping".</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom</p>
+								<p>FF/Chrome + NVDA: ignored</p>
+								<p>FF/Chrome + JAWS: ignored</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 			<div class="test">
@@ -39,7 +69,20 @@
 				<div class="test__case">
 					<blockquote title="title" cite="http://html5doctor.com/cite-and-blockquote-reloaded/"></blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX ignores <code>blockquote</code>.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". title exposed as accName.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. All Name from title.</p>
+								<p>FF/Chrome + NVDA: ignored</p>
+								<p>FF/Chrome + JAWS: ignored</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 			<div class="test">
@@ -47,7 +90,20 @@
 				<div class="test__case">
 					<blockquote aria-label="aria-label" cite="http://html5doctor.com/cite-and-blockquote-reloaded/"></blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX exposes as group named by <code>aria-label</code> but exposes no special info for <code>cite</code> attribute.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". aria-label exposed as accName.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. All Name from aria-label.</p>
+								<p>FF/Chrome + NVDA: ignored</p>
+								<p>FF/Chrome + JAWS: ignored</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
@@ -58,7 +114,19 @@
 						<p>Text within a paragraph.</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX ignores <code>blockquote</code>.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote".</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
@@ -69,8 +137,21 @@
 						<p>Text within a paragraph.</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX exposes as group named by <code>aria-label</code>.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". aria-label exposed as accName.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote" with accName.</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog.</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
+
 
 			<div class="test">
 				<h2>Blockquote with title and with paragraph element</h2>
@@ -79,8 +160,21 @@
 						<p>Text within a paragraph.</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX exposes as group named by <code>title</code>.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". title exposed as accName.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote" with accName.</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog.</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
+
 
 			<div class="test">
 				<h2>Blockquote with title and aria-label and with paragraph element</h2>
@@ -89,7 +183,19 @@
 						<p>Text within a paragraph.</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX exposes as group named by <code>aria-label</code>, <code>title</code> exposed as "help" text.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". aria-label exposed as accName. title exposed as description.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote" with accName. Description only announced if navigating by hot key.</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog. Description not announced.</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
@@ -100,7 +206,20 @@
 						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX exposes as group named by <code>aria-label</code>, <code>title</code> exposed as "help" text. No exposure of <code>cite</code> attribute.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". aria-label exposed as accName. title exposed as description.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote" with accName. Description only announced if navigating by hot key.</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog. Description not announced.</p>
+								<p>Chrome/IE11 + JAWS will announce cited URL when VC navigates to blockquote.</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
@@ -111,7 +230,20 @@
 						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX ignores <code>blockquote</code> and exposes no special info for <code>cite</code> attribute.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName, description or help values exposed.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote". JAWS dialog exposes cite attribute's URL as identifier.</p>
+								<p>Chrome/IE11 + JAWS will announce cited URL when VC navigates to blockquote.</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
@@ -125,7 +257,19 @@
 						</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX ignores <code>blockquote</code>.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName, description or help values exposed.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote". JAWS dialog exposes cite attribute's URL as identifier. Nested cite element appended to URL identifier</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
@@ -139,11 +283,47 @@
 						</p>
 					</blockquote>
 				</div>
-				<div class="test__info"></div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
+								<p>AX ignores <code>blockquote</code>.</p>
+								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName, description or help values exposed.</p>
+								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote". JAWS dialog exposes cite attribute's URL as identifier. Nested cite element appended to URL identifier</p>
+								<p>Chrome/IE11 + JAWS will announce cited URL when VC navigates to blockquote.</p>
+							</div>
+						</details>
+					</div>
+				</div>
 			</div>
 
 
+			<div class="test">
+				<h2>Invalid test: Blockquote with paragraph element, with nested cite and cite attribute that is not a URL.</h2>
+				<div class="test__case">
+					<blockquote cite="testing this">
+						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+						<p>
+							<cite>HTML Standard</cite>
+						</p>
+					</blockquote>
+				</div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details>
+							<summary>results</summary>
+							<div>
 
+							</div>
+						</details>
+					</div>
+				</div>
+			</div>
+
+
+<!--
 			<div class="test">
 				<h2>Blockquote with paragraph element, with nested cite within footer</h2>
 				<div class="test__case">
@@ -187,7 +367,7 @@
 					</figure>
 				</div>
 				<div class="test__info"></div>
-			</div>
+			</div> -->
 
 
 

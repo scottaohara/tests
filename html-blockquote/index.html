@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Testing blockquote element</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1><code>blockquote</code> element tests</h1>
+				<div class="dates">
+					<p>Published: <span>August 3, 2019</span></p>
+					<!-- <p>Last Updated: <span>...</span></p> -->
+				</div>
+			</header>
+
+
+			<div class="test">
+				<h2>Blockquote with no content</h2>
+				<div class="test__case">
+					<blockquote></blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with no content, but with cite attribute</h2>
+				<div class="test__case">
+					<blockquote cite="http://html5doctor.com/cite-and-blockquote-reloaded/"></blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+			<div class="test">
+				<h2>Blockquote with no content, but with title and cite attributes</h2>
+				<div class="test__case">
+					<blockquote title="title" cite="http://html5doctor.com/cite-and-blockquote-reloaded/"></blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+			<div class="test">
+				<h2>Blockquote with no content, but aria-label and cite attribute</h2>
+				<div class="test__case">
+					<blockquote aria-label="aria-label" cite="http://html5doctor.com/cite-and-blockquote-reloaded/"></blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with paragraph element</h2>
+				<div class="test__case">
+					<blockquote>
+						<p>Text within a paragraph.</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with aria-label and with paragraph element</h2>
+				<div class="test__case">
+					<blockquote aria-label="ARIA label">
+						<p>Text within a paragraph.</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+			<div class="test">
+				<h2>Blockquote with title and with paragraph element</h2>
+				<div class="test__case">
+					<blockquote title="title">
+						<p>Text within a paragraph.</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+			<div class="test">
+				<h2>Blockquote with title and aria-label and with paragraph element</h2>
+				<div class="test__case">
+					<blockquote aria-label="ARIA label" title="title">
+						<p>Text within a paragraph.</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with title, cite attr and aria-label and with paragraph element</h2>
+				<div class="test__case">
+					<blockquote aria-label="ARIA label" title="title" cite="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">
+						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with paragraph element, with cite attribute</h2>
+				<div class="test__case">
+					<blockquote cite="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">
+						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with paragraph element, with nested cite</h2>
+				<div class="test__case">
+					<blockquote>
+						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+						<p>
+							<cite>HTML Standard</cite>
+						</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with paragraph element, with nested cite and cite attribute</h2>
+				<div class="test__case">
+					<blockquote cite="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">
+						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+						<p>
+							<cite>HTML Standard</cite>
+						</p>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+
+			<div class="test">
+				<h2>Blockquote with paragraph element, with nested cite within footer</h2>
+				<div class="test__case">
+					<blockquote>
+						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+						<footer>
+							<cite>HTML Standard</cite>
+						</footer>
+					</blockquote>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with paragraph element, with cite as sibling element</h2>
+				<div class="test__case">
+					<blockquote>
+						<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+					</blockquote>
+					<p>
+						<cite>HTML Standard</cite>
+					</p>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with paragraph element within figure, with cite within figcaption</h2>
+				<div class="test__case">
+					<figure>
+						<blockquote>
+							<p>User agents may allow users to follow such citation links, but they are primarily intended for private use...</p>
+						</blockquote>
+						<figcaption>
+							<p>
+								<cite>HTML Standard</cite>
+							</p>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="test__info"></div>
+			</div>
+
+
+
+		</div> <!-- /#app -->
+		<script src="../-assets/shared.js"></script>
+	</body>
+</html>

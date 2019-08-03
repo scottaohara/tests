@@ -15,7 +15,7 @@
         <h1><code>fieldset</code> and <code>legend</code> element tests</h1>
         <div class="dates">
           <p>Published: <span>August 2nd, 2019</span></p>
-          <!-- <p>Last Updated: <time>...</time></p> -->
+          <p>Last Updated: <span>August 3rd, 2019</span></p>
         </div>
       </header>
 
@@ -27,12 +27,14 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p>No accessible name reported on any platform.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -44,12 +46,14 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p><code>aria-label</code> provides accessible name to group on all platforms.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -62,12 +66,15 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p>IE11 doesn't expose grouping with title as accName.</p>
+                <p>Firefox, Safari, Edge (dev) / Chrome all expose title as accName.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -80,12 +87,14 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p><code>aria-label</code> provides accessible name to group on all platforms.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -99,12 +108,14 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p><code>aria-label</code> provides accessible name to group on all platforms.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -118,12 +129,14 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p><code>aria-label</code> provides accessible name to group on all platforms.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -137,12 +150,15 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p>IE11 doesn't expose grouping with legend or title as accName. JAWS <strong>will</strong> expose "legend" as grouping name.</p>
+                <p>Firefox, Safari, Edge (dev) / Chrome all expose legend as accName.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -156,12 +172,15 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p>IE11 doesn't expose grouping with legend as accName. JAWS <strong>will</strong> expose "legend" as grouping name.</p>
+                <p>Firefox, Safari, Edge (dev) / Chrome all expose legend as accName.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -175,12 +194,15 @@
           </fieldset>
         </div>
         <div class="test__info">
-          <!-- <div class="test__info__results">
+          <div class="test__info__results">
             <details>
               <summary>results</summary>
-              Results here
+              <div>
+                <p>IE11 doesn't expose grouping with legend as accName. JAWS <strong>will</strong> expose "legend" as grouping name.</p>
+                <p>Firefox, Safari, Edge (dev) / Chrome all expose legend as accName.</p>
+              </div>
             </details>
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -199,7 +221,8 @@
               <summary>results</summary>
               <div>
                 <ul>
-                  <li>AXFieldset exposed as "ARIA label, group"</li>
+                  <li>AXFieldset exposed with "ARIA label" name.</li>
+                  <li>MSAA/IA2 and UIA expose "grouping" with "ARIA label" name.</li>
                 </ul>
               </div>
             </details>
@@ -222,7 +245,8 @@
               <summary>results</summary>
               <div>
                 <ul>
-                  <li>AXFieldset exposed as "ARIA label, group"</li>
+                  <li>AXFieldset exposed with "ARIA label" name.</li>
+                  <li>MSAA/IA2 and UIA expose "grouping" with "ARIA label" name.</li>
                 </ul>
               </div>
             </details>
@@ -245,15 +269,14 @@
               <summary>results</summary>
               <div>
                 <ul>
-                  <li>AXFieldset exposed as "title, group"</li>
+                  <li>AXFieldset exposed with "title, group".</li>
+                  <li>MSAA/IA2 and UIA expose "grouping" with "title" name.</li>
                 </ul>
               </div>
             </details>
           </div>
         </div>
       </div>
-
-
 
     </div> <!-- /#app -->
 

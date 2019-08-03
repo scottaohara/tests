@@ -121,6 +121,7 @@
 							<div>
 								<p>AX ignores <code>blockquote</code>.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. No accName.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
 								<p>FF/Chrome + JAWS: announced as "blockquote".</p>
 							</div>
@@ -144,6 +145,7 @@
 							<div>
 								<p>AX exposes as group named by <code>aria-label</code>.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". aria-label exposed as accName.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. All Name from aria-label.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote" with accName.</p>
 								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog.</p>
 							</div>
@@ -167,6 +169,7 @@
 							<div>
 								<p>AX exposes as group named by <code>title</code>.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". title exposed as accName.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. All Name from title.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote" with accName.</p>
 								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog.</p>
 							</div>
@@ -190,6 +193,7 @@
 							<div>
 								<p>AX exposes as group named by <code>aria-label</code>, <code>title</code> exposed as "help" text.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". aria-label exposed as accName. title exposed as description.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. All Name from aria-label, description from title.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote" with accName. Description only announced if navigating by hot key.</p>
 								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog. Description not announced.</p>
 							</div>
@@ -213,6 +217,7 @@
 							<div>
 								<p>AX exposes as group named by <code>aria-label</code>, <code>title</code> exposed as "help" text. No exposure of <code>cite</code> attribute.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". aria-label exposed as accName. title exposed as description.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. All Name from aria-label, description from title.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote" with accName. Description only announced if navigating by hot key.</p>
 								<p>FF/Chrome + JAWS: announced as "blockquote". accName exposed in blockquote dialog. Description not announced.</p>
 								<p>Chrome/IE11 + JAWS will announce cited URL when VC navigates to blockquote.</p>
@@ -237,8 +242,9 @@
 							<div>
 								<p>AX ignores <code>blockquote</code> and exposes no special info for <code>cite</code> attribute.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName, description or help values exposed.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. No accName.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
-								<p>FF/Chrome + JAWS: announced as "blockquote". JAWS dialog exposes cite attribute's URL as identifier.</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote".</p>
 								<p>Chrome/IE11 + JAWS will announce cited URL when VC navigates to blockquote.</p>
 							</div>
 						</details>
@@ -264,8 +270,9 @@
 							<div>
 								<p>AX ignores <code>blockquote</code>.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName, description or help values exposed.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. No accName.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
-								<p>FF/Chrome + JAWS: announced as "blockquote". JAWS dialog exposes cite attribute's URL as identifier. Nested cite element appended to URL identifier</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote".</p>
 							</div>
 						</details>
 					</div>
@@ -290,8 +297,9 @@
 							<div>
 								<p>AX ignores <code>blockquote</code>.</p>
 								<p>FF IA2 exposes no role. MSAA accRole: "grouping". No accName, description or help values exposed.</p>
+								<p>Chromium: MSAA accRole: 'BLOCKQUOTE', IA2 role: section, UIA: UIA_Custom. No accName.</p>
 								<p>FF/Chrome + NVDA: announced as "blockquote".</p>
-								<p>FF/Chrome + JAWS: announced as "blockquote". JAWS dialog exposes cite attribute's URL as identifier. Nested cite element appended to URL identifier</p>
+								<p>FF/Chrome + JAWS: announced as "blockquote".</p>
 								<p>Chrome/IE11 + JAWS will announce cited URL when VC navigates to blockquote.</p>
 							</div>
 						</details>
@@ -315,7 +323,7 @@
 						<details>
 							<summary>results</summary>
 							<div>
-
+								<p>Using the <code>cite</code> attribute incorrectly and providing it with a text string instead of a URL, JAWS with IE11 and Chrome will expose the <code>cite</code> attribute's value as the means to uniquely expose it in the blockquote JAWS listing dialog.</p>
 							</div>
 						</details>
 					</div>

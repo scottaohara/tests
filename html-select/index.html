@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>select element tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing the <code>select</code> element</h1>
+        <div class="dates">
+          <p>Published: <span>August 3, 2019</span></p>
+        </div>
+        <p>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">option element</a>.
+        </p>
+      </header>
+
+
+			<div class="test">
+        <h2>Empty <code>select</code></h2>
+        <div class="test__case">
+          <select></select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with child <code>option</code>s</h2>
+        <div class="test__case">
+          <select>
+            <option>option 1</option>
+            <option label="option 2a">Option 2b</option>
+            <option value="option 3a">Option 3b</option>
+            <option label="option 4a" value="option 4b"></option>
+            <option value="option 5a">Option 5b</option>
+            <option label="option 6a" title="title 6b" value="option 6c"></option>
+            <option title="title 7">Option 7</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> nested in a <code>label</code> and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <label>
+            My label
+            <select>
+              <option>option 1</option>
+              <option label="option 2a">Option 2b</option>
+            </select>
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with associated <code>label</code> and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <label for="s">
+            My label
+          </label>
+          <select id="s">
+            <option>option 1</option>
+            <option label="option 2a">Option 2b</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with associated <code>label</code>, title attribute, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <label for="s2">
+            My label
+          </label>
+          <select id="s2" title="title">
+            <option>option 1</option>
+            <option label="option 2a">Option 2b</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with associated <code>label</code>, aria-label, title attribute, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <label for="s3">
+            My label
+          </label>
+          <select id="s3" title="title" aria-label="ARIA label">
+            <option>option 1</option>
+            <option label="option 2a">Option 2b</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with associated <code>label</code>, aria-label, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <label for="s4">
+            My label
+          </label>
+          <select id="s4" aria-label="ARIA label">
+            <option>option 1</option>
+            <option label="option 2a">Option 2b</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>select</code> with a parent <code>label</code>, aria-label, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <label>
+            My label
+            <select aria-label="ARIA label">
+              <option>option 1</option>
+              <option label="option 2a">Option 2b</option>
+            </select>
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with a parent <code>label</code>, title, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <label>
+            My label
+            <select title="title">
+              <option>option 1</option>
+              <option label="option 2a">Option 2b</option>
+            </select>
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with title, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <select title="title">
+            <option>option 1</option>
+            <option label="option 2a">Option 2b</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with aria-label, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <select aria-label="ARIA label">
+            <option>option 1</option>
+            <option label="option 2a">Option 2b</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>select</code> with aria-label, and with child <code>optgroup</code>s with different and no labeling</h2>
+        <div class="test__case">
+          <select aria-label="ARIA label">
+            <optgroup label="label" aria-label="ARIA provided label">
+              <option>option A</option>
+            </optgroup>
+            <optgroup label="Label">
+              <option>option 1</option>
+              <option label="option 2a">Option 2b</option>
+            </optgroup>
+            <optgroup label="Label" title="title">
+              <option>option 1</option>
+              <option label="option 2a">Option 2b</option>
+            </optgroup>
+            <optgroup title="title"> <!-- invalid -->
+              <option>option Z</option>
+              <option>Option X</option>
+            </optgroup>
+            <optgroup> <!-- invalid -->
+              <option>option 0</option>
+              <option>Option 0a</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with aria-label, multiple attr, and with child <code>optgroup</code>s with different and no labeling</h2>
+        <div class="test__case">
+          <select aria-label="ARIA label" multiple="" style="width: 100%; max-width: 300px; min-height: 220px;">
+            <optgroup label="label" aria-label="ARIA provided label">
+              <option>option A</option>
+            </optgroup>
+            <optgroup label="Label">
+              <option>option 1</option>
+              <option label="option 2a">Option 2b</option>
+            </optgroup>
+            <optgroup label="Label" title="title">
+              <option>option 1</option>
+              <option label="option 2a">Option 2b</option>
+            </optgroup>
+            <optgroup title="title"> <!-- invalid -->
+              <option>option Z</option>
+              <option>Option X</option>
+            </optgroup>
+            <optgroup> <!-- invalid -->
+              <option>option 0</option>
+              <option>Option 0a</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

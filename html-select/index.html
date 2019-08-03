@@ -32,7 +32,11 @@
             <details>
               <summary>results</summary>
               <div>
-
+                <p>Chromium + Gecko MSAA/IA2: role combo box. no accName.</p>
+                <p>Chromium MSAA accState "has popup".  IA2 object attributes haspopup menu.</p>
+                <p>Gecko MSAA accState "has popup". IA2 does NOT have haspopup menu object attribute.</p>
+                <p>Chromium and Gecko both expose empty "list" child</p>
+                <p>AX exposes as AXPopUpButton</p>
               </div>
             </details>
           </div>
@@ -51,6 +55,8 @@
             <option value="option 5a">Option 5b</option>
             <option label="option 6a" title="title 6b" value="option 6c"></option>
             <option title="title 7">Option 7</option>
+            <option aria-label="aria label">Option 8</option> <!-- warning -->
+            <option aria-label="aria label" label="Option 9a">Option 9b</option> <!-- warning -->
           </select>
         </div>
         <div class="test__info">
@@ -58,7 +64,7 @@
             <details>
               <summary>results</summary>
               <div>
-
+                <p>All: Nameless select does not inherit name from first option.</p>
               </div>
             </details>
           </div>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>table elements tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+      .test__case table {
+        border: 1px solid;
+        border-spacing: 0;
+        width: 100%;
+        text-align: left;
+      }
+      .test__case tr > *:not(:last-child) {
+        border-right: 1px solid;
+      }
+      .test__case thead *,
+      .test__case tbody tr:not(:last-of-type) * {
+        border-bottom: 1px solid;
+      }
+      .test__case th,
+      .test__case td {
+        padding: .625em;
+      }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing table element</h1>
+        <div class="dates">
+          <p>Published: <span>August 4, 2019</span></p>
+        </div>
+      </header>
+
+
+			<div class="test">
+        <h2>Table with caption, th and td elements with various attributes.</h2>
+        <div class="test__case">
+          <table>
+            <caption>caption</caption>
+            <thead>
+              <tr>
+                <th>col 1: th</th>
+                <th scope="col">col 2: th /scope</th>
+                <th abbr="column 4" id="th3">col 4 w/abbr</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">row heading</th>
+                <td colspan="2">2 span cell</td>
+              </tr>
+              <tr>
+                <th scope="row" abbr="r head">row heading w/abbr</th>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td colspan="3" headers="th3">
+                  3 span cell, has headers attr.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>s</code></h2>
+        <div class="test__case">
+          <table>
+            <caption aria-label="aria caption">caption</caption>
+            <tbody>
+              <tr>
+                <th scope="row" aria-label="ARIA label">row heading</th>
+                <td colspan="2" aria-label="ARIA label">cell</td>
+              </tr>
+              <tr>
+                <th scope="row" title="title">row heading</th>
+                <td title="title">cell</td>
+              </tr>
+              <tr>
+                <th scope="row" abbr="abbreviation" aria-label="ARIA label">row heading</th>
+                <td>cell</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Table with caption (title for desc), tr element accName testing</h2>
+        <div class="test__case">
+          <table>
+            <caption title="title caption">caption</caption>
+            <tbody>
+              <tr tabindex="0">
+                <th scope="row">row heading</th>
+                <td colspan="2">cell</td>
+              </tr>
+              <tr aria-label="aria label">
+                <th scope="row">row heading</th>
+                <td title="title">cell</td>
+              </tr>
+              <tr title="title">
+                <th scope="row">row heading</th>
+                <td title="title">cell</td>
+              </tr>
+              <tr aria-label="aria label" tabindex="0">
+                <th scope="row">row heading</th>
+                <td title="title">cell</td>
+              </tr>
+              <tr title="title" tabindex="0">
+                <th scope="row">row heading</th>
+                <td title="title">cell</td>
+              </tr>
+              <tr title="title" aria-label="aria label" tabindex="0">
+                <th scope="row">row heading</th>
+                <td title="title">cell</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Table with empty caption with title attribute</h2>
+        <div class="test__case">
+          <table>
+            <caption title="title caption"></caption>
+            <tbody>
+              <tr>
+                <td>cell 1</td>
+                <td colspan="2">cell</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

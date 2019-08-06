@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Header / banner landmark test case
+		</title>
+		<style>
+			body {
+				background: #aaa;
+				font-family: arial;
+			}
+
+			#app * {
+				margin: .5em;
+			}
+
+			#app *:not(input):not(label):not(legend):not(a):not(h2):not(h1):not(p) {
+				border: 1px solid;
+			}
+
+			#app {
+				background: #fff;
+				border: 1px solid #555;
+			}
+
+			#app > header {
+				background: darkgreen;
+				color: #fff;
+			}
+
+			header {
+				background: red;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div style="background: #fff; padding: 1em 0; border: 1px solid">
+			<details>
+				<summary>Results: August 6, 2019</summary>
+				<div style="padding: 1em 1em 0">
+					<h2>JAWS 2019 (august)</h2>
+					<ul>
+						<li>With Chrome 75 exposes 2 banner landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</li>
+						<li>With Edge 77 (dev) exposes 2 banner landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</li>
+						<li>With IE11 fails to expose banner landmark. <a href="https://github.com/FreedomScientific/VFO-standards-support/issues/216">Existing bug</a> noting that if there is a wrapping <code>div id=...</code> between the <code>body</code> and the <code>header</code>, that JAWS will not correctly convert the <code>header</code> to a landmark.</li>
+						<li>With Firefox 68.0.1 exposes <strong>14 banner landmarks</strong>. This appears to potentially be an issue with both applications? Reviewing Firefox's accessibility tree <strong>some</strong> of the <code>header</code> elements are <em>not</em> exposed as landmarks, but JAWS is still treats them as such.  However, there are also many instances of <code>header</code> being improperly conveyed as a landmark in Firefox's tree.
+							<img src="firefox-a11ytree-aug2019.jpg" alt="firefox incorrectly exposing a header within a main element as a landmark role."></li>
+					</ul>
+
+					<h2>NVDA 2019.1.1</h2>
+					<ul>
+						<li>With Chrome 75 exposes 1 (correct) banner landmark.</li>
+						<li>With Edge 77 (dev) exposes 1 (correct) banner landmark.</li>
+						<li>With IE11 exposes <strong>13 banner landmarks</strong></li>
+						<li>With Firefox 68.0.1 exposes 2 banner landmarks. The first being the expected banner scoped to the body.  The second banner originates from the second <code>header</code> element that is a direct child of the <code>main</code> element.</li>
+					</ul>
+
+					<h2>macOS 10.14.5 VoiceOver with Safari 12.1.1 and iOS 12.3.1 VoiceOver</h2>
+					<p>Except for the header elements within <code>section</code>, <code>article</code> all others (12) were exposed as landmarks.</p>
+					<p><a href="https://bugs.webkit.org/show_bug.cgi?id=195010">Open Webkit bug</a></p>
+
+
+					<h2>macOS 10.14.5 VoiceOver with Chrome 75</h2>
+					<p>Exposes 2 banner landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</p>
+
+
+					<h2>TalkBack 7.3 on Android 8.1</h2>
+					<ul>
+						<li>Chrome 75 exposes 2 banner landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</li>
+						<li>
+							Firefox 68 exposed 2 or 3 banner landmarks. 1st was the expected banner landmark scoped to body. The second two were the header elements scoped to the main element. The first one of these <i>may</i> have been the main landmark, but as the role names were not announced, it is hard to tell.
+						</li>
+				</div>
+			</details>
+		</div>
+
+		<div id="app">
+			div#app
+
+			<header>
+				<h2>header scoped to body</h2>
+				<p>
+					This should be the header element
+					exposed as a banner.</p>
+			</header>
+
+			<nav>
+				<p>Nav</p>
+				<header>
+					Should not be a landmark
+				</header>
+				<a href="#">Link</a>
+			</nav>
+			<main>
+				<header>
+					Should not be a landmark
+				</header>
+				<h1>Main</h1>
+
+				<article>
+					<h2>Article</h2>
+					<header>
+						Should not be a landmark
+					</header>
+				</article>
+
+				<section>
+					<h2>Section</h2>
+					<header>
+						Should not be a landmark
+					</header>
+				</section>
+
+				<aside>
+					<h2>Aside</h2>
+					<header>
+						Should not be a landmark
+					</header>
+				</aside>
+
+				<header>
+					Should not be a landmark
+				</header>
+			</main>
+
+			<blockquote>
+				<p>Blockquote</p>
+				<header>
+					Should not be a landmark
+				</header>
+			</blockquote>
+
+			<details>
+				<summary>details/summary</summary>
+				<p>text...</p>
+				<header>
+					Should not be a landmark
+				</header>
+			</details>
+
+
+			<form>
+				<fieldset>
+					<legend>Fieldset</legend>
+					<label>
+						<input type="radio" name="f"> No
+					</label>
+					<header>
+						<label>
+							<input type="radio" name="f"> Should not be a landmark
+						</label>
+					</header>
+				</fieldset>
+			</form>
+
+
+			<figure>
+				<div>
+					Figure
+					<header>
+						Should not be a landmark
+					</header>
+				</div>
+				<figcaption>
+					Figcaption
+					<header>
+						Also should not be a landmark
+					</header>
+				</figcaption>
+			</figure>
+
+
+			<table>
+				<tr>
+					<td>
+						A table cell
+					</td>
+					<td>
+						Cell with header:
+						<header>
+							Should not be a landmark
+						</header>
+					</td>
+				</tr>
+			</table>
+
+
+			<dialog open>
+				<p>A dialog element</p>
+				<header>
+					<button>OK</button>
+					Should not be a landmark
+				</header>
+			</dialog>
+		</div>
+
+	</body>
+</html>

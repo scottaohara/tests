@@ -47,7 +47,7 @@
 						<li>With Chrome 75 exposes 2 banner landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</li>
 						<li>With Edge 77 (dev) exposes 2 banner landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</li>
 						<li>With IE11 fails to expose banner landmark. <a href="https://github.com/FreedomScientific/VFO-standards-support/issues/216">Existing bug</a> noting that if there is a wrapping <code>div</code> between the <code>body</code> and the <code>header</code>, that JAWS will not correctly convert the <code>header</code> to a landmark.</li>
-						<li>With Firefox 68.0.1 exposes <strong>14 banner landmarks</strong>. This appears to potentially be an issue with both applications? Reviewing Firefox's accessibility tree <strong>some</strong> of the <code>header</code> elements are <em>not</em> exposed as landmarks, but JAWS is still treats them as such.  However, there are also many instances of <code>header</code> being improperly conveyed as a landmark in Firefox's tree.
+						<li>With Firefox 68.0.1 exposes <strong>14 banner landmarks</strong>. This appears to potentially be an issue with both applications? Reviewing Firefox's accessibility tree <strong>some</strong> of the <code>header</code> elements are <em>not</em> exposed as landmarks, but JAWS still treats them as such.  However, there are also many instances of <code>header</code> being improperly conveyed as a landmark in Firefox's tree.
 							<img src="firefox-a11ytree-aug2019.jpg" alt="firefox incorrectly exposing a header within a main element as a landmark role."></li>
 					</ul>
 

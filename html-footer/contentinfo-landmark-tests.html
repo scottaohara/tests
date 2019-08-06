@@ -38,7 +38,47 @@
 		<div style="background: #fff; padding: 1em 0; border: 1px solid">
 			<details>
 				<summary>Results: August 6, 2019</summary>
+				<div style="padding: 1em 1em 0">
+					<h2>JAWS 2019 (august)</h2>
+					<ul>
+						<li>With Chrome 75 exposes 2 contentinfo landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</li>
+						<li>With Edge 77 (dev) exposes 2 contentinfo landmarks. The first scoped to the body, and the second within the open non-modal <code>dialog</code> element.</li>
 
+
+						<li>With IE11 fails to expose contentinfo landmark. <a href="https://github.com/FreedomScientific/VFO-standards-support/issues/216">Existing bug</a> noting that if there is a wrapping <code>div</code> between the <code>body</code> and the <code>header</code>, that JAWS will not correctly convert the <code>footer</code> to a landmark. If <code>div id=app</code> did not exist, the correct footer <strong>would</strong> be announced as a contentinfo landmark.</li>
+
+
+						<li>With Firefox 68.0.1 exposes <strong>13 contentinfo landmarks</strong>. Firefox's accessibility tree generally exposes these footers as "role: section" in their a11y tree, The <strong>exception</strong> being the footer which should be exposed as the contentinfo landmark.  This element <strong>is</strong> exposed as "role: landmark" in Firefox's a11y tree.</li>
+					</ul>
+
+					<h2>NVDA 2019.1.1</h2>
+					<ul>
+						<li>With Chrome 75 exposes 1 (correct) contentinfo landmark.</li>
+						<li>With Edge 77 (dev) exposes 1 (correct) contentinfo landmark.</li>
+						<li>With IE11 exposes <strong>13 contentinfo landmarks</strong></li>
+						<li>With Firefox 68.0.1 exposes 1 (correct) contentinfo landmark.</li>
+					</ul>
+
+					<h2>macOS 10.14.5 VoiceOver with Safari 12.1.1</h2>
+					<p>No <code>contentinfo</code> landmarks exposed. <a href="https://bugs.webkit.org/show_bug.cgi?id=190138">Webkit bug marked as fixed</a>.</p>
+					<p>Retesting with Safari Tech Preview Release 88 (Safari 13.0, WebKit 14608.1.36), three content information landmarks are exposed. 1 as a child of <code>nav</code>, another as a child of <code>dialog</code> and the last correctly scoped to <code>body</code>.</p>
+
+
+					<h2>iOS 12.3.1 VoiceOver</h2>
+					<p>Except for the footer elements within <code>section</code>, <code>article</code> all others (12) were exposed as "footer" landmarks.</p>
+
+
+					<h2>macOS 10.14.5 VoiceOver with Chrome 75</h2>
+					<p>Exposes zero contentinfo landmarks.</p>
+
+
+					<h2>TalkBack 7.3 on Android 8.1</h2>
+					<ul>
+						<li>Chrome 75 zero contentinfo landmarks.</li>
+						<li>
+							Firefox 68 exposed 2 contentinfo landmarks. The first being the <code>footer</code> at the end of the <code>main</code> element. The second being the expected contentinfo landmark where the footer is scoped to the body.
+						</li>
+				</div>
 			</details>
 		</div>
 

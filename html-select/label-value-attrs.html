@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>select/option element test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+      blockquote {
+        border-left: 4px solid;
+        margin-left: 0;
+        padding: .5em .5em .5em 1em;
+      }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing labeling <code>option</code> elements</h1>
+        <div class="dates">
+          <p>Published: <span>August 6, 2019</span></p>
+        </div>
+        <p>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">option element</a>.
+        </p>
+      </header>
+
+
+      <div class="test">
+        <h2><code>select</code> with child <code>option</code>s</h2>
+        <div class="test__case">
+<select>
+  <option>text label</option>
+  <option label="option 2" value="opt2 value"></option>
+  <option>text label</option>
+</select>
+
+<select multiple>
+  <option>text label</option>
+  <option label="option 2" value="opt2 value"></option>
+  <option>text label</option>
+</select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <p>The <code>label</code> attribute should provide user visible text for an <code>option</code>, specifically if following the first line of the HTML Living Standard's Content Model for the element:</p>
+                <blockquote>
+                  <p>If the element has a label attribute and a value attribute: Nothing</p>
+                </blockquote>
+                <p>e.g., there is no expected subtree content for the <code>option</code> element because the value and label are provided by the element's attributes.</p>
+                <p>
+                  However, a visible text label fails to load with:
+                </p>
+                <ul>
+                  <li>Firefox 68.0.1 on macOS and Windows</li>
+                  <li>iOS Safari 12.3.1</li>
+                </ul>
+                <p>
+                  Testing with IE11, Edge (pre and post chromium), Chrome (mac, Android and PC), Firefox Android, and Safari on macOS, all options render with a visible label.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>loading=lazy demo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  img { display: block; margin: 1em 0; }
+  .fail img { display: none; }
+  pre { border: 2px solid red; }
+  .fail pre { border-color: red; background: pink; }
+  .pass pre { border-color: darkgreen; background: lightgreen; }
+</style>
+</head>
+<body>
+  <p>
+    Note: this page is a fork of <a href="https://mathiasbynens.be/demo/img-loading-lazy"></a>.
+  </p>
+  <p>
+    Read more about <a href="https://addyosmani.com/blog/lazy-loading/">lazy loading content</a>.
+  </p>
+<pre><code>'loading' in HTMLImageElement.prototype === <span>false</span></code></pre>
+<script>
+  const hasSupport = 'loading' in HTMLImageElement.prototype;
+  document.documentElement.className = hasSupport ? 'pass' : 'fail';
+  document.querySelector('span').textContent = hasSupport;
+</script>
+<!--
+Quick and dirty HTML generated using Bash:
+$ for i in {400..499}; do echo "<img loading='lazy' src='https://placekitten.com/${i}/${i}' width='${i}' height='${i}' alt=''>"; done
+-->
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/400/400'
+  width='400' height='400' alt='random cat photo 1'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/401/401'
+  width='401' height='401' alt='random cat photo 2'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/402/402'
+  width='402' height='402' alt='random cat photo 3'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/403/403'
+  width='403' height='403' alt='random cat photo 4'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/404/404'
+  width='404' height='404' alt='random cat photo 5'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/405/405'
+  width='405' height='405' alt='random cat photo 6'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/406/406'
+  width='406' height='406' alt='random cat photo 7'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/407/407'
+  width='407' height='407' alt='random cat photo 8'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/408/408'
+  width='408' height='408' alt='random cat photo 9'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/409/409'
+  width='409' height='409' alt='random cat photo 10'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/410/410'
+  width='410' height='410' alt='random cat photo 11'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/411/411'
+  width='411' height='411' alt='random cat photo 12'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/412/412'
+  width='412' height='412' alt='random cat photo 13'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/413/413'
+  width='413' height='413' alt='random cat photo 14'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/414/414'
+  width='414' height='414' alt='random cat photo 15'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/415/415'
+  width='415' height='415' alt='random cat photo 16'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/416/416'
+  width='416' height='416' alt='random cat photo 17'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/417/417'
+  width='417' height='417' alt='random cat photo 18'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/418/418'
+  width='418' height='418' alt='random cat photo 19'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/419/419'
+  width='419' height='419' alt='random cat photo 20'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/420/420'
+  width='420' height='420' alt='random cat photo 21'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/421/421'
+  width='421' height='421' alt='random cat photo 22'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/422/422'
+  width='422' height='422' alt='random cat photo 23'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/423/423'
+  width='423' height='423' alt='random cat photo 24'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/424/424'
+  width='424' height='424' alt='random cat photo 25'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/425/425'
+  width='425' height='425' alt='random cat photo 26'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/426/426'
+  width='426' height='426' alt='random cat photo 27'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/427/427'
+  width='427' height='427' alt='random cat photo 28'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/428/428'
+  width='428' height='428' alt='random cat photo 29'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/429/429'
+  width='429' height='429' alt='random cat photo 30'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/430/430'
+  width='430' height='430' alt='random cat photo 31'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/431/431'
+  width='431' height='431' alt='random cat photo 32'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/432/432'
+  width='432' height='432' alt='random cat photo 33'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/433/433'
+  width='433' height='433' alt='random cat photo 34'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/434/434'
+  width='434' height='434' alt='random cat photo 35'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/435/435'
+  width='435' height='435' alt='random cat photo 36'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/436/436'
+  width='436' height='436' alt='random cat photo 37'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/437/437'
+  width='437' height='437' alt='random cat photo 38'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/438/438'
+  width='438' height='438' alt='random cat photo 39'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/439/439'
+  width='439' height='439' alt='random cat photo 40'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/440/440'
+  width='440' height='440' alt='random cat photo 41'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/441/441'
+  width='441' height='441' alt='random cat photo 42'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/442/442'
+  width='442' height='442' alt='random cat photo 43'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/443/443'
+  width='443' height='443' alt='random cat photo 44'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/444/444'
+  width='444' height='444' alt='random cat photo 45'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/445/445'
+  width='445' height='445' alt='random cat photo 46'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/446/446'
+  width='446' height='446' alt='random cat photo 47'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/447/447'
+  width='447' height='447' alt='random cat photo 48'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/448/448'
+  width='448' height='448' alt='random cat photo 49'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/449/449'
+  width='449' height='449' alt='random cat photo 50'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/450/450'
+  width='450' height='450' alt='random cat photo 51'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/451/451'
+  width='451' height='451' alt='random cat photo 52'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/452/452'
+  width='452' height='452' alt='random cat photo 53'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/453/453'
+  width='453' height='453' alt='random cat photo 54'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/454/454'
+  width='454' height='454' alt='random cat photo 55'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/455/455'
+  width='455' height='455' alt='random cat photo 56'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/456/456'
+  width='456' height='456' alt='random cat photo 57'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/457/457'
+  width='457' height='457' alt='random cat photo 58'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/458/458'
+  width='458' height='458' alt='random cat photo 59'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/459/459'
+  width='459' height='459' alt='random cat photo 60'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/460/460'
+  width='460' height='460' alt='random cat photo 61'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/461/461'
+  width='461' height='461' alt='random cat photo 62'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/462/462'
+  width='462' height='462' alt='random cat photo 63'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/463/463'
+  width='463' height='463' alt='random cat photo 64'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/464/464'
+  width='464' height='464' alt='random cat photo 65'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/465/465'
+  width='465' height='465' alt='random cat photo 66'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/466/466'
+  width='466' height='466' alt='random cat photo 67'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/467/467'
+  width='467' height='467' alt='random cat photo 68'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/468/468'
+  width='468' height='468' alt='random cat photo 69'>
+</a>
+<a href="https://placekitten.com">
+  <img loading='lazy' src='https://placekitten.com/469/469'
+  width='469' height='469' alt='random cat photo 70'>
+</a>
+</body>
+</html>

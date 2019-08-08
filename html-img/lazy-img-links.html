@@ -29,6 +29,29 @@
 Quick and dirty HTML generated using Bash:
 $ for i in {400..499}; do echo "<img loading='lazy' src='https://placekitten.com/${i}/${i}' width='${i}' height='${i}' alt=''>"; done
 -->
+
+<p>
+  A non-lazy loaded static image:
+  <img src='https://placekitten.com/400/400'
+  width='400' height='400' alt='a not-lazy loaded random cat photo'>
+</p>
+<p>
+  A non-lazy loaded image within a link:
+  <a href="https://placekitten.com">
+    <img src='https://placekitten.com/400/400'
+    width='400' height='400' alt='a not-lazy loaded random cat photo in a link'>
+  </a>
+</p>
+
+<p>
+  A lazy loaded static image:
+  <img loading='lazy' src='https://placekitten.com/400/400'
+  width='400' height='400' alt='a lazy loaded random cat photo'>
+</p>
+
+<p>
+  The following 70 links contain lazy loaded images.
+</p>
 <a href="https://placekitten.com">
   <img loading='lazy' src='https://placekitten.com/400/400'
   width='400' height='400' alt='random cat photo 1'>

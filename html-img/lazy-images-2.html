@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>loading=lazy demo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  img { display: block; margin: 1em 0; }
+  .fail img { display: none; }
+  pre { border: 2px solid red; }
+  .fail pre { border-color: red; background: pink; }
+  .pass pre { border-color: darkgreen; background: lightgreen; }
+</style>
+</head>
+<body>
+  <p>
+    Read more about <a href="https://addyosmani.com/blog/lazy-loading/">lazy loading content</a>.
+  </p>
+<pre><code>'loading' in HTMLImageElement.prototype === <span>false</span></code></pre>
+<script>
+  const hasSupport = 'loading' in HTMLImageElement.prototype;
+  document.documentElement.className = hasSupport ? 'pass' : 'fail';
+  document.querySelector('span').textContent = hasSupport;
+</script>
+
+
+<p>
+  <strong>
+    Note: there are 73 images with alt text in this document.
+  </strong>
+</p>
+<ul>
+  <li>1 standard loaded static image</li>
+  <li>1 standard loaded image within a link</li>
+  <li>1 lazy loaded static image</li>
+</ul>
+
+
+<p>
+  A standard loaded static image:
+  <img src='https://placekitten.com/400/400'
+  width='400' height='400' alt='a standard loaded random cat photo'>
+</p>
+
+<p>
+  A standard loaded image within a link:
+  <a href="https://placekitten.com">
+    <img src='https://placekitten.com/400/400'
+    width='400' height='400' alt='a standard loaded random cat photo in a link'>
+  </a>
+</p>
+
+<p>
+  A lazy loaded static image:
+  <img loading='lazy' src='https://placekitten.com/400/400'
+  width='400' height='400' alt='a lazy loaded random cat photo'>
+</p>
+
+<p>
+  A lazy loaded image within a link:
+  <a href="https://placekitten.com">
+    <img loading="lazy" src='https://placekitten.com/400/400'
+    width='400' height='400' alt='a standard loaded random cat photo in a link'>
+  </a>
+</p>
+
+</body>
+</html>

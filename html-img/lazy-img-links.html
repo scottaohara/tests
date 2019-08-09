@@ -31,12 +31,24 @@ $ for i in {400..499}; do echo "<img loading='lazy' src='https://placekitten.com
 -->
 
 <p>
-  A non-lazy loaded static image:
+  <strong>
+    Note: there are 73 images with alt text in this document.
+  </strong>
+</p>
+<ul>
+  <li>1 standard loaded static image</li>
+  <li>1 standard loaded image within a link</li>
+  <li>1 lazy loaded static image</li>
+  <li>70 lazy loaded images within links</li>
+</ul>
+
+<p>
+  A standard loaded static image:
   <img src='https://placekitten.com/400/400'
   width='400' height='400' alt='a not-lazy loaded random cat photo'>
 </p>
 <p>
-  A non-lazy loaded image within a link:
+  A standard loaded image within a link:
   <a href="https://placekitten.com">
     <img src='https://placekitten.com/400/400'
     width='400' height='400' alt='a not-lazy loaded random cat photo in a link'>

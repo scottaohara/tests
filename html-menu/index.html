@@ -13,7 +13,6 @@
         outline: 2px solid;
         outline-offset: 3px;
       }
-
       li {
         padding: .325em 0;
       }
@@ -38,8 +37,8 @@
       <header>
         <h1>The <code>menu</code> element</h1>
         <div class="dates">
-          <p>Published: <time>June 5, 2019</time></p>
-          <p>Last Updated: <time>July 20, 2019</time></p>
+          <p>Published: <span>June 5, 2019</span></p>
+          <p>Last Updated: <span>August 10, 2019</span></p>
         </div>
         <p>
           Note: <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element"><code>menu</code></a> does not allow direct children other than <code>li</code> elements.
@@ -82,15 +81,18 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                          <div>Chromium: Element ignored/not mapped.</div><div>Gecko: Text frame<br></div></td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                          Chromium: Element ignored/not mapped.<br>Gecko: accRole 'menu' (element name)</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                          Element ignored/not mapped.</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
@@ -154,15 +156,18 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                        Chromium: Element ignored/not mapped.&nbsp; List items mapped (list item) with no list container.<br>Gecko: Text frame. List items mapped as 'text frame'.<br></td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                        Chromium: Element ignored/not mapped.&nbsp; List items mapped (list item) with no list container.<br>Gecko: accRole 'menu' (element name). List items mapped as 'li' (element name).<br></td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                        Element ignored/not mapped.&nbsp; List items mapped (UIA_ListItem) with no list container.<br></td>
                       </tr>
                       <tr>
                         <th>ATK</th>
@@ -228,15 +233,18 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                        Chromium: Element ignored/not mapped.&nbsp; List items mapped (list item) with no list container. Child link and buttons have standard mappings.<br>Gecko: Text frame. List items mapped as 'text frame'.&nbsp; Child link and buttons have standard mappings.<br></td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                        Chromium: Element ignored/not mapped.&nbsp; List items mapped (list item) with no list container. Child link and buttons with standard mappings.<br>Gecko: accRole 'menu' (element name). List items mapped as 'li' (element name). Child link and buttons have standard mappings.</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                        Element ignored/not mapped.&nbsp; List items mapped (UIA_ListItem) with no list container. Child link and buttons with standard mappings.</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
@@ -305,15 +313,18 @@
                       </tr>
                       <tr>
                         <th>IA2</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">Chromium: Element ignored/not mapped.&nbsp; List items mapped (list item) with no list
+container. Child buttons have standard mappings.<br>Gecko: Text frame. List items mapped as 'text frame'.&nbsp; Child buttons have standard mappings.</td>
                       </tr>
                       <tr>
                         <th>MSAA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">Chromium: Element ignored/not mapped.&nbsp; List items mapped (list item) with no list
+container. Child buttons have standard mappings.<br>Gecko: accRole 'menu' (element name). List items mapped as 'li' (element name). Child buttons have standard mappings.</td>
                       </tr>
                       <tr>
                         <th>UIA</th>
-                        <td contenteditable=true>...</td>
+                        <td contenteditable="true">
+                        Element ignored/not mapped.&nbsp; List items mapped (UIA_ListItem) with no list container. Child buttons have standard mappings.</td>
                       </tr>
                       <tr>
                         <th>ATK</th>
@@ -333,7 +344,7 @@
                 <p>Notes:</p>
                 <ul>
                   <li>macOS VoiceOver w/Safari or Chrome do not expose this pattern as a list</li>
-
+                  <li>JAWS exposes each list item as individual lists containing a single list item</li>
                 </ul>
               </div>
             </details>

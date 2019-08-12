@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>aria-owns tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing aria-owns</h1>
+        <div class="dates">
+          <p>Published: <span>August 12, 2019</span></p>
+          <!-- <p>Last Updated: <span>...</span></p> -->
+        </div>
+      </header>
+      <div class="test">
+        <h2>div role=banner with aria-owns</h2>
+        <div class="test__case">
+          <div role="banner" aria-owns="bref">
+            Content within banner.
+          </div>
+          <p>
+            <a href="#!">link outside of banner and owned element</a>
+          </p>
+          <div id="bref">
+            Element "owned" by the banner.
+          </div>
+        </div>
+
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>label with aria-owns</h2>
+        <div class="test__case">
+          <label aria-owns="lref" for="d">
+            Name
+          </label>
+          <input type="text" id="d">
+          <p>
+            <a href="#!">link outside of label and owned element</a>
+          </p>
+          <div id="lref">
+            Element "owned" by the label.
+          </div>
+        </div>
+
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>table elements tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+      .test__case table {
+        border: 1px solid;
+        border-spacing: 0;
+        width: 100%;
+        text-align: left;
+      }
+      .test__case tr > *:not(:last-child) {
+        border-right: 1px solid;
+      }
+      .test__case thead *,
+      .test__case tbody tr:not(:last-of-type) * {
+        border-bottom: 1px solid;
+      }
+      .test__case th,
+      .test__case td {
+        padding: .625em;
+      }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing table element</h1>
+        <div class="dates">
+          <p>Published: <span>August 13, 2019</span></p>
+        </div>
+      </header>
+
+
+			<div class="test">
+        <h2>Table with caption, some cells are empty.</h2>
+        <div class="test__case">
+          <table>
+            <caption>Food stuffs</caption>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Vegetable</th>
+                <th>Fruit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Sammy</th>
+                <td>Carrots</td>
+                <td>Apples</td>
+              </tr>
+              <tr>
+                <th scope="row">Tammy</th>
+                <td>Red pepper</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Jammy
+                </th>
+                <td></td>
+                <td>
+                  Grapes
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

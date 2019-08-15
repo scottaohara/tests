@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>select element tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing the <code>select</code> element variations</h1>
+        <div class="dates">
+          <p>Published: <span>August 15, 2019</span></p>
+        </div>
+        <p>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">HTML select element</a>
+        </p>
+      </header>
+
+
+			<div class="test">
+        <h2>Standard <code>select</code> with 3 options</h2>
+        <div class="test__case">
+          <div>
+            <label for="s1">Standard Rendering</label>
+          </div>
+          <select id="s1">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2><code>select</code> width <code>multiple</code> attribute, and with 3 options</h2>
+        <div class="test__case">
+          <div>
+            <label for="s2">Multiple attr</label>
+          </div>
+          <select id="s2" multiple>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with <code>size=1</code> attribute, and with 3 options</h2>
+        <div class="test__case">
+          <div>
+            <label for="s4">size 1</label>
+          </div>
+          <select id="s4" size="1">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Standard <code>select</code> with <code>size=2</code> attribute, and with 3 options</h2>
+        <div class="test__case">
+          <div>
+            <label for="s5">size 2</label>
+          </div>
+          <select id="s5" size="2">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with <code>multiple</code> and <code>size=1</code> attribute, and with 3 options</h2>
+        <div class="test__case">
+          <div>
+            <label for="sms">Multiple and size 1</label>
+          </div>
+          <select id="sms" multiple="" size="1">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

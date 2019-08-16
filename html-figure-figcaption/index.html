@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing figure and figcaption</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>figure</code> and <code>figcaption</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <span>August 15th, 2019</span></p>
+          <!-- <p>Last Updated: <span>xxx, 2019</span></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>figure</code> with no <code>figcaption</code></h2>
+        <div class="test__case">
+          <figure>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>figure</code> with no <code>figcaption</code> and an <code>aria-label</code></h2>
+        <div class="test__case">
+          <figure aria-label="ARIA label">
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with no <code>figcaption</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <figure title="title">
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with no <code>figcaption</code> and an <code>aria-label</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <figure aria-label="ARIA label" title="title">
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code> and an <code>aria-label</code></h2>
+        <div class="test__case">
+          <figure aria-label="ARIA label">
+            <figcaption>figcaption</figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code> and an <code>aria-label</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <figure aria-label="ARIA label" title="title">
+            <figcaption>figcaption</figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code> and a <code>title</code></h2>
+        <div class="test__case">
+          <figure title="title">
+            <figcaption>figcaption</figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code></h2>
+        <div class="test__case">
+          <figure>
+            <figcaption>figcaption</figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code> which has a <code>title</code></h2>
+        <div class="test__case">
+          <figure>
+            <figcaption title="title">figcaption</figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code> which has an <code>aria-label</code></h2>
+        <div class="test__case">
+          <figure>
+            <figcaption aria-label="ARIA label">figcaption</figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  ...
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code> which has an <code>aria-label</code> and no inner text</h2>
+        <div class="test__case">
+          <figure>
+            <figcaption aria-label="ARIA label"></figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  ...
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>figure</code> with a <code>figcaption</code> which has a <code>title</code> and no inner text</h2>
+        <div class="test__case">
+          <figure>
+            <figcaption title="title"></figcaption>
+            <img src="../-assets/search.jpg" alt="search icon">
+          </figure>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  ...
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

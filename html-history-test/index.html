@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>History testing</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+        <h1>Testing updating a browser's history</h1>
+        <div class="dates">
+          <p>Published: <span>August 20, 2019</span></p>
+        </div>
+      </header>
+
+			<div class="test">
+				<h2>Activate a link to inject content and update history</h2>
+				<div class="test__case">
+
+					<div id="content-area">
+						<p>
+						Initial content goes here</p>
+						<p><a href="#!" style="margin-bottom: 1em;" id="link">link to test</a></p>
+					</div>
+					<script>
+						var link = document.getElementById('link');
+						var content = document.getElementById('content-area');
+						let stateObj = {
+						    test: '<h2 tabindex="-1">test page</h2><p>test page content</p><p>the following link has standard link behavior</p><a href="index.html">return to index page</a>'
+						};
+
+						link.addEventListener('click', function ( e ) {
+							e.preventDefault();
+							content.innerHTML = stateObj.test
+							history.pushState(stateObj, 'My test page', 'test.html');
+							content.querySelector('h2').focus();
+						});
+					</script>
+				</div>
+				<div class="test__info">
+          <div class="test__info__results"></div>
+        </div>
+			</div>
+
+		</div> <!-- /#app -->
+
+		<script src="../-assets/shared.js"></script>
+	</body>
+</html>

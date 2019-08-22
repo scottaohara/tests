@@ -21,9 +21,23 @@
 
 
       <div class="test">
-        <h2><code>a</code> with no <code>href</code></h2>
+        <h2><code>a</code> with <code>aria-disabled="true"</code></h2>
         <div class="test__case">
           <a href="#!" aria-disabled="true">My anchor</a>
+        </div>
+        <div class="test__info">
+          <div class="text__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>macOS/iOS Safari and Chrome with VoiceOver announces "dimmed"</li>
+                  <li>Firefox, Chrome, IE11, Edge with NVDA announces "unavailable"</li>
+                  <li>Firefox, Chrome, IE11, Edge with JAWS announces "unavailable"</li>
+                </ul>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
 

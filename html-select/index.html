@@ -15,6 +15,7 @@
         <h1>Testing the <code>select</code> element</h1>
         <div class="dates">
           <p>Published: <span>August 3, 2019</span></p>
+          <p>Updated: <span>August 23, 2019</span></p>
         </div>
         <p>
           <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">option element</a>.
@@ -268,6 +269,28 @@
           <select aria-label="ARIA label">
             <option>option 1</option>
             <option label="option 2a">Option 2b</option>
+          </select>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+           <!--  <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>select</code> with <code>aria-labelledby</code> and <code>title</code> attributes, and with child <code>option</code>s</h2>
+        <div class="test__case">
+          <p id="a">Labelled by</p>
+          <select aria-labelledby="a">
+            <option>option 1</option>
+            <option>option 2</option>
           </select>
         </div>
         <div class="test__info">

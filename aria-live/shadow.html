@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing aria live in the light and shadows</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>A test of the light and shadow</h1>
+
+      <template id="ex">
+        <slot name="insert"></slot>
+        <span class="s"> and shadow content.</span>
+      </template>
+
+      <div class="test">
+        <h2>Using <code>aria-atomic=false</code> to only announce changed content</h2>
+        <div class="test__case">
+          <p role="status" aria-atomic="false">
+            <my-status class="f1">
+              <span slot="insert">Light content</span>
+            </my-status>
+          </p>
+          <button id="a">Update light</button>
+          <button id="b">Update shadow</button>
+          <button id="c">Update both</button>
+        </div>
+      </div>
+      <div class="test">
+        <h2>How the live region works w/out <code>aria-atomic=false</code></h2>
+        <div class="test__case">
+          <p role="status">
+            <my-status class="f2">
+              <span slot="insert">Light content</span>
+            </my-status>
+          </p>
+          <button id="d">Update light</button>
+          <button id="e">Update shadow</button>
+          <button id="f">Update both</button>
+        </div>
+      </div>
+
+
+      <script>
+      var a = document.getElementById('a');
+      var b = document.getElementById('b');
+      var c = document.getElementById('c');
+      var d = document.getElementById('d');
+      var e = document.getElementById('e');
+      var f = document.getElementById('f');
+
+      customElements.define('my-status', class extends HTMLElement {
+        constructor() {
+          super();
+          const template = document.getElementById('ex').content;
+          const shadowRoot = this.attachShadow({mode: 'open'});
+          shadowRoot.appendChild(template.cloneNode(true));
+        }
+      });
+
+      var status1 = document.querySelector('.f1');
+      var statusSpan1 = status1.querySelector('span[slot]');
+      var shadowSpan1 = status1.shadowRoot.querySelector('.s');
+
+      a.addEventListener('click', function () {
+        statusSpan1.textContent = 'Updated light';
+      });
+
+      b.addEventListener('click', function () {
+        shadowSpan1.textContent = 'Updated shadow';
+      });
+
+      c.addEventListener('click', function () {
+        statusSpan1.textContent = 'Updated light, and also';
+        shadowSpan1.textContent = 'an updated shadow';
+      });
+
+      var status2 = document.querySelector('.f2');
+      var statusSpan2 = status2.querySelector('span[slot]');
+      var shadowSpan2 = status2.shadowRoot.querySelector('.s');
+
+      d.addEventListener('click', function () {
+        statusSpan2.textContent = 'Updated light';
+      });
+
+      e.addEventListener('click', function () {
+        shadowSpan2.textContent = 'Updated shadow';
+      });
+
+      f.addEventListener('click', function () {
+        statusSpan2.textContent = 'Updated light, and also';
+        shadowSpan2.textContent = 'an updated shadow';
+      });
+      </script>
+
+
+      <!--
+        Expectations would be that both the content from the light and shadow dom should be announced.
+      -->
+    </div>
+  </body>
+</html>

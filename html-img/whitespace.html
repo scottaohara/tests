@@ -29,18 +29,26 @@
     <div id="app">
       <header>
         <h1>
-          Images with white space alt and aria-labels
+          Testing images with white space <code>alt</code> and <code>aria-label</code>s
         </h1>
         <div class="dates">
           <p>Published: <span>August 30, 2019</span></p>
           <!-- <p>Last Updated: <span>..., 2019</span></p> -->
         </div>
         <p>
-          Expectation: Images with <code>alt=" "</code> should be treated as <code>alt=""</code> or <code>alt</code> and should be treated as decorative.
+          Expectation:
         </p>
-        <p>
-          Images with <code>aria-label=""</code> or <code>aria-label=" "</code> should not receive a name. If they are exposed, it should be as the image's file name, as these examples have no <code>alt</code>.
-        </p>
+        <ul>
+          <li>
+            Images with <code>alt=" "</code>, <code>alt=""</code> or <code>alt</code> should receive no accessible name from the attribute.
+          </li>
+          <li>
+            Images with <code>aria-label=""</code> or <code>aria-label=" "</code> should receive no accessible name from the attribute.
+          </li>
+          <li>
+            Receiving no accessible name from <code>alt</code> or <code>aria-label</code>, all images should receive their accessible name from their <code>title</code> attribute.
+          </li>
+        </ul>
       </header>
 
 
@@ -48,14 +56,14 @@
         <h2>Control: <code>alt</code> with empty string</h2>
         <div class="test__case">
 <img src="https://placekitten.com/200/200"
-width="200" height="200" alt="">
+width="200" height="200" alt=""  title="title 1">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details style="display: none">
               <summary>results</summary>
               <div>
-                <p>Image should be ignored.</p>
+                <p>Image should have name of "title 1".</p>
                 <ul>
                   <!-- Windows -->
                   <li class="pass"><strong>Chrome:</strong> pass. No name. Ignored by screen readers.</li>
@@ -82,14 +90,14 @@ width="200" height="200" alt="">
         <h2><code>alt</code> with single whitespace</h2>
         <div class="test__case">
 <img src="https://placekitten.com/220/220"
-width="200" height="200" alt=" ">
+width="200" height="200" alt=" "  title="title 2">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details style="display: none">
               <summary>results</summary>
               <div>
-                <p>Image should be ignored.</p>
+                <p>Image should have name of "title 2".</p>
                 <ul>
                   <!-- Windows -->
                   <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
@@ -115,14 +123,14 @@ width="200" height="200" alt=" ">
         <h2><code>alt</code> with multiple whitespace characters</h2>
         <div class="test__case">
 <img src="https://placekitten.com/300/300"
-width="200" height="200" alt="    ">
+width="200" height="200" alt="    "  title="title 3">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details style="display: none">
               <summary>results</summary>
               <div>
-                <p>Image should be ignored.</p>
+                <p>Image should have name of "title 3".</p>
                 <ul>
                   <!-- Windows -->
                   <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
@@ -149,14 +157,14 @@ width="200" height="200" alt="    ">
         <h2>No <code>alt</code>, but <code>aria-label</code> with whitespace character</h2>
         <div class="test__case">
 <img src="https://placekitten.com/300/300"
-width="200" height="200" aria-label=" ">
+width="200" height="200" aria-label=" "  title="title 4">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details style="display: none">
               <summary>results</summary>
               <div>
-                <p>Image should have no accessible name or should be announced as its file name.</p>
+                <p>Image should have name of "title 4".</p>
                 <ul>
                   <!-- Windows -->
                   <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
@@ -183,27 +191,27 @@ width="200" height="200" aria-label=" ">
         <h2>No <code>alt</code>, but <code>aria-label</code> with empty string</h2>
         <div class="test__case">
 <img src="https://placekitten.com/300/300"
-width="200" height="200" aria-label="">
+width="200" height="200" aria-label=""  title="title 5">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details>
+            <details style="display: none">
               <summary>results</summary>
               <div>
-                <p>Image should have no accessible name or should be announced as its file name.</p>
+                <p>Image should have name of "title 5".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class="pass"><strong>Chrome:</strong> name exposed as "To get missing image description, open the context menu."</li>
-                  <li class=""><strong>Firefox:</strong></li>
+                  <li class="pass"><strong>Chrome:</strong> pass.</li>
+                  <li class="pass"><strong>Firefox:</strong> pass.</li>
                   <li class=""><strong>IE11:</strong></li>
 
                   <!-- macOS/iOS -->
-                  <li class="pass"><strong>macOS Safari:</strong> pass. Image announced as file name.</li>
-                  <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class="pass"><strong>iOS Safari:</strong> pass. Image announced as file name.</li>
+                  <li class="pass"><strong>macOS Safari:</strong> pass.</li>
+                  <li class="pass"><strong>macOS Chrome:</strong> pass.</li>
+                  <li class="pass"><strong>iOS Safari:</strong> pass.</li>
 
                   <!-- Android -->
-                  <li class="pass"><strong>Android Chrome:</strong> pass. Announced as its file name by TalkBack.</li>
+                  <li class="pass"><strong>Android Chrome:</strong> pass.</li>
                   <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
                 </ul>
               </div>

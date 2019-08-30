@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>images with white space alt and aria-labels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      .test__info__results li {
+        padding: .3em;
+      }
+
+      .test__info__results li::marker {
+        color: #000;
+      }
+
+      .test__info__results .fail {
+        background-color: darkred;
+        color: #fff;
+      }
+
+      .test__info__results .pass {
+        background-color: green;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          Images with white space alt and aria-labels
+        </h1>
+        <div class="dates">
+          <p>Published: <span>August 30, 2019</span></p>
+          <!-- <p>Last Updated: <span>..., 2019</span></p> -->
+        </div>
+        <p>
+          Expectation: Images with <code>alt=" "</code> should be treated as <code>alt=""</code> or <code>alt</code> and should be treated as decorative.
+        </p>
+        <p>Images with <code>aria-label=""</code> or <code>aria-label=" "</code>
+      </header>
+
+
+      <div class="test">
+        <h2>Control: <code>alt</code> with empty string</h2>
+        <div class="test__case">
+<img src="https://placekitten.com/200/200"
+width="200" height="200" alt="">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Image should be ignored.</p>
+                <ul>
+                  <!-- Windows -->
+                  <li class=""><strong>Chrome:</strong></li>
+                  <li class=""><strong>Firefox:</strong></li>
+                  <li class=""><strong>IE11:</strong></li>
+
+                  <!-- macOS -->
+                  <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
+                  <li class=""><strong>iOS Safari:</strong></li>
+
+                  <!-- Android -->
+                  <li class=""><strong>Android Chrome:</strong></li>
+                  <li class=""><strong>Android Firefox:</strong></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>alt</code> with single whitespace</h2>
+        <div class="test__case">
+<img src="https://placekitten.com/220/220"
+width="200" height="200" alt=" ">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Image should be ignored.</p>
+                <ul>
+                  <!-- Windows -->
+                  <li class=""><strong>Chrome:</strong></li>
+                  <li class=""><strong>Firefox:</strong></li>
+                  <li class=""><strong>IE11:</strong></li>
+
+                  <!-- macOS/iOS -->
+                  <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
+                  <li class=""><strong>iOS Safari:</strong></li>
+
+                  <!-- Android -->
+                  <li class=""><strong>Android Chrome:</strong></li>
+                  <li class=""><strong>Android Firefox:</strong></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>alt</code> with multiple whitespace characters</h2>
+        <div class="test__case">
+<img src="https://placekitten.com/300/300"
+width="200" height="200" alt="    ">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Image should be ignored.</p>
+                <ul>
+                  <!-- Windows -->
+                  <li class=""><strong>Chrome:</strong></li>
+                  <li class=""><strong>Firefox:</strong></li>
+                  <li class=""><strong>IE11:</strong></li>
+
+                  <!-- macOS -->
+                  <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
+                  <li class=""><strong>iOS Safari:</strong></li>
+
+                  <!-- Android -->
+                  <li class=""><strong>Android Chrome:</strong></li>
+                  <li class=""><strong>Android Firefox:</strong></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+       <div class="test">
+        <h2>No <code>alt</code>, but <code>aria-label</code> with whitespace character</h2>
+        <div class="test__case">
+<img src="https://placekitten.com/300/300"
+width="200" height="200" aria-label=" ">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Image should have no accessible name or be announced as its file name.</p>
+                <ul>
+                  <!-- Windows -->
+                  <li class=""><strong>Chrome:</strong></li>
+                  <li class=""><strong>Firefox:</strong></li>
+                  <li class=""><strong>IE11:</strong></li>
+
+                  <!-- macOS -->
+                  <li class="fail"><strong>macOS Safari:</strong> fail, image announced with name "space".</li>
+                  <li class=""><strong>iOS Safari:</strong></li>
+
+                  <!-- Android -->
+                  <li class=""><strong>Android Chrome:</strong></li>
+                  <li class=""><strong>Android Firefox:</strong></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>No <code>alt</code>, but <code>aria-label</code> with empty string</h2>
+        <div class="test__case">
+<img src="https://placekitten.com/300/300"
+width="200" height="200" aria-label="">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Image should have no accessible name or be announced as its file name.</p>
+                <ul>
+                  <!-- Windows -->
+                  <li class=""><strong>Chrome:</strong></li>
+                  <li class=""><strong>Firefox:</strong></li>
+                  <li class=""><strong>IE11:</strong></li>
+
+                  <!-- macOS -->
+                  <li class="pass"><strong>macOS Safari:</strong> pass, image announced as file name.</li>
+                  <li class=""><strong>iOS Safari:</strong></li>
+
+                  <!-- Android -->
+                  <li class=""><strong>Android Chrome:</strong></li>
+                  <li class=""><strong>Android Firefox:</strong></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <script>
+        var check = document.getElementById('show');
+        var tests = document.querySelectorAll('img');
+        // reset on page refresh just in case
+        check.checked = false;
+
+        check.addEventListener('change', function () {
+          for ( var i = 0; i < tests.length; i++ ) {
+            if ( check.checked === true ) {
+              tests[i].classList.add('test-size');
+            }
+            else {
+              tests[i].classList.remove('test-size');
+            }
+          }
+        });
+      </script>
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

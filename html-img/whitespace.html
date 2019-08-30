@@ -58,18 +58,18 @@ width="200" height="200" alt="">
                 <p>Image should be ignored.</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong></li>
-                  <li class=""><strong>Firefox:</strong></li>
+                  <li class="pass"><strong>Chrome:</strong> pass. No name. Ignored by screen readers.</li>
+                  <li class="pass"><strong>Firefox:</strong> No name. Ignored by screen readers.</li>
                   <li class=""><strong>IE11:</strong></li>
 
-                  <!-- macOS -->
+                  <!-- macOS/iOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
                   <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class=""><strong>iOS Safari:</strong></li>
+                  <li class="pass"><strong>iOS Safari:</strong> pass. ignored</li>
 
                   <!-- Android -->
-                  <li class=""><strong>Android Chrome:</strong></li>
-                  <li class=""><strong>Android Firefox:</strong></li>
+                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
+                  <li class="pass"><strong>Android Firefox:</strong> pass. Ignored by TalkBack.</li>
                 </ul>
               </div>
             </details>
@@ -92,18 +92,18 @@ width="200" height="200" alt=" ">
                 <p>Image should be ignored.</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong></li>
-                  <li class=""><strong>Firefox:</strong></li>
+                  <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
+                  <li class="fail"><strong>Firefox:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
                   <li class=""><strong>IE11:</strong></li>
 
                   <!-- macOS/iOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
                   <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class=""><strong>iOS Safari:</strong></li>
+                  <li class="pass"><strong>iOS Safari:</strong> pass. ignored</li>
 
                   <!-- Android -->
-                  <li class=""><strong>Android Chrome:</strong></li>
-                  <li class=""><strong>Android Firefox:</strong></li>
+                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
+                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
                 </ul>
               </div>
             </details>
@@ -125,18 +125,18 @@ width="200" height="200" alt="    ">
                 <p>Image should be ignored.</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong></li>
-                  <li class=""><strong>Firefox:</strong></li>
+                  <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
+                  <li class="fail"><strong>Firefox:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
                   <li class=""><strong>IE11:</strong></li>
 
-                  <!-- macOS -->
+                  <!-- macOS/iOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
                   <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class=""><strong>iOS Safari:</strong></li>
+                  <li class="pass"><strong>iOS Safari:</strong> pass. ignored</li>
 
                   <!-- Android -->
-                  <li class=""><strong>Android Chrome:</strong></li>
-                  <li class=""><strong>Android Firefox:</strong></li>
+                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
+                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
                 </ul>
               </div>
             </details>
@@ -159,18 +159,18 @@ width="200" height="200" aria-label=" ">
                 <p>Image should have no accessible name or be announced as its file name.</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong></li>
-                  <li class=""><strong>Firefox:</strong></li>
+                  <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
+                  <li class="pass"><strong>Firefox:</strong> pass. Whitespace is trimmed from <code>aria-label</code>, no name is provided.</li>
                   <li class=""><strong>IE11:</strong></li>
 
-                  <!-- macOS -->
-                  <li class="fail"><strong>macOS Safari:</strong> fail, image announced with name "space".</li>
+                  <!-- macOS/iOS -->
+                  <li class="fail"><strong>macOS Safari:</strong> fail. Image announced with name "space".</li>
                   <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class=""><strong>iOS Safari:</strong></li>
+                  <li class="fail"><strong>iOS Safari:</strong> fail. Nameless image exposed.</li>
 
                   <!-- Android -->
-                  <li class=""><strong>Android Chrome:</strong></li>
-                  <li class=""><strong>Android Firefox:</strong></li>
+                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
+                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
                 </ul>
               </div>
             </details>
@@ -193,18 +193,18 @@ width="200" height="200" aria-label="">
                 <p>Image should have no accessible name or be announced as its file name.</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong></li>
+                  <li class="pass"><strong>Chrome:</strong> name exposed as "To get missing image description, open the context menu."</li>
                   <li class=""><strong>Firefox:</strong></li>
                   <li class=""><strong>IE11:</strong></li>
 
-                  <!-- macOS -->
-                  <li class="pass"><strong>macOS Safari:</strong> pass, image announced as file name.</li>
+                  <!-- macOS/iOS -->
+                  <li class="pass"><strong>macOS Safari:</strong> pass. Image announced as file name.</li>
                   <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class=""><strong>iOS Safari:</strong></li>
+                  <li class="pass"><strong>iOS Safari:</strong> pass. Image announced as file name.</li>
 
                   <!-- Android -->
-                  <li class=""><strong>Android Chrome:</strong></li>
-                  <li class=""><strong>Android Firefox:</strong></li>
+                  <li class="pass"><strong>Android Chrome:</strong> pass. Announced as its file name by TalkBack.</li>
+                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
                 </ul>
               </div>
             </details>

@@ -8,6 +8,7 @@
     <style>
       .test__info__results li {
         padding: .3em;
+        margin-bottom: 2px;
       }
 
       .test__info__results li::marker {
@@ -66,9 +67,8 @@ width="200" height="200" alt=""  title="title 1">
                 <p>Image should have name of "title 1".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong> </li>
-                  <li class=""><strong>Firefox:</strong> </li>
-                  <li class=""><strong>IE11:</strong></li>
+                  <li class="fail"><strong>Chrome:</strong> fail. Ignored. (ignored by JAWS and NVDA).</li>
+                  <li class="pass"><strong>Firefox:</strong> pass.</li>
 
                   <!-- macOS/iOS -->
                   <li class="fail"><strong>macOS Safari:</strong> fail. Ignored.</li>
@@ -100,9 +100,8 @@ width="200" height="200" alt=" "  title="title 2">
                 <p>Image should have name of "title 2".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong> </li>
-                  <li class=""><strong>Firefox:</strong> </li>
-                  <li class=""><strong>IE11:</strong></li>
+                  <li class="fail"><strong>Chrome:</strong> fail. Named by whitespace. (ignored by JAWS)</li>
+                  <li class="fail"><strong>Firefox:</strong> fail. Named by whitespace. (ignored by JAWS)</li>
 
                   <!-- macOS/iOS -->
                   <li class="fail"><strong>macOS Safari:</strong> fail. Ignored.</li>
@@ -133,9 +132,8 @@ width="200" height="200" alt="    "  title="title 3">
                 <p>Image should have name of "title 3".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong> </li>
-                  <li class=""><strong>Firefox:</strong> </li>
-                  <li class=""><strong>IE11:</strong></li>
+                  <li class="fail"><strong>Chrome:</strong> fail. Named by whitespace. (ignored by JAWS)</li>
+                  <li class="fail"><strong>Firefox:</strong> fail. Named by whitespace. (ignored by JAWS)</li>
 
                   <!-- macOS/iOS -->
                   <li class="fail"><strong>macOS Safari:</strong> fail. Ignored.</li>
@@ -167,9 +165,8 @@ width="200" height="200" aria-label=" "  title="title 4">
                 <p>Image should have name of "title 4".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong> </li>
-                  <li class=""><strong>Firefox:</strong> </li>
-                  <li class=""><strong>IE11:</strong></li>
+                  <li class="fail"><strong>Chrome:</strong> fail. Named by whitespace. (ignored by JAWS)</li>
+                  <li class="pass"><strong>Firefox:</strong> pass.</li>
 
                   <!-- macOS/iOS -->
                   <li class="fail"><strong>macOS Safari:</strong> fail. Named by whitespace. VoiceOver announces name as "space".</li>
@@ -201,9 +198,8 @@ width="200" height="200" aria-label=""  title="title 5">
                 <p>Image should have name of "title 5".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class=""><strong>Chrome:</strong> </li>
-                  <li class=""><strong>Firefox:</strong> </li>
-                  <li class=""><strong>IE11:</strong></li>
+                  <li class="pass"><strong>Chrome:</strong> pass.</li>
+                  <li class="pass"><strong>Firefox:</strong> pass.</li>
 
                   <!-- macOS/iOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass.</li>

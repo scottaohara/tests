@@ -60,24 +60,24 @@ width="200" height="200" alt=""  title="title 1">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details style="display: none">
+            <details open>
               <summary>results</summary>
               <div>
                 <p>Image should have name of "title 1".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class="pass"><strong>Chrome:</strong> pass. No name. Ignored by screen readers.</li>
-                  <li class="pass"><strong>Firefox:</strong> No name. Ignored by screen readers.</li>
+                  <li class=""><strong>Chrome:</strong> </li>
+                  <li class=""><strong>Firefox:</strong> </li>
                   <li class=""><strong>IE11:</strong></li>
 
                   <!-- macOS/iOS -->
-                  <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
-                  <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class="pass"><strong>iOS Safari:</strong> pass. ignored</li>
+                  <li class="fail"><strong>macOS Safari:</strong> fail. Ignored.</li>
+                  <li class="pass"><strong>macOS Chrome:</strong> pass.</li>
+                  <li class="fail"><strong>iOS Safari:</strong> fail. Ignored.</li>
 
                   <!-- Android -->
-                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
-                  <li class="pass"><strong>Android Firefox:</strong> pass. Ignored by TalkBack.</li>
+                  <li class="fail"><strong>Android Chrome:</strong> fail. Ignored by TalkBack.</li>
+                  <li class="pass"><strong>Android Firefox:</strong> pass.</li>
                 </ul>
               </div>
             </details>
@@ -94,24 +94,24 @@ width="200" height="200" alt=" "  title="title 2">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details style="display: none">
+            <details open>
               <summary>results</summary>
               <div>
                 <p>Image should have name of "title 2".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
-                  <li class="fail"><strong>Firefox:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
+                  <li class=""><strong>Chrome:</strong> </li>
+                  <li class=""><strong>Firefox:</strong> </li>
                   <li class=""><strong>IE11:</strong></li>
 
                   <!-- macOS/iOS -->
-                  <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
-                  <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class="pass"><strong>iOS Safari:</strong> pass. ignored</li>
+                  <li class="fail"><strong>macOS Safari:</strong> fail. Ignored.</li>
+                  <li class="fail"><strong>macOS Chrome:</strong> fail. Named by whitespace.</li>
+                  <li class="fail"><strong>iOS Safari:</strong> fail. Ignored.</li>
 
                   <!-- Android -->
-                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
-                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
+                  <li class="fail"><strong>Android Chrome:</strong> fail. Ignored by TalkBack.</li>
+                  <li class="fail"><strong>Android Firefox:</strong> fail. Named by whitespace.</li>
                 </ul>
               </div>
             </details>
@@ -127,24 +127,24 @@ width="200" height="200" alt="    "  title="title 3">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details style="display: none">
+            <details open>
               <summary>results</summary>
               <div>
                 <p>Image should have name of "title 3".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
-                  <li class="fail"><strong>Firefox:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
+                  <li class=""><strong>Chrome:</strong> </li>
+                  <li class=""><strong>Firefox:</strong> </li>
                   <li class=""><strong>IE11:</strong></li>
 
                   <!-- macOS/iOS -->
-                  <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
-                  <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class="pass"><strong>iOS Safari:</strong> pass. ignored</li>
+                  <li class="fail"><strong>macOS Safari:</strong> fail. Ignored.</li>
+                  <li class="fail"><strong>macOS Chrome:</strong> fail. Named by whitespace.</li>
+                  <li class="fail"><strong>iOS Safari:</strong> ignored.</li>
 
                   <!-- Android -->
-                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
-                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
+                  <li class="fail"><strong>Android Chrome:</strong> fail. Ignored by TalkBack.</li>
+                  <li class="fail"><strong>Android Firefox:</strong> fail. Named by whitespace.</li>
                 </ul>
               </div>
             </details>
@@ -161,24 +161,24 @@ width="200" height="200" aria-label=" "  title="title 4">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details style="display: none">
+            <details open>
               <summary>results</summary>
               <div>
                 <p>Image should have name of "title 4".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class="fail"><strong>Chrome:</strong> fail. Whitespace provides empty name. JAWS ignores, NVDA does not.</li>
-                  <li class="pass"><strong>Firefox:</strong> pass. Whitespace is trimmed from <code>aria-label</code>, no name is provided.</li>
+                  <li class=""><strong>Chrome:</strong> </li>
+                  <li class=""><strong>Firefox:</strong> </li>
                   <li class=""><strong>IE11:</strong></li>
 
                   <!-- macOS/iOS -->
-                  <li class="fail"><strong>macOS Safari:</strong> fail. Image announced with name "space".</li>
-                  <li class=""><strong>macOS Chrome:</strong></li>
-                  <li class="fail"><strong>iOS Safari:</strong> fail. Nameless image exposed.</li>
+                  <li class="fail"><strong>macOS Safari:</strong> fail. Named by whitespace. VoiceOver announces name as "space".</li>
+                  <li class="fail"><strong>macOS Chrome:</strong> fail. Named by whitespace.</li>
+                  <li class="pass"><strong>iOS Safari:</strong> pass.</li>
 
                   <!-- Android -->
-                  <li class="pass"><strong>Android Chrome:</strong> pass. Ignored by TalkBack.</li>
-                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
+                  <li class="fail"><strong>Android Chrome:</strong> fail. Ignored by TalkBack.</li>
+                  <li class="pass"><strong>Android Firefox:</strong> pass.</li>
                 </ul>
               </div>
             </details>
@@ -195,14 +195,14 @@ width="200" height="200" aria-label=""  title="title 5">
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <details style="display: none">
+            <details open>
               <summary>results</summary>
               <div>
                 <p>Image should have name of "title 5".</p>
                 <ul>
                   <!-- Windows -->
-                  <li class="pass"><strong>Chrome:</strong> pass.</li>
-                  <li class="pass"><strong>Firefox:</strong> pass.</li>
+                  <li class=""><strong>Chrome:</strong> </li>
+                  <li class=""><strong>Firefox:</strong> </li>
                   <li class=""><strong>IE11:</strong></li>
 
                   <!-- macOS/iOS -->
@@ -212,7 +212,7 @@ width="200" height="200" aria-label=""  title="title 5">
 
                   <!-- Android -->
                   <li class="pass"><strong>Android Chrome:</strong> pass.</li>
-                  <li class="fail"><strong>Android Firefox:</strong> TalkBack exposes as nameless graphic.</li>
+                  <li class="pass"><strong>Android Firefox:</strong> pass.</li>
                 </ul>
               </div>
             </details>

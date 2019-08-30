@@ -47,7 +47,7 @@
             Images with <code>aria-label=""</code> or <code>aria-label=" "</code> should receive no accessible name from the attribute.
           </li>
           <li>
-            Receiving no accessible name from <code>alt</code> or <code>aria-label</code>, all images should receive their accessible name from their <code>title</code> attribute.
+            Receiving no accessible name from <code>alt</code> or <code>aria-label</code>, <strong>all images should receive their accessible name from their <code>title</code> attribute.</strong>
           </li>
         </ul>
         <p>
@@ -57,7 +57,40 @@
 
 
       <div class="test">
-        <h2>Control: <code>alt</code> with empty string</h2>
+        <h2>Image with only <code>title</code> attribute</h2>
+        <div class="test__case">
+<img src="https://placekitten.com/219/219"
+width="200" height="200" title="title">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <p>Image should have name of "title".</p>
+                <ul>
+                  <!-- Windows -->
+                  <li class=""><strong>Chrome:</strong> .</li>
+                  <li class=""><strong>Firefox:</strong> .</li>
+
+                  <!-- macOS/iOS -->
+                  <li class="pass"><strong>macOS Safari:</strong> pass.</li>
+                  <li class="pass"><strong>macOS Chrome:</strong> pass.</li>
+                  <li class=""><strong>iOS Safari:</strong> .</li>
+
+                  <!-- Android -->
+                  <li class=""><strong>Android Chrome:</strong> .</li>
+                  <li class=""><strong>Android Firefox:</strong> .</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>alt</code> with empty string</h2>
         <div class="test__case">
 <img src="https://placekitten.com/200/200"
 width="200" height="200" alt=""  title="title 1">
@@ -92,7 +125,7 @@ width="200" height="200" alt=""  title="title 1">
       <div class="test">
         <h2><code>alt</code> with single whitespace</h2>
         <div class="test__case">
-<img src="https://placekitten.com/220/220"
+<img src="https://placekitten.com/201/201"
 width="200" height="200" alt=" "  title="title 2">
         </div>
         <div class="test__info">
@@ -124,7 +157,7 @@ width="200" height="200" alt=" "  title="title 2">
       <div class="test">
         <h2><code>alt</code> with multiple whitespace characters</h2>
         <div class="test__case">
-<img src="https://placekitten.com/300/300"
+<img src="https://placekitten.com/210/210"
 width="200" height="200" alt="    "  title="title 3">
         </div>
         <div class="test__info">
@@ -157,7 +190,7 @@ width="200" height="200" alt="    "  title="title 3">
        <div class="test">
         <h2>No <code>alt</code>, but <code>aria-label</code> with whitespace character</h2>
         <div class="test__case">
-<img src="https://placekitten.com/300/300"
+<img src="https://placekitten.com/220/220"
 width="200" height="200" aria-label=" "  title="title 4">
         </div>
         <div class="test__info">
@@ -190,7 +223,7 @@ width="200" height="200" aria-label=" "  title="title 4">
       <div class="test">
         <h2>No <code>alt</code>, but <code>aria-label</code> with empty string</h2>
         <div class="test__case">
-<img src="https://placekitten.com/300/300"
+<img src="https://placekitten.com/240/240"
 width="200" height="200" aria-label=""  title="title 5">
         </div>
         <div class="test__info">

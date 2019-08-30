@@ -38,7 +38,9 @@
         <p>
           Expectation: Images with <code>alt=" "</code> should be treated as <code>alt=""</code> or <code>alt</code> and should be treated as decorative.
         </p>
-        <p>Images with <code>aria-label=""</code> or <code>aria-label=" "</code>
+        <p>
+          Images with <code>aria-label=""</code> or <code>aria-label=" "</code> should not receive a name. If they are exposed, it should be as the image's file name, as these examples have no <code>alt</code>.
+        </p>
       </header>
 
 
@@ -62,6 +64,7 @@ width="200" height="200" alt="">
 
                   <!-- macOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
+                  <li class=""><strong>macOS Chrome:</strong></li>
                   <li class=""><strong>iOS Safari:</strong></li>
 
                   <!-- Android -->
@@ -95,6 +98,7 @@ width="200" height="200" alt=" ">
 
                   <!-- macOS/iOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
+                  <li class=""><strong>macOS Chrome:</strong></li>
                   <li class=""><strong>iOS Safari:</strong></li>
 
                   <!-- Android -->
@@ -127,6 +131,7 @@ width="200" height="200" alt="    ">
 
                   <!-- macOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass. Marked as "ignored".</li>
+                  <li class=""><strong>macOS Chrome:</strong></li>
                   <li class=""><strong>iOS Safari:</strong></li>
 
                   <!-- Android -->
@@ -160,6 +165,7 @@ width="200" height="200" aria-label=" ">
 
                   <!-- macOS -->
                   <li class="fail"><strong>macOS Safari:</strong> fail, image announced with name "space".</li>
+                  <li class=""><strong>macOS Chrome:</strong></li>
                   <li class=""><strong>iOS Safari:</strong></li>
 
                   <!-- Android -->
@@ -193,6 +199,7 @@ width="200" height="200" aria-label="">
 
                   <!-- macOS -->
                   <li class="pass"><strong>macOS Safari:</strong> pass, image announced as file name.</li>
+                  <li class=""><strong>macOS Chrome:</strong></li>
                   <li class=""><strong>iOS Safari:</strong></li>
 
                   <!-- Android -->

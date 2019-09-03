@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing empty lists</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      li {
+        padding: .325em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing empty lists</h1>
+        <div class="dates">
+          <p>Published: <span>September 3, 2019</span></p>
+          <!-- <p>Last Updated: <span>x</span></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>ul</code> and <code>ol</code> with no children</h2>
+        <div class="test__case">
+          <ul></ul>
+          <ol></ol>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>ul</code> with empty <code>li</code> children</h2>
+        <div class="test__case">
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>ol</code> with empty <code>li</code> children</h2>
+        <div class="test__case">
+          <ol>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>ul</code> with empty <code>li</code> children and no list markers</h2>
+        <div class="test__case">
+          <ul style="list-style: none">
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>ol</code> with empty <code>li</code> children and no list markers</h2>
+        <div class="test__case">
+          <ol style="list-style: none">
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

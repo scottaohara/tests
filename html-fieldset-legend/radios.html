@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing fieldset and legend for radio groups</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>fieldset</code> and <code>legend</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <span>September 5th, 2019</span></p>
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code></h2>
+        <div class="test__case">
+          <fieldset aria-label="ARIA label">
+            <legend>Legend</legend>
+            <label>
+              <input type="radio" name="r">
+              Option 1
+            </label>
+            <label>
+              <input type="radio" name="r">
+              Option 2
+            </label>
+            <label>
+              <input type="radio" name="r">
+              Option 3
+            </label>
+            <label>
+              <input type="radio" name="r">
+              Option 4
+            </label>
+          </fieldset>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

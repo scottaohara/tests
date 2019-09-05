@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../-assets/shared.css">
     <style>
-
+      li {
+        margin-bottom: .5em
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <h1>A test of the light and shadow</h1>
+
+      <p>Tested with JAWS 2019 (aug release), NVDA 2019.1.1, macOS VoiceOver 10.14.5.</p>
 
       <template id="ex">
         <slot name="insert"></slot>
@@ -30,6 +34,24 @@
           <button id="b">Update shadow</button>
           <button id="c">Update both</button>
         </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>Test 1 results</summary>
+              <div>
+                <ul>
+                  <li><strong>Chrome and Safari w/ macOS VoiceOver:</strong> only updated content announced. Light and Shadow DOM content announced as expected.</li>
+
+                  <li><strong>JAWS w/Chrome:</strong> announces all content (light and shadow) within the live region.</li>
+                  <li><strong>JAWS w/Firefox:</strong> only updated light DOM content announced. Shadow DOM content is not announced at all.</li>
+
+                  <li><strong>NVDA w/Chrome:</strong> announces all content (light and shadow) within the live region.</li>
+                  <li><strong>NVDA w/Firefox:</strong> only updated content announced. Light and Shadow DOM content announced as expected.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
       </div>
       <div class="test">
         <h2>How the live region works w/out <code>aria-atomic=false</code></h2>
@@ -42,6 +64,24 @@
           <button id="d">Update light</button>
           <button id="e">Update shadow</button>
           <button id="f">Update both</button>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>Test 2 results</summary>
+              <div>
+                <ul>
+                  <li><strong>Chrome and Safari w/ macOS VoiceOver:</strong> announces all content (light and shadow), oddly the first test (Update light) announces content out of order.</li>
+
+                  <li><strong>JAWS w/Chrome:</strong> announces all content (light and shadow) within the live region.</li>
+                  <li><strong>JAWS w/Firefox:</strong> only updated light DOM content announced. Shadow DOM content is not announced at all.</li>
+
+                  <li><strong>NVDA w/Chrome:</strong> announces all content (light and shadow) within the live region.</li>
+                  <li><strong>NVDA w/Firefox:</strong> only updated content announced. Light and Shadow DOM content announced as expected.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
 

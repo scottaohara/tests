@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing menu element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="app">
+
+      <div class="test">
+        <h2>Example from HTML specification</h2>
+        <div class="test__case">
+          <menu>
+            <li><button onclick="copy()"><img src="copy.svg" alt="Copy"></button></li>
+            <li><button onclick="cut()"><img src="cut.svg" alt="Cut"></button></li>
+            <li><button onclick="paste()"><img src="paste.svg" alt="Paste"></button></li>
+          </menu>
+        </div>
+
+    </div> <!-- /#app -->
+
+    <script>
+      var copy = function () {
+        alert('i copied something')
+      }
+      var cut = function () {
+        alert('something was done cut!')
+      }
+      var paste = function () {
+        alert('Clearly none of these functions actually do anything...')
+      }
+    </script>
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

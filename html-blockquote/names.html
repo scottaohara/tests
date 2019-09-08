@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Blockquote accessible names</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1><code>blockquote</code> element tests</h1>
+				<div class="dates">
+					<p>Published: <span>September 8, 2019</span></p>
+					<!-- <p>Last Updated: <span>...</span></p> -->
+				</div>
+				<p>
+					Note: navigate by blockquotes with NVDA by use of <kbd>Q</kbd> button.
+					<kbd>CTRL+INSERT+Q</kbd> to open JAWS dialog of blockquotes.
+				</p>
+			</header>
+
+			<div class="test">
+				<h2>Blockquote with only subtree content</h2>
+				<div class="test__case">
+					<blockquote>
+						Text goes here
+					</blockquote>
+				</div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details open>
+							<summary>Expectation</summary>
+							<div>
+								<p>
+									Should expose no accessible name.
+								</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with title attribute</h2>
+				<div class="test__case">
+					<blockquote title="Title">
+						Text goes here
+					</blockquote>
+				</div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details open>
+							<summary>Expectation</summary>
+							<div>
+								<p>
+									Should expose accessible name of "Title".
+								</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with aria-label attribute</h2>
+				<div class="test__case">
+					<blockquote aria-label="Aria label">
+						Text goes here
+					</blockquote>
+				</div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details open>
+							<summary>Expectation</summary>
+							<div>
+								<p>
+									Should expose accessible name of "Aria label".
+								</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Blockquote with aria-labelledby attribute</h2>
+				<div class="test__case">
+					<div hidden id="a">Aria label"</div>
+					<blockquote aria-labelledby="a">
+						Text goes here
+					</blockquote>
+				</div>
+				<div class="test__info">
+					<div class="test__info__results">
+						<details open>
+							<summary>Expectation</summary>
+							<div>
+								<p>
+									Should expose accessible name of "Aria label".
+								</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div> <!-- /#app -->
+		<script src="../-assets/shared.js"></script>
+	</body>
+</html>

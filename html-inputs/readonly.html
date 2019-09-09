@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Form elements with readonly attribute</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+			details li:not(:last-child) {
+				margin-bottom: .5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1>Testing <code>readonly</code> attribute on form elements</h1>
+				<div class="dates">
+					<p>
+						Published: <span>September 9, 2019</span>
+					</p>
+					<!-- <p>Last Updated: <span>...</span></p> -->
+				</div>
+			</header>
+
+			<div class="test">
+				<h2><code>input=text</code></h2>
+				<div class="test__case">
+<label for="h">
+	text input
+</label>
+<input readonly type="text" id="h">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+			<div class="test">
+				<h2><code>input=search</code></h2>
+				<div class="test__case">
+<label for="srch">
+	search input
+</label>
+<input readonly type="search" id="srch">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=tel</code></h2>
+				<div class="test__case">
+<label for="tel">
+	tel input
+</label>
+<input readonly type="tel" id="tel">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=url</code></h2>
+				<div class="test__case">
+<label for="url">
+	url input
+</label>
+<input readonly type="url" id="url">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=email</code></h2>
+				<div class="test__case">
+<label for="email">
+	email input
+</label>
+<input readonly type="email" id="email">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=password</code></h2>
+				<div class="test__case">
+<label for="password">
+	password input
+</label>
+<input readonly type="password" id="password">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=month</code></h2>
+				<div class="test__case">
+<label for="month">
+	month input
+</label>
+<input readonly type="month" id="month">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=date</code></h2>
+				<div class="test__case">
+<label for="date">
+	date input
+</label>
+<input readonly type="date" id="date">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+			<div class="test">
+				<h2><code>input=week</code></h2>
+				<div class="test__case">
+<label for="week">
+	week input
+</label>
+<input readonly type="week" id="week">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=time</code></h2>
+				<div class="test__case">
+<label for="time">
+	time input
+</label>
+<input readonly type="time" id="time">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=datetime-local</code></h2>
+				<div class="test__case">
+<label for="datetime-local">
+	datetime local input
+</label>
+<input readonly type="datetime-local" id="datetime-local">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=number</code></h2>
+				<div class="test__case">
+<label for="number">
+	number input
+</label>
+<input readonly type="number" id="number">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input=range</code></h2>
+				<div class="test__case">
+<label for="range">
+	range input
+</label>
+<input readonly type="range" id="range">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input=color</code></h2>
+				<div class="test__case">
+<label for="color">
+	color input
+</label>
+<input readonly type="color" id="color">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input type=checkbox</code></h2>
+				<div class="test__case">
+<label for="c">
+	checkbox input
+</label>
+<input readonly type="checkbox" id="c">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input type=radio</code></h2>
+				<div class="test__case">
+<label for="r">
+	radio input
+</label>
+<input readonly type="radio" id="r">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input=file</code></h2>
+				<div class="test__case">
+<label for="file">
+	file input
+</label>
+<input readonly type="file" id="file">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input=submit</code></h2>
+				<div class="test__case">
+<label for="submit">
+	submit input
+</label>
+<input readonly type="submit" id="submit">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input=image</code></h2>
+				<div class="test__case">
+<label for="image">
+	image input
+</label>
+<input readonly type="image" alt="alt" id="image">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input=reset</code></h2>
+				<div class="test__case">
+<label for="reset">
+	reset input
+</label>
+<input readonly type="reset" id="reset">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2>Invalid: <code>input=button</code></h2>
+				<div class="test__case">
+<label for="button">
+	button input
+</label>
+<input readonly type="button" value="Value" id="button">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+        <h2>Invalid: <code>select</code></h2>
+        <div class="test__case">
+<label for="select">
+  select element
+</label>
+<select readonly id="select"><option>Item 1</option><option>Item 2</option></select>
+        </div>
+        <div class="test__info">
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Invalid: <code>select</code> with <code>readonly</code> <code>option</code></h2>
+        <div class="test__case">
+<label for="select2">
+  select element
+</label>
+<select id="select2"><option readonly>Item 1</option><option>Item 2</option></select>
+        </div>
+        <div class="test__info">
+        </div>
+      </div>
+
+
+			<div class="test">
+				<h2><code>textarea</code></h2>
+				<div class="test__case">
+<label for="textarea">
+	text area
+</label>
+<textarea readonly id="textarea"></textarea>
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+</div> <!-- /#app -->
+
+
+
+		<script src="../-assets/shared.js"></script>
+	</body>
+</html>

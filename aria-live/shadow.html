@@ -112,9 +112,9 @@
               <span slot="insert">Light content</span>
             </my-status>
           </p>
-          <button id="g">Update light</button>
-          <button id="h">Update shadow</button>
-          <button id="i">Update both</button>
+          <button id="g">Update light CSS content</button>
+          <button id="h">Update shadow CSS content</button>
+          <button id="i">Update light and shadow content and CSS content</button>
         </div>
       </div>
 
@@ -180,12 +180,12 @@
       var shadowSpan3 = status3.shadowRoot.querySelector('.s');
 
       g.addEventListener('click', function () {
-        statusSpan3.textContent = 'Updated light';
+        // statusSpan3.textContent = 'Updated light';
         statusSpan3.className ='after';
       });
 
       h.addEventListener('click', function () {
-        shadowSpan3.textContent = 'Updated shadow';
+        // shadowSpan3.textContent = 'Updated shadow';
         shadowSpan3.className ='shadow-after';
       });
 

@@ -9,6 +9,14 @@
       li {
         margin-bottom: .5em
       }
+
+      .after:after {
+        content: ' New CSS 1 ';
+      }
+
+      .after2:after {
+        content: ' New CSS 2 ';
+      }
     </style>
   </head>
   <body>
@@ -18,6 +26,15 @@
       <p>Tested with JAWS 2019 (aug release), NVDA 2019.1.1, macOS VoiceOver 10.14.5.</p>
 
       <template id="ex">
+        <style>
+          .shadow-after:after {
+            content: ' New shadow CSS 1 ';
+          }
+
+          .shadow-after2:after {
+            content: ' New shadow CSS 2 ';
+          }
+        </style>
         <slot name="insert"></slot>
         <span class="s"> and shadow content.</span>
       </template>
@@ -53,6 +70,7 @@
           </div>
         </div>
       </div>
+
       <div class="test">
         <h2>How the live region works w/out <code>aria-atomic=false</code></h2>
         <div class="test__case">
@@ -86,6 +104,21 @@
       </div>
 
 
+      <div class="test">
+        <h2>Using <code>aria-atomic=false</code> to only announce changed content, and including CSS content</h2>
+        <div class="test__case">
+          <p role="status" aria-atomic=false>
+            <my-status class="f3">
+              <span slot="insert">Light content</span>
+            </my-status>
+          </p>
+          <button id="g">Update light</button>
+          <button id="h">Update shadow</button>
+          <button id="i">Update both</button>
+        </div>
+      </div>
+
+
       <script>
       var a = document.getElementById('a');
       var b = document.getElementById('b');
@@ -93,6 +126,10 @@
       var d = document.getElementById('d');
       var e = document.getElementById('e');
       var f = document.getElementById('f');
+
+      var g = document.getElementById('g');
+      var h = document.getElementById('h');
+      var i = document.getElementById('i');
 
       customElements.define('my-status', class extends HTMLElement {
         constructor() {
@@ -135,6 +172,28 @@
       f.addEventListener('click', function () {
         statusSpan2.textContent = 'Updated light, and also';
         shadowSpan2.textContent = 'an updated shadow';
+      });
+
+
+      var status3 = document.querySelector('.f3');
+      var statusSpan3 = status3.querySelector('span[slot]');
+      var shadowSpan3 = status3.shadowRoot.querySelector('.s');
+
+      g.addEventListener('click', function () {
+        statusSpan3.textContent = 'Updated light';
+        statusSpan3.className ='after';
+      });
+
+      h.addEventListener('click', function () {
+        shadowSpan3.textContent = 'Updated shadow';
+        shadowSpan3.className ='shadow-after';
+      });
+
+      i.addEventListener('click', function () {
+        statusSpan3.textContent = 'Updated light, and also';
+        shadowSpan3.textContent = 'an updated shadow';
+        statusSpan3.className ='after2';
+        shadowSpan3.className ='shadow-after2';
       });
       </script>
 

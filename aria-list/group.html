@@ -1,0 +1,31 @@
+<h1>Testing ARIA lists with group</h1>
+<p>Published <span>September 11, 2019</span></p>
+
+<h2>Control list</h2>
+<div role="list">
+    <div role="listitem">item 1</div>
+    <div role="listitem">item 2</div>
+    <div role="listitem">item 3</div>
+</div>
+
+<h2>List containing 2 groups</h2>
+<div role="list">
+  <div role="group">
+    <div role="listitem">item 1</div>
+    <div role="listitem">item 2</div>
+    <div role="listitem">item 3</div>
+  </div>
+  <div role="group" aria-label='foo'>
+    <div role="listitem">item 4</div>
+    <div role="listitem">item 5</div>
+    <div role="listitem">item 6</div>
+  </div>
+</div>
+
+
+
+<hr>
+
+role=list with groups in it breaks Safari + VO being able to discover the list.
+
+role=list with 2 groups in it with Chrome + VO exposes a list of 2 items. individual items are not announced as being x of y.

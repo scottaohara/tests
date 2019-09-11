@@ -25,7 +25,15 @@
 
 
 <hr>
-
+<p>
 role=list with groups in it breaks Safari + VO being able to discover the list.
-
+<p>
 role=list with 2 groups in it with Chrome + VO exposes a list of 2 items. individual items are not announced as being x of y.
+<p>
+  No issues with JAWS + Chrome/Firefox.  Group only announced by JAWS if has author provided name, and user navigates with virtual cursor.  Not announced if navigating by list items.
+
+<p>
+  NVDA + Firefox announce list with 2 groups as a list with 2 items.  All items are accessible when navigating by list items.  Group name not announced when navigating by list item or virtual cursor.
+
+<p>
+  NVDA + Chrome announce list with 2 groups as a list with 2 items.  All items are accessible when navigating by list items.  Accessible name of second group is sometimes announced.  Not sure what causes it to be/not to be announced at times.

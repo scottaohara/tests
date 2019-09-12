@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>option tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing role=option</h1>
+        <div class="dates">
+          <p>Published: <span>September 12, 2019</span></p>
+          <!-- <p>Last Updated: <span>...</span></p> -->
+        </div>
+      </header>
+      <div class="test">
+        <h2>listbox containing options with combinations of aria-checked and selected</h2>
+        <div class="test__case">
+          <div role="listbox">
+
+            <div aria-hidden="true">-- aria-checked --</div>
+
+            <div tabindex="0" role="option" aria-checked="false">Option 1</div>
+            <div tabindex="0" role="option" aria-checked="mixed">Option 2</div>
+            <div tabindex="0" role="option" aria-checked="true">Option 3</div>
+            <div tabindex="0" role="option" aria-checked="undefined">Option 4</div>
+
+            <div aria-hidden="true">-- aria-selected --</div>
+
+            <div tabindex="0" role="option" aria-selected="false">Option 5</div>
+            <div tabindex="0" role="option" aria-selected="true">Option 6</div>
+            <div tabindex="0" role="option" aria-selected="undefined">Option 7</div>
+
+            <div aria-hidden="true">-- aria-selected and checked --</div>
+
+            <div tabindex="0" role="option" aria-selected="false" aria-checked="false">Option 8</div>
+            <div tabindex="0" role="option" aria-selected="false" aria-checked="mixed">Option 9</div>
+            <div tabindex="0" role="option" aria-selected="false" aria-checked="true">Option 10</div>
+            <div tabindex="0" role="option" aria-selected="false" aria-checked="undefined">Option 11</div>
+
+            <div tabindex="0" role="option" aria-selected="true" aria-checked="false">Option 8</div>
+            <div tabindex="0" role="option" aria-selected="true" aria-checked="mixed">Option 9</div>
+            <div tabindex="0" role="option" aria-selected="true" aria-checked="true">Option 10</div>
+            <div tabindex="0" role="option" aria-selected="true" aria-checked="undefined">Option 11</div>
+
+            <div tabindex="0" role="option" aria-selected="undefined" aria-checked="false">Option 12</div>
+            <div tabindex="0" role="option" aria-selected="undefined" aria-checked="mixed">Option 13</div>
+            <div tabindex="0" role="option" aria-selected="undefined" aria-checked="true">Option 14</div>
+            <div tabindex="0" role="option" aria-selected="undefined" aria-checked="undefined">Option 15</div>
+          </div>
+        </div>
+
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                ...
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

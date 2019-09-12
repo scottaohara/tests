@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing aria live with SVG content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing the updating of ARIA live regions with SVGs</h1>
+        <div class="dates">
+          <p>Published: <span>September 12, 2019</span></p>
+          <!-- <p>Updated: <span>..., 2019</span></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>aria-live="polite"</code> injected into the DOM with button press</h2>
+        <div class="test__case">
+          <button id="injectPolite">Inject polite content</button>
+          <div aria-live="polite"></div>
+<script>
+  (function () {
+    var btn = document.getElementById('injectPolite');
+    var region = btn.parentNode.querySelector('[aria-live]');
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "<svg style='width: 100%; height: 40px;' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><text x='0' y='10'>test!</text></svg>";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce "test!".</p>
+                <!-- <ul>
+                  <li></li>
+                </ul> -->
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+            <div class="test">
+        <h2><code>role=status</code> with content injected into it via button press</h2>
+        <div class="test__case">
+          <button id="injectStatus">Inject status content</button>
+          <svg style='width: 100%; height: 40px;' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><text role='status' x='0' y='10'>Initial content</text></svg>
+<script>
+  (function () {
+    var btn = document.getElementById('injectStatus');
+    var region = btn.parentNode.querySelector('svg [role="status"]');
+
+    region.style = 'fill: #f00'
+
+    btn.addEventListener('click', function () {
+      region.innerHTML = "test!";
+    });
+  })();
+</script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <p>Expectation: should announce "test!".</p>
+                <!-- <ul>
+                  <li></li>
+                </ul> -->
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

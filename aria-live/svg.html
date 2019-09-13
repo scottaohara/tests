@@ -91,11 +91,11 @@
       <div class="test">
         <h2><code>aria-live="polite"</code> injected into the DOM with button press</h2>
         <div class="test__case">
-          <button id="injectPolite">Inject polite content</button>
+          <button id="injectPolite2">Inject polite content</button>
           <div role="status"></div>
 <script>
   (function () {
-    var btn = document.getElementById('injectPolite');
+    var btn = document.getElementById('injectPolite2');
     var region = btn.parentNode.querySelector('[aria-live]');
 
     btn.addEventListener('click', function () {

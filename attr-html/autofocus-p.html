@@ -1,10 +1,26 @@
+<style>
+  :focus {
+    outline: 3px solid #f00;
+  }
+</style>
+
 <label>
   First element
   <input>
 </label>
 
-
 <label>
-  Auto-focus element
-  <input autofocus>
+  Second element
+  <input>
 </label>
+
+
+<p>Following paragraph element has autofocus and tabindex=0 attribute, but browsers will ignore</p>
+<p tabindex="0" autofocus>
+  I'm just a p.  Sorry.
+</p>
+
+
+<button autofocus>
+  OK
+</button>

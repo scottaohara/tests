@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>contenteditable</title>
+		<style>
+			body {
+				font-family: arial;
+			}
+
+			.test {
+				margin: 1em;
+				padding: 1em;
+				border-bottom: 1px solid;
+			}
+
+			.test:last-of-type {
+				border-bottom: 0;
+			}
+
+			[contenteditable] {
+				border: 1px solid #666;
+				padding: .25em;
+			}
+
+			[contenteditable]:focus {
+				outline: 2px solid blue;
+			}
+
+			table,
+			caption {
+				text-align: left;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<h1>
+			Contenteditable tests
+		</h1>
+
+		<div class="test">
+			<h2>Test: contenteditable on a form</h2>
+
+			<form contenteditable="true">
+				<label>
+					Name
+					<input>
+				</label>
+			</form>
+		</div>
+
+		<div class="test">
+			<h2>Test: contenteditable on a div</h2>
+			<div contenteditable>
+				Change me
+			</div>
+		</div>
+
+
+
+		<div class="test">
+			<h2>Test: contenteditable on a div role=main</h2>
+			<div contenteditable role="main">
+				Change me main
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a button
+			</h2>
+			<button contenteditable>
+				Change me
+			</button>
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on an interactive element
+				with click event
+			</h2>
+			<button onclick="alert('hi')" contenteditable>
+				Change me
+			</button>
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable within a button
+			</h2>
+			<button onclick="alert('3')">
+				<span contenteditable>Change me</span>
+			</button>
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a input type=button
+			</h2>
+			<input type="button" onclick="alert('test')" value="Edit me?">
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on table cells and caption
+			</h2>
+
+			<table>
+				<caption contenteditable>What happens?</caption>
+				<thead>
+					<tr>
+						<th contenteditable>Row</th>
+						<th contenteditable>Cells</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th contenteditable>Row 1</th>
+						<td contenteditable>...</td>
+					</tr>
+					<tr>
+						<th contenteditable>Row 2</th>
+						<td contenteditable>...</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on select and option elements
+			</h2>
+
+			<select aria-label="testing" contenteditable>
+				<option contenteditable>Change me</option>
+			</select>
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a link and on a span within a link
+			</h2>
+			<a href="https://www.google.com" contenteditable>
+				Change me
+			</a>
+
+			<a href="https://www.google.com" >
+				<span contenteditable>Change me</span>
+			</a>
+		</div>
+
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a label
+			</h2>
+			<label for=n contenteditable>
+				Name
+			</label>
+			<input type="text" id="n">
+
+		</div>
+
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on an input
+			</h2>
+			<label for=n2>
+				Name
+			</label>
+			<input type="text" id="n2" contenteditable>
+		</div>
+
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on an image
+			</h2>
+
+			<img src="earth.jpg" contenteditable alt="test alt text">
+		</div>
+
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a video
+			</h2>
+
+			<video controls="" contenteditable=""></video>
+		</div>
+
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a fieldset
+			</h2>
+
+			<fieldset contenteditable=true>
+				<legend >Hi there</legend>
+				<label for=testa >
+					My label
+				</label>
+				<input type=checkbox id=testa >
+			</fieldset>
+		</div>
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a legend
+			</h2>
+
+			<fieldset>
+				<legend contenteditable=true>Hi there</legend>
+				<label for=testb contenteditable=true>
+					My label
+				</label>
+				<input type=checkbox id=testb>
+			</fieldset>
+		</div>
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a checkbox
+			</h2>
+
+			<fieldset>
+				<legend>Hi there</legend>
+				<label for='c'>
+					My label
+				</label>
+				<input type=checkbox id='c'>
+			</fieldset>
+		</div>
+
+		<div class="test">
+			<h2>
+				Test: contenteditable on a fieldset and its legend
+			</h2>
+
+			<fieldset contenteditable=true>
+				<legend contenteditable=true>Hi there</legend>
+				<label for=test>
+					My label
+				</label>
+				<input type=checkbox id=test>
+			</fieldset>
+		</div>
+	</body>
+</html>

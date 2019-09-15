@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Input type=range</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing <code>input type=range</code></h1>
+        <div class="dates">
+          <p>
+            Published: <span>September 15, 2019</span>
+          </p>
+          <!-- <p>Last Updated: <span>...</span></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>No accessible name provided by author</h2>
+        <div class="test__case">
+          <input type="range" min="0" max="100" step="10">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Range with accessible name from label</h2>
+        <div class="test__case">
+          <label for="f">
+            Test label
+          </label>
+          <input type="range" min="0" max="100" step="10" id="f">
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

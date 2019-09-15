@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing the img element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      .test-size {
+        background: lightyellow;
+        width: 150px;
+        height: 100px;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          Testing the <code>img</code> element
+        </h1>
+        <div class="dates">
+          <p>Published: <span>September 15, 2019</span></p>
+          <!-- <p>Last Updated: <span>J...</span></p> -->
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2>with alt text</h2>
+        <div class="test__case">
+          <img src="yellow.jpg" alt="alt text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with title text and no alt</h2>
+        <div class="test__case">
+          <img src='yellow.jpg' title="title text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with aria-label and no title or alt</h2>
+        <div class="test__case">
+          <img src="yellow.jpg" aria-label="aria label">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with aria-labelledby and no title or alt</h2>
+        <div class="test__case">
+          <img src="yellow.jpg" aria-labelledby="d">
+          <p id=d>aria-labelledby text</p>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with alt and title text</h2>
+        <div class="test__case">
+          <img src='yellow.jpg' alt="alt text" title="title text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with alt and role=presentation</h2>
+        <div class="test__case">
+          <img src='yellow.jpg' alt="alt text" role="presentation">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with empty alt and aria-label</h2>
+        <div class="test__case">
+          <img src='yellow.jpg' alt="" aria-label="ARIA label">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+      <div class="test">
+        <h2>with empty alt and title</h2>
+        <div class="test__case">
+          <img src='yellow.jpg' alt="" title="title text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <script src="../-assets/shared.js"></script>
+    </div>
+  </body>
+</html>

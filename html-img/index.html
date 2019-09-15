@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../-assets/shared.css">
     <style>
-      .test-size {
-        background: lightyellow;
-        width: 150px;
-        height: 100px;
-        font-weight: bolder;
+      img {
+        max-width: 100%;
       }
     </style>
   </head>
@@ -91,9 +88,30 @@
       </div>
 
       <div class="test">
-        <h2>with empty alt and title</h2>
+        <h2>with title and an empty alt</h2>
         <div class="test__case">
-          <img src='yellow.jpg' alt="" title="title text">
+          <img src='yellow-small.jpg' alt="" title="title text">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>with srcset</h2>
+        <div class="test__case">
+          <img src='yellow-small.jpg' srcset="yellow.jpg" alt="alt attribute">
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>within picture</h2>
+        <div class="test__case">
+          <picture>
+            <source srcset="yellow.jpg" media="(min-width: 800px)">
+            <img src='yellow-small.jpg' alt="alt attribute">
+          </picture>
         </div>
         <div class="test__info"></div>
       </div>

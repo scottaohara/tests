@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Inputs that use the step attribute</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing <code>input</code>s that accept the step attribute</h1>
+        <div class="dates">
+          <p>
+            Published: <span>September 16, 2019</span>
+          </p>
+          <!-- <p>Last Updated: <span>...</span></p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Range with step 10</h2>
+        <div class="test__case">
+          <label>
+            Test label
+            <input type="range" min="0" max="100" step="10">
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Number with step 10</h2>
+        <div class="test__case">
+          <label>
+            Test label
+            <input type="number" min="0" max="100" step="10">
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Time with step 10</h2>
+        <p>Should update seconds in increments of 10 if supported</p>
+        <div class="test__case">
+          <label>
+            Test label
+            <input type="time" step="10">
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date)">Date</a> with step 2</h2>
+        <p>Should update days in increments of 2 if supported</p>
+        <div class="test__case">
+          <label>
+            Test label
+            <input type="date" step="10">
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><a href="https://html.spec.whatwg.org/multipage/input.html#month-state-(type=month)">Month</a> with step 2</h2>
+        <p>Should update month in increments of 2 if supported</p>
+        <div class="test__case">
+          <label>
+            Test label
+            <input type="month" step="2">
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><a href="https://html.spec.whatwg.org/multipage/input.html#week-state-(type=week)">Week</a> with step</h2>
+        <p>Should update week number in increments of 2 if supported</p>
+        <div class="test__case">
+          <label>
+            Test label
+            <input type="week" step="2">
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><a href="https://html.spec.whatwg.org/multipage/input.html#local-date-and-time-state-(type=datetime-local)">datetime-local</a> with step 20</h2>
+        <p>Should update seconds in increments of 20 if supported</p>
+        <div class="test__case">
+          <label>
+            Test label
+            <input type="datetime-local" step="20">
+          </label>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>results</summary>
+              <div>
+              </div>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

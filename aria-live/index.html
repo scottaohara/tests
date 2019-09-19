@@ -6,7 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../-assets/shared.css">
     <style>
+      .g {
+        margin-top: .325em;
+      }
 
+      .pass {
+        color: green;
+      }
+
+      .fail {
+        font-weight: bolder;
+      }
+
+      .partial {
+        color: darkorange;
+      }
     </style>
   </head>
   <body>
@@ -14,9 +28,14 @@
       <header>
         <h1>Testing injecting ARIA live regions</h1>
         <div class="dates">
-          <p>Published: <time>June 18, 2019</time></p>
-          <p>Updated: <time>July 4, 2019</time></p>
+          <p>Published: <span>June 18, 2019</span></p>
+          <p>Updated: <span>September 19, 2019</time></p>
         </div>
+
+        <p>
+          <strong>Note:</strong>
+          Testing with Chrome 76 and TalkBack, when new content is injected into the DOM (whether the injected content is expected to be announced or not) previously injected live messages can re-announce.  e.g. injecting a <code>role=progressbar</code> may re-announce an injected <code>role=status</code> message.
+        </p>
       </header>
 
       <div class="test">
@@ -45,22 +64,23 @@
               <div>
                 <p>Expectation: may announce when element injected into page.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: message announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: message announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: message announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Edge 79 Canary: not announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Chrome 77: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: message announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
+                  <li class="g fail">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Edge 79 Canary: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Chrome 77: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Firefox 69.0.1: not announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced.</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
+                  <li class="g fail">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="pass">Android 8.1 TalkBack 7.3 with Chrome 76: message announced.</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
             </details>
@@ -95,22 +115,23 @@
               <div>
                 <p>Expectation: may announce when element injected into page.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: message announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: message announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: message announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Edge 79 Canary: not announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Chrome 77: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: message announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
+                  <li class="g fail">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Edge 79 Canary: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Chrome 77: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Firefox 69.0.1: not announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced.</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
+                  <li class="g fail">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="pass">Android 8.1 TalkBack 7.3 with Chrome 76: message announced.</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
             </details>
@@ -143,24 +164,25 @@
             <details>
               <summary>results</summary>
               <div>
-                <p>Expectation: may announce when role injected into page.</p>
+                <p>Expectation: SHOULD announce when role injected into page.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: message announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: message announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: message announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: message announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: message announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Edge 79 Canary: message announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Chrome 77: message announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: message announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: message announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: message announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: message announced.</li>
+                  <li class="g fail">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Edge 79 Canary: message announced.</li>
+                  <li class="pass">NVDA 2019.2 with Chrome 77: message announced.</li>
+                  <li class="pass">NVDA 2019.2 with Firefox 69.0.1: message announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced (twice).</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
+                  <li class="g fail">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="partial">Android 8.1 TalkBack 7.3 with Chrome 76: message announced (twice).</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
             </details>
@@ -195,22 +217,23 @@
               <div>
                 <p>Expectation: may announce when role injected into page.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: message announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: message announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: message announced.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: message announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Edge 79 Canary: not announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Chrome 77: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: message announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
+                  <li class="g fail">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Edge 79 Canary: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Chrome 77: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Firefox 69.0.1: not announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 68.0 (preview): not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced (twice).</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
+                  <li class="g fail">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="partial">Android 8.1 TalkBack 7.3 with Chrome 76: message announced (twice).</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
             </details>
@@ -245,22 +268,23 @@
               <div>
                 <p>Expectation: may announce when role injected into page.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: message announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: message announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: message announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: message announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: message announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Edge 79 Canary: not announced.</li>
+                  <li class="fail">JAWS 2019 (aug) with Chrome 77: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: message announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
+                  <li class="g fail">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Edge 79 Canary: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Chrome 77: not announced.</li>
+                  <li class="fail">NVDA 2019.2 with Firefox 69.0.1: not announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: message announced (twice).</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: message announced.</li>
+                  <li class="g fail">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="partial">Android 8.1 TalkBack 7.3 with Chrome 76: message announced (twice).</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: message announced.</li>
                 </ul>
               </div>
             </details>
@@ -293,24 +317,25 @@
             <details>
               <summary>results</summary>
               <div>
-                <p>Expectation: no initial announcement. Default is <code>aria-live=off</code>.</p>
+                <p>Expectation: <strong>NO initial announcement</strong>. Default is <code>aria-live=off</code>.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: not announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: not announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: not announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: not announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: not announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Edge 79 Canary: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Chrome 77: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: not announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
+                  <li class="g pass">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Edge 79 Canary: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Chrome 77: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Firefox 69.0.1: not announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: not announced.</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: not announced.</li>
+                  <li class="g pass">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="pass">Android 8.1 TalkBack 7.3 with Chrome 76: not announced.</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: not announced.</li>
                 </ul>
               </div>
             </details>
@@ -343,24 +368,25 @@
             <details>
               <summary>results</summary>
               <div>
-                <p>Expectation: no initial announcement. Default is <code>aria-live=off</code>.</p>
+                <p>Expectation: <strong>NO initial announcement</strong>. Default is <code>aria-live=off</code>.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: not announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: not announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: not announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: not announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: not announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Edge 79 Canary: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Chrome 77: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: not announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
+                  <li class="g pass">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Edge 79 Canary: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Chrome 77: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Firefox 69.0.1: not announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: not announced.</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: not announced.</li>
+                  <li class="g pass">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="pass">Android 8.1 TalkBack 7.3 with Chrome 76: not announced.</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: not announced.</li>
                 </ul>
               </div>
             </details>
@@ -373,7 +399,7 @@
       <div class="test">
         <h2><code>role="progressbar"</code> injected into the DOM with button press</h2>
         <div class="test__case">
-          <button id="injectProgress">Inject progressbar</button>
+          <button id="injectProgress">Inject progress bar</button>
           <script>
             (function () {
               var btn = document.getElementById('injectProgress');
@@ -398,24 +424,25 @@
             <details>
               <summary>results</summary>
               <div>
-                <p>Expectation: no initial announcement.</p>
+                <p>Expectation: <strong>NO initial announcement</strong>.</p>
                 <ul>
-                  <li>macOS 10.14.4 VoiceOver with Safari 12.1: not announced.</li>
-                  <li>macOS 10.14.4 VoiceOver with Chrome 75: not announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Safari 12.1.1: not announced.</li>
+                  <li class="pass">macOS 10.14.5 VoiceOver with Chrome 76: not announced.</li>
 
-                  <li>JAWS 2019 (june) with IE11: not announced.</li>
-                  <li>JAWS 2019 (june) with Edge 76 dev: not announced.</li>
-                  <li>JAWS 2019 (june) with Chrome 75: not announced.</li>
-                  <li>JAWS 2019 (june) with Firefox 67.0.3: ??.</li>
+                  <li class="g pass">JAWS 2019 (aug) with IE11: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Edge 79 Canary: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Chrome 77: not announced.</li>
+                  <li class="pass">JAWS 2019 (aug) with Firefox 69.0.1: not announced.</li>
 
-                  <li>NVDA 2019.1.1 with IE11: not announced.</li>
-                  <li>NVDA 2019.1.1 with Edge 76 dev: not announced.</li>
-                  <li>NVDA 2019.1.1 with Chrome 75: not announced.</li>
-                  <li>NVDA 2019.1.1 with Firefox 67.0.3: not announced.</li>
+                  <li class="g pass">NVDA 2019.2 with IE11: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Edge 79 Canary: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Chrome 77: not announced.</li>
+                  <li class="pass">NVDA 2019.2 with Firefox 69.0.1: not announced.</li>
 
-                  <li>Android 8.1 TalkBack 7.3 with Firefox 67.0.3: not announced.</li>
-                  <li>Android 8.1 TalkBack 7.3 with Chrome 75: not announced.</li>
-                  <li>iOS 12.3.1 VoiceOver with Safari: not announced.</li>
+                  <li class="g pass">Android 8.1 TalkBack 7.3 with Firefox 68.0.2: not announced.</li>
+                  <li class="pass">Android 8.1 TalkBack 7.3 with Chrome 76: not announced.</li>
+
+                  <li class="g pass">iOS 12.3.1 VoiceOver with Safari: not announced.</li>
                 </ul>
               </div>
             </details>

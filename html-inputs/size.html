@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Form elements with size attribute</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+			details li:not(:last-child) {
+				margin-bottom: .5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1>Testing <code>size</code> attribute on form elements</h1>
+				<div class="dates">
+					<p>
+						Published: <span>September 22, 2019</span>
+					</p>
+					<!-- <p>Last Updated: <span>...</span></p> -->
+				</div>
+				<p>
+					The <code>size</code> attribute is allowed on the following input types:
+					when type is <code>text</code>, <code>search</code>, <code>url</code>, <code>tel</code>, <code>email</code>, or <code>password</code>.
+				</p>
+				<p>
+					It is also allowed on the <code>select</code> element.  Other form controls are not tested due to the <code>size</code> attribute being inappropriate on them.
+				</p>
+			</header>
+
+			<div class="test">
+				<h2><code>input=text</code></h2>
+				<div class="test__case">
+<label for="h1">
+	text input no size
+</label>
+<input type="text" id="h1">
+<br>
+<label for="h">
+	text input
+</label>
+<input size=5 type="text" id="h">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+			<div class="test">
+				<h2><code>input=search</code></h2>
+				<div class="test__case">
+<label for="srch1">
+	search input no size
+</label>
+<input type="search" id="srch1">
+<br>
+<label for="srch">
+	search input
+</label>
+<input size=5 type="search" id="srch">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=tel</code></h2>
+				<div class="test__case">
+<label for="tel1">
+	tel input no size
+</label>
+<input type="tel" id="tel1">
+<br>
+<label for="tel">
+	tel input
+</label>
+<input size=5 type="tel" id="tel">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=url</code></h2>
+				<div class="test__case">
+<label for="url1">
+	url input no size
+</label>
+<input type="url" id="url1">
+<br>
+<label for="url">
+	url input
+</label>
+<input size=5 type="url" id="url">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=email</code></h2>
+				<div class="test__case">
+<label for="email1">
+	email input no size
+</label>
+<input type="email" id="email1">
+<br>
+<label for="email">
+	email input
+</label>
+<input size=5 type="email" id="email">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+
+			<div class="test">
+				<h2><code>input=password</code></h2>
+				<div class="test__case">
+<label for="password1">
+	password input no size
+</label>
+<input type="password" id="password1">
+<br>
+<label for="password">
+	password input
+</label>
+<input size=5 type="password" id="password">
+				</div>
+				<div class="test__info">
+				</div>
+			</div>
+
+			<div class="test">
+        <h2><code>select</code></h2>
+        <div class="test__case">
+<label for="select0">
+  select element with out size
+</label>
+<select id="select0">
+	<option>Item 1</option><option>Item 2</option>
+	<option>Item 3</option><option>Item 4</option>
+</select>
+<br>
+<label for="select1">
+  select element with size=1
+</label>
+<select size=1 id="select1">
+	<option>Item 1</option><option>Item 2</option>
+	<option>Item 3</option><option>Item 4</option>
+</select>
+<br>
+<label for="select">
+  select element with size=5
+</label>
+<select size=5 id="select">
+	<option>Item 1</option><option>Item 2</option>
+	<option>Item 3</option><option>Item 4</option>
+	<option>Item 5</option><option>Item 6</option>
+</select>
+        </div>
+        <div class="test__info">
+        </div>
+      </div>
+
+
+</div> <!-- /#app -->
+
+
+
+		<script src="../-assets/shared.js"></script>
+	</body>
+</html>

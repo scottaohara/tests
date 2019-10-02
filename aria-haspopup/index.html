@@ -35,11 +35,14 @@
               <summary>results</summary>
               <div>
                 <h3>macOS with VoiceOver on Safari 12.1.1</h3>
-                <p>Announces all but "false" as "pop-up button" with no further indication of what they do.</p>
+                <p>All but "false" announce as "pop-up button" with no further indication of what they do.</p>
 
                 <h3>JAWS</h3>
+                <p>Chrome & Firefox: all but "false" announce as "button menu".</p>
 
                 <h3>NVDA</h3>
+                <p>Firefox: all but "false" announce as "button, submenu".  "true" will anounce as "menu button, submenu".</p>
+                <p>Chrome: all but "false" announce as "menu button, submenu".</p>
               </div>
             </details>
           </div>
@@ -64,11 +67,20 @@
               <summary>results</summary>
               <div>
                 <h3>macOS with VoiceOver on Safari 12.1.1</h3>
-                <p>Announces all but "false" as "menu pop-up link, AccName".</p>
+                <p>All but "false" announce as "menu pop-up link, AccName".</p>
 
                 <h3>JAWS</h3>
+                <p>Chrome & Firefox: </p>
+                <ul>
+                  <li>True: "has pop-up menu, link"</li>
+                  <li>Listbox: "has pop-up listbox, link"</li>
+                  <li>tree: "has pop-up tree, link"</li>
+                  <li>grid: "has pop-up grid, link"</li>
+                  <li>dialog: "has pop-up dialog, link"</li>
+                </ul>
 
                 <h3>NVDA</h3>
+                <p>Chrome & Firefox: all but "false" announce as "submenu, link".</p>
               </div>
             </details>
           </div>
@@ -94,11 +106,13 @@
               <summary>results</summary>
               <div>
                 <h3>macOS with VoiceOver on Safari 12.1.1</h3>
-                <p>Announces all but "false" as "menu pop-up edit text".</p>
+                <p>All but "false" announce as "menu pop-up edit text".</p>
 
                 <h3>JAWS</h3>
+                <p>Chrome & Firefox: all but "false" announce as "has pop-up".</p>
 
                 <h3>NVDA</h3>
+                <p>Chrome & Firefox: all but "false" announce as "edit, submenu".</p>
               </div>
             </details>
           </div>
@@ -129,8 +143,10 @@
                 <p>The existence of <code>aria-haspopup</code> is not announced on any <code>tab</code>.</p>
 
                 <h3>JAWS</h3>
+                <p>Chrome & Firefox: all but "false" announce as "has pop-up".</p>
 
                 <h3>NVDA</h3>
+                <p>Chrome & Firefox: all but "false" announce as "tab, submenu".</p>
               </div>
             </details>
           </div>
@@ -157,11 +173,13 @@
               <summary>results</summary>
               <div>
                 <h3>macOS with VoiceOver on Safari 12.1.1</h3>
-                <p>Announces all but "false" as "AccName, menu pop-up button", leaving "false" as the only "menu item".</p>
+                <p>All but "false" announce as "AccName, menu pop-up button", leaving "false" as the only "menu item".</p>
 
                 <h3>JAWS</h3>
+                <p>Chrome & Firefox: all but "false" announce as "submenu".</p>
 
                 <h3>NVDA</h3>
+                <p>Chrome & Firefox: all but "false" announce as "submenu".</p>
               </div>
             </details>
           </div>
@@ -192,8 +210,10 @@
                 <p>The existence of <code>aria-haspopup</code> is not announced on any <code>slider</code>.</p>
 
                 <h3>JAWS</h3>
+                <p>Chrome & Firefox: all but "false" announce as "has pop-up".</p>
 
                 <h3>NVDA</h3>
+                <p>Chrome & Firefox: all but "false" announce as "slider, submenu".</p>
               </div>
             </details>
           </div>

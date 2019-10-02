@@ -16,6 +16,7 @@
         <div class="dates">
           <p>Published: <span>October 2, 2019</span></p>
         </div>
+        <p>Tests were performed with the latest browser versions available at the time of publication, or as noted in the test results.</p>
       </header>
 
 
@@ -32,6 +33,24 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>JAWS 2019 (aug)</h3>
+                <p>When paired with Firefox and Chrome a "directory" will be discovered when navigating by lists, list items, and virtual cursor.  It will be announced as a "list" with X items, making no mention of the "directory" role.</p>
+                <p>IE11 does not expose <code>role=directory</code> as a list, and JAWS does not mitigate this gap.</p>
+
+                <h3>NVDA 2019.2.1</h3>
+                <p>When paired with Firefox and Chrome a "directory" will be discovered when navigating by lists, list items, and virtual cursor.  It will be announced as a "list" with X items, making no mention of the "directory" role.</p>
+                <p>IE11 does not expose <code>role=directory</code> as a list. For this pattern in particular, NVDA will ignore the role and instead respect the <code>ul</code>'s mapping to expose this pattern as a list.</p>
+
+                <h3>iOS 12.4.1 VoiceOver</h3>
+                <p>The "directory" can be discovered if using the rotor to navigate by lists. When entering, VO will announce "list start" or "list end" depending on the entry point.</p>
+
+                <h3>macOS 10.14.5 VoiceOver with Safari 12.1.1 and Chrome</h3>
+                <p>The "directory" can be discovered if navigating by lists (<kbd>control</kbd> + <kbd>option</kbd> + <kbd>command</kbd> + <kbd>X</kbd>) or by standard VO navigation. When navigated to, VO will announce "list x items" or "end of list" depending on the entry point.</p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -50,6 +69,24 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>JAWS 2019 (aug)</h3>
+                <p>When paired with Firefox and Chrome a "directory" will be discovered when navigating by lists, list items, and virtual cursor.  It will be announced as a "list" with X items, making no mention of the "directory" role.</p>
+                <p>IE11 does not expose <code>role=directory</code> as a list, and JAWS does not mitigate this gap.</p>
+
+                <h3>NVDA 2019.2.1</h3>
+                <p>When paired with Firefox and Chrome a "directory" will be discovered when navigating by lists, list items, and virtual cursor.  It will be announced as a "list" with X items, making no mention of the "directory" role.</p>
+                <p>IE11 does not expose <code>role=directory</code> as a list, and NVDA does not mitigate this gap.</p>
+
+                <h3>iOS 12.4.1 VoiceOver</h3>
+                <p>The "directory" can be discovered if using the rotor to navigate by lists. When entering, VO will announce "list start" or "list end" depending on the entry point.</p>
+
+                <h3>macOS 10.14.5 VoiceOver with Safari 12.1.1 and Chrome</h3>
+                <p>The "directory" can be discovered if navigating by lists (<kbd>control</kbd> + <kbd>option</kbd> + <kbd>command</kbd> + <kbd>X</kbd>) or by standard VO navigation. When navigated to, VO will announce "list x items" or "end of list" depending on the entry point.</p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -68,6 +105,24 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>JAWS 2019 (aug)</h3>
+                <p>When paired with Firefox and Chrome a "directory" will be discovered when navigating by lists, list items, and virtual cursor.  It will be announced as a "list" with X items, making no mention of the "directory" role. When navigating to the "directory" (via list quick key or virtual cursor), the accessible name will be announced. The accessible name will not be announced when navigating by list item.</p>
+                <p>IE11 does not expose <code>role=directory</code> as a list, and JAWS does not mitigate this gap.</p>
+
+                <h3>NVDA 2019.2.1</h3>
+                <p>When paired with Firefox and Chrome a "directory" will be discovered when navigating by lists, list items, and virtual cursor.  It will be announced as a "list" with X items, making no mention of the "directory" role.  When navigating to the "directory" (via quick keys or virtual cursor), the accessible name will be announced.</p>
+                <p>IE11 does not expose <code>role=directory</code> as a list, and NVDA does not mitigate this gap.</p>
+
+                <h3>iOS 12.4.1 VoiceOver</h3>
+                <p>The "directory" can be discovered if using the rotor to navigate by lists. When entering, VO will announce "list start" or "list end" depending on the entry point.  No accessible name will be announced by VoiceOver.</p>
+
+                <h3>macOS 10.14.5 VoiceOver with Safari 12.1.1 and Chrome</h3>
+                <p>The "directory" can be discovered if navigating by lists (<kbd>control</kbd> + <kbd>option</kbd> + <kbd>command</kbd> + <kbd>X</kbd>) or by standard VO navigation. When navigated to, VO will announce "list x items" or "end of list" depending on the entry point. The accessible name will be announced by VoiceOver when navigating to the "directory".</p>
+              </div>
+            </details>
           </div>
         </div>
       </div>

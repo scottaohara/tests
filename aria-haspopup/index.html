@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>aria-haspopup tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing aria-haspopup on elements/roles</h1>
+        <div class="dates">
+          <p>Published: <span>October 2, 2019</span></p>
+          <!-- <p>Last Updated: <span>...</span></p> -->
+        </div>
+      </header>
+      <div class="test">
+        <h2>on <code>button</code> element</h2>
+        <div class="test__case">
+          <button aria-haspopup="true">true</button>
+          <button aria-haspopup="false">false</button>
+          <button aria-haspopup="listbox">listbox</button>
+          <button aria-haspopup="tree">tree</button>
+          <button aria-haspopup="grid">grid</button>
+          <button aria-haspopup="dialog">dialog</button>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>macOS with VoiceOver on Safari 12.1.1</h3>
+                <p>Announces all but "false" as "pop-up button" with no further indication of what they do.</p>
+
+                <h3>JAWS</h3>
+
+                <h3>NVDA</h3>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>on <code>a</code> with <code>href</code></h2>
+        <div class="test__case">
+          <a href="#" aria-haspopup="true">true</a>
+          <a href="#" aria-haspopup="false">false</a>
+          <a href="#" aria-haspopup="listbox">listbox</a>
+          <a href="#" aria-haspopup="tree">tree</a>
+          <a href="#" aria-haspopup="grid">grid</a>
+          <a href="#" aria-haspopup="dialog">dialog</a>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>macOS with VoiceOver on Safari 12.1.1</h3>
+                <p>Announces all but "false" as "menu pop-up link, AccName".</p>
+
+                <h3>JAWS</h3>
+
+                <h3>NVDA</h3>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>on <code>role="textbox"</code></h2>
+        <div class="test__case">
+          <div contenteditable role="textbox" aria-haspopup="true">true</div>
+          <div contenteditable role="textbox" aria-haspopup="false">false</div>
+          <div contenteditable role="textbox" aria-haspopup="listbox">listbox</div>
+          <div contenteditable role="textbox" aria-haspopup="tree">tree</div>
+          <div contenteditable role="textbox" aria-haspopup="grid">grid</div>
+          <div contenteditable role="textbox" aria-haspopup="dialog">dialog</div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>macOS with VoiceOver on Safari 12.1.1</h3>
+                <p>Announces all but "false" as "menu pop-up edit text".</p>
+
+                <h3>JAWS</h3>
+
+                <h3>NVDA</h3>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>on <code>role="tab"</code></h2>
+        <div class="test__case">
+          <div role="tablist">
+            <span tabindex="0" role="tab" aria-haspopup="true">true</span>
+            <span tabindex="0" role="tab" aria-haspopup="false">false</span>
+            <span tabindex="0" role="tab" aria-haspopup="listbox">listbox</span>
+            <span tabindex="0" role="tab" aria-haspopup="tree">tree</span>
+            <span tabindex="0" role="tab" aria-haspopup="grid">grid</span>
+            <span tabindex="0" role="tab" aria-haspopup="dialog">dialog</span>
+          </div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>macOS with VoiceOver on Safari 12.1.1</h3>
+                <p>The existence of <code>aria-haspopup</code> is not announced on any <code>tab</code>.</p>
+
+                <h3>JAWS</h3>
+
+                <h3>NVDA</h3>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>on <code>role="menuitem"</code></h2>
+        <div class="test__case">
+          <div role="menu">
+            <div role="menuitem" tabindex="0" aria-haspopup="true">true</div>
+            <div role="menuitem" tabindex="0" aria-haspopup="false">false</div>
+            <div role="menuitem" tabindex="0" aria-haspopup="listbox">listbox</div>
+            <div role="menuitem" tabindex="0" aria-haspopup="tree">tree</div>
+            <div role="menuitem" tabindex="0" aria-haspopup="grid">grid</div>
+            <div role="menuitem" tabindex="0" aria-haspopup="dialog">dialog</div>
+          </div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>macOS with VoiceOver on Safari 12.1.1</h3>
+                <p>Announces all but "false" as "AccName, menu pop-up button", leaving "false" as the only "menu item".</p>
+
+                <h3>JAWS</h3>
+
+                <h3>NVDA</h3>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>on <code>role="slider"</code></h2>
+        <div class="test__case">
+          <div role="menu">
+            <div aria-labelledby="s_1" aria-valuemin="1" aria-valuemax="4" role="slider" tabindex="0" aria-haspopup="true"><span id="s_1">true</span></div>
+            <div aria-labelledby="s_2" aria-valuemin="1" aria-valuemax="4" role="slider" tabindex="0" aria-haspopup="false"><span id="s_2">false</span></div>
+            <div aria-labelledby="s_3" aria-valuemin="1" aria-valuemax="4" role="slider" tabindex="0" aria-haspopup="listbox"><span id="s_3">listbox</span></div>
+            <div aria-labelledby="s_4" aria-valuemin="1" aria-valuemax="4" role="slider" tabindex="0" aria-haspopup="tree"><span id="s_4">tree</span></div>
+            <div aria-labelledby="s_5" aria-valuemin="1" aria-valuemax="4" role="slider" tabindex="0" aria-haspopup="grid"><span id="s_5">grid</span></div>
+            <div aria-labelledby="s_6" aria-valuemin="1" aria-valuemax="4" role="slider" tabindex="0" aria-haspopup="dialog"><span id="s_6">dialog</span></div>
+          </div>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <h3>macOS with VoiceOver on Safari 12.1.1</h3>
+                <p>The existence of <code>aria-haspopup</code> is not announced on any <code>slider</code>.</p>
+
+                <h3>JAWS</h3>
+
+                <h3>NVDA</h3>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+      <hr>
+
+      <p>"Used in roles" not yet tested:</p>
+      <ul>
+        <li>combobox</li>
+        <li>gridcell</li>
+        <li>treeitem</li>
+      </ul>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

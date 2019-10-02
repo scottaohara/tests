@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>role=directory</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing <code>role=directory</code></h1>
+        <div class="dates">
+          <p>Published: <span>October 2, 2019</span></p>
+        </div>
+      </header>
+
+
+			<div class="test">
+        <h2><code>directory</code> on <code>ul</code> with child <code>li</code> elements</h2>
+        <div class="test__case">
+          <ul role="directory">
+            <li>location A</li>
+            <li>location B</li>
+            <li>location C</li>
+            <li>location D</li>
+            <li>location E</li>
+          </ul>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>directory</code> with child <code>role=listitem</code>s</h2>
+        <div class="test__case">
+          <div role="directory">
+            <div role="listitem">location A</div>
+            <div role="listitem">location B</div>
+            <div role="listitem">location C</div>
+            <div role="listitem">location D</div>
+            <div role="listitem">location E</div>
+          </div>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Heading levels beyond 6</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing heading levels beyond 6</h1>
+        <div class="dates">
+          <p>Published: <span>October 22, 2019</span></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Heading containing span</h2>
+        <div class="test__case">
+          <h1 aria-level="7">
+            h1 with level 7
+          </h1>
+          <div role=heading aria-level="8">
+            div with role heading and level 8
+          </div>
+          <h3 role=heading aria-level="20">
+            h3 with role heading and level 20
+          </h3>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <dl>
+                  <dt>MSAA/IA2</dt>
+                  <dd>...</dd>
+                  <dt>UIA</dt>
+                  <dd>...</dd>
+                  <dt>AX API</dt>
+                  <dd>AXHeading with value of 7, 8 and 20.</dd>
+                  <dt>JAWS & NVDA</dt>
+                  <dd>...</dd>
+                  <dt>VoiceOver</dt>
+                  <dd>With Safari announces level 7, 8 and 20.</dd>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+		</div> <!-- /#app -->
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

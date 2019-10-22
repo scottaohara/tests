@@ -19,7 +19,7 @@
       </header>
 
       <div class="test">
-        <h2>Heading containing span</h2>
+        <h2>Headings of different levels beyond 6</h2>
         <div class="test__case">
           <h1 aria-level="7">
             h1 with level 7
@@ -38,13 +38,16 @@
               <div>
                 <dl>
                   <dt>MSAA/IA2</dt>
-                  <dd>...</dd>
-                  <dt>UIA</dt>
-                  <dd>...</dd>
+                  <dd>MSAA reports h1, Heading.</dd>
+                  <dd>IA2 reports role Heading and object attribute level 7, 8 and 20.
                   <dt>AX API</dt>
                   <dd>AXHeading with value of 7, 8 and 20.</dd>
-                  <dt>JAWS & NVDA</dt>
-                  <dd>...</dd>
+                  <dt>JAWS</dt>
+                  <dd>FF - level 2 for all headings beyond 6.</dd>
+                  <dd>Chrome - level 2 for h1 and div test, level 3 for h3 test.</dd>
+                  <dt>NVDA</dt>
+                  <dd>FF announces level 7, 8 and 20.</dd>
+                  <dd>Chrome announces level 7 and 8. Level 3 announced for h3 test</dd>
                   <dt>VoiceOver</dt>
                   <dd>With Safari announces level 7, 8 and 20.</dd>
                 </dl>

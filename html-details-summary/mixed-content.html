@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing summaries with intermixed phrasing and heading content</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      summary h3 {
+        display: inline-block;
+        margin: 0;
+        width: calc(100% - 2em);
+      }
+
+      summary > span {
+        padding-left: 1.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>details</code> and <code>summary</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <span>November 26th, 2019</span></p>
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2><code>details</code> with a <code>summary</code> containing an <code>a</code> element</h2>
+        <div class="test__case">
+          <details>
+            <summary>
+              Standard summary <a href="#">with an <code>a</code> element</a>
+            </summary>
+            <div>
+              Content goes here.
+            </div>
+          </details>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div> <!-- /.test -->
+
+      <div class="test">
+        <h2><code>details</code> with a <code>summary</code> containing a <code>heading</code></h2>
+        <div class="test__case">
+          <details>
+            <summary>
+              <h3>Summering</h3>
+            </summary>
+            <div>
+              Content goes here.
+            </div>
+          </details>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div> <!-- /.test -->
+
+
+      <div class="test">
+        <h2><code>details</code> with a <code>summary</code> containing a <code>heading</code> and phrasing content</h2>
+        <div class="test__case">
+          <details class="format">
+            <summary>
+              <h3>Summering</h3>
+              <span>and more <a href="#">content</a></span>.
+            </summary>
+            <div>
+              Content goes here.
+            </div>
+          </details>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div> <!-- /.test -->
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

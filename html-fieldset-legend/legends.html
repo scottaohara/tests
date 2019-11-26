@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing legends with intermixed phrasing and heading content</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      .format legend {
+        padding: 1em .5em .5em;
+        margin-left: -.25em;
+      }
+
+      .format h3 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>fieldset</code> and <code>legend</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <span>November 26th, 2019</span></p>
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> containing a <code>span</code></h2>
+        <div class="test__case">
+          <fieldset>
+            <legend>
+              Standard legend <a href="#">with an <code>a</code> element</a>
+            </legend>
+            <div>
+              <label>
+                <input type=radio name=r>
+                test 1
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type=radio name=r>
+                test 2
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div> <!-- /.test -->
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> containing a <code>heading</code></h2>
+        <div class="test__case">
+          <fieldset>
+            <legend>
+              <h3>Ledging</h3>
+            </legend>
+            <div>
+              <label>
+                <input type=radio name=r1>
+                test 1
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type=radio name=r1>
+                test 2
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div> <!-- /.test -->
+
+
+      <div class="test">
+        <h2><code>fieldset</code> with a <code>legend</code> containing a <code>heading</code> and phrasing content</h2>
+        <div class="test__case">
+          <fieldset class="format">
+            <legend>
+              <h3>Ledging</h3> and more <a href="#">content</a>.
+            </legend>
+            <div>
+              <label>
+                <input type=radio name=r2>
+                test 1
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type=radio name=r2>
+                test 2
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="test__info">
+
+        </div>
+      </div> <!-- /.test -->
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

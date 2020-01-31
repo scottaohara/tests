@@ -49,6 +49,7 @@
             <details open>
               <summary>results</summary>
               <div>
+                <h3>macOS / iOS</h3>
                 <ul>
                   <li>
                     <p>macOS VoiceOver can navigate to all hidden content.</p>
@@ -61,8 +62,10 @@
                     <p>Hidden links and buttons can be activated.</p>
                     <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
                   </li>
+                </ul>
 
-
+                <h3>Android</h3>
+                <ul>
                   <li>
                     <p>TalkBack + Chrome can <strong>only find focusable hidden content</strong>.</p>
                     <p>Hidden links and buttons can be activated.</p>
@@ -73,6 +76,12 @@
                     <p>TalkBack + Firefox do not find any hidden content.</p>
                     <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
                   </li>
+                </ul>
+
+                <h3>Windows</h3>
+                <ul>
+                  <li>Chrome exposes <code>display: none</code> <code>aria-hidden="false"</code> elements to accessibility tree.</li>
+                  <li>Firefox does not expose <code>display: none</code> <code>aria-hidden="false"</code> elements to accessibility tree.</li>
 
                   <li>
                     <p>NVDA + Chrome can <strong>only find focusable hidden content</strong>.</p>
@@ -84,7 +93,15 @@
                     <p>NVDA + Firefox do not find any hidden content.</p>
                     <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
                   </li>
+
+                  <li>
+                    <p>JAWS + Firefox do not find any hidden content.</p>
+                    <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
+                  </li>
                 </ul>
+
+                <p>Note:</p>
+                <p><code>aria-hidden=true</code> paragraph is not exposed to the accessibility tree.</p>
                 <p>Cannot access any hidden interactive elements with <kbd>Tab</kbd> key or with a screen reader not enabled.</p>
               </div>
             </details>

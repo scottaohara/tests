@@ -40,7 +40,7 @@
           </ul>
           <a href="https://google.com" style="display: none;" aria-hidden="false">i'm a link</a>
           <a href="https://google.com">i'm a link <span style="display: none;" aria-hidden="false">with hidden text</span></a>
-          <button onClick="alert('you found me!')" style="display: none;" aria-hidden="false">press me</button>
+          <button onClick="alert('now i know you\'re using a screen reader...')" style="display: none;" aria-hidden="false">press me</button>
         </div>
 
         <div class="test__info">
@@ -48,7 +48,32 @@
             <details open>
               <summary>results</summary>
               <div>
-                <p>VoiceOver can navigate to all hidden content.  Hidden links and buttons can be activated. Cannot access with <kbd>Tab</kbd> key or with VO not enabled.</p>
+                <ul>
+                  <li>
+                    <p>macOS VoiceOver can navigate to all hidden content.</p>
+                    <p>Hidden links and buttons can be activated.</p>
+                    <p>Hidden text within link is part of link's accName.</p>
+                  </li>
+
+                  <li>
+                    <p>iOS VoiceOver can navigate to all hidden content.</p>
+                    <p>Hidden links and buttons can be activated.</p>
+                    <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
+                  </li>
+
+
+                  <li>
+                    <p>TalkBack + Chrome can only find focusable hidden content.</p>
+                    <p>Hidden links and buttons can be activated.</p>
+                    <p>Hidden text within link is part of link's accName.</p>
+                  </li>
+
+                  <li>
+                    <p>TalkBack + Firefox do not find any hidden content.</p>
+                    <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
+                  </li>
+                </ul>
+                <p>Cannot access any hidden interactive elements with <kbd>Tab</kbd> key or with a screen reader not enabled.</p>
               </div>
             </details>
           </div>

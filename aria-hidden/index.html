@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>aria-hidden=false tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      .results-table-wrap table {
+        border-left: 0;
+      }
+      th:first-child {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        border-left: 1px solid #111;
+        background-color: #fefefe;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing <code>aria-hidden=false</code></h1>
+        <div class="dates">
+          <p>Published: <span>January 31, 2020</span></p>
+          <!-- <p>Last Updated: <span>...</span></p> -->
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2>on hidden elements</h2>
+        <p>The following contains a paragraph, list, link, span within a visible link, and button which have all been set to <code>display: none</code> with <code>aria-hidden="false"</code>.</p>
+        <div class="test__case">
+          <p style="display: none;" aria-hidden="false">I'm a paragraph</p>
+          <ul style="display: none;" aria-hidden="false">
+            <li>I'm a list item</li>
+            <li>I'm a list item</li>
+          </ul>
+          <a href="https://google.com" style="display: none;" aria-hidden="false">i'm a link</a>
+          <a href="https://google.com">i'm a link <span style="display: none;" aria-hidden="false">with hidden text</span></a>
+          <button onClick="alert('you found me!')" style="display: none;" aria-hidden="false">press me</button>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <p>VoiceOver can navigate to all hidden content.  Hidden links and buttons can be activated. Cannot access with <kbd>Tab</kbd> key or with VO not enabled.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

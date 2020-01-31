@@ -33,6 +33,7 @@
         <h2>on hidden elements</h2>
         <p>The following contains a paragraph, list, link, span within a visible link, and button which have all been set to <code>display: none</code> with <code>aria-hidden="false"</code>.</p>
         <div class="test__case">
+          <p aria-hidden="true">aria-hidden=true paragraph</p>
           <p style="display: none;" aria-hidden="false">I'm a paragraph</p>
           <ul style="display: none;" aria-hidden="false">
             <li>I'm a list item</li>
@@ -63,13 +64,24 @@
 
 
                   <li>
-                    <p>TalkBack + Chrome can only find focusable hidden content.</p>
+                    <p>TalkBack + Chrome can <strong>only find focusable hidden content</strong>.</p>
                     <p>Hidden links and buttons can be activated.</p>
                     <p>Hidden text within link is part of link's accName.</p>
                   </li>
 
                   <li>
                     <p>TalkBack + Firefox do not find any hidden content.</p>
+                    <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
+                  </li>
+
+                  <li>
+                    <p>NVDA + Chrome can <strong>only find focusable hidden content</strong>.</p>
+                    <p>Hidden links and buttons can be activated.</p>
+                    <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
+                  </li>
+
+                  <li>
+                    <p>NVDA + Firefox do not find any hidden content.</p>
                     <p>Hidden text within link is <strong>NOT</strong> part of link's accName.</p>
                   </li>
                 </ul>

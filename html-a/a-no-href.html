@@ -14,7 +14,8 @@
       <header>
         <h1>Testing the <code>a</code> element as a placeholder link</h1>
         <div class="dates">
-          <p>Published: <time>July 17, 2019</time></p>
+          <p>Published: July 17, 2019</p>
+          <p>Updated: February 8, 2020</p>
         </div>
       </header>
 
@@ -24,6 +25,206 @@
         <h2><code>a</code> with no <code>href</code></h2>
         <div class="test__case">
           <a>My anchor</a>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Role</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Webkit:</th>
+                        <!-- role --> <td> ignored </td>
+                        <!-- name --> <td> My Anchor </td>
+                        <!-- desc ---><td> n/a </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Chromium:</th>
+                        <!-- role --> <td> ignored </td>
+                        <!-- name --> <td> My Anchor </td>
+                        <!-- desc ---><td> n/a </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Gecko:</th>
+                        <!-- role --> <td> Link </td>
+                        <!-- name --> <td> My Anchor </td>
+                        <!-- desc ---><td> n/a </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>a</code> with no <code>href</code> and <code>aria-label</code></h2>
+        <div class="test__case">
+          <a aria-label="aria">My anchor</a>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Role</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Webkit:</th>
+                        <!-- role --> <td> group </td>
+                        <!-- name --> <td> aria </td>
+                        <!-- desc ---><td> n/a </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Chromium:</th>
+                        <!-- role --> <td></td>
+                        <!-- name --> <td></td>
+                        <!-- desc ---><td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Gecko:</th>
+                        <!-- role --> <td></td>
+                        <!-- name --> <td></td>
+                        <!-- desc ---><td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>a</code> with no <code>href</code> and <code>title</code></h2>
+        <div class="test__case">
+          <a title="title">My anchor</a>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Role</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Webkit:</th>
+                        <!-- role --> <td> ignored </td>
+                        <!-- name --> <td> title (not announced) </td>
+                        <!-- desc ---><td> (used as name)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Chromium:</th>
+                        <!-- role --> <td></td>
+                        <!-- name --> <td></td>
+                        <!-- desc ---><td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Gecko:</th>
+                        <!-- role --> <td></td>
+                        <!-- name --> <td></td>
+                        <!-- desc ---><td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>a</code> with no <code>href</code> and <code>aria-label</code> and <code>title</code></h2>
+        <div class="test__case">
+          <a aria-label="aria" title="title">My anchor</a>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details open>
+              <summary>results</summary>
+              <div>
+                <div class="results-table-wrap">
+                  <table style="min-width: 600px;">
+                    <colgroup>
+                      <col style="width: 90px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Role</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Webkit:</th>
+                        <!-- role --> <td> group </td>
+                        <!-- name --> <td> aria </td>
+                        <!-- desc ---><td> title </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Chromium:</th>
+                        <!-- role --> <td></td>
+                        <!-- name --> <td></td>
+                        <!-- desc ---><td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Gecko:</th>
+                        <!-- role --> <td></td>
+                        <!-- name --> <td></td>
+                        <!-- desc ---><td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
 

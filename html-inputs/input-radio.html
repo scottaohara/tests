@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Radio Buttons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      [role="checkbox"] {
+        height: 1.5em;
+        width: 1.5em;
+        border: 2px solid;
+        display: inline-block;
+      }
+      [role="checkbox"]:focus {
+        outline: 2px solid transparent;
+        box-shadow: 0 0 1px 3px lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing radio buttons</h1>
+        <div class="dates">
+          <p>Published: February 08, 2020</p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Radio button group with no initially checked radio</h2>
+        <div class="test__case">
+          <label>
+            <input type="radio" name="t">
+            option 1
+          </label>
+          <label>
+            <input type="radio" name="t">
+            option 2
+          </label>
+          <label>
+            <input type="radio" name="t">
+            option 3
+          </label>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>Firefox allows <kbd>Tab</kbd> key to focus each radio button until a selection is made.</li>
+                  <li>
+                    Safari, Chrome, and Edge (legacy and chromium) allow <kbd>Tab</kbd> key to go to the first or last radio button, depending on which direction users are navigating the DOM, until a selection is made.
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Radio button group with an initially checked radio</h2>
+        <div class="test__case">
+          <label>
+            <input type="radio" checked="" name="a">
+            option 1
+          </label>
+          <label>
+            <input type="radio" name="a">
+            option 2
+          </label>
+          <label>
+            <input type="radio" name="a">
+            option 3
+          </label>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                All browsers treat a radio group with a pre-checked radio button as a single focus stop.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

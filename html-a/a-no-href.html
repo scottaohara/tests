@@ -6,7 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../-assets/shared.css">
 		<style>
-
+      td ul {
+        padding: 0 0 0 1.125em
+      }
 		</style>
 	</head>
 	<body>
@@ -34,7 +36,10 @@
                 <div class="results-table-wrap">
                   <table style="min-width: 600px;">
                     <colgroup>
-                      <col style="width: 90px">
+                      <col style="width: 11ch">
+                      <col style="width: 15ch;">
+                      <col style="width: 10ch;">
+                      <col style="width: 18ch;">
                     </colgroup>
                     <thead>
                       <tr>
@@ -42,26 +47,30 @@
                         <th>Role</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Announcement</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">Webkit:</th>
-                        <!-- role --> <td> ignored </td>
-                        <!-- name --> <td> My Anchor </td>
-                        <!-- desc ---><td> n/a </td>
+                        <!-- role -->  <td> ignored </td>
+                        <!-- name -->  <td> subtree </td>
+                        <!-- desc ---> <td> n/a </td>
+                        <!-- nounce --><td> "My anchor" with no role </td>
                       </tr>
                       <tr>
                         <th scope="row">Chromium:</th>
-                        <!-- role --> <td> ignored </td>
-                        <!-- name --> <td> My Anchor </td>
-                        <!-- desc ---><td> n/a </td>
+                        <!-- role -->  <td> link <small>(exposed in devtools as 'anchor')</small> </td>
+                        <!-- name -->  <td> subtree </td>
+                        <!-- desc ---> <td> n/a </td>
+                        <!-- nounce --><td> "My anchor" with no role </td>
                       </tr>
                       <tr>
                         <th scope="row">Gecko:</th>
-                        <!-- role --> <td> Link </td>
-                        <!-- name --> <td> My Anchor </td>
-                        <!-- desc ---><td> n/a </td>
+                        <!-- role -->  <td> link </td>
+                        <!-- name -->  <td> subtree </td>
+                        <!-- desc ---> <td> n/a </td>
+                        <!-- nounce --><td> "My anchor" with no role </td>
                       </tr>
                     </tbody>
                   </table>
@@ -86,7 +95,10 @@
                 <div class="results-table-wrap">
                   <table style="min-width: 600px;">
                     <colgroup>
-                      <col style="width: 90px">
+                      <col style="width: 11ch">
+                      <col style="width: 15ch;">
+                      <col style="width: 10ch;">
+                      <col style="width: 18ch;">
                     </colgroup>
                     <thead>
                       <tr>
@@ -94,6 +106,7 @@
                         <th>Role</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Announcement</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -102,18 +115,31 @@
                         <!-- role --> <td> group </td>
                         <!-- name --> <td> aria </td>
                         <!-- desc ---><td> n/a </td>
+                        <!-- nounce --><td>
+                                "aria, group". Navigate into group to hear "My anchor"</td>
                       </tr>
                       <tr>
                         <th scope="row">Chromium:</th>
-                        <!-- role --> <td></td>
-                        <!-- name --> <td></td>
-                        <!-- desc ---><td></td>
+                        <!-- role --> <td> no role </td>
+                        <!-- name --> <td> aria </td>
+                        <!-- desc ---><td> n/a </td>
+                        <!-- nounce --><td>
+                          <ul>
+                            <li>JAWS:<br>
+                                "My anchor"</li>
+                            <li>NVDA:<br>
+                                "aria"</li>
+                            <li>VO:<br>
+                                "aria, group". Navigate into group to hear "My anchor"</li>
+                          </ul>
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">Gecko:</th>
-                        <!-- role --> <td></td>
-                        <!-- name --> <td></td>
-                        <!-- desc ---><td></td>
+                        <!-- role -->  <td></td>
+                        <!-- name -->  <td></td>
+                        <!-- desc ---> <td> n/a </td>
+                        <!-- nounce --><td></td>
                       </tr>
                     </tbody>
                   </table>
@@ -138,7 +164,10 @@
                 <div class="results-table-wrap">
                   <table style="min-width: 600px;">
                     <colgroup>
-                      <col style="width: 90px">
+                      <col style="width: 11ch">
+                      <col style="width: 15ch;">
+                      <col style="width: 10ch;">
+                      <col style="width: 18ch;">
                     </colgroup>
                     <thead>
                       <tr>
@@ -146,26 +175,30 @@
                         <th>Role</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Announcement</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">Webkit:</th>
-                        <!-- role --> <td> ignored </td>
-                        <!-- name --> <td> title (not announced) </td>
-                        <!-- desc ---><td> (used as name)</td>
+                        <!-- role -->  <td> ignored </td>
+                        <!-- name -->  <td> title </td>
+                        <!-- desc ---> <td> (used as name) </td>
+                        <!-- nounce --><td>"My anchor" with no role</td>
                       </tr>
                       <tr>
                         <th scope="row">Chromium:</th>
-                        <!-- role --> <td></td>
-                        <!-- name --> <td></td>
-                        <!-- desc ---><td></td>
+                        <!-- role -->  <td>  </td>
+                        <!-- name -->  <td> subtree </td>
+                        <!-- desc ---> <td> title (not announced) </td>
+                        <!-- nounce --><td></td>
                       </tr>
                       <tr>
                         <th scope="row">Gecko:</th>
-                        <!-- role --> <td></td>
-                        <!-- name --> <td></td>
-                        <!-- desc ---><td></td>
+                        <!-- role -->  <td></td>
+                        <!-- name -->  <td></td>
+                        <!-- desc ---> <td></td>
+                        <!-- nounce --><td></td>
                       </tr>
                     </tbody>
                   </table>
@@ -190,7 +223,10 @@
                 <div class="results-table-wrap">
                   <table style="min-width: 600px;">
                     <colgroup>
-                      <col style="width: 90px">
+                      <col style="width: 11ch">
+                      <col style="width: 15ch;">
+                      <col style="width: 10ch;">
+                      <col style="width: 18ch;">
                     </colgroup>
                     <thead>
                       <tr>
@@ -198,26 +234,32 @@
                         <th>Role</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Announcement</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">Webkit:</th>
-                        <!-- role --> <td> group </td>
-                        <!-- name --> <td> aria </td>
-                        <!-- desc ---><td> title </td>
+                        <!-- role -->  <td> group </td>
+                        <!-- name -->  <td> aria </td>
+                        <!-- desc ---> <td> title </td>
+                        <!-- nounce --><td>
+                          "aria, group, title". Navigate into group to hear "My anchor"
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">Chromium:</th>
-                        <!-- role --> <td></td>
-                        <!-- name --> <td></td>
-                        <!-- desc ---><td></td>
+                        <!-- role -->  <td></td>
+                        <!-- name -->  <td></td>
+                        <!-- desc ---> <td></td>
+                        <!-- nounce --><td></td>
                       </tr>
                       <tr>
                         <th scope="row">Gecko:</th>
-                        <!-- role --> <td></td>
-                        <!-- name --> <td></td>
-                        <!-- desc ---><td></td>
+                        <!-- role -->  <td></td>
+                        <!-- name -->  <td></td>
+                        <!-- desc ---> <td></td>
+                        <!-- nounce --><td></td>
                       </tr>
                     </tbody>
                   </table>

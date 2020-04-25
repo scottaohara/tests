@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing font awesome buttons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      button:hover,
+      button:focus {
+        box-shadow: 0 0 0 2px lightBlue;
+        outline: 2px solid blue;
+        outline-offset: 2px;
+      }
+
+      .flex {
+        display: flex;
+        min-width: 200px;
+      }
+
+      .flex i {
+        width: 2em;
+      }
+
+      .flex > span {
+        flex-grow: 1;
+      }
+
+      .flex > span > span {
+        display: inline-block;
+        width: 100%;
+        padding: .25em 0;
+      }
+
+      .txt-center {
+        text-align: center;
+      }
+    </style>
+    <script src="https://kit.fontawesome.com/ca0bc8d5e7.js"></script>
+  </head>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing font awesome button patterns</h1>
+        <div class="dates">
+          <p>Published: April 25, 2020</p>
+          <!-- <p>Last Updated: X, 2020</p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Button with icon w/role=img and aria-label</h2>
+        <div class="test__case">
+          <button>
+<span aria-label="download" role="img">
+  <i class="far fa-arrow-alt-circle-down"></i>
+  <!-- font-awesome automatically puts an aria-hidden=true on its icons -->
+</span>
+</button>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with icon and visible text</h2>
+        <div class="test__case">
+          <button>
+  <i class="far fa-arrow-alt-circle-down"></i>
+  Download
+</button>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with icon with aria-hidden=true and visible text</h2>
+        <div class="test__case">
+          <button>
+  <i class="far fa-arrow-alt-circle-down"></i>
+  Download
+</button>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with icon w/role=img and aria-label and visible text</h2>
+        <div class="test__case">
+          <button>
+  <i class="far fa-arrow-alt-circle-down" aria-label="download" role="img"></i>
+  File name
+</button>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with icon with <code>aria-hidden=true</code> and visible text</h2>
+        <div class="test__case">
+          <button>
+  <i class="far fa-arrow-alt-circle-down" aria-hidden="true"></i>
+  File name
+</button>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Button using flexbox with icon with <code>aria-hidden=true</code> and visible text</h2>
+        <div class="test__case">
+          <button class="flex">
+  <i class="far fa-arrow-alt-circle-down" aria-hidden="true"></i>
+  <span class="txt-center">File name</span>
+</button>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Button using flexbox with icon with <code>aria-hidden=true</code> and 2 lines of visible text</h2>
+        <div class="test__case">
+          <button class="flex">
+  <i class="far fa-arrow-alt-circle-down"
+    aria-hidden="true"
+    style="position: relative; top: .825em;"></i>
+  <span>
+    <span>Download</span>
+    <span>File name</span>
+  </span>
+</button>
+        </div>
+        <div class="test__info"></div>
+      </div>
+
+    </div>
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

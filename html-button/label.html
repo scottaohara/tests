@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing labeling buttons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      button:hover,
+      button:focus {
+        box-shadow: 0 0 0 2px lightBlue;
+        outline: 2px solid blue;
+        outline-offset: 2px;
+      }
+
+      .flex {
+        display: flex;
+        min-width: 200px;
+      }
+
+      .flex i {
+        width: 2em;
+      }
+
+      .flex > span {
+        flex-grow: 1;
+      }
+
+      .flex > span > span {
+        display: inline-block;
+        width: 100%;
+        padding: .25em 0;
+      }
+
+      .txt-center {
+        text-align: center;
+      }
+    </style>
+    <script src="https://kit.fontawesome.com/ca0bc8d5e7.js"></script>
+  </head>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing labeling a button</h1>
+        <div class="dates">
+          <p>Published: April 29, 2020</p>
+          <!-- <p>Last Updated: X, 2020</p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Button with a label and text</h2>
+        <div class="test__case">
+          <label for="b">Label</label>
+          <button id="b">
+            Test
+</button>
+        </div>
+        <div class="test__info">
+          <ul>
+            <li>Firefox: "label" is accname of button</li>
+            <li>Chrome: "label" is accname of button</li>
+            <li>Safari: "label" is accname of button</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

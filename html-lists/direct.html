@@ -3,14 +3,29 @@
 <meta charset="utf-8">
 <title>testing direct list nesting</title>
 
+<h2>control</h2>
 <ul>
+  <li>parent item 1</li>
+  <li>parent item 2</li>
   <li>
-    check</li>
-    <li>if</li>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+  </li>
+</ul>
+
+
+<h2>test</h2>
+
+<ul>
+  <li>parent item 1</li>
+  <li>parent item 2</li>
   <ul>
-    <li>works?</li>
-    <li>or</li>
-    <li>naw</li>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
   </ul>
 </ul>
 
@@ -18,6 +33,8 @@
   <summary>
   Results</summary>
   <p>macOS Safari + VO - no detrimental impact.</p>
+  <p>Chrome, IE11, firefox + JAWS - announces 2 item list for primary list. Announces nested list as nested.</p>
+  <p>NVDA - no detrimental impact.</p>
 </details>
 
 </html>

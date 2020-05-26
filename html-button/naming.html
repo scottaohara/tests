@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Naming buttons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      button {
+        border: 2px solid;
+        padding: .635em;
+      }
+      button:hover,
+      button:focus {
+        box-shadow: 0 0 0 2px lightBlue;
+        outline: 2px solid blue;
+        outline-offset: 2px;
+      }
+
+      .flex {
+        display: flex;
+        min-width: 200px;
+      }
+
+      .flex i {
+        width: 2em;
+      }
+
+      .flex > span {
+        flex-grow: 1;
+      }
+
+      .flex > span > span {
+        display: inline-block;
+        width: 100%;
+        padding: .25em 0;
+      }
+
+      .txt-center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing labeling a button</h1>
+        <div class="dates">
+          <p>Published: May 26, 2020</p>
+          <!-- <p>Last Updated: X, 2020</p> -->
+        </div>
+      </header>
+
+      <div id="idref" hidden>aria labelledby</div>
+
+      <div class="test">
+        <h2>Button with text</h2>
+        <div class="test__case">
+<button>text</button>
+        </div>
+        <div class="test__info">
+          <p>Expected name: "text"</p>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td>Pass</td><!-- chrome -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- ie -->
+          </template>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Button with value</h2>
+        <div class="test__case">
+<button value="value"></button>
+        </div>
+        <div class="test__info">
+          <p>Expected name: no name</p>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td>Pass</td><!-- chrome -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- ie -->
+          </template>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Button with title</h2>
+        <div class="test__case">
+<button title="title"></button>
+        </div>
+        <div class="test__info">
+          <p>Expected name: "title"</p>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td>Pass</td><!-- chrome -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- ie -->
+          </template>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Button with aria-label</h2>
+        <div class="test__case">
+<button aria-label="aria label"></button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Button with aria-labelledby</h2>
+        <div class="test__case">
+<button aria-labelledby="idref"></button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+
+
+
+      <div class="test">
+        <h2>Button with title and value</h2>
+        <div class="test__case">
+<button title="title" value="value"></button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with text, title and value</h2>
+        <div class="test__case">
+<button title="title" value="value">Text</button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with text and value</h2>
+        <div class="test__case">
+<button value="value">
+  Text
+</button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with text and title</h2>
+        <div class="test__case">
+<button title="title">
+  Text
+</button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with text and aria-label</h2>
+        <div class="test__case">
+<button aria-label="aria label">
+  Text
+</button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with text and aria-labelledby</h2>
+        <div class="test__case">
+<button aria-labelledby="idref">
+  Text
+</button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Button with a label and text</h2>
+        <div class="test__case">
+          <label for="b">Label</label>
+<button id="b">
+  Test
+</button>
+        </div>
+        <div class="test__info">
+          <!--
+
+          -->
+        </div>
+      </div>
+
+
+      <h2>Testing Results</h2>
+      <details>
+        <summary>Versions</summary>
+        <dl>
+          <dt>Windows 10</dt>
+          <dd>Firefox 76.0.1</dd>
+          <dd>Chrome 81</dd>
+          <dd>Edge 83</dd>
+          <dd>IE11</dd>
+
+          <dt>macOS 10.15.3 (10.15.4 pending update)</dt>
+          <dd>Safari 13.0.5</dd>
+          <dd>Chrome 81</dd>
+
+          <dt>Android x</dt>
+          <dd>Firefox x</dd>
+          <dd>Chrome x</dd>
+
+          <dt>iOS 13.4.1</dt>
+          <dd>Safari</dd>
+        </dl>
+      </details>
+    </div>
+
+
+  </body>
+</html>

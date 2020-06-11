@@ -1,0 +1,1753 @@
+<!doctype html>
+<html lang="en"><head>
+		<meta charset="utf-8">
+		<title>Figure and figcaption tests</title>
+		<style>
+.na {
+	background: #aaa;
+	color: #000;
+}
+
+.na[contenteditable] {
+	background: #eee;
+}
+
+.fail {
+	background: darkred;
+	color: #fff;
+}
+
+.partial {
+	background: lightyellow;
+}
+
+.pass {
+	background: darkgreen;
+	color: #fff;
+}
+
+.sr-only {
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+		white-space: nowrap;
+		position: absolute;
+	}
+
+table {
+	text-align: left;
+	width: 100%;
+	border-spacing: 0;
+	border: 1px solid #111;
+}
+
+button {
+	font: inherit;
+}
+
+tbody tr:not(:last-of-type) > *,
+thead tr > * {
+	border-bottom: 1px solid #111;
+}
+
+td, th {
+	padding: .25em;
+}
+
+td:not(:last-of-type),
+th:not(:last-of-type) {
+	border-right: 1px solid #111;
+}
+
+td + th,
+th + td {
+	border-left: 1px solid #111;
+}
+
+img,
+svg {
+	height: 3em;
+	width: 3em;
+}
+</style>
+
+</head><body>
+	<div hidden="">
+	<svg viewBox="0 0 1024 1024" id="pull1" xmlns="http://www.w3.org/2000/svg">
+		<title id="p">Accessible Name</title>
+		<path d="M832 320c-8.75 0-17.125 1.406-25.625 2.562C757.625 208.25 644.125 128 512 128c-132.156 0-245.562 80.25-294.406 194.562C209.156 321.406 200.781 320 192 320 85.938 320 0 405.938 0 512s85.938 192 192 192c20.531 0 39.875-4.25 58.375-10.375C284.469 731.375 331.312 756.75 384 764.5v-65.25c-49.844-10.375-91.594-42.812-112.625-87.875C249.531 629 222.219 640 192 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 25.281 0 48.625 7.562 68.406 20.094C281.344 283.78099999999995 385.594 192 512 192c126.5 0 229.75 92.219 250.5 212.75 20-13 43.875-20.75 69.5-20.75 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128-10.25 0-20-1.5-29.625-3.75C773.438 677.125 725.938 704 672 704c-11.062 0-21.625-1.625-32-4v64.938c10.438 1.688 21.062 3.062 32 3.062 61.188 0 116.5-24.625 156.938-64.438C830 703.625 830.875 704 832 704c106.062 0 192-85.938 192-192S938.062 320 832 320zM576 512H448v320H320l192 192 192-192H576V512z"></path>
+	</svg>
+	<svg viewBox="0 0 1024 1024" id="pull2" xmlns="http://www.w3.org/2000/svg">
+		<path d="M832 320c-8.75 0-17.125 1.406-25.625 2.562C757.625 208.25 644.125 128 512 128c-132.156 0-245.562 80.25-294.406 194.562C209.156 321.406 200.781 320 192 320 85.938 320 0 405.938 0 512s85.938 192 192 192c20.531 0 39.875-4.25 58.375-10.375C284.469 731.375 331.312 756.75 384 764.5v-65.25c-49.844-10.375-91.594-42.812-112.625-87.875C249.531 629 222.219 640 192 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 25.281 0 48.625 7.562 68.406 20.094C281.344 283.78099999999995 385.594 192 512 192c126.5 0 229.75 92.219 250.5 212.75 20-13 43.875-20.75 69.5-20.75 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128-10.25 0-20-1.5-29.625-3.75C773.438 677.125 725.938 704 672 704c-11.062 0-21.625-1.625-32-4v64.938c10.438 1.688 21.062 3.062 32 3.062 61.188 0 116.5-24.625 156.938-64.438C830 703.625 830.875 704 832 704c106.062 0 192-85.938 192-192S938.062 320 832 320zM576 512H448v320H320l192 192 192-192H576V512z"></path>
+	</svg>
+</div>
+
+<h1>Figure &amp; figcaption tests</h1>
+<p>
+	Note: there are no special keys to navigate by <code>figure</code> or <code>figcaption</code>s.
+</p>
+<p>
+	All tests performed with default screen reader settings.
+</p>
+<p>
+	Note: <b>Some failures may rectify themselves if screen reader settings are modified to announce all images</b>.  E.g. Test 2 results for Chrome + JAWS will change.
+</p>
+
+<p>
+	<b>Pass</b> means the each test's expected announcement was made.
+</p>
+<p>
+	<b>Fail</b> means that no figure semantics were exposed, unless otherwise noted.
+</p>
+
+<div>
+	<h2>Test 1</h2>
+	<figure>
+		<img src="earth.jpg" alt="Accessible Name">
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p>Image has non-empty <code>alt</code> attribute.</p>
+	</details>
+
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "Content caption" as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail<br></td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 2</h2>
+	<figure>
+		<img src="earth.jpg">
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p>Image has no declared <code>alt</code> attribute.</p>
+		<p>Note: Image "should" announce as "earth.jpg" but screen readers may ignore.</p>
+	</details>
+
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "Content caption" as the accessible name.
+	</p>
+	<p>Note: Image "should" announce as "earth.jpg" but screen readers may ignore.</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail (all content ignored!)</td> <!-- jaws 18 -->
+			<td class="fail">fail (all content ignored!)</td> <!-- jaws 2018 -->
+			<td class="fail">fail (all content ignored!)<br></td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 3</h2>
+	<figure>
+		<img src="earth.jpg" alt="">
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p>Image has empty <code>alt</code> attribute.</p>
+	</details>
+
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "Content caption" as the accessible name.
+	</p>
+	<p>Note: Image "should" be ignored.</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail (all content ignored!)</td> <!-- jaws 18 -->
+			<td class="fail">fail (all content ignored!)</td> <!-- jaws 2018 -->
+			<td class="fail">fail (all content ignored!)<br></td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="fail">fail (all content ignored!)</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 4</h2>
+	<figure aria-label="ARIA label">
+		<img src="earth.jpg" alt="">
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> has <code>aria-label</code>. Image has empty <code>alt</code> attribute.</p>
+	</details>
+
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "ARIA label" as the accessible name.
+	</p>
+	<p>Note: Image should be ignored.</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 5</h2>
+	<figure aria-label="ARIA label">
+		<img src="earth.jpg" alt="Accessible Name">
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> has <code>aria-label</code>. Image has non-empty <code>alt</code> attribute.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "ARIA label" as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="pass">pass<br></td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 6</h2>
+	<figure>
+		<img src="earth.jpg" alt="Accessible Name">
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> without <code>figcaption</code>. Image has non-empty <code>alt</code> attribute.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with no accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass<br></td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="fail">fail</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 7</h2>
+	<figure aria-labelledby="lby">
+		<img src="earth.jpg" alt="Accessible Name">
+		<figcaption id="lby">
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> has <code>aria-labelledby</code> pointing to the <code>figcaption</code>. Image has non-empty <code>alt</code> attribute.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "Content caption" as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 8</h2>
+	<figure role="figure">
+		<img src="earth.jpg" alt="Accessible Name">
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> has <code>role="figure"</code>. Image has non-empty <code>alt</code> attribute.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "Content caption" as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">
+			fail (figure exposed but no accessible name)</td> <!-- jaws 18 -->
+			<td class="fail">fail (figure exposed but no accessible name)</td> <!-- jaws 2018 -->
+			<td class="fail">fail (figure exposed but no accessible name)</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 9</h2>
+	<figure role="figure" aria-labelledby="figID">
+		<img src="earth.jpg" alt="Accessible Name">
+		<figcaption id="figID">
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> has <code>role="figure"</code> and <code>aria-labelledby</code> pointing to the <code>figcaption</code>. Image has non-empty <code>alt</code> attribute.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "Content caption" as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass<br></td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 10</h2>
+	<figure role="figure" aria-label="ARIA label">
+		<img src="earth.jpg" alt="Accessible Name">
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> has <code>role="figure"</code> and <code>aria-label</code>. Image has non-empty <code>alt</code> attribute.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "ARIA label" as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made<br></td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 11</h2>
+	<figure>
+		<p>Non-image figure content</p>
+		<figcaption>
+			Content caption.
+		</figcaption>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> with a paragraph as its subject.
+			A <code>&lt;figcaption&gt;</code> should provide the accessible name.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "Content caption." as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 12</h2>
+	<figure>
+		<p>Non-image figure content</p>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> with a paragraph as its subject. No <code>&lt;figcaption&gt;</code>.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with no accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="fail">fail</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="fail">fail</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<h2>Test 13</h2>
+	<figure aria-label="ARIA label">
+		<p>Non-image figure content</p>
+	</figure>
+
+	<details>
+		<summary>Pattern notes:</summary>
+		<p><code>&lt;figure&gt;</code> with an <code>aria-label</code> which should provide
+		its accessible name.</p>
+	</details>
+
+	<p>
+		Expected announcement:<br>
+		Should announce figure role with "ARIA label" as the accessible name.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<th>NVDA (2018.4.1)</th>
+				<th>JAWS 18</th>
+				<th>JAWS (2018)</th>
+				<th>JAWS (2019)</th>
+				<th>VO (Mac 10.14)</th>
+				<th>VO (iOS 12.1)</th>
+				<th>TalkBack (7.2)</th>
+				<th>Narrator</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Firefox Android (63.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Firefox (64.0.2)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>IE (11)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (12.0.2)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="pass">pass<br></td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Safari (iOS 12.1.2</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome (71.0)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="pass">pass</td> <!-- jaws 18 -->
+			<td class="pass">pass</td> <!-- jaws 2018 -->
+			<td class="pass">pass</td> <!-- jaws 2019 -->
+			<td class="pass">pass</td> <!-- vo 10.14.2 -->
+			<td class="fail">fail</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="na">na</td> <!-- narrator -->
+		</tr>
+		<tr>
+			<th>Chrome Android (70.0)</th>
+			<td class="na">na</td> <!-- nvda 2018.4.1 -->
+			<td class="na">na</td> <!-- jaws 18 -->
+			<td class="na">na</td> <!-- jaws 2018 -->
+			<td class="na">na</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="fail">fail</td> <!-- tb 7.2 -->
+			<td class="na"></td>
+		</tr>
+		<tr>
+			<th>Edge (42)</th>
+			<td class="fail">fail</td> <!-- nvda 2018.4.1 -->
+			<td class="fail">fail</td> <!-- jaws 18 -->
+			<td class="fail">fail</td> <!-- jaws 2018 -->
+			<td class="fail">fail</td> <!-- jaws 2019 -->
+			<td class="na">na</td> <!-- vo 10.14.2 -->
+			<td class="na">na</td> <!-- ios 12.1 -->
+			<td class="na">na</td> <!-- tb 7.2 -->
+			<td class="partial">no announced role, <br>but relationship made</td> <!-- narrator -->
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<footer>
+	<p>
+		Additional <a href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/figure.html">figure</a> and <a href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/figure-figcaption.html">figure with figcaption</a> tests.
+	</p>
+
+	<p>
+		Chrome uses the same rendering engine as Safari on iOS, so results <b>should</b> be the same. Testing largely just to verify.
+	</p>
+</footer>
+
+</body></html>

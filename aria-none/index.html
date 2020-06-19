@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>role=none / presentation tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing role=none / presentation</h1>
+        <div class="dates">
+          <p>Published: <span>June 19, 2020</span></p>
+          <!-- <p>Last Updated: <span>...</span></p> -->
+        </div>
+      </header>
+      <div class="test">
+        <h2><code>tabindex=-1</code> wraps a presentational layout table</h2>
+        <div class="test__case">
+          <div tabindex="-1">
+            <table role="presentation">
+              <tr>
+                <th>header 1</th>
+                <th>header 2</th>
+              </tr>
+              <tr>
+                <td>Some info can go here</td>
+                <td>And some more info can go here</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="test__info">
+          <p>Expected result: table is treated as presentational and no table semantics are conveyed</p>
+        </div>
+      </div>
+
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

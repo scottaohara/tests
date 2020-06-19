@@ -90,6 +90,40 @@
       </div>
 
 
+
+      <div class="test">
+        <h2><code>tabindex=-1</code> wraps a presentational layout table, role=presentation used on all table elements</h2>
+        <div class="test__case">
+          <div tabindex="-1">
+            <table role="presentation">
+              <tr role="presentation">
+                <td role="presentation">example</td><td role="presentation">example</td><td role="presentation">example</td><td role="presentation">example</td>
+                <td role="presentation">example 2</td>
+              </tr>
+              <tr role="presentation">
+                <td role="presentation">this table has role=presentation</td>
+                <td role="presentation">so it should not be exposed as a table</td>
+                <td role="presentation">example</td><td role="presentation">example</td><td role="presentation">example</td>
+              </tr>
+              <tr role="presentation">
+                <td role="presentation">example</td><td role="presentation">example</td><td role="presentation">example</td><td role="presentation">example</td>
+                <td role="presentation">example 2</td>
+              </tr>
+              <tr role="presentation">
+                <td role="presentation">example</td><td role="presentation">example</td><td role="presentation">example</td><td role="presentation">example</td>
+                <td role="presentation">example 2</td>
+              </tr>
+            </table>
+          </div>
+      </div>
+
+        <div class="test__info">
+          <p>Expected result: table is treated as presentational and no table semantics are conveyed</p>
+          <!-- <p>Results: same as previous results.</p> -->
+        </div>
+      </div>
+
+
     </div> <!-- /#app -->
 
     <script src="../-assets/shared.js"></script>

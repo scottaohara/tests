@@ -50,8 +50,9 @@
 
         <div class="test__info">
           <p>Expected result: table is treated as presentational and no table semantics are conveyed</p>
-          <p>Safari and VoiceOver do not expose table as expected.</p>
-          <!-- <p>JAWS 2020 and IE11 find  -->
+          <p>Safari and VoiceOver correctly finds no tables in this test.</p>
+          <p>JAWS 2020 and IE11 <strong>incorrectly exposes</strong> the table within the <code>div tabindex=-1</code> as a table.  This does not occur with latest versions of Firefox, Chrome, or Edge.</p>
+          <p>Latest NVDA with IE11, Edge, Chrome and Firefox correctly find no tables in this test.</p>
         </div>
       </div>
 

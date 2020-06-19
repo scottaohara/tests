@@ -28,15 +28,30 @@
                 <th>header 2</th>
               </tr>
               <tr>
-                <td>Some info can go here</td>
-                <td>And some more info can go here</td>
+                <td>this table has role=presentation</td>
+                <td>so it should not be exposed as a table</td>
               </tr>
             </table>
           </div>
+
+          <hr>
+
+          <table role="presentation">
+            <tr>
+              <th>control table</th>
+              <th>header 2</th>
+            </tr>
+            <tr>
+              <td>this table is not wrapped in a <code>div tabindex=-1</code></td>
+              <td>It should not be exposed as a table.</td>
+            </tr>
+          </table>
         </div>
 
         <div class="test__info">
           <p>Expected result: table is treated as presentational and no table semantics are conveyed</p>
+          <p>Safari and VoiceOver do not expose table as expected.</p>
+          <!-- <p>JAWS 2020 and IE11 find  -->
         </div>
       </div>
 

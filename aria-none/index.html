@@ -134,9 +134,32 @@
 
         <div class="test__info">
           <p>Expected result: table is treated as presentational and no table semantics are conveyed</p>
+          <p>Results: same as previous results.</p>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>div</code> with <code>role=presentation</code> and <code>tabindex=-1</code> wraps a presentational layout table</h2>
+        <div class="test__case">
+          <div tabindex="-1" role="presentation">
+            <table role="presentation">
+              <tr role="presentation">
+                <th role="presentation">header 1</th>
+                <th role="presentation">header 2</th>
+              </tr>
+              <tr role="presentation">
+                <td role="presentation">this table has role=presentation</td>
+                <td role="presentation">so it should not be exposed as a table</td>
+              </tr>
+            </table>
+          </div>
+        <div class="test__info">
+          <p>Expected result: table is treated as presentational and no table semantics are conveyed</p>
           <!-- <p>Results: same as previous results.</p> -->
         </div>
       </div>
+
 
 
     </div> <!-- /#app -->

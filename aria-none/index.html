@@ -57,6 +57,38 @@
       </div>
 
 
+      <div class="test">
+        <h2><code>tabindex=-1</code> wraps a presentational layout table</h2>
+        <div class="test__case">
+          <div tabindex="-1">
+            <table role="presentation">
+              <tr>
+                <td>example</td><td>example</td><td>example</td><td>example</td>
+                <td>example 2</td>
+              </tr>
+              <tr>
+                <td>this table has role=presentation</td>
+                <td>so it should not be exposed as a table</td>
+                <td>example</td><td>example</td><td>example</td>
+              </tr>
+              <tr>
+                <td>example</td><td>example</td><td>example</td><td>example</td>
+                <td>example 2</td>
+              </tr>
+              <tr>
+                <td>example</td><td>example</td><td>example</td><td>example</td>
+                <td>example 2</td>
+              </tr>
+            </table>
+          </div>
+      </div>
+
+        <div class="test__info">
+          <p>Expected result: table is treated as presentational and no table semantics are conveyed</p>
+
+        </div>
+      </div>
+
 
     </div> <!-- /#app -->
 

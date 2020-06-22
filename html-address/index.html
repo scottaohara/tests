@@ -1,59 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Testing address element</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
 	</head>
 	<body>
 		<div id="app">
-			<header>
-				<h1><code>address</code> element tests</h1>
-				<div class="dates">
-					<p>Published: <time>June 9th, 2019</time></p>
-					<!-- <p>Last Updated: <time>...</time></p> -->
-				</div>
-			</header>
+      <header>
+        <h1><code>address</code> element tests</h1>
+        <div class="dates">
+          <p>Published: <span>June 22, 2020</span></p>
+        </div>
+      </header>
 
 
 			<div class="test">
-				<h2>using br</h2>
-				<div class="test__case">
-					<address>
-						The Fakerson Family<br>
-						123 Fake Street<br>
-						Fakestown FA, 55555
-					</address>
-				</div>
-				<div class="test__info"></div>
-			</div>
+        <h2>Separating lines with <code>br</code></h2>
+        <div class="test__case">
+          <address>
+            The Fakerson Family<br>
+            123 Fake Street<br>
+            Fakestown FA, 55555
+          </address>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
 
 
-			<div class="test">
-				<h2>using pre</h2>
-				<div class="test__case">
-				<address>
-					<pre style="font-family: inherit; font-size: inherit;">The Fakerson Family
-					123 Fake Street
-					Fakestown FA, 55555</pre>
-					</address>
-				</div>
-				<div class="test__info"></div>
-			</div>
+      <div class="test">
+        <h2>Using <code>pre</code> within <code>address</code></h2>
+        <div class="test__case">
+          <address>
+            <pre style="font-family: inherit; font-size: inherit;">The Fakerson Family
+            123 Fake Street
+            Fakestown FA, 55555</pre>
+          </address>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
 
-			<div class="test">
-				<h2>using paragraphs</h2>
-				<div class="test__case">
-					<address>
-						<p>The Fakerson Family</p>
-						<p>123 Fake Street</p>
-						<p>Fakestown FA, 55555</p>
-					</address>
-				</div>
-				<div class="test__info"></div>
-			</div>
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Using <code>p</code>s within <code>address</code></h2>
+        <div class="test__case">
+          <address>
+            <p>The Fakerson Family</p>
+            <p>123 Fake Street</p>
+            <p>Fakestown FA, 55555</p>
+          </address>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Testing <code>aria-label</code> on <code>address</code></h2>
+        <div class="test__case">
+          <address aria-label="aria label">
+            The Fakerson Family<br>
+            123 Fake Street<br>
+            Fakestown FA, 55555
+          </address>
+        </div>
+        <div class="test__info">
+          <!-- <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div> -->
+        </div>
+      </div>
+
 
 		</div> <!-- /#app -->
-		<script src="../-assets/shared.js"></script>
+
+    <script src="../-assets/shared.js"></script>
+
 	</body>
 </html>

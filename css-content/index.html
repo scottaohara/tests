@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Testing CSS pseudo content</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+      .pseudo:before,
+      .pseudo:after {
+        color: green;
+      }
+      .pseudo:before {
+        content: 'before ';
+      }
+      .pseudo:after {
+        content: ' after';
+      }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing CSS pseudo content</h1>
+        <div class="dates">
+          <p>Published: <span>June 24, 2020</span></p>
+        </div>
+      </header>
+
+
+			<div class="test">
+        <h2>Pseudo content and a paragraph</h2>
+        <div class="test__case">
+          <p class="pseudo">Paragraph text.</p>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Pseudo content and the <code>dfn</code> element</h2>
+        <div class="test__case">
+          <p>
+            <dfn class="pseudo">defining instance of a term</dfn>
+          </p>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Pseudo content with links and buttons</h2>
+        <div class="test__case">
+          <p>
+            <button class="pseudo">button label</button>
+          </p>
+          <p>
+            <a href="#" class="pseudo">link label</a>
+          </p>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

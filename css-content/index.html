@@ -27,6 +27,21 @@
         </div>
       </header>
 
+      <details>
+        <summary>Application versions</summary>
+        <p>Testing was performed with the following:</p>
+        <ul>
+          <li>iOS 13.5.1 / Safari</li>
+          <li>macOS 10.15.5 / Safari 13.1.1</li>
+          <li>Android 10, TalkBack, Chrome 83</li>
+          <li>Windows Firefox 77</li>
+          <li>Windows Chrome 83</li>
+          <li>Windows Edge 83</li>
+          <li>NVDA 2020.1</li>
+          <li>JAWS 2020.2006.12 (June)</li>
+        </ul>
+      </details>
+
 
 			<div class="test">
         <h2>Pseudo content and a paragraph</h2>
@@ -35,6 +50,40 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
+            <details>
+              <summary>Results</summary>
+              <dl>
+                <dt>VoiceOver + Safari macOS</dt>
+                <dd>before/after content announces as part of paragraph.</dd>
+                <dd>If navigating <b>into</b> the paragraph (<kbd>Control + Option + Shift + down arrow</kbd>) the before/after content will not be read.</dd>
+
+                <dt>VoiceOver + Safari iOS</dt>
+                <dd>before/after content can be discovered as individual stops when left/right swiping through content.</dd>
+                <dd>Navigating by "words" is awkward and appears to get tripped up by before/after content.</dd>
+                <dd>Navigating by "lines" will skip before/after content.</dd>
+                <dd>Search by touch will focus before/after content in isolation.</dd>
+
+                <dt>TalkBack + Chrome</dt>
+                <dd>before/after content announces as part of paragraph.</dd>
+                <dd>Navigating by characters, words or lines, before/after content will be announced.</dd>
+
+                <dt>JAWS + Chrome/Edge</dt>
+                <dd>Navigating by line, character, word or sentence announces before/after when announcing paragraph text.</dd>
+                <dd>Navigating by "same element" (<kbd>S</kbd>) pseudo content will cause JAWS to announce the paragraph 3 times before moving to next "paragraph" in the document.</dd>
+
+                <dt>JAWS + Firefox</dt>
+                <dd>Same results as Chrome/Edge.</dd>
+
+                <dt>JAWS & NVDA + IE11</dt>
+                <dd>Ignores before/after content as IE11 does not expose it to the accessibility tree.</dd>
+
+                <dt>NVDA + Chrome/Edge</dt>
+                <dd>Navigating by line, character, or word announces before/after when announcing announcing paragraph text.</dd>
+
+                <dt>NVDA + Firefox</dt>
+                <dd>Same results as Chrome/Edge.</dd>
+              </dl>
+            </details>
           </div>
         </div>
       </div>
@@ -49,6 +98,40 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
+            <details>
+              <summary>Results</summary>
+              <dl>
+                <dt>VoiceOver + Safari macOS</dt>
+                <dd>before/after content announces as part of the <code>dfn</code>'s content.</dd>
+                <dd>If navigating <b>into</b> the <code>dfn</code> element, (<kbd>Control + Option + Shift + down arrow</kbd>) the before/after content can be navigated to as individual words, just like the child text of the element.</dd>
+
+                <dt>VoiceOver + Safari iOS</dt>
+                <dd>before/after content can be discovered as individual stops when left/right swiping through content.</dd>
+                <dd>Navigating by "words" is awkward and appears to get tripped up by before/after content.</dd>
+                <dd>Navigating by "lines" will skip before/after content.</dd>
+                <dd>Search by touch will focus before/after content in isolation.</dd>
+
+                <dt>TalkBack + Chrome</dt>
+                <dd>before/after content announces as part of the <code>dfn</code>'s content.</dd>
+                <dd>Navigating by characters, words or lines, before/after content will be announced.</dd>
+
+                <dt>JAWS + Chrome/Edge</dt>
+                <dd>Navigating by line, character, word or sentence announces before/after when announcing <code>dfn</code> text.</dd>
+                <dd>Navigating by "same element" (<kbd>S</kbd>) pseudo content will cause JAWS to announce the content 3 times before moving to next paragraph in the document (whether the <code>dfn</code> is wrapped in a <code>p</code> or not, it treats the line of text as a paragraph).</dd>
+
+                <dt>JAWS + Firefox</dt>
+                <dd>Same results as Chrome.</dd>
+
+                <dt>JAWS & NVDA + IE11</dt>
+                <dd>Ignores before/after content as IE11 does not expose it to the accessibility tree.</dd>
+
+                <dt>NVDA + Chrome/Edge</dt>
+                <dd>Navigating by line, character, or word announces before/after when announcing announcing <code>dfn</code> text.</dd>
+
+                <dt>NVDA + Firefox</dt>
+                <dd>Same results as Chrome/Edge.</dd>
+              </dl>
+            </details>
           </div>
         </div>
       </div>
@@ -66,6 +149,42 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
+            <details>
+              <summary>Results</summary>
+              <dl>
+                <dt>VoiceOver + Safari macOS</dt>
+                <dd>before/after content announces as part of the <code>dfn</code>'s content.</dd>
+                <dd>If navigating <b>into</b> the button or link elements, (<kbd>Control + Option + Shift + down arrow</kbd>) the before/after content can be navigated to as individual words, just like the child text of the element.</dd>
+
+                <dt>VoiceOver + Safari iOS</dt>
+                <dd>before/after content is announced when focusing button or link.</dd>
+                <dd>Navigating by "words" is awkward and appears to get tripped up by before/after content.</dd>
+                <dd>Navigating by "lines" will skip before/after content.</dd>
+                <dd>Search by touch will focus entire link or button, and not individual before/after or child text of the elements.</dd>
+
+                <dt>TalkBack + Chrome</dt>
+                <dd>before/after content is not announced as part of the button or link's accessible name.</dd>
+                <dd>Navigating by characters, words or lines, before/after content will not be announced.</dd>
+
+                <dt>JAWS + Chrome/Edge</dt>
+                <dd>before/after content <strong>not</strong> announced in buttons.</dd>
+                <dd>Navigating by line, character, word or sentence announces before/after when announcing link text.</dd>
+
+                <dt>JAWS + Firefox</dt>
+                <dd>Navigating by line, character, word or sentence announces before/after when announcing link or button text.</dd>
+                <dd>Navigating by buttons or form controls will announce before/after content of button.</dd>
+
+                <dt>JAWS & NVDA + IE11</dt>
+                <dd>Ignores before/after content as IE11 does not expose it to the accessibility tree.</dd>
+
+                <dt>NVDA + Chrome/Edge</dt>
+                <dd>Navigating by line, character, or word announces before/after when announcing button and link text.</dd>
+                <dd>Navigating by links, buttons, form controls, before/after is announced.</dd>
+
+                <dt>NVDA + Firefox</dt>
+                <dd>Same results as Chrome/Edge.</dd>
+              </dl>
+            </details>
           </div>
         </div>
       </div>

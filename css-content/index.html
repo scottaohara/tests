@@ -189,6 +189,95 @@
         </div>
       </div>
 
+
+      <div class="test">
+        <h2>Pseudo content referenced via aria-labelledby for links and buttons</h2>
+        <div class="test__case">
+          <p>
+            <button aria-labelledby="p">button label</button>
+          </p>
+          <p>
+            <a href="#" aria-labelledby="p">link label</a>
+          </p>
+
+          <div id="p" class="pseudo"></div>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+           <!--  <details>
+              <summary>Results</summary>
+              <dl>
+                <dt>VoiceOver + Safari macOS</dt>
+                <dd></dd>
+
+                <dt>VoiceOver + Safari iOS</dt>
+                <dd></dd>
+
+                <dt>TalkBack + Chrome</dt>
+                <dd></dd>
+
+                <dt>JAWS + Chrome/Edge</dt>
+                <dd></dd>
+
+                <dt>JAWS + Firefox</dt>
+                <dd></dd>
+
+                <dt>JAWS & NVDA + IE11</dt>
+                <dd>Ignores before/after content as IE11 does not expose it to the accessibility tree.</dd>
+
+                <dt>NVDA + Chrome/Edge</dt>
+                <dd></dd>
+
+                <dt>NVDA + Firefox</dt>
+                <dd></dd>
+              </dl>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Pseudo content from span within button</h2>
+        <div class="test__case">
+          <p>
+            <button><span class="pseudo"></span> button text</button>
+          </p>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <!-- <details>
+              <summary>Results</summary>
+              <dl>
+                <dt>VoiceOver + Safari macOS</dt>
+                <dd></dd>
+
+                <dt>VoiceOver + Safari iOS</dt>
+                <dd></dd>
+
+                <dt>TalkBack + Chrome</dt>
+                <dd></dd>
+
+                <dt>JAWS + Chrome/Edge</dt>
+                <dd></dd>
+
+                <dt>JAWS + Firefox</dt>
+                <dd></dd>
+
+                <dt>JAWS & NVDA + IE11</dt>
+                <dd>Ignores before/after content as IE11 does not expose it to the accessibility tree.</dd>
+
+                <dt>NVDA + Chrome/Edge</dt>
+                <dd></dd>
+
+                <dt>NVDA + Firefox</dt>
+                <dd></dd>
+              </dl>
+            </details> -->
+          </div>
+        </div>
+      </div>
+
 		</div> <!-- /#app -->
 
     <script src="../-assets/shared.js"></script>

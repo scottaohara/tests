@@ -83,7 +83,7 @@
                   <li><b>NVDA 2020.1 with Firefox 78.0.2</b><br>
                     Live announcement of injected content. Navigating to element after pressing update button will announce content, but no role for output element.</li>
 
-                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox 68.10.1:</b><br>
+                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox Beta 79.0.0-beta.5:</b><br>
                     No live announcement made. Navigating to element after pressing update button will announce content, but no role. Element cannot be discovered prior to content injection.</li>
                   <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
                     Live announcement of content, "status" role, and then repeats non-link content.</li>
@@ -141,8 +141,8 @@
                   <li><b>NVDA 2020.1 with Firefox 78.0.2</b><br>
                     Live announcement of injected content. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be navigated to without injected content.</li>
 
-                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox 68.10.1:</b><br>
-                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be discovered prior to content injection.</li>
+                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox Beta 79.0.0-beta.5:</b><br>
+                    Announcement of accessible name ("aria label") but not of injected content. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be discovered prior to content injection.</li>
                   <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
                     Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
@@ -200,8 +200,8 @@
                   <li><b>NVDA 2020.1 with Firefox 78.0.2</b><br>
                     Live announcement of injected content. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be navigated to without injected content.</li>
 
-                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox 68.10.1:</b><br>
-                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be discovered prior to content injection.</li>
+                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox Beta 79.0.0-beta.5:</b><br>
+                    Announcement of accessible name "label", but not injected content. Can navigate to output prior to content being injected and hear accessible name and "status bar" role. Cannot swipe to output and hear name/role after content is injected.</li>
                   <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
                     Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
@@ -258,8 +258,8 @@
                   <li><b>NVDA 2020.1 with Firefox 78.0.2</b><br>
                     Live announcement of injected content. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be navigated to without injected content.</li>
 
-                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox 68.10.1:</b><br>
-                    No live announcement made. Navigating to element after pressing update button will announce content, but no accessible name or role. Element cannot be discovered prior to content injection.</li>
+                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox Beta 79.0.0-beta.5:</b><br>
+                    Same results as test 3, but with "title attribute" as accessible name.</li>
                   <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
                     Live announcement of content, accessible name, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce accessible name and status role.  After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
 
@@ -316,7 +316,7 @@
                   <li><b>NVDA 2020.1 with Firefox 78.0.2</b><br>
                     Live announcement of injected content. Navigating to element will announce content, but no role.</li>
 
-                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox 68.10.1:</b><br>
+                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox Beta 79.0.0-beta.5:</b><br>
                     No live announcement made. Navigating to element before or after pressing update button will announce content, but no role.</li>
                   <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
                     Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the initial text string, and then the status role. After injecting content, TalkBack will only navigate to injected content and not announce role.</li>
@@ -375,8 +375,8 @@
                   <li><b>NVDA 2020.1 with Firefox 78.0.2</b><br>
                     Live announcement of injected content. Navigating to element will announce content, but no accessible name or role.</li>
 
-                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox 68.10.1:</b><br>
-                    No live announcement made. Navigating to element before or after pressing update button will announce content, but no accessible name or role.</li>
+                  <li class="change-at"><b>Android 10 TalkBack 8.2 with Firefox Beta 79.0.0-beta.5:</b><br>
+                    No live announcement made. Navigating to element before injecting content will announce "aria label, status bar" followed by the default content of the output element. After pressing update button, swiping to the output will announce content, but no accessible name or role.</li>
                   <li><b>Android 8.1 TalkBack 7.3 with Chrome 75:</b><br>
                     Live announcement of content, "status" role, and then repeats non-link content. If update button not pressed, TalkBack can focus <code>output</code> and will announce the accessible name, and status role, but not the visible content on screen. After injecting content, TalkBack will navigate to injected content and not announce role, or accessible name.</li>
 

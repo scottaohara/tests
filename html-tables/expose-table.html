@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>table elements tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+      .test__case table {
+        border: 1px solid;
+        border-spacing: 0;
+        width: 100%;
+        text-align: left;
+      }
+      .test__case tr > *:not(:last-child) {
+        border-right: 1px solid;
+      }
+      .test__case thead *,
+      .test__case tbody tr:not(:last-of-type) * {
+        border-bottom: 1px solid;
+      }
+      .test__case th,
+      .test__case td {
+        padding: .625em;
+      }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing table element</h1>
+        <div class="dates">
+          <p>Published: <span>March 20, 2021</span></p>
+        </div>
+      </header>
+
+
+      <div class="test">
+        <h2>Table without <code>th</code>, <code>caption</code> or accessible name</h2>
+        <div class="test__case">
+          <table>
+              <tr>
+                <td>just a cell</td>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td>just a cell</td>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td>cell</td>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <p><strong>Expectation:</strong> no role</p>
+            <dl>
+              <dt>macOS</dt>
+              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
+              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
+              <dd>Firefox 86.0.1 + VoiceOver ignores table mapping</dd>
+            </dl>
+
+            <dl>
+              <dt>iOS</dt>
+            </dl>
+
+            <dl>
+              <dt>Android</dt>
+              <dd>Firefox</dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Windows</dt>
+              <dd>Firefox
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Edge
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+			<div class="test">
+        <h2>Table without <code>th</code>, <code>caption</code> or accessible name</h2>
+        <div class="test__case">
+          <table>
+              <tr>
+                <td>just a cell</td>
+                <td colspan="2">2 span cell</td>
+              </tr>
+              <tr>
+                <td>just a cell</td>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  3 span cell
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <p><strong>Expectation:</strong> no role</p>
+            <dl>
+              <dt>macOS</dt>
+              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
+              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
+              <dd>Firefox 86.0.1 + VoiceOver ignores table mapping</dd>
+            </dl>
+
+            <dl>
+              <dt>iOS</dt>
+            </dl>
+
+            <dl>
+              <dt>Android</dt>
+              <dd>Firefox</dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Windows</dt>
+              <dd>Firefox
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Edge
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Table with <code>th</code>, but no <code>caption</code> or accessible name</h2>
+        <div class="test__case">
+          <table>
+              <tr>
+                <th>row heading</th>
+                <td colspan="2">2 span cell</td>
+              </tr>
+              <tr>
+                <th>row heading w/abbr</th>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  3 span cell
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <p><strong>Expectation:</strong> exposed as table</p>
+            <dl>
+              <dt>macOS</dt>
+              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
+              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
+              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+            </dl>
+
+            <dl>
+              <dt>iOS</dt>
+            </dl>
+
+            <dl>
+              <dt>Android</dt>
+              <dd>Firefox</dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Windows</dt>
+              <dd>Firefox
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Edge
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="test">
+        <h2>Table with <code>caption</code>, but no <code>th</code> elements</h2>
+        <div class="test__case">
+          <table>
+            <caption>example</caption>
+              <tr>
+                <td>just a cell</td>
+                <td colspan="2">2 span cell</td>
+              </tr>
+              <tr>
+                <td>just a cell</td>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  3 span cell
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <p><strong>Expectation:</strong> exposed as table</p>
+            <dl>
+              <dt>macOS</dt>
+              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
+              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
+              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+            </dl>
+
+            <dl>
+              <dt>iOS</dt>
+            </dl>
+
+            <dl>
+              <dt>Android</dt>
+              <dd>Firefox</dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Windows</dt>
+              <dd>Firefox
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Edge
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Table with no <code>th</code> or <code>caption</code> elements, but is given an accessible name via <code>aria-label</code> attribute</h2>
+        <div class="test__case">
+          <table aria-label="aria-label example">
+              <tr>
+                <td>just a cell</td>
+                <td colspan="2">2 span cell</td>
+              </tr>
+              <tr>
+                <td>just a cell</td>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  3 span cell
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <p><strong>Expectation:</strong> exposed as table</p>
+            <dl>
+              <dt>macOS</dt>
+              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
+              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
+              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+            </dl>
+
+            <dl>
+              <dt>iOS</dt>
+            </dl>
+
+            <dl>
+              <dt>Android</dt>
+              <dd>Firefox</dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Windows</dt>
+              <dd>Firefox
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Edge
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Table with no <code>th</code> or <code>caption</code> elements, but is given an accessible name via <code>title</code> attribute</h2>
+        <div class="test__case">
+          <table title="title example">
+              <tr>
+                <td>just a cell</td>
+                <td colspan="2">2 span cell</td>
+              </tr>
+              <tr>
+                <td>just a cell</td>
+                <td>cell</td>
+                <td>cell</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  3 span cell
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <p><strong>Expectation:</strong> exposed as table</p>
+            <dl>
+              <dt>macOS</dt>
+              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
+              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
+              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+            </dl>
+
+            <dl>
+              <dt>iOS</dt>
+            </dl>
+
+            <dl>
+              <dt>Android</dt>
+              <dd>Firefox</dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Windows</dt>
+              <dd>Firefox
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+              <dd>Edge
+                <br>with JAWS:
+                <br>with NVDA:
+                <br>with Narrator:
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

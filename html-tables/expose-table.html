@@ -23,6 +23,11 @@
       .test__case td {
         padding: .625em;
       }
+
+      dd span {
+        display: block;
+        margin-left: 1.25em;
+      }
 		</style>
 	</head>
 	<body>
@@ -39,6 +44,79 @@
         <h2>Table without <code>th</code>, <code>caption</code> or accessible name</h2>
         <div class="test__case">
           <table>
+            <tr>
+              <td>just a cell</td>
+              <td>cell</td>
+            </tr>
+            <tr>
+              <td>just a cell</td>
+              <td>cell</td>
+            </tr>
+          </table>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <dl>
+              <dt>macOS</dt>
+              <dd>Safari 13.1.2:<br>
+                <span>with VoiceOver exposed as table</span>
+                <span>exposed as table role browser a11y panel</span>
+              </dd>
+              <dd>Edge 89.0.774.48:
+                <span>with VoiceOver exposed as table</span>
+                <span>exposed as table role browser a11y panel</span>
+              </dd>
+              <dd>Firefox 86.0.1:
+                <span>with VoiceOver ignores table mapping</span>
+                <span>exposed as table role browser a11y panel</span>
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>iOS</dt>
+              <dd>
+                Safari:<br>
+                <span>with VoiceOver exposed as table</span>
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Android</dt>
+              <dd>Firefox</dd>
+              <dd>Chrome
+                <br>with JAWS:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
+              </dd>
+            </dl>
+
+            <dl>
+              <dt>Windows</dt>
+              <dd>Firefox
+                <br>with JAWS:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
+              </dd>
+              <dd>Chrome 89.04389.90
+                <br>with JAWS:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
+              </dd>
+              <dd>Edge
+                <br>with JAWS:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Table without <code>th</code>, <code>caption</code> or accessible name</h2>
+        <div class="test__case">
+          <table>
               <tr>
                 <td>just a cell</td>
                 <td>cell</td>
@@ -59,16 +137,25 @@
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <p><strong>Expectation:</strong> no role</p>
             <dl>
               <dt>macOS</dt>
-              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
-              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
-              <dd>Firefox 86.0.1 + VoiceOver ignores table mapping</dd>
+              <dd>Safari 13.1.2:<br>
+                 <span>with VoiceOver exposed as table</span>
+                 <span>exposed as table role browser a11y panel</span></dd>
+              <dd>Edge 89.0.774.48:
+                <span>with VoiceOver exposed as table</span>
+              </dd>
+              <dd>Firefox 86.0.1:
+                <span>with VoiceOver ignores table mapping</span>
+              </dd>
             </dl>
 
             <dl>
               <dt>iOS</dt>
+              <dd>
+                Safari:<br>
+                <span>with VoiceOver exposed as table</span>
+              </dd>
             </dl>
 
             <dl>
@@ -76,8 +163,8 @@
               <dd>Firefox</dd>
               <dd>Chrome
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
 
@@ -85,18 +172,18 @@
               <dt>Windows</dt>
               <dd>Firefox
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
-              <dd>Chrome
+              <dd>Chrome 89.04389.90
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
               <dd>Edge
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
           </div>
@@ -108,35 +195,45 @@
         <h2>Table without <code>th</code>, <code>caption</code> or accessible name</h2>
         <div class="test__case">
           <table>
-              <tr>
-                <td>just a cell</td>
-                <td colspan="2">2 span cell</td>
-              </tr>
-              <tr>
-                <td>just a cell</td>
-                <td>cell</td>
-                <td>cell</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  3 span cell
-                </td>
-              </tr>
-            </tbody>
+            <tr>
+              <td>just a cell</td>
+              <td colspan="2">2 span cell</td>
+            </tr>
+            <tr>
+              <td>just a cell</td>
+              <td>cell</td>
+              <td>cell</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                3 span cell
+              </td>
+            </tr>
           </table>
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <p><strong>Expectation:</strong> no role</p>
             <dl>
               <dt>macOS</dt>
-              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
-              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
-              <dd>Firefox 86.0.1 + VoiceOver ignores table mapping</dd>
+              <dd>Safari 13.1.2:<br>
+                <span>with VoiceOver exposed as table</span>
+                <span>exposed as table role browser a11y panel</span></dd>
+              <dd>Edge 89.0.774.48:
+                <span>with VoiceOver exposed as table</span>
+                <span>exposed as table role browser a11y panel</span>
+              </dd>
+              <dd>Firefox 86.0.1:
+                <span>with VoiceOver ignores table mapping</span>
+                <span>exposed as table role browser a11y panel</span>
+              </dd>
             </dl>
 
             <dl>
               <dt>iOS</dt>
+              <dd>
+                Safari:<br>
+                <span>with VoiceOver exposed as table</span>
+              </dd>
             </dl>
 
             <dl>
@@ -144,8 +241,8 @@
               <dd>Firefox</dd>
               <dd>Chrome
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
 
@@ -153,18 +250,18 @@
               <dt>Windows</dt>
               <dd>Firefox
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
-              <dd>Chrome
+              <dd>Chrome 89.04389.90
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
               <dd>Edge
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
           </div>
@@ -177,35 +274,44 @@
         <h2>Table with <code>th</code>, but no <code>caption</code> or accessible name</h2>
         <div class="test__case">
           <table>
-              <tr>
-                <th>row heading</th>
-                <td colspan="2">2 span cell</td>
-              </tr>
-              <tr>
-                <th>row heading w/abbr</th>
-                <td>cell</td>
-                <td>cell</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  3 span cell
-                </td>
-              </tr>
-            </tbody>
+            <tr>
+              <th>row heading</th>
+              <td colspan="2">2 span cell</td>
+            </tr>
+            <tr>
+              <th>row heading w/abbr</th>
+              <td>cell</td>
+              <td>cell</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                3 span cell
+              </td>
+            </tr>
           </table>
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <p><strong>Expectation:</strong> exposed as table</p>
             <dl>
               <dt>macOS</dt>
-              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
-              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
-              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+              <dd>Safari 13.1.2:<br>
+                <span>with VoiceOver exposed as table</span>
+                <span>exposed as table role browser a11y panel</span></dd>
+              <dd>Edge 89.0.774.48:
+                <span>with VoiceOver exposed as table</span>
+                <span>exposed as table role browser a11y panel</span>
+              </dd>
+              <dd>Firefox 86.0.1:
+                <span>with VoiceOver exposes as "table"</span>
+              </dd>
             </dl>
 
             <dl>
               <dt>iOS</dt>
+              <dd>
+                Safari:<br>
+                <span>with VoiceOver exposed as table</span>
+              </dd>
             </dl>
 
             <dl>
@@ -213,8 +319,8 @@
               <dd>Firefox</dd>
               <dd>Chrome
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
 
@@ -222,18 +328,18 @@
               <dt>Windows</dt>
               <dd>Firefox
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
-              <dd>Chrome
+              <dd>Chrome 89.04389.90
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
               <dd>Edge
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
           </div>
@@ -247,35 +353,43 @@
         <div class="test__case">
           <table>
             <caption>example</caption>
-              <tr>
-                <td>just a cell</td>
-                <td colspan="2">2 span cell</td>
-              </tr>
-              <tr>
-                <td>just a cell</td>
-                <td>cell</td>
-                <td>cell</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  3 span cell
-                </td>
-              </tr>
-            </tbody>
+            <tr>
+              <td>just a cell</td>
+              <td colspan="2">2 span cell</td>
+            </tr>
+            <tr>
+              <td>just a cell</td>
+              <td>cell</td>
+              <td>cell</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                3 span cell
+              </td>
+            </tr>
           </table>
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <p><strong>Expectation:</strong> exposed as table</p>
             <dl>
               <dt>macOS</dt>
-              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
-              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
-              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+              <dd>Safari 13.1.2:<br>
+                <span>with VoiceOver exposed as table</span>
+                <span>exposed as table role browser a11y panel</span></dd>
+              <dd>Edge 89.0.774.48:
+                <span>with VoiceOver exposed as table</span>
+              </dd>
+              <dd>Firefox 86.0.1:
+                <span>with VoiceOver exposes as "group"</span>
+              </dd>
             </dl>
 
             <dl>
               <dt>iOS</dt>
+              <dd>
+                Safari:<br>
+                <span>with VoiceOver exposed as table</span>
+              </dd>
             </dl>
 
             <dl>
@@ -283,8 +397,8 @@
               <dd>Firefox</dd>
               <dd>Chrome
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
 
@@ -292,18 +406,18 @@
               <dt>Windows</dt>
               <dd>Firefox
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
-              <dd>Chrome
+              <dd>Chrome 89.04389.90
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
               <dd>Edge
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
           </div>
@@ -315,35 +429,43 @@
         <h2>Table with no <code>th</code> or <code>caption</code> elements, but is given an accessible name via <code>aria-label</code> attribute</h2>
         <div class="test__case">
           <table aria-label="aria-label example">
-              <tr>
-                <td>just a cell</td>
-                <td colspan="2">2 span cell</td>
-              </tr>
-              <tr>
-                <td>just a cell</td>
-                <td>cell</td>
-                <td>cell</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  3 span cell
-                </td>
-              </tr>
-            </tbody>
+            <tr>
+              <td>just a cell</td>
+              <td colspan="2">2 span cell</td>
+            </tr>
+            <tr>
+              <td>just a cell</td>
+              <td>cell</td>
+              <td>cell</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                3 span cell
+              </td>
+            </tr>
           </table>
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <p><strong>Expectation:</strong> exposed as table</p>
             <dl>
               <dt>macOS</dt>
-              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
-              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
-              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+              <dd>Safari 13.1.2:<br>
+                 <span>with VoiceOver exposed as table</span>
+                 <span>exposed as table role browser a11y panel</span></dd>
+              <dd>Edge 89.0.774.48:
+                <span>with VoiceOver exposed as table</span>
+              </dd>
+              <dd>Firefox 86.0.1:
+                <span>with VoiceOver exposes as "group"</span>
+              </dd>
             </dl>
 
             <dl>
               <dt>iOS</dt>
+              <dd>
+                Safari:<br>
+                <span>with VoiceOver exposed as table</span>
+              </dd>
             </dl>
 
             <dl>
@@ -351,8 +473,8 @@
               <dd>Firefox</dd>
               <dd>Chrome
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
 
@@ -360,18 +482,18 @@
               <dt>Windows</dt>
               <dd>Firefox
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
-              <dd>Chrome
+              <dd>Chrome 89.04389.90
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
               <dd>Edge
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
           </div>
@@ -383,31 +505,35 @@
         <h2>Table with no <code>th</code> or <code>caption</code> elements, but is given an accessible name via <code>title</code> attribute</h2>
         <div class="test__case">
           <table title="title example">
-              <tr>
-                <td>just a cell</td>
-                <td colspan="2">2 span cell</td>
-              </tr>
-              <tr>
-                <td>just a cell</td>
-                <td>cell</td>
-                <td>cell</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  3 span cell
-                </td>
-              </tr>
-            </tbody>
+            <tr>
+              <td>just a cell</td>
+              <td colspan="2">2 span cell</td>
+            </tr>
+            <tr>
+              <td>just a cell</td>
+              <td>cell</td>
+              <td>cell</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                3 span cell
+              </td>
+            </tr>
           </table>
         </div>
         <div class="test__info">
           <div class="test__info__results">
-            <p><strong>Expectation:</strong> exposed as table</p>
             <dl>
               <dt>macOS</dt>
-              <dd>Safari 13.1.2 with VoiceOver exposes table</dd>
-              <dd>Edge 89.0.774.48 with VoiceOver exposes table</dd>
-              <dd>Firefox 86.0.1 + VoiceOver exposes as "group"</dd>
+              <dd>Safari 13.1.2:<br>
+                 <span>with VoiceOver exposed as table</span>
+                 <span>exposed as table role browser a11y panel</span></dd>
+              <dd>Edge 89.0.774.48:
+                <span>with VoiceOver exposed as table</span>
+              </dd>
+              <dd>Firefox 86.0.1:
+                <span>with VoiceOver exposes as "group"</span>
+              </dd>
             </dl>
 
             <dl>
@@ -419,8 +545,8 @@
               <dd>Firefox</dd>
               <dd>Chrome
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
 
@@ -428,18 +554,18 @@
               <dt>Windows</dt>
               <dd>Firefox
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
-              <dd>Chrome
+              <dd>Chrome 89.04389.90
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
               <dd>Edge
                 <br>with JAWS:
-                <br>with NVDA:
-                <br>with Narrator:
+                <span>with NVDA:</span>
+                <span>with Narrator:</span>
               </dd>
             </dl>
           </div>

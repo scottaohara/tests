@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Explicit and Implicit Labeling Form Controls</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+			details li:not(:last-child) {
+				margin-bottom: .5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1>Testing explicit and implicit labeling of form controls</h1>
+				<div class="dates">
+					<p>
+						Published: <span>September 23, 2019</span>
+					</p>
+					<!-- <p>Last Updated: <span>...</span></p> -->
+				</div>
+			</header>
+
+			<div class="test">
+				<h2><code>input=text</code> with explicit label</h2>
+				<div class="test__case">
+<label for="i1">
+	text label
+</label>
+<input type="text" id="i1">
+				</div>
+				<div class="test__info">
+					<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+				</div>
+			</div>
+
+
+      <div class="test">
+        <h2><code>input=text</code> with wrapping label</h2>
+        <div class="test__case">
+<label>
+	text label
+	<input type="text">
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>input=text</code> with wrapping label with content before and after element</h2>
+        <div class="test__case">
+<label>
+	text label
+	<input type="text">
+	with more content
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>input=text</code> with wrapping label but with aria-label</h2>
+        <div class="test__case">
+<label>
+	text label
+	<input type="text" aria-label="ARIA label">
+	with more content
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>input=text</code> with wrapping label also referenced by aria-labelledby</h2>
+        <div class="test__case">
+<label id="tl">
+	text label
+	<input type="text" aria-labelledby="tl">
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>input=text</code> unassociated label but referenced with aria-labelledby</h2>
+        <div class="test__case">
+<label id="tl2">
+	text label
+</label>
+<input type="text" aria-labelledby="tl2">
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+
+
+<!--
+	Select element tests
+-->
+			<div class="test">
+        <h2><code>select</code> with explicit label</h2>
+        <div class="test__case">
+<label for="select0">
+	Select label
+</label>
+<select id="select0">
+	<option>Item 1</option><option>Item 2</option>
+	<option>Item 3</option><option>Item 4</option>
+</select>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>select</code> with wrapping label</h2>
+        <div class="test__case">
+<label>
+	Select label
+	<select>
+		<option>Item 1</option><option>Item 2</option>
+		<option>Item 3</option><option>Item 4</option>
+	</select>
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>select</code> with wrapping label with content before and after element</h2>
+        <div class="test__case">
+<label>
+	Select label
+	<select>
+		<option>Item 1</option><option>Item 2</option>
+		<option>Item 3</option><option>Item 4</option>
+	</select>
+	with more content
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>select</code> with wrapping label but with aria-label</h2>
+        <div class="test__case">
+<label>
+	Select label
+	<select aria-label="ARIA label">
+		<option>Item 1</option><option>Item 2</option>
+		<option>Item 3</option><option>Item 4</option>
+	</select>
+	with more content
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>select</code> with wrapping label also referenced by aria-labelledby</h2>
+        <div class="test__case">
+<label id="l">
+	Select label
+	<select aria-labelledby="l">
+		<option>Item 1</option><option>Item 2</option>
+		<option>Item 3</option><option>Item 4</option>
+	</select>
+</label>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2><code>select</code> unassociated label but referenced with aria-labelledby</h2>
+        <div class="test__case">
+<label id="l2">
+	Select label
+</label>
+<select aria-labelledby="l2">
+	<option>Item 1</option><option>Item 2</option>
+	<option>Item 3</option><option>Item 4</option>
+</select>
+        </div>
+        <div class="test__info">
+        	<div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+</div> <!-- /#app -->
+
+
+
+		<script src="../-assets/shared.js"></script>
+	</body>
+</html>

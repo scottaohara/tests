@@ -93,10 +93,10 @@
           <template>
             <td>Pass</td><!-- firefox -->
             <td>Pass
-                <br>Chrome + JAWS will announce "value"
+                <br>Chrome + JAWS will announce "value" as the name, but the browser exposes no name for the element.
                 <!-- nvda does not announce value --></td><!-- chrome -->
             <td>Pass
-                <br>Edge + JAWS will announce "value"
+                <br>Edge + JAWS will announce "value" as the name, but the browser exposes no name for the element.
                 <!-- nvda does not announce value --></td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
@@ -317,10 +317,11 @@
           <dd>Safari</dd>
 
           <dt>Screen Readers</dt>
-          <dd>JAWS 2020.2006.12</dd>
-          <dd>NVDA 2020.4</dd>
-          <dd>VO macOS 10.15.6</dd>
+          <dd>JAWS 2020.2006.12 (with chrome/firefox/edge)</dd>
+          <dd>NVDA 2020.4 (with chrome/firefox/edge)</dd>
+          <dd>VO macOS 10.15.6 (with firefox/edge/safari)</dd>
           <dd>VO iOS 13.4.1</dd>
+          <dd>Narrator (with edge)</dd>
         </dl>
       </details>
     </div>
@@ -328,7 +329,7 @@
     <div class="results-table-wrap large">
       <table style="table-layout: fixed;">
         <caption>
-          <span id="tname">Exposed accessible names</span>
+          <span id="tname">Exposed accessible names & descriptions</span>
           <span id="desc">(with any screen reader variants)</span>
         </caption>
         <colgroup>

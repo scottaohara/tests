@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Naming buttons part 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+      button {
+        border: 2px solid;
+        padding: .635em;
+      }
+      button:hover,
+      button:focus {
+        box-shadow: 0 0 0 2px lightBlue;
+        outline: 2px solid blue;
+        outline-offset: 2px;
+      }
+
+      .flex {
+        display: flex;
+        min-width: 200px;
+      }
+
+      .flex i {
+        width: 2em;
+      }
+
+      .flex > span {
+        flex-grow: 1;
+      }
+
+      .flex > span > span {
+        display: inline-block;
+        width: 100%;
+        padding: .25em 0;
+      }
+
+      .txt-center {
+        text-align: center;
+      }
+
+      template {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing labeling a button</h1>
+        <div class="dates">
+          <p>Published: April 16, 2021</p>
+          <!-- <p>Last Updated: X, 2021</p> -->
+        </div>
+      </header>
+
+      <div id="idref" tabindex="-1" hidden>By</div>
+
+
+
+      <div class="test">
+        <h2>Button with a label and text</h2>
+        <div class="test__case">
+          <label for="b">Label</label>
+<button id="b">
+  Text
+</button>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "Label"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with a label, text and title</h2>
+        <div class="test__case">
+          <label for="c">Label</label>
+<button id="c" title="title">
+  Text
+</button>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "Label"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with a label, and title</h2>
+        <div class="test__case">
+          <label for="cc">Label</label>
+<button id="cc" title="title">
+
+</button>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "Label"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with a label, and aria-label</h2>
+        <div class="test__case">
+          <label for="ccc">Label</label>
+<button id="ccc" aria-label="aria"></button>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "aria"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button with a label, aria-label, text and title</h2>
+        <div class="test__case">
+          <label for="d">Label</label>
+<button id="d" title="title" aria-label="aria">
+  Text
+</button>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "aria"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>
+              Fail<br>
+              Name=aria, description=title, VO announces name of 'aria Label'
+            </td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+      <div class="test">
+        <h2>Button within a label with text, button has NO text, and has title</h2>
+        <div class="test__case">
+          <label for="ee">
+            Label
+  <button id="ee" title="title"></button>
+</label>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "Label"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>
+              Fail<br>
+
+              Exposes "Label title" as name.
+              Exposes "title" as description.
+            </td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button within a label with text, text content and title</h2>
+        <div class="test__case">
+          <label for="e">Label
+  <button id="e" title="title">
+    Text
+  </button>
+</label>
+
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "aria"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>
+
+            </td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button within a label (no text), text content and title</h2>
+        <div class="test__case">
+          <label for="f">
+  <button id="f" title="title">
+    Text
+  </button>
+</label>
+
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "aria"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>
+
+            </td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button within a label with text, text content, aria-label and title</h2>
+        <div class="test__case">
+          <label id=g>
+            Label
+  <button aria-label="aria" title="title">
+    Text
+  </button>
+</label>
+
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "aria"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>
+
+            </td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+      <h2>Testing Results</h2>
+      <details>
+        <summary>Versions</summary>
+        <dl>
+          <dt>Windows 10</dt>
+          <dd>Firefox 87</dd>
+          <dd>Chrome 81</dd>
+          <dd>Edge 83</dd>
+          <!-- <dd>IE11</dd> -->
+
+          <dt>macOS 10.15.3 (10.15.4 pending update)</dt>
+          <dd>Safari 13.0.5</dd>
+          <dd>Chrome 81</dd>
+          <dd>Firefox 87</dd>
+
+          <dt>iOS 14.4.2</dt>
+          <dd>Safari</dd>
+
+          <dt>Screen Readers</dt>
+          <dd>JAWS 2020.2004.66</dd>
+          <dd>NVDA x</dd>
+          <dd>VO macOS 10.15.3</dd>
+          <dd>VO iOS 13.4.1</dd>
+        </dl>
+      </details>
+    </div>
+
+    <div class="results-table-wrap large">
+      <table style="table-layout: fixed;">
+        <caption>
+          <span id="tname">Exposed accessible names</span>
+          <span id="desc">(with any screen reader variants)</span>
+        </caption>
+        <colgroup>
+          <col style="width: 200px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">Test</th>
+            <th scope="col">Firefox (mac / win)</th>
+            <th scope="col">Chrome (win)</th>
+            <th scope="col">Edge (mac / win)</th>
+            <th scope="col">Safari (mac)</th>
+            <th scope="col">Safari (iOS)</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
+    </div>
+    <script src="../-assets/shared.js"></script>
+    <script>
+      var tbody = document.getElementById('tbody');
+      var tests = document.querySelectorAll('.test');
+      var desc;
+      var testNo = tests.length;
+      var i;
+      var row;
+      var template;
+      var results;
+
+      for ( i = 0; i < testNo; i++ ) {
+        template = tests[i].querySelector('template');
+        desc = tests[i].querySelector('.test__info .expect');
+
+        if ( template ) {
+          results = tests[i].querySelector('template').innerHTML;
+        }
+        else {
+          results = '<td colspan="6">No results</td>';
+        }
+
+        if ( desc ) {
+          desc = desc.innerHTML;
+        }
+        else {
+          desc = '';
+        }
+
+        row = document.createElement('tr');
+        row.innerHTML = '<th scope="row">Text ' + (i+1) + '<br><small>' + desc +'</small></th>' + results;
+        tbody.appendChild(row);
+      }
+    </script>
+  </body>
+</html>

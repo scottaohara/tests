@@ -40,6 +40,10 @@
         text-align: center;
       }
 
+      label {
+        border: 4px solid #f00;
+      }
+
       template {
         display: none;
       }
@@ -61,9 +65,9 @@
 
 
       <div class="test">
-        <h2>Button with a label and text</h2>
+        <h2>Button with an explicit label, and child text content</h2>
         <div class="test__case">
-          <label for="b">Label</label>
+<label for="b">Label</label>
 <button id="b">
   Text
 </button>
@@ -85,9 +89,9 @@
 
 
       <div class="test">
-        <h2>Button with a label, text and title</h2>
+        <h2>Button with an explicit label, child text content, and title</h2>
         <div class="test__case">
-          <label for="c">Label</label>
+<label for="c">Label</label>
 <button id="c" title="title">
   Text
 </button>
@@ -109,12 +113,31 @@
 
 
       <div class="test">
-        <h2>Button with a label, and title</h2>
+        <h2>Button with an explicit label, no child content, and title</h2>
         <div class="test__case">
-          <label for="cc">Label</label>
-<button id="cc" title="title">
+<label for="cc">Label</label>
+<button id="cc" title="title"></button>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "Label"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
 
-</button>
+      <div class="test">
+        <h2>Button with an explicit label, no child content, and value</h2>
+        <div class="test__case">
+<label for="v">Label</label>
+<button id="v" value="value"></button>
         </div>
         <div class="test__info">
           <div class="expect">
@@ -133,9 +156,9 @@
 
 
       <div class="test">
-        <h2>Button with a label, and aria-label</h2>
+        <h2>Button with an explicit label, and an aria-label</h2>
         <div class="test__case">
-          <label for="ccc">Label</label>
+<label for="ccc">Label</label>
 <button id="ccc" aria-label="aria"></button>
         </div>
         <div class="test__info">
@@ -155,9 +178,9 @@
 
 
       <div class="test">
-        <h2>Button with a label, aria-label, text and title</h2>
+        <h2>Button with an explicit label, aria-label, child text content, and title</h2>
         <div class="test__case">
-          <label for="d">Label</label>
+<label for="d">Label</label>
 <button id="d" title="title" aria-label="aria">
   Text
 </button>
@@ -181,7 +204,7 @@
       </div>
 
       <div class="test">
-        <h2>Button within a label with text, button has NO text, and has title</h2>
+        <h2>Button within a label with text, button has no child content, and has a title</h2>
         <div class="test__case">
           <label for="ee">
             Label
@@ -210,7 +233,36 @@
 
 
       <div class="test">
-        <h2>Button within a label with text, text content and title</h2>
+        <h2>Button within a label with text, button has no child content, and has a value</h2>
+        <div class="test__case">
+          <label>
+            Label
+  <button value="value"></button>
+</label>
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "Label"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>
+              Fail<br>
+
+              Exposes "Label title" as name.
+              Exposes "title" as description.
+            </td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2>Button within a label with text, button has child content, and a title</h2>
         <div class="test__case">
           <label for="e">Label
   <button id="e" title="title">
@@ -238,7 +290,7 @@
 
 
       <div class="test">
-        <h2>Button within a label (no text), text content and title</h2>
+        <h2>Button within a label (no text), button has child content, and title</h2>
         <div class="test__case">
           <label for="f">
   <button id="f" title="title">
@@ -266,7 +318,7 @@
 
 
       <div class="test">
-        <h2>Button within a label with text, text content, aria-label and title</h2>
+        <h2>Button within a label with text, button has child content, aria-label, and title</h2>
         <div class="test__case">
           <label id=g>
             Label
@@ -293,29 +345,58 @@
         </div>
       </div>
 
+
+      <div class="test">
+        <h2>Button within a label with text, button has child content, aria-labelledby, and title</h2>
+        <div class="test__case">
+          <label id=g>
+            Label
+  <button aria-labelledby="idref" title="title">
+    Text
+  </button>
+</label>
+
+        </div>
+        <div class="test__info">
+          <div class="expect">
+            <p>Expected name: "By"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>
+
+            </td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td></td><!-- edge -->
+            <td></td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
+        </div>
+      </div>
+
       <h2>Testing Results</h2>
       <details>
         <summary>Versions</summary>
         <dl>
           <dt>Windows 10</dt>
           <dd>Firefox 87</dd>
-          <dd>Chrome 81</dd>
-          <dd>Edge 83</dd>
-          <!-- <dd>IE11</dd> -->
+          <dd>Chrome 90</dd>
+          <dd>Edge 90</dd>
 
           <dt>macOS 10.15.3 (10.15.4 pending update)</dt>
-          <dd>Safari 13.0.5</dd>
-          <dd>Chrome 81</dd>
+          <dd>Safari 13.1.2</dd>
           <dd>Firefox 87</dd>
+          <dd>Edge 90</dd>
 
           <dt>iOS 14.4.2</dt>
           <dd>Safari</dd>
 
           <dt>Screen Readers</dt>
-          <dd>JAWS 2020.2004.66</dd>
-          <dd>NVDA x</dd>
-          <dd>VO macOS 10.15.3</dd>
+          <dd>JAWS 2020.2006.12 (with chrome/firefox/edge)</dd>
+          <dd>NVDA 2020.4 (with chrome/firefox/edge)</dd>
+          <dd>VO macOS 10.15.6 (with firefox/edge/safari)</dd>
           <dd>VO iOS 13.4.1</dd>
+          <dd>Narrator (with edge)</dd>
         </dl>
       </details>
     </div>

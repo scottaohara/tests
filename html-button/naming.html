@@ -43,6 +43,7 @@
       template {
         display: none;
       }
+
     </style>
   </head>
   <body>
@@ -50,12 +51,14 @@
       <header>
         <h1>Testing labeling a button</h1>
         <div class="dates">
-          <p>Published: May 26, 2020</p>
-          <!-- <p>Last Updated: X, 2020</p> -->
+          <p>Published: April 16, 2021</p>
+          <!-- <p>Last Updated: X, 2021</p> -->
         </div>
       </header>
 
       <div id="idref" tabindex="-1" hidden>By</div>
+
+
 
       <div class="test">
         <h2>Button with text</h2>
@@ -63,14 +66,16 @@
 <button>text</button>
         </div>
         <div class="test__info">
-          <p>Expected name: "text"</p>
+          <div class="expect">
+            <p>Expected name: "text"</p>
+            <p>Expected description: none</p>
+          </div>
           <template>
-            <td>Pass</td><!-- firefox -->
-            <td>Pass</td><!-- chrome -->
-            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- firefox mac/win-->
+            <td>Pass</td><!-- chrome win-->
+            <td>Pass</td><!-- edge mac/win -->
+            <td>Pass</td><!-- safari mac -->
             <td>Pass</td><!-- safari ios -->
-            <td>Pass</td><!-- edge -->
-            <td>Pass</td><!-- ie -->
           </template>
         </div>
       </div>
@@ -81,14 +86,20 @@
 <button value="value"></button>
         </div>
         <div class="test__info">
-          <p>Expected name: no name</p>
+          <div class="expect">
+            <p>Expected name: none</p>
+            <p>Expected description: none</p>
+          </div>
           <template>
             <td>Pass</td><!-- firefox -->
-            <td>Pass</td><!-- chrome -->
+            <td>Pass
+                <br>Chrome + JAWS will announce "value"
+                <!-- nvda does not announce value --></td><!-- chrome -->
+            <td>Pass
+                <br>Edge + JAWS will announce "value"
+                <!-- nvda does not announce value --></td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
-            <td>Pass</td><!-- edge -->
-            <td>Pass</td><!-- ie -->
           </template>
         </div>
       </div>
@@ -99,14 +110,16 @@
 <button title="title"></button>
         </div>
         <div class="test__info">
-          <p>Expected name: "title"</p>
+          <div class="expect">
+            <p>Expected name: "title"</p>
+            <p>Expected description: none</p>
+          </div>
           <template>
             <td>Pass</td><!-- firefox -->
             <td>Pass</td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
-            <td>Pass</td><!-- edge -->
-            <td>Pass</td><!-- ie -->
           </template>
         </div>
       </div>
@@ -114,12 +127,20 @@
       <div class="test">
         <h2>Button with aria-label</h2>
         <div class="test__case">
-<button aria-label="aria label"></button>
+<button aria-label="aria"></button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "aria"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
 
@@ -129,13 +150,19 @@
 <button aria-labelledby="idref"></button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "By"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
-
-
 
 
       <div class="test">
@@ -144,9 +171,17 @@
 <button title="title" value="value"></button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "Title"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
 
@@ -157,9 +192,17 @@
 <button title="title" value="value">Text</button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "Text"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
 
@@ -172,9 +215,17 @@
 </button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "Text"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
 
@@ -187,9 +238,17 @@
 </button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "Text"</p>
+            <p>Expected description: "title"</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
 
@@ -197,14 +256,22 @@
       <div class="test">
         <h2>Button with text and aria-label</h2>
         <div class="test__case">
-<button aria-label="aria label">
+<button aria-label="aria">
   Text
 </button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "aria"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
 
@@ -217,24 +284,17 @@
 </button>
         </div>
         <div class="test__info">
-          <!--
-
-          -->
-        </div>
-      </div>
-
-      <div class="test">
-        <h2>Button with a label and text</h2>
-        <div class="test__case">
-          <label for="b">Label</label>
-<button id="b">
-  Test
-</button>
-        </div>
-        <div class="test__info">
-          <!--
-
-          -->
+          <div class="expect">
+            <p>Expected name: "By"</p>
+            <p>Expected description: none</p>
+          </div>
+          <template>
+            <td>Pass</td><!-- firefox -->
+            <td></td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
+            <td>Pass</td><!-- safari macos -->
+            <td></td><!-- safari ios -->
+          </template>
         </div>
       </div>
 
@@ -244,37 +304,55 @@
         <summary>Versions</summary>
         <dl>
           <dt>Windows 10</dt>
-          <dd>Firefox 76.0.1</dd>
-          <dd>Chrome 81</dd>
-          <dd>Edge 83</dd>
-          <dd>IE11</dd>
+          <dd>Firefox 87</dd>
+          <dd>Chrome 81</dd> <!-- UPDATE -->
+          <dd>Edge 90</dd>
+          <!-- <dd>IE11</dd> -->
 
           <dt>macOS 10.15.3 (10.15.4 pending update)</dt>
-          <dd>Safari 13.0.5</dd>
+          <dd>Safari 13.1.2</dd>
           <dd>Chrome 81</dd>
+          <dd>Firefox 87</dd>
 
-          <dt>Android x</dt>
-          <dd>Firefox x</dd>
-          <dd>Chrome x</dd>
-
-          <dt>iOS 13.4.1</dt>
+          <dt>iOS 14.4.2</dt>
           <dd>Safari</dd>
 
           <dt>Screen Readers</dt>
           <dd>JAWS 2020.2004.66</dd>
           <dd>NVDA x</dd>
-          <dd>VO macOS 10.15.3</dd>
+          <dd>VO macOS 10.15.6</dd>
           <dd>VO iOS 13.4.1</dd>
-          <dd>TalkBack x</dd>
         </dl>
       </details>
     </div>
 
     <div class="results-table-wrap large">
+      <table style="table-layout: fixed;">
+        <caption>
+          <span id="tname">Exposed accessible names</span>
+          <span id="desc">(with any screen reader variants)</span>
+        </caption>
+        <colgroup>
+          <col style="width: 200px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">Test</th>
+            <th scope="col">Firefox (mac / win)</th>
+            <th scope="col">Chrome (win)</th>
+            <th scope="col">Edge (mac / win)</th>
+            <th scope="col">Safari (mac)</th>
+            <th scope="col">Safari (iOS)</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
     </div>
     <script src="../-assets/shared.js"></script>
     <script>
-      var tbody = document.getElementById('tbody')
+      var tbody = document.getElementById('tbody');
       var tests = document.querySelectorAll('.test');
       var desc;
       var testNo = tests.length;
@@ -282,6 +360,29 @@
       var row;
       var template;
       var results;
+
+      for ( i = 0; i < testNo; i++ ) {
+        template = tests[i].querySelector('template');
+        desc = tests[i].querySelector('.test__info .expect');
+
+        if ( template ) {
+          results = tests[i].querySelector('template').innerHTML;
+        }
+        else {
+          results = '<td colspan="6">No results</td>';
+        }
+
+        if ( desc ) {
+          desc = desc.innerHTML;
+        }
+        else {
+          desc = '';
+        }
+
+        row = document.createElement('tr');
+        row.innerHTML = '<th scope="row">Test ' + (i+1) + '<br><small>' + desc +'</small></th>' + results;
+        tbody.appendChild(row);
+      }
     </script>
   </body>
 </html>

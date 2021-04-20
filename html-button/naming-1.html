@@ -79,7 +79,7 @@
           </div>
           <template>
             <td>Pass</td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>
               Pass<br>
@@ -93,7 +93,7 @@
       </div>
 
 
-      <div class="test">
+      <div class="test"> <!-- 2 -->
         <h2>Button with an explicit label, child text content, and title</h2>
         <div class="test__case">
 <label for="c">Label</label>
@@ -108,7 +108,7 @@
           </div>
           <template>
             <td>Pass</td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>
               Pass<br>
@@ -135,15 +135,15 @@
           </div>
           <template>
             <td>Pass</td><!-- firefox -->
-            <td></td><!-- chrome -->
-            <td></td><!-- edge -->
+            <td>Pass</td><!-- chrome -->
+            <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
 
-      <div class="test">
+      <div class="test"> <!-- 4 -->
         <h2>Button with an explicit label, no child content, and value</h2>
         <div class="test__case">
 <label for="v">Label</label>
@@ -156,7 +156,7 @@
           </div>
           <template>
             <td>Pass</td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
@@ -165,7 +165,7 @@
       </div>
 
 
-      <div class="test">
+      <div class="test"> <!-- 5 -->
         <h2>Button with an explicit label, and an aria-label</h2>
         <div class="test__case">
 <label for="ccc">Label</label>
@@ -181,7 +181,7 @@
               <br>name=aria<br>
               VO announces "aria Label"
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>
@@ -213,7 +213,7 @@
               Pass<br>
               Name=aria, description=title, VO announces name of 'aria Label'
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>
@@ -226,7 +226,7 @@
         </div>
       </div>
 
-      <div class="test">
+      <div class="test"> <!-- 7 -->
         <h2>Button within a label with text, button has no child content, and has a title</h2>
         <div class="test__case">
           <label for="ee">
@@ -245,7 +245,7 @@
               Exposes "Label title" as name.
               Exposes "title" as description.
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
@@ -271,7 +271,7 @@
             <td>
               Pass
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
@@ -299,8 +299,12 @@
             <td>
               Pass
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
-            <td>Pass</td><!-- edge -->
+            <td>Fail
+              <br>name=Label.  "Text" is dropped even though a child of the <code>label</code>.
+            </td><!-- chrome -->
+            <td>Fail
+              <br>name=Label.  "Text" is dropped even though a child of the <code>label</code>.
+            </td><!-- edge -->
             <td>
               "Semi-Pass"<br>
               name exposed by Safari and announced as "Text Label" by VO.
@@ -334,7 +338,7 @@
             <td>
               Pass
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>Pass</td><!-- safari ios -->
@@ -365,7 +369,7 @@
               <br>
               name=aria. VO+FF announce "aria Label aria" as name.
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>
@@ -401,7 +405,7 @@
               name="By"<br>
               Firefox+VO announce "By Label Text" as name.
             </td><!-- firefox -->
-            <td></td><!-- chrome -->
+            <td>Pass</td><!-- chrome -->
             <td>Pass</td><!-- edge -->
             <td>Pass</td><!-- safari macos -->
             <td>

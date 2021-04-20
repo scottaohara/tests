@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>dl/dt/dd element tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../-assets/shared.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+      <header>
+        <h1>Testing the <code>dl</code>, <code>dt</code>, <code>dd</code> elements</h1>
+        <div class="dates">
+          <p>Published: April 20, 2021</p>
+        </div>
+      </header>
+
+
+			<!--
+				For aria-labelledby/describedby tests
+			-->
+			<div hidden id="by">ARIA labelled by</div>
+			<div hidden id="desc">Description</div>
+
+
+			<div class="test">
+        <h2><code>dl dt dd</code></h2>
+        <div class="test__case">
+          <dl>
+            <dt>key</dt>
+            <dd>value</dd>
+          </dl>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>dl dt dt dd</code></h2>
+        <div class="test__case">
+          <dl>
+            <dt>key 1</dt>
+            <dt>key 2</dt>
+            <dd>value</dd>
+          </dl>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>dl dt dd dt dd</code></h2>
+        <div class="test__case">
+          <dl>
+            <dt>key 1</dt>
+            <dd>value 1</dd>
+            <dt>key 2</dt>
+            <dd>value 2</dd>
+          </dl>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="test">
+        <h2><code>dl div dt dd div dt dd</code></h2>
+        <div class="test__case">
+          <style>
+            dl div {
+              border: 1px solid;
+            }
+          </style>
+          <dl>
+            <div>
+              <dt>key 1</dt>
+              <dd>value 1</dd>
+            </div>
+            <div>
+              <dt>key 2</dt>
+              <dd>value 2</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+          </div>
+        </div>
+      </div>
+
+
+
+		</div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+
+	</body>
+</html>

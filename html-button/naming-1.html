@@ -55,7 +55,7 @@
       <header>
         <h1>Testing labeling a button</h1>
         <div class="dates">
-          <p>Published: April 16, 2021</p>
+          <p>Published: April 20, 2021</p>
           <!-- <p>Last Updated: X, 2021</p> -->
         </div>
       </header>
@@ -81,8 +81,13 @@
             <td>Pass</td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>
+              Pass<br>
+              Safari exposes label as "Label"
+              <br>
+              VO announces "Text Label" as name.
+            </td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -105,8 +110,13 @@
             <td>Pass</td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>
+              Pass<br>
+              Safari exposes label as "Label"
+              <br>
+              VO announces "Text Label" as name.
+            </td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -127,8 +137,8 @@
             <td>Pass</td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -148,8 +158,8 @@
             <td>Pass</td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -167,11 +177,19 @@
             <p>Expected description: none</p>
           </div>
           <template>
-            <td>Pass</td><!-- firefox -->
+            <td>Pass
+              <br>name=aria<br>
+              VO announces "aria Label"
+            </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>
+              "Pass"
+              <br>
+              name=aria<br>
+              VO announces "Label" as name - VO bug?
+            </td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -192,13 +210,18 @@
           </div>
           <template>
             <td>
-              Fail<br>
+              Pass<br>
               Name=aria, description=title, VO announces name of 'aria Label'
             </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>
+              "Pass"
+              <br>
+              name=aria<br>
+              VO announces "Label" as name - VO bug?
+            </td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -219,14 +242,13 @@
           <template>
             <td>
               Fail<br>
-
               Exposes "Label title" as name.
               Exposes "title" as description.
             </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -243,19 +265,16 @@
         <div class="test__info">
           <div class="expect">
             <p>Expected name: "Label"</p>
-            <p>Expected description: "title"</p>
+            <p>Expected description: none</p>
           </div>
           <template>
             <td>
-              Fail<br>
-
-              Exposes "Label title" as name.
-              Exposes "title" as description.
+              Pass
             </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -273,17 +292,24 @@
         </div>
         <div class="test__info">
           <div class="expect">
-            <p>Expected name: "aria"</p>
+            <p>Expected name: "Label Text"</p>
             <p>Expected description: "title"</p>
           </div>
           <template>
             <td>
-
+              Pass
             </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>
+              "Semi-Pass"<br>
+              name exposed by Safari and announced as "Text Label" by VO.
+            </td><!-- safari macos -->
+            <td>
+              "Pass"<br>
+              name exposed as "Label Text" in dev panel<br>
+              VO announces "Label" as name.
+            </td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -306,12 +332,12 @@
           </div>
           <template>
             <td>
-
+              Pass
             </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>Pass</td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -335,12 +361,18 @@
           </div>
           <template>
             <td>
-
+              "Pass"
+              <br>
+              name=aria. VO+FF announce "aria Label aria" as name.
             </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>
+              "Pass"<br>
+              name=aria<br>
+              VO announces "Label" as name. - VO bug?
+            </td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -364,12 +396,19 @@
           </div>
           <template>
             <td>
-
+              "Pass"
+              <br>
+              name="By"<br>
+              Firefox+VO announce "By Label Text" as name.
             </td><!-- firefox -->
             <td></td><!-- chrome -->
             <td></td><!-- edge -->
-            <td></td><!-- safari macos -->
-            <td></td><!-- safari ios -->
+            <td>Pass</td><!-- safari macos -->
+            <td>
+              "Pass"<br>
+              name="By"<br>
+              VO announces "Label" as name. - VO bug?
+            </td><!-- safari ios -->
           </template>
         </div>
       </div>
@@ -383,8 +422,8 @@
           <dd>Chrome 90</dd>
           <dd>Edge 90</dd>
 
-          <dt>macOS 10.15.3 (10.15.4 pending update)</dt>
-          <dd>Safari 13.1.2</dd>
+          <dt>macOS 11.2.3</dt>
+          <dd>Safari 14.0.3</dd>
           <dd>Firefox 87</dd>
           <dd>Edge 90</dd>
 

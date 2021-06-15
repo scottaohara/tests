@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Headings within legend elements</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+        table {
+          border-collapse: collapse;
+          border-left: 1px solid;
+          border-right: 1px solid;
+          border-top: 1px solid;
+          margin: 1em 0;
+          table-layout: fixed;
+          width: 100%;
+        }
+        th, td {
+            padding: .25em;
+            text-align: left;
+        }
+        tr {
+            border-bottom: 1px solid;
+        }
+        tr:nth-child(2n) {
+            background: #eee;
+        }
+        th:not(:last-child), td:not(:last-child) {
+          border-right: 1px solid;
+        }
+        th[rowspan] {
+          background: #fefefe;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Heading within a legend</h1>
+        <div class="dates">
+          <p>Published: <span>June 15, 2021</span></p>
+        </div>
+      </header>
+
+      <div class="test">
+        <h2>Heading within a legend</h2>
+        <div class="test__case">
+          <fieldset>
+            <legend><h2>Level 2</h2></legend>
+            <label for=n>
+              Name
+            </label>
+            <input id=n>
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <table>
+              <thead>
+                <tr>
+                  <th>Browsers</th>
+                  <th>Heading exposed?</th>
+                  <th>Screen Reader</th>
+                  <th>Heading announced?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th rowspan="4">Edge</th>
+                  <td rowspan="4">yes</td>
+                  <td>Narrator</td>
+                  <td>?</td>
+                </tr>
+                <tr>
+                  <td>NVDA</td>
+                  <td>?</td>
+                </tr>
+                <tr>
+                  <td>JAWS</td>
+                  <td>?</td>
+                </tr>
+                <tr>
+                  <td>VoiceOver (macOS)</td>
+                  <td>yes</td>
+                </tr>
+
+
+                <tr>
+                  <th rowspan="2">Chrome</th>
+                  <td rowspan="2">?</td>
+                  <td>NVDA</td>
+                  <td>?</td>
+                </tr>
+                <tr>
+                  <td>JAWS</td>
+                  <td>?</td>
+                </tr>
+
+                <tr>
+                  <th rowspan="3">Firefox</th>
+                  <td rowspan="3">yes</td>
+                  <td>NVDA</td>
+                  <td>?</td>
+                </tr>
+                <tr>
+                  <td>JAWS</td>
+                  <td>?</td>
+                </tr>
+                <tr>
+                  <td>VoiceOver (macOS)</td>
+                  <td>yes</td>
+                </tr>
+
+                <tr>
+                  <th rowspan="2">Safari</th>
+                  <td>yes</td>
+                  <td>VoiceOver (macOS)</td>
+                  <td>yes</td>
+                </tr>
+                <tr>
+                  <td rowspan="2">?</td>
+                  <td>VoiceOver (iOS)</td>
+                  <td>?</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+
+		</div> <!-- /#app -->
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

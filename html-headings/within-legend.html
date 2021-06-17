@@ -23,13 +23,17 @@
             border-bottom: 1px solid;
         }
         tr:nth-child(2n) {
-            background: #eee;
+            /*background: #fafafa;*/
         }
         th:not(:last-child), td:not(:last-child) {
           border-right: 1px solid;
         }
         th[rowspan] {
-          background: #fefefe;
+          background: #fafafa;
+        }
+
+        .bug {
+          background: lightyellow;
         }
     </style>
   </head>
@@ -38,7 +42,7 @@
       <header>
         <h1>Heading within a legend</h1>
         <div class="dates">
-          <p>Published: <span>June 15, 2021</span></p>
+          <p>Published: <span>June 17, 2021</span></p>
         </div>
       </header>
 
@@ -68,16 +72,16 @@
                 <tr>
                   <th rowspan="4">Edge</th>
                   <td rowspan="4">yes</td>
-                  <td>Narrator</td>
-                  <td>?</td>
+                  <td class=bug>Narrator</td>
+                  <td class=bug><strong>no</strong></td>
                 </tr>
                 <tr>
                   <td>NVDA</td>
-                  <td>?</td>
+                  <td>yes</td>
                 </tr>
                 <tr>
-                  <td>JAWS</td>
-                  <td>?</td>
+                  <td class=bug>JAWS</td>
+                  <td class=bug><strong>no</strong></td>
                 </tr>
                 <tr>
                   <td>VoiceOver (macOS)</td>
@@ -86,28 +90,36 @@
 
 
                 <tr>
-                  <th rowspan="2">Chrome</th>
-                  <td rowspan="2">?</td>
+                  <th rowspan="3">Chrome</th>
+                  <td rowspan="3">yes</td>
                   <td>NVDA</td>
-                  <td>?</td>
+                  <td>yes</td>
                 </tr>
                 <tr>
-                  <td>JAWS</td>
-                  <td>?</td>
+                  <td class=bug>JAWS</td>
+                  <td class=bug><strong>no</strong></td>
+                </tr>
+                <tr>
+                  <td>TalkBack</td>
+                  <td>yes</td>
                 </tr>
 
                 <tr>
-                  <th rowspan="3">Firefox</th>
-                  <td rowspan="3">yes</td>
+                  <th rowspan="4">Firefox</th>
+                  <td rowspan="4">yes</td>
                   <td>NVDA</td>
-                  <td>?</td>
+                  <td>yes</td>
                 </tr>
                 <tr>
-                  <td>JAWS</td>
-                  <td>?</td>
+                  <td class=bug>JAWS</td>
+                  <td class=bug><strong>no</strong></td>
                 </tr>
                 <tr>
                   <td>VoiceOver (macOS)</td>
+                  <td>yes</td>
+                </tr>
+                <tr>
+                  <td>TalkBack</td>
                   <td>yes</td>
                 </tr>
 
@@ -118,9 +130,9 @@
                   <td>yes</td>
                 </tr>
                 <tr>
-                  <td rowspan="2">?</td>
+                  <td rowspan="2">yes</td>
                   <td>VoiceOver (iOS)</td>
-                  <td>?</td>
+                  <td>yes</td>
                 </tr>
               </tbody>
             </table>

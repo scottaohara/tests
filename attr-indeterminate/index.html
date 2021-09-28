@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+  <title>Testing indeterminiate checkboxes</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+  <style>
+
+    table {
+      width: 100%;
+      border-top: 1px solid;
+      border-left: 1px solid;
+    }
+
+    th, td {
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    #f {
+      display: inline-block;
+      border:  1px solid;
+      height:  .75em;
+      width:  .75em;
+      margin:  0 .325em;
+    }
+  </style>
+  </head>
+<body>
+  <div id="app">
+  <header>
+        <h1>Testing indeterminiate / aria-checked=mixed checkboxes</h1>
+        <div class="dates">
+          <p>Published: September 28, 2021</p>
+        </div>
+      </header>
+  <main>
+    <h1>Testing</h1>
+
+    <p>
+      <input id="a" type="checkbox"><label for=a>A: Native mix</label>
+    <p>
+      <input id="b" type="checkbox" checked><label for=b>B: Native chosen + native mix</label>
+    <p>
+      <input id="c" type="checkbox" checked aria-checked=mixed><label for=c>C: Native chosen + aria mix</label>
+    <p>
+      <input id="d" type="checkbox" aria-checked=mixed><label for=d>D: Aria mix only</label>
+    <p>
+      <input id="e" type="checkbox" aria-checked=mixed><label for=e>E: Native mix + Aria mix</label>
+    <p>
+      <div tabindex="0" id="f" aria-labelledby="fa" role=checkbox aria-checked=mixed></div><span id=fa>F: ARIA checkbox w/ mix</span>
+    <script>
+      document.getElementById('a').indeterminate = true;
+      document.getElementById('b').indeterminate = true;
+      document.getElementById('e').indeterminate = true;
+    </script>
+
+    <table style="margin-top: 2em;">
+      <caption style="text-align: left;">Results</caption>
+      <tbody><tr>
+        <th>Browser</th>
+        <th>API exposed?</th>
+        <th>JAWS</th>
+        <th>NVDA</th>
+        <th>Narrator</th>
+        <th>VO macOS</th>
+        <th>VO iOS</th>
+        <th>TalkBack</th>
+      </tr>
+      <tr>
+        <th>Firefox</th>
+        <td>???</td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>n/a</td>
+        <td>
+          <ol type="A"><li>"mixed"</li><li>"mixed"</li><li>ignored<br></li><li>ignored<br></li><li>"mixed"<br></li><li>"mixed"<br></li></ol></td>
+        <td>n/a</td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+      </tr>
+      <tr>
+        <th>Chrome</th>
+        <td>???</td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>n/a</td>
+        <td>
+          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>n/a</td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+      </tr>
+      <tr>
+        <th>Edge</th>
+        <td>???</td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>
+          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>n/a</td>
+        <td>
+          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+      </tr>
+      <tr>
+        <th>Safari</th>
+        <td>???</td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>n/a</td>
+        <td>
+          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>n/a</td>
+      </tr>
+    </tbody></table>
+
+  </main>
+    
+  </div> <!-- /app -->
+</body>
+</html>

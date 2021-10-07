@@ -1,10 +1,22 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-  <title>Testing indeterminiate checkboxes</title>
-    <link rel="stylesheet" href="../-assets/shared.css">
+  <meta charset="utf-8">
+  <title>Custom dialog</title>
   <style>
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: arial;
+    }
+
+    main, header, footer {
+      padding: 1.325em;
+    }
 
     table {
       width: 100%;
@@ -25,15 +37,11 @@
       margin:  0 .325em;
     }
   </style>
-  </head>
+</html>
 <body>
-  <div id="app">
-  <header>
-        <h1>Testing indeterminiate / aria-checked=mixed checkboxes</h1>
-        <div class="dates">
-          <p>Published: September 28, 2021</p>
-        </div>
-      </header>
+  <!-- <header>
+
+  </header> -->
   <main>
     <h1>Testing</h1>
 
@@ -70,52 +78,49 @@
       <tr>
         <th>Firefox</th>
         <td>???</td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td>n/a</td>
+        <td><ol type="A"><li>"partially checked"</li><li>"partially checked"</li><li>ignored<br></li><li>ignored<br></li><li>"partially checked"</li><li>"partially checked"</li></ol></td>
+        <td><ol type="A"><li>"half checked"</li><li>"half checked"</li><li>ignored<br></li><li>ignored<br></li><li>"half checked"</li><li>"half checked"</li></ol></td>
+        <td><ol type="A"><li>"Indeterminate"<br></li><li>"Indeterminate"</li><li>ignored</li><li>ignored</li><li>"Indeterminate"</li><li>"Indeterminate"</li></ol></td>
         <td>
           <ol type="A"><li>"mixed"</li><li>"mixed"</li><li>ignored<br></li><li>ignored<br></li><li>"mixed"<br></li><li>"mixed"<br></li></ol></td>
         <td>n/a</td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li></ol></td>
       </tr>
       <tr>
         <th>Chrome</th>
         <td>???</td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td>n/a</td>
+        <td><ol type="A"><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li></ol></td>
+        <td><ol type="A"><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li></ol></td>
+        <td><ol type="A"><li>"Indeterminate"<br></li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li></ol></td>
         <td>
-          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+          <ol type="A"><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li></ol></td>
         <td>n/a</td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A"><li>"partially&nbsp; checked"<br></li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li></ol></td>
       </tr>
       <tr>
         <th>Edge</th>
-        <td>???</td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>UIA - AriaProperties: checked=mixed</td>
+        <td><ol type="A"><li>"partially checked"<br></li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li></ol></td>
+        <td><ol type="A"><li>"half checked"<br></li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li></ol></td>
+        <td><ol type="A"><li>"Indeterminate"<br></li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li></ol></td>
         <td>
-          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+          <ol type="A"><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li><li>"mixed"</li></ol></td>
         <td>n/a</td>
-        <td>
-          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td><ol type="A"><li>"partially&nbsp; checked"<br></li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li><li>"partially&nbsp; checked"</li></ol></td>
       </tr>
       <tr>
         <th>Safari</th>
-        <td>???</td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+        <td>idl and unchecked reported as value=0. aria-checked=mixed value=2</td>
+        <td>n/a</td>
+        <td>n/a</td>
         <td>n/a</td>
         <td>
-          <ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
-        <td><ol type="A" contenteditable=""><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li><li><br></li></ol></td>
+          <ol type="A"><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>"mixed"</li></ol></td>
+        <td><ol type="A"><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>"mixed"</li></ol></td>
         <td>n/a</td>
       </tr>
     </tbody></table>
 
   </main>
-    
-  </div> <!-- /app -->
 </body>
 </html>

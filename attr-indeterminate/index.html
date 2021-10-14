@@ -47,16 +47,26 @@
 
     <p>
       <input id="a" type="checkbox"><label for=a>A: Native mix</label>
+      <br>
+      Expectation: expose the 'mixed state'
     <p>
-      <input id="b" type="checkbox" checked><label for=b>B: Native chosen + native mix</label>
+      <input id="b" type="checkbox" checked><label for=b>B: Native chosen + native mix</label><br>
+      Expectation: expose the 'mixed state'
     <p>
-      <input id="c" type="checkbox" checked aria-checked=mixed><label for=c>C: Native chosen + aria mix</label>
+      <input id="c" type="checkbox" checked aria-checked=mixed><label for=c>C: Native chosen + aria mix</label><br>
+      Expectation: ignore aria-checked attribute as the native checkbox is in the checked state.
     <p>
-      <input id="d" type="checkbox" aria-checked=mixed><label for=d>D: Aria mix only</label>
+      <input id="d" type="checkbox" aria-checked=mixed><label for=d>D: Aria mix only</label><br>
+      Expectation: ignore aria-checked attribute as the native checkbox is in the unchecked state.
     <p>
       <input id="e" type="checkbox" aria-checked=mixed><label for=e>E: Native mix + Aria mix</label>
+      <br>
+      Expectation: expose the 'mixed state', but ignore the aria-checked attribute as the mixed state is set by the IDL attribute.
     <p>
       <div tabindex="0" id="f" aria-labelledby="fa" role=checkbox aria-checked=mixed></div><span id=fa>F: ARIA checkbox w/ mix</span>
+      <br>
+      Expectation: expose the 'mixed state'
+    </p>
     <script>
       document.getElementById('a').indeterminate = true;
       document.getElementById('b').indeterminate = true;

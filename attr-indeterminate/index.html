@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <meta charset="utf-8">
-  <title>Custom dialog</title>
+  <title>Indeterminate / mixed checkboxes</title>
   <style>
     *, *:before, *:after {
       box-sizing: border-box;
@@ -77,7 +77,7 @@
       </tr>
       <tr>
         <th>Firefox</th>
-        <td>???</td>
+        <td>MSAA/IA2 <code>input type=checkbox</code> with <code>indeterminate=true</code> and <code>role=checkbox aria-checked=mixed</code>: accState = mixed.  <p>accState mixed is <strong>not</strong> exposed on a native checkbox with aria-checked=mixed</td>
         <td><ol type="A"><li>"partially checked"</li><li>"partially checked"</li><li>ignored<br></li><li>ignored<br></li><li>"partially checked"</li><li>"partially checked"</li></ol></td>
         <td><ol type="A"><li>"half checked"</li><li>"half checked"</li><li>ignored<br></li><li>ignored<br></li><li>"half checked"</li><li>"half checked"</li></ol></td>
         <td><ol type="A"><li>"Indeterminate"<br></li><li>"Indeterminate"</li><li>ignored</li><li>ignored</li><li>"Indeterminate"</li><li>"Indeterminate"</li></ol></td>
@@ -88,7 +88,7 @@
       </tr>
       <tr>
         <th>Chrome</th>
-        <td>???</td>
+        <td>MSAA/IA2 <code>input type=checkbox</code> with <code>indeterminate=true</code> and <code>role=checkbox aria-checked=mixed</code>: accState = mixed.  <p>accState mixed is exposed on a native checkbox with aria-checked=mixed... though this may well be because the aria-checked attribute is given priority over the native checked state of the input, which is not correct per ARIA section 8.5</td>
         <td><ol type="A"><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li></ol></td>
         <td><ol type="A"><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li></ol></td>
         <td><ol type="A"><li>"Indeterminate"<br></li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li></ol></td>
@@ -99,7 +99,7 @@
       </tr>
       <tr>
         <th>Edge</th>
-        <td>UIA - AriaProperties: checked=mixed</td>
+        <td>UIA - AriaProperties: checked=mixed.  See also described behavior of aria-checked in Chrome.</td>
         <td><ol type="A"><li>"partially checked"<br></li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li><li>"partially checked"</li></ol></td>
         <td><ol type="A"><li>"half checked"<br></li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li><li>"half checked"</li></ol></td>
         <td><ol type="A"><li>"Indeterminate"<br></li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li><li>"Indeterminate"</li></ol></td>
@@ -110,7 +110,7 @@
       </tr>
       <tr>
         <th>Safari</th>
-        <td>idl and unchecked reported as value=0. aria-checked=mixed value=2</td>
+        <td>native checkbox indeterminate idl and unchecked state reported as value=0. aria-checked=mixed value=2.  <p>would have expected IDL to return value of 2 to indicate the 'mixed' state.</td>
         <td>n/a</td>
         <td>n/a</td>
         <td>n/a</td>

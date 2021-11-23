@@ -39,12 +39,11 @@
   </style>
 </html>
 <body>
-  <!-- <header>
-
-  </header> -->
   <main>
-    <h1>Testing</h1>
-
+    <h1>Testing mixed state checkboxes</h1>
+    <p>Last updated: Nov 23, 2021</p>
+    
+    <h2>Test cases</h2>
     <p>
       <input id="a" type="checkbox"><label for=a>A: Native mix</label>
       <br>
@@ -73,8 +72,9 @@
       document.getElementById('e').indeterminate = true;
     </script>
 
+    <h2>Results</h2>
     <table style="margin-top: 2em;">
-      <caption style="text-align: left;">Results</caption>
+      <caption style="text-align: left;">Mappings and Screen Reader results by browser</caption>
       <tbody><tr>
         <th>Browser</th>
         <th>API exposed?</th>
@@ -94,7 +94,9 @@
         <td>
           <ol type="A"><li>"mixed"</li><li>"mixed"</li><li>ignored<br></li><li>ignored<br></li><li>"mixed"<br></li><li>"mixed"<br></li></ol></td>
         <td>n/a</td>
-        <td><ol type="A" contenteditable=""><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li></ol></td>
+        <td><ol type="A" contenteditable=""><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li><li>ignored<br></li></ol>
+          <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1742619">Firefox bug filed</a>
+        </td>
       </tr>
       <tr>
         <th>Chrome</th>
@@ -120,12 +122,17 @@
       </tr>
       <tr>
         <th>Safari</th>
-        <td>native checkbox indeterminate idl and unchecked state reported as value=0. aria-checked=mixed value=2.  <p>would have expected IDL to return value of 2 to indicate the 'mixed' state.</td>
+        <td>
+          native checkbox indeterminate idl and unchecked state reported as value=0. aria-checked=mixed value=2.  
+          <p>would have expected IDL to return value of 2 to indicate the 'mixed' state.</p>
+          <p><a href="https://bugs.webkit.org/show_bug.cgi?id=231760">webkit bug filed</a></p>
+        </td>
         <td>n/a</td>
         <td>n/a</td>
         <td>n/a</td>
         <td>
-          <ol type="A"><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>"mixed"</li></ol></td>
+          <ol type="A"><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>"mixed"</li></ol>
+        </td>
         <td><ol type="A"><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>ignored</li><li>"mixed"</li></ol></td>
         <td>n/a</td>
       </tr>

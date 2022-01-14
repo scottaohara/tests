@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <title>Readonly checkboxes</title>
+  <style>
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: arial;
+    }
+
+    main, header, footer {
+      padding: 1.325em;
+    }
+
+    table {
+      width: 100%;
+      border-top: 1px solid;
+      border-left: 1px solid;
+    }
+
+    th, td {
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    #f {
+      display: inline-block;
+      border:  1px solid;
+      height:  .75em;
+      width:  .75em;
+      margin:  0 .325em;
+    }
+
+    [role=checkbox] {
+      height: 1em;
+      display: inline-block;
+      width: 1em;
+      border: 1px solid;
+      position: relative;
+    }
+    [role=checkbox]:focus {
+      outline:  2px solid black;
+    }
+    [role=checkbox][aria-checked=true]::before {
+      content: '';
+      height: 20%;
+      width: 20%;
+      border:  4px solid;
+      position: absolute;
+      bottom: 0; top: 0; left: 0; right: 0; margin: auto;
+    }
+  </style>
+</html>
+<body>
+  <main>
+    <h1>Testing 'readonly' checkboxes</h1>
+    <p>Last updated: Jan 14, 2022</p>
+    
+    <h2>Test cases</h2>
+    <p>
+      <input id="a" type="checkbox" readonly>
+      <label for=a>A: native</label>
+      <br>
+      Expectation: no announcement. invalid - <code>readonly</code> is not allowed on an <code>input type=checkbox</code>
+    </p>
+    <p>
+      <input id="b" type="checkbox" aria-readonly=true>
+      <label for=b>B: native w/ aria attribute</label>
+      <br>
+      Expectation: possible announcement. Mixing ARIA attr w/ HTML element.
+    </p>
+    <p>
+      <span role=checkbox aria-checked=true aria-readonly=true aria-labelledby=c tabindex=0></span>
+      <span id=c>C: native w/ aria attribute</span>
+      <br>
+      Expectation: should announce as allowed by ARIA.
+    </p>
+
+    <h2>Results</h2>
+    <table style="margin-top: 2em;">
+      <caption style="text-align: left;">Mappings and Screen Reader results by browser</caption>
+      <tbody><tr>
+        <th>Browser</th>
+        <th>API exposed?</th>
+        <th>JAWS</th>
+        <th>NVDA</th>
+        <th>Narrator</th>
+        <th>VO macOS</th>
+        <th>VO iOS</th>
+        <th>TalkBack</th>
+      </tr>
+      <tr>
+        <th>Firefox</th>
+        <td>
+          MSAA/IA2
+          <ol type="A">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td>
+          <ol type="A"><li>no announcement.<br>can be toggled</li><li>no announcement.</li><li>no announcement.</li></ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+      </tr>
+      <tr>
+        <th>Chrome</th>
+        <td>
+          MSAA/IA2
+          <ol type="A">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+      </tr>
+      <tr>
+        <th>Edge</th>
+        <td>UIA
+          <ol type="A"><li>isReadonly=false</li>
+            <li>IsReadOnly: True, AriaProperties: readonly=true</li>
+</li><li>IsReadOnly: True, AriaProperties: readonly=true</li></ol>
+        </td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A"><li>no announcement.<br>can be toggled</li><li>no announcement.</li><li>no announcement.</li></ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+      </tr>
+      <tr>
+        <th>Safari</th>
+        <td>
+          ???
+          <ol type="A">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+        <td><ol type="A">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol></td>
+      </tr>
+    </tbody></table>
+
+  </main>
+</body>
+</html>

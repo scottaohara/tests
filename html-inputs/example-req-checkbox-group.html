@@ -1,0 +1,63 @@
+<form>
+  <fieldset aria-describedby="desc">
+    <legend>
+      Choose your favorite fruit(s) - required
+    </legend>
+    <div id="desc">
+      <span id="default">You must choose at least one fruit</span>
+      <span role="alert"></span>
+    </div>
+    <div>
+      <input id="Apple" name="Apple" type="checkbox">
+      <label for="Apple">Apple</label>
+    </div>
+    <div>
+      <input id="banana" name="banana" type="checkbox">
+      <label for="banana">Banana</label>
+    </div>
+    <div>
+      <input id="kiwi" name="kiwi" type="checkbox">
+      <label for="kiwi">Kiwi</label>
+    </div>
+  </fieldset>
+  <input type="submit">
+</form>
+
+<script>
+  const def = document.getElementById('default');
+  const descEl = document.getElementById('desc');
+  const description = descEl.textContent;
+  const ogDesc = description;
+  const alert = descEl.querySelector('[role="alert"]');
+
+  for ( const fieldset of document.querySelectorAll('fieldset') ) {
+    const checkValidity = () => {
+      if ( ![...fieldset.elements].some(e => e.checked) ) {
+        def.hidden = true;
+        alert.textContent = 'Error: ' + description;
+        def.textContent = alert.textContent;
+
+        setTimeout(function () {
+          def.hidden = false;
+          alert.textContent = '';
+        }, 300);
+
+        if ( !fieldset.getAttribute('aria-describedby') ) {
+          fieldset.setAttribute('aria-describedby', 'desc');
+        }
+
+        event.preventDefault();
+      }
+    };
+
+    const checkListener = () => {
+      if ( [...fieldset.elements].some(e => e.checked) ) {
+        def.textContent = ogDesc;
+        fieldset.removeAttribute('aria-describedby');
+      }
+    }
+
+    fieldset.form.addEventListener('change', checkListener);
+    fieldset.form.addEventListener('submit', checkValidity);
+  }
+</script>

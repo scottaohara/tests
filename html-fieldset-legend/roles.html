@@ -34,7 +34,13 @@
             <details>
               <summary>results</summary>
               <div>
-                .,..
+                <p><strong>Note:</strong> the way in which different screen readers / browsers announce the accName of a toolbar may vary. 
+                  E.g., whether a user hears the name of the toolbar will depend on their navigation method (forms mode / scan mode).</p>
+                <hr>
+                <p>Chromium & Gecko + JAWS 2021: announces legend as accName of 'toolbar'</p>
+                <p>Chromium & Gecko + Narrator: announces legend as accName of 'toolbar'</p>
+                <p>Chromium & Gecko + NVDA 2021.3.1: announces legend as accName of 'toolbar'</p>
+                <p>Webkit & Chromium & Gecko + VoiceOver: announces legend as accName of 'menubar'</p>
               </div>
             </details>
           </div>
@@ -56,9 +62,43 @@
             <details>
               <summary>results</summary>
               <div>
-                .,..
+                <p><strong>Note:</strong> the way in which different screen readers / browsers announce the accName of a menubar may vary. 
+                  E.g., whether a user hears the name of the menubar will depend on their navigation method (forms mode / scan mode).</p>
+                <hr>
+                <p>Chromium & Gecko + JAWS 2021: announces legend as accName of 'menubar'</p>
+                <p>Chromium & Gecko + Narrator: announces legend as accName of 'menbuar'</p>
+                <p>Chromium & Gecko + NVDA 2021.3.1: announces legend as accName of 'menbuar'</p>
+                <p>Webkit & Chromium + VoiceOver: announces legend as accName of 'menubar'</p>
+                <p>Gecko + VoiceOver: providing a menubar an accessible name (regardless of method) has bugs. The a11y tree correctly shows "Example 1" as the accName.</p>
               </div>
             </details>
+          </div>
+        </div>
+      </div>
+      
+      
+      <h2>Control tests</h2>
+      <p>The following are to compare behavior with specifying toolbar and menubar roles on a <code>div</code> 
+        and an accessible name by use of <code>aria-label</code>, instead.</p>
+      
+         <div class="test">
+        <h2><code>div</code> with <code>role=toolbar</code> name from <code>aria-label</code></h2>
+        <div class="test__case">
+          <div role=toolbar aria-label="control example">
+            <label>test <input type="checkbox"></label>
+            <label>testb <input type="checkbox"></label>
+            <label>testc <input type="checkbox"></label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="test">
+        <h2><code>div</code> with <code>role=menubar</code> name from <code>aria-label</code></h2>
+        <div class="test__case">
+          <div role=menubar aria-label="control example>
+            <button role=menuitem>test</button>
+            <button role=menuitem>test2</button>
+            <button role=menuitem>test3</button>
           </div>
         </div>
       </div>

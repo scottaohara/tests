@@ -40,6 +40,8 @@
                 <p>macOS Webkit & Chromium & Gecko + VoiceOver: announces legend as accName of 'toolbar'</p>
                 <p>iOS Webkit + VO: announces 'form start' but does not announce role or name of toolbar. 
                   If toolbar is specified on a div, 'form start' is not announced, but also, the role and name are not announced either.</p>
+                <p>Chromium + TalkBack does not announce the toolbar nor its name when entering via swipe gestures.</p>
+                <p>Gecko + TalkBack does not announce the toolbar role or name when entered via swipe gestures.</p>
               </div>
             </details>
           </div>
@@ -107,9 +109,6 @@
           </fieldset>
         </div>
       </div>
-
-  
-
     </div> <!-- /#app -->
 
     <script src="../-assets/shared.js"></script>

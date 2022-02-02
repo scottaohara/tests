@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Testing fieldset with roles and legend</title>
     <link rel="stylesheet" href="../-assets/shared.css">
-    <style>
-
-    </style>
   </head>
   <body>
     <div id="app">
@@ -40,7 +37,9 @@
                 <p>Chromium & Gecko + JAWS 2021: announces legend as accName of 'toolbar'</p>
                 <p>Chromium & Gecko + Narrator: announces legend as accName of 'toolbar'</p>
                 <p>Chromium & Gecko + NVDA 2021.3.1: announces legend as accName of 'toolbar'</p>
-                <p>Webkit & Chromium & Gecko + VoiceOver: announces legend as accName of 'menubar'</p>
+                <p>macOS Webkit & Chromium & Gecko + VoiceOver: announces legend as accName of 'toolbar'</p>
+                <p>iOS Webkit + VO: announces 'form start' but does not announce role or name of toolbar. 
+                  If toolbar is specified on a div, 'form start' is not announced, but also, the role and name are not announced either.</p>
               </div>
             </details>
           </div>
@@ -68,8 +67,14 @@
                 <p>Chromium & Gecko + JAWS 2021: announces legend as accName of 'menubar'</p>
                 <p>Chromium & Gecko + Narrator: announces legend as accName of 'menbuar'</p>
                 <p>Chromium & Gecko + NVDA 2021.3.1: announces legend as accName of 'menbuar'</p>
-                <p>Webkit & Chromium + VoiceOver: announces legend as accName of 'menubar'</p>
-                <p>Gecko + VoiceOver: providing a menubar an accessible name (regardless of method) has bugs. The a11y tree correctly shows "Example 1" as the accName.</p>
+                <p>macOS Webkit & Chromium + VoiceOver: announces legend as accName of 'menubar'</p>
+                <p>Gecko + VoiceOver: providing a menubar an accessible name (regardless of method) has bugs. 
+                  The a11y tree correctly shows "Example 1" as the accName.</p>
+                <p>iOS Webkit + VO: announces 'form start' but does not announce role or name of menubar. 
+                  If menubar is specified on a div, 'form start' is not announced, but also, the role and name are not announced either.</p>
+                <p>Chromium + TalkBack does not announce the menubar nor its name when entering via swipe gestures.</p>
+                <p>Gecko + TalkBack does not announce the menubar role or name when entered via swipe gestures.</p>
+                <p>Gecko + TalkBack <strong>DOES</strong> announce the menubar and its name when entering if using an aria-label to provide the accessible name, rather than legend.
               </div>
             </details>
           </div>
@@ -95,11 +100,11 @@
       <div class="test">
         <h2><code>div</code> with <code>role=menubar</code> name from <code>aria-label</code></h2>
         <div class="test__case">
-          <div role=menubar aria-label="control example">
+          <fieldset role=menubar aria-label="control example">
             <button role=menuitem>test</button>
             <button role=menuitem>test2</button>
             <button role=menuitem>test3</button>
-          </div>
+          </fieldset>
         </div>
       </div>
 

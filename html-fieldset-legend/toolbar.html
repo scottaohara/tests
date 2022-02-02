@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing fieldset with roles and legend</title>
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1><code>fieldset</code> with <code>role</code> and <code>legend</code> tests</h1>
+        <div class="dates">
+          <p>Published: <span>February 2nd, 2022</span></p>
+          <!-- <p>Last Updated: ...</p> -->
+        </div>
+      </header>
+
+      <div class="test">
+        <h2><code>fieldset</code> with <code>role=toolbar</code> and <code>legend</code></h2>
+        <div class="test__case">
+          <fieldset role=toolbar>
+            <fieldset>Example 1</fieldste>
+            <label>test <input type="checkbox"></label>
+            <label>testb <input type="checkbox"></label>
+            <label>testc <input type="checkbox"></label>
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                .,..
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+      
+      <div class="test">
+        <h2><code>fieldset</code> with <code>role=menubar</code> and <code>legend</code></h2>
+        <div class="test__case">
+          <fieldset role=menubar>
+            <fieldset>Example 1</fieldste>
+            <button role=menuitem>test</button>
+            <button role=menuitem>test2</button>
+            <button role=menuitem>test3</button>
+          </fieldset>
+        </div>
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                .,..
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+  
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ARIA live regions: timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../-assets/shared.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Testing ARIA <code>role=timer</code></h1>
+        <div class="dates">
+          <p>Published: <time>March 2, 2022</time></p>
+        </div>
+      </header>
+      
+      <p>A <a href="https://www.w3.org/TR/wai-aria-1.2/#timer"><code>role=timer</code></a> is a live region with an implicit <code>aria-live=off</code>.</p>
+      <p>An <a href="https://www.w3.org/TR/wai-aria-1.2/#aria-live"><code>aria-live=off</code></a> 
+        is not meant to announce dynamic changes "unless the user is currently focused on that region".</p>
+      <p>The following test has a <code>role=timer</code> with a <code>tabindex=0</code> to allow for testing with Virtual Cursor "focus" as well as keyboard focus.</p>
+
+      <div class="test">
+        <h2><code>role="timer"</code> in the DOM on page load</h2>
+        <div class="test__case">
+          <div role=timer></div>
+          <script>
+            const timer = document.querySelector('[role=timer]');
+            let maxTime = 60 * 5;
+
+            function startTimer ( duration ) {
+              counter = duration;
+              let minutes;
+              let seconds;
+
+              setInterval ( function () {
+                minutes = parseInt(counter / 60, 10);
+                seconds = parseInt(counter % 60, 10);
+
+                minutes = minutes < 10 ? + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                timer.textContent = minutes + ':' + seconds;
+
+                if ( --counter < 0 ) {
+                  counter = duration;
+                }
+              }, 1000);
+            }
+            startTimer(maxTime);	
+          </script>
+        </div>
+
+        <div class="test__info">
+          <div class="test__info__results">
+            <details>
+              <summary>results</summary>
+              <div>
+                <ul>
+                  <li>macOS 11.6 VoiceOver with Safari 15.1: updates not announced when focused with VC or keyboard focus. Timer role announced.</li>
+
+                  <li>JAWS 2022.2110.60 with Edge &amp; Chrome 98 updates not announced when focused with VC or keyboard focus. Timer role not announced.</li>
+                  <li>JAWS 2022.2110.60 with Firefox 97.0.1: no announcement of content made if focused with <kbd>Tab</kbd> key. VC focus announces current value but not dynamic updates. Timer role not announced.</li>
+                  
+                  <li>NVDA 2021.3.3 with Edge &amp; Chrome 98: updates not announced when focused with VC or keyboard focus. Timer role not announced.</li>
+                  <li>NVDA 2021.3.3 with Firefox 97.0.1: updates not announced when focused with VC or keyboard focus. Timer role not announced.</li>
+                  
+                  <li>Narrator with Win10 and Edge 98: updates not announced when focused with VC or keyboard focus. Timer role announced.</li>
+
+                  <li>Android 12 TalkBack with Firefox 95.2: updates announced while VC focus remains on element. Timer role not announced.</li>
+                  <li>Android 12 TalkBack with Chrome 96: updates not announced when focused with VC. Timer role announced.</li>
+                  
+                  <li>iOS 15.3.1 VoiceOver with Safari: no announcement of dynamic content. Is difficult to swipe to the dynamically updating content. VO focus will often skip over the countdown timer (nothing to do with the role. iOS VO just doesn't seem to like moving focus to content that updates so frequently). Timer role not announced.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /#app -->
+
+    <script src="../-assets/shared.js"></script>
+  </body>
+</html>
